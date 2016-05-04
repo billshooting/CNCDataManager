@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataManager", "CNCDataManager\CNCDataManager.csproj", "{6B099419-7934-4E27-8526-A72D56984205}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataManager.Tests", "CNCDataManager.Tests\CNCDataManager.Tests.csproj", "{0C1178A2-407A-49DE-B62F-30F0D92DC68B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B099419-7934-4E27-8526-A72D56984205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B099419-7934-4E27-8526-A72D56984205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B099419-7934-4E27-8526-A72D56984205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B099419-7934-4E27-8526-A72D56984205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
