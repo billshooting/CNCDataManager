@@ -180,6 +180,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\CSS\Home\Index.css" />
+    <Content Include="Assets\CNC\数控系统-表.jpg" />
+    <Content Include="Assets\Cover\CNC.jpg" />
+    <Content Include="Assets\Cover\driver.jpg" />
+    <Content Include="Assets\Cover\machine.jpg" />
+    <Content Include="Assets\Cover\motor.jpg" />
+    <Content Include="Assets\Cover\system.jpg" />
+    <Content Include="Assets\Mechanics\1-滚动轴承-介绍.jpg" />
+    <Content Include="Assets\Mechanics\2-联轴器-介绍.jpg" />
+    <Content Include="Assets\Mechanics\3-导轨-介绍.jpg" />
+    <Content Include="Assets\Mechanics\4-滚珠丝杠螺副-介绍.jpg" />
+    <Content Include="Assets\Mechanics\5-回转工作台-介绍.jpg" />
+    <Content Include="Assets\Mechanics\6-齿轮结构-介绍.jpg" />
+    <Content Include="Assets\Mechanics\7-蜗轮蜗杆-介绍.jpg" />
+    <Content Include="Assets\Mechanics\8-带传动-介绍.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -236,7 +251,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\Scripts\Home\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Motors\" />
+    <Folder Include="Assets\Servo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

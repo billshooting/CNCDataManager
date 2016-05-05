@@ -1,7 +1,42 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "主页";
+}
+@section css{
+<link rel="stylesheet" href="~/App/CSS/Home/Index.css" type="text/css" />
 }
 
+<div class="carousel slide" id="home-index-cover" data-interval="4000">
+    <ol class="carousel-indicators">
+        <li data-target="#home-index-cover1" data-slide="0" class="active"></li>
+        <li data-target="#home-index-cover2" data-slide="1" class=""></li>
+        <li data-target="#home-index-cover3" data-slide="2" class=""></li>
+        <li data-target="#home-index-cover4" data-slide="3" class=""></li>
+        <li data-target="#home-index-cover5" data-slide="4" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active" id="home-index-cover1" >
+            <img src="~/Assets/Cover/CNC.jpg" alt="数控机床" />
+        </div>
+        <div class="item" id="home-index-cover2">
+            <img src="~/Assets/Cover/driver.jpg" alt="伺服驱动" />
+        </div>
+        <div class="item" id="home-index-cover3">
+            <img src="~/Assets/Cover/machine.jpg" alt="机械部件"/>
+        </div>
+        <div class="item" id="home-index-cover4">
+            <img src="~/Assets/Cover/motor.jpg" alt="电机"/>
+        </div>
+        <div class="item" id="home-index-cover5">
+            <img src="~/Assets/Cover/system.jpg" alt="数控系统" />
+        </div>
+    </div>
+    <a class="left carousel-control" href="#home-index-cover" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#home-index-cover" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
 <div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
