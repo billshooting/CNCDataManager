@@ -1,66 +1,116 @@
-﻿@{
-    ViewBag.Title = "主页";
-}
-@section css{
-<link rel="stylesheet" href="~/App/CSS/Home/Index.css" type="text/css" />
+﻿
+@{
+    Layout = null;
 }
 
-<div class="carousel slide" id="home-index-cover" data-interval="4000">
-    <ol class="carousel-indicators">
-        <li data-target="#home-index-cover1" data-slide="0" class="active"></li>
-        <li data-target="#home-index-cover2" data-slide="1" class=""></li>
-        <li data-target="#home-index-cover3" data-slide="2" class=""></li>
-        <li data-target="#home-index-cover4" data-slide="3" class=""></li>
-        <li data-target="#home-index-cover5" data-slide="4" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="item active" id="home-index-cover1" >
-            <img src="~/Assets/Cover/CNC.jpg" alt="数控机床" />
-        </div>
-        <div class="item" id="home-index-cover2">
-            <img src="~/Assets/Cover/driver.jpg" alt="伺服驱动" />
-        </div>
-        <div class="item" id="home-index-cover3">
-            <img src="~/Assets/Cover/machine.jpg" alt="机械部件"/>
-        </div>
-        <div class="item" id="home-index-cover4">
-            <img src="~/Assets/Cover/motor.jpg" alt="电机"/>
-        </div>
-        <div class="item" id="home-index-cover5">
-            <img src="~/Assets/Cover/system.jpg" alt="数控系统" />
-        </div>
-    </div>
-    <a class="left carousel-control" href="#home-index-cover" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#home-index-cover" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-</div>
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>主页-数控机床数据库管理系统</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/App/CSS/Home/Index.css" type="text/css" />
+</head>
+<body>
+    <div class="navbar navbar-fixed-top transparent" style="background:none">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--以下链接可以用html辅助函数来防止被攻击-->
+                <a href="/" class="navbar-brand home-index-nav-link" area ="">数控机床数据管理</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index" class="home-index-nav-link">主页</a></li>
+                    <li><a href="#" class="home-index-nav-link">查看数据</a></li>
+                    <li><a href="/Home/About" class="home-index-nav-link">关于</a></li>
+                    <li><a href="/Home/Contact" class="home-index-nav-link">联系我们</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="container body-content">
+        <div>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <h1>HAHA</h1>
+            <button type="button" class="btn btn-primary">点我</button>
+        </div>
+
+        <div class="carousel slide" id="home-index-cover" data-interval="4000">
+            <ol class="carousel-indicators">
+                <li data-target="#home-index-cover" data-slide-to="0" class="active"></li>
+                <li data-target="#home-index-cover" data-slide-to="1" class=""></li>
+                <li data-target="#home-index-cover" data-slide-to="2" class=""></li>
+                <li data-target="#home-index-cover" data-slide-to="3" class=""></li>
+                <li data-target="#home-index-cover" data-slide-tp="4" class=""></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active home-index-cover-img" id="home-index-cover1">
+                    <img src="~/Assets/Cover/CNC.jpg" alt="数控机床"/>
+                </div>
+                <div class="item home-index-cover-img" id="home-index-cover2">
+                    <img src="~/Assets/Cover/driver.jpg" alt="伺服驱动" />
+                </div>
+                <div class="item home-index-cover-img" id="home-index-cover3">
+                    <img src="~/Assets/Cover/machine.jpg" alt="机械部件" />
+                </div>
+                <div class="item home-index-cover-img" id="home-index-cover4">
+                    <img src="~/Assets/Cover/motor.jpg" alt="电机" />
+                </div>
+                <div class="item home-index-cover-img" id="home-index-cover5">
+                    <img src="~/Assets/Cover/system.jpg" alt="数控系统" />
+                </div>
+            </div>
+            <a class="left carousel-control" href="#home-index-cover" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" id="home-index-cover-prev-arrow"></span>
+            </a>
+            <a class="right carousel-control " href="#home-index-cover" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" id="home-index-cover-next-arrow"></span>
+            </a>
+        </div>
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>To do.</p>
+                </div>
+                <div class="col-md-4">
+                    <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+                    <p>邮编：430074</p>
+                </div>
+                <div class="col-md-4">
+                    <p>To do.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNCDataBaseManageSystem All Rights Reserved.</p>
+                </div>
+            </div>
+
+        </footer>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

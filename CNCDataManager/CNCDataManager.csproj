@@ -181,12 +181,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\CSS\Home\Index.css" />
+    <Content Include="App\CSS\Shared\_Layout.css" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
     <Content Include="Assets\Cover\driver.jpg" />
     <Content Include="Assets\Cover\machine.jpg" />
     <Content Include="Assets\Cover\motor.jpg" />
     <Content Include="Assets\Cover\system.jpg" />
+    <Content Include="Assets\Home\home-background-img.png" />
+    <Content Include="Assets\Home\login-bg.png" />
+    <Content Include="Assets\Home\login-bg1.png" />
     <Content Include="Assets\Mechanics\1-滚动轴承-介绍.jpg" />
     <Content Include="Assets\Mechanics\2-联轴器-介绍.jpg" />
     <Content Include="Assets\Mechanics\3-导轨-介绍.jpg" />
@@ -195,6 +199,44 @@
     <Content Include="Assets\Mechanics\6-齿轮结构-介绍.jpg" />
     <Content Include="Assets\Mechanics\7-蜗轮蜗杆-介绍.jpg" />
     <Content Include="Assets\Mechanics\8-带传动-介绍.jpg" />
+    <Content Include="Assets\Mechanics\传动带-表\带传动.jpg" />
+    <Content Include="Assets\Mechanics\回转工作台-表\工作台.jpg" />
+    <Content Include="Assets\Mechanics\导轨-表\1-直线滚动导轨-表.jpg" />
+    <Content Include="Assets\Mechanics\导轨-表\导轨.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\1-角接触球轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\2-深沟球轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\3-圆锥滚子轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\4-圆柱滚子轴承1-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\4-圆柱滚子轴承2-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\5-调心滚子轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\6-调心球轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\7-滚珠丝杠支撑轴承-表.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\滚动轴承.jpg" />
+    <Content Include="Assets\Mechanics\滚动轴承-表\滚珠丝杠螺母副.jpg" />
+    <Content Include="Assets\Mechanics\滚珠丝杠-表\1-实心滚珠丝杠螺母副-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\1-凸缘式联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\2-十字滑块联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\3-齿式联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\4-带制动轮弹性套柱销联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\5-弹性套注销联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\6-弹性柱销联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\7-梅花形弹性联轴器-表.jpg" />
+    <Content Include="Assets\Mechanics\联轴器-表\联轴器.jpg" />
+    <Content Include="Assets\Mechanics\蜗轮蜗杆-表\1-普通圆柱蜗轮蜗杆-表.jpg" />
+    <Content Include="Assets\Mechanics\蜗轮蜗杆-表\2-圆弧圆柱蜗轮蜗杆-表.jpg" />
+    <Content Include="Assets\Mechanics\蜗轮蜗杆-表\蜗轮蜗杆.jpg" />
+    <Content Include="Assets\Mechanics\齿轮-表\1-直齿圆柱齿轮-表.jpg" />
+    <Content Include="Assets\Mechanics\齿轮-表\2-斜齿圆柱齿轮-表.jpg" />
+    <Content Include="Assets\Mechanics\齿轮-表\3-直齿锥齿轮-表.jpg" />
+    <Content Include="Assets\Mechanics\齿轮-表\齿轮.jpg" />
+    <Content Include="Assets\Motors\主轴电机.jpg" />
+    <Content Include="Assets\Motors\伺服电机-介绍.jpg" />
+    <Content Include="Assets\Motors\伺服电机.jpg" />
+    <Content Include="Assets\Motors\进给电机-表.jpg" />
+    <Content Include="Assets\Motors\进给电机尺寸图-表.jpg" />
+    <Content Include="Assets\Servo\伺服部分.jpg" />
+    <Content Include="Assets\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
+    <Content Include="Assets\Servo\电机驱动-介绍.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -228,7 +270,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -249,12 +291,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Scripts\Home\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\Motors\" />
-    <Folder Include="Assets\Servo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
