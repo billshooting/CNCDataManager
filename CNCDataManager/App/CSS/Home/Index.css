@@ -1,12 +1,15 @@
 ﻿* {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:14px;
+    font-size:16px;
+    margin:0;
+    padding:0;
 }
 body {
     background-image: url('../../../Assets/Home/home-background-img.png');
     background-size:100%;
     background-repeat:no-repeat;
 }
+
 .carousel-control.left {
     background-image: -webkit-gradient(linear, 0 top, 100% top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
     background-image: -webkit-linear-gradient(left, color-stop(rgba(0, 0, 0, 0) 0), color-stop(rgba(0, 0, 0, 0) 0%));
@@ -89,21 +92,54 @@ body {
     margin-right:auto;
 }
 
-.navbar {
+div.navbar {
     border:none;
 }
 
-.home-index-nav-link{
+
+a.home-index-nav-link{
+    margin-top:auto;
+    margin-bottom:auto;
+    vertical-align:central;
     font-family:'Times New Roman';
+    font-size:16px;
     color:white;
     font-weight:600;
-}
-.navbar-nav >a :hover{
-    color:red;
-    background-color:red;
+    letter-spacing:2px;
 }
 
-.navbar-brand a:hover{
-    color:red;
+ul.navbar-nav li >a{ color: lightskyblue;}
 
+ul.navbar-nav li :hover{
+    color:lightgray;
+    background-color:transparent;
+}
+
+
+a.navbar-brand { 
+    color: lightskyblue;
+    font-size:20px;
+}
+
+a.navbar-brand :hover{ color: lightgray;}
+
+div#home-page-head{
+    margin-top:100px;
+    color:white;
+    text-align:center;
+}
+
+div#home-page-head >h1{ 
+    font-size:3em;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+div#home-page-head >h2{
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+div#home-page-head >h4{
+    letter-spacing:2px;
+    margin-bottom:20px;
 }

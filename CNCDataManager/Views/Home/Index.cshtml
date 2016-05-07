@@ -10,6 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>主页-数控机床数据库管理系统</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -17,8 +18,8 @@
     <link rel="stylesheet" href="~/App/CSS/Home/Index.css" type="text/css" />
 </head>
 <body>
-    <div class="navbar navbar-fixed-top transparent" style="background:none">
-        <div class="container">
+    <div class="navbar navbar-fixed-top" id="navbar" style="background:none">
+        <div class="container navbar-container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
@@ -27,32 +28,34 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!--以下链接可以用html辅助函数来防止被攻击-->
-                <a href="/" class="navbar-brand home-index-nav-link" area ="">数控机床数据管理</a>
+                <a href="/" class="navbar-brand home-index-nav-link" area =""><span>数控机床数据管理</span></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/Home/Index" class="home-index-nav-link">主页</a></li>
-                    <li><a href="#" class="home-index-nav-link">查看数据</a></li>
-                    <li><a href="/Home/About" class="home-index-nav-link">关于</a></li>
-                    <li><a href="/Home/Contact" class="home-index-nav-link">联系我们</a></li>
+                    <li><a href="/Home/Index" class="home-index-nav-link"><span>主页</span></a></li>
+                    <li><a href="#" class="home-index-nav-link"><span>查看数据</span></a></li>
+                    <li><a href="/Home/About" class="home-index-nav-link"><span>关于</span></a></li>
+                    <li><a href="/Home/Contact" class="home-index-nav-link"><span>联系我们</span></a></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
     <div class="container body-content">
-        <div>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <h1>HAHA</h1>
-            <button type="button" class="btn btn-primary">点我</button>
+        <div id="home-page-head">
+            <h1 aria-label="数控机床参数">数控机床参数 - CNC Data Hub</h1>
+            <br/>
+            <h2 aria-label="专业、准确、全面的数据，专为数控机床准备">专业、准确、全面的数据，专为数控机床准备。</h2>
+            <h4 aria-label="由华中数控、广州数控等多家国内知名数控厂家提供数据">由华中数控、广州数控等多家国内知名数控厂家提供数据。</h4>
+            <div class="row" style="margin-bottom:20px">
+                <div class="col-sm-4">
+                    <img src="~/Assets/Home/left-part-head-img.png" alt="数据"/>
+                </div>
+                <div class="col-sm-4 col-sm-offset-2">
+                    <img src="~/Assets/Home/left-part-head-img.png" alt="数据"/>
+                </div>
+            </div>
+            <a href="#" class="btn btn-primary btn-lg">点击查看数据</a>
         </div>
 
         <div class="carousel slide" id="home-index-cover" data-interval="4000">
@@ -87,7 +90,12 @@
                 <span class="glyphicon glyphicon-chevron-right" id="home-index-cover-next-arrow"></span>
             </a>
         </div>
+
         <hr />
+        <div class="row home-index-tech-used">
+
+        </div>
+        <hr/>
         <footer>
             <div class="row">
                 <div class="col-md-4">
@@ -98,7 +106,8 @@
                     <p>邮编：430074</p>
                 </div>
                 <div class="col-md-4">
-                    <p>To do.</p>
+                    <p>电话：027-87541114</p>
+                    <p>传真：027-87545438</p>
                 </div>
             </div>
             <div class="row">
@@ -112,5 +121,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/App/Scripts/Home/Index.js"></script>
 </body>
 </html>

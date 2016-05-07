@@ -182,6 +182,7 @@
   <ItemGroup>
     <Content Include="App\CSS\Home\Index.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
+    <Content Include="App\Scripts\Home\Index.js" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
     <Content Include="Assets\Cover\driver.jpg" />
@@ -189,6 +190,7 @@
     <Content Include="Assets\Cover\motor.jpg" />
     <Content Include="Assets\Cover\system.jpg" />
     <Content Include="Assets\Home\home-background-img.png" />
+    <Content Include="Assets\Home\left-part-head-img.png" />
     <Content Include="Assets\Home\login-bg.png" />
     <Content Include="Assets\Home\login-bg1.png" />
     <Content Include="Assets\Mechanics\1-滚动轴承-介绍.jpg" />
@@ -270,7 +272,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index2.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -294,7 +295,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\Scripts\Home\" />
+    <Folder Include="App\Scripts\Account\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
