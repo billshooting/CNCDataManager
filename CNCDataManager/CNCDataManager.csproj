@@ -189,7 +189,11 @@
     <Content Include="Assets\Cover\machine.jpg" />
     <Content Include="Assets\Cover\motor.jpg" />
     <Content Include="Assets\Cover\system.jpg" />
+    <Content Include="Assets\Home\angular.png" />
+    <Content Include="Assets\Home\asp-net.png" />
+    <Content Include="Assets\Home\bootstrap-logo.png" />
     <Content Include="Assets\Home\home-background-img.png" />
+    <Content Include="Assets\Home\jQuery.png" />
     <Content Include="Assets\Home\left-part-head-img.png" />
     <Content Include="Assets\Home\login-bg.png" />
     <Content Include="Assets\Home\login-bg1.png" />
@@ -269,7 +273,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutPageData.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -293,6 +297,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Scripts\Account\" />

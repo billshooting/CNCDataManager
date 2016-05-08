@@ -6,7 +6,7 @@
 }
 body {
     background-image: url('../../../Assets/Home/home-background-img.png');
-    background-size:100%;
+    background-size:1920px 630px;
     background-repeat:no-repeat;
 }
 
@@ -108,6 +108,10 @@ a.home-index-nav-link{
     letter-spacing:2px;
 }
 
+a.home-index-nav-link :visited{
+    background-color: transparent;
+}
+
 ul.navbar-nav li >a{ color: lightskyblue;}
 
 ul.navbar-nav li :hover{
@@ -118,28 +122,64 @@ ul.navbar-nav li :hover{
 
 a.navbar-brand { 
     color: lightskyblue;
-    font-size:20px;
+    font-size: 20px;
 }
 
 a.navbar-brand :hover{ color: lightgray;}
 
 div#home-page-head{
-    margin-top:100px;
-    color:white;
-    text-align:center;
+    margin-top: 5%;
+    color: white;
+    text-align: center;
 }
 
 div#home-page-head >h1{ 
-    font-size:3em;
-    font-weight:bold;
-    letter-spacing:2px;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 div#home-page-head >h2{
-    font-weight:bold;
-    letter-spacing:2px;
-    margin-bottom:20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
 }
 div#home-page-head >h4{
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.home-index-tech-used{
+    width:80%;
+    margin:auto;
+}
+.home-index-tech-used >p{
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
     letter-spacing:2px;
-    margin-bottom:20px;
+}
+
+.tech-img{
+    position:relative;
+    width: 200px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding-left:24px;
+    padding-right: 24px;    
+    float:left;
+}
+.tech-img:hover{
+    border: 1px solid #777;
+}
+
+.tech-img img{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+div.tech-img-desc{
+    padding:10px;
+    font-size:18px;
+    font-weight:bold;
+    text-align: center;
 }

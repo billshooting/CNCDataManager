@@ -2,10 +2,10 @@
 $(function () {
     $(window).scroll(function () {
         if ($(window).scrollTop() < 10) {
-            $("#navbar").animate({ background: 'none' });
+            $("#navbar").css({ background: 'none' });
         }
         else {
-            $("#navbar").animate({ background: 'black' });
+            $("#navbar").css({ background: '#555' });
         }
     });
 });
