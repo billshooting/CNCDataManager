@@ -1,17 +1,29 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<div>
+    <div id="contact-block">
+        <div id="contact-icon">
+            <p>欢迎访问</p>
+            <p>数控机床数据管理系统</p>
+        </div>
+        <hr />
+        <div id="contact-message">
+            <p>电话：027-87541114</p>
+            <p>传真：027-87545438</p>
+            <p>邮编：430074</p>
+            <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+        </div>
+        <hr />
+        <div id="developer-message">
+            <p>联系网站开发者：</p>
+            <p>邮箱：bill_shooting@@sina.com</p>
+        </div>
+        
+    </div>
+</div>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+@section css{
+    <link rel="stylesheet" type="text/css" href="~/App/CSS/Home/Contact.css" />
+}

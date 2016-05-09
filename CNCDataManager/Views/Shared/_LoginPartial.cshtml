@@ -1,4 +1,16 @@
 ﻿@using Microsoft.AspNet.Identity
+<style>
+ul.navbar-right a{
+    font-size: 16px;
+    font-weight:600;
+    letter-spacing:2px;
+    color: white;
+}
+ul.navbar-right a:hover{
+    background-color :transparent;
+    color: #ccc;
+}
+</style>
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -7,7 +19,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("你好，" + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            <a href="/Manage/Index" title="Manage" >你好，@User.Identity.GetUserName()</a>
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
     </ul>
@@ -16,8 +28,7 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-        <li><a href="/Account/Register" id="registerLink" class="btn btn-success">注册</a></li>
+        <li><a href="/Account/Register" id="registerLink">注册</a></li>
+        <li><a href="/Account/Login" id="loginLink">登陆</a></li>
     </ul>
 }

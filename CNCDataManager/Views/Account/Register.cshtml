@@ -3,39 +3,45 @@
     ViewBag.Title = "注册";
 }
 
-<h2>@ViewBag.Title。</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>创建新帐户。</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<div>
+    <div id="register-block">
+        <div id="register-icon">
+            <p>欢迎注册</p>
+            <p>数控机床数据管理系统</p>
+        </div>
+        <form action="/Account/Register" method="post" role="form">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label" for="Email" style="display:none">邮箱</label>
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder ="注册邮箱"})
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="Password" style="display:none">密码</label>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="ConfirmPassword" style="display:none">确认密码</label>
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "确认密码" })
+            </div>
+            <div class="form-group">
+                 <input type="submit" class="btn btn-lg btn-success form-control" value="注册" disabled/>
+            </div>
+            <p>
+                <span style="color:red"><b>暂不开放注册</b></span>，如需账户 @Html.ActionLink("联系我们", "Contact", "Home")。
+            </p>
+        </form>
+        <hr />
+        <div id="register-desc">
+            <p>为了保障各个厂商的数据，该网站不开放公开注册，所有账户由华中科技大学统一分配。拥有账户的厂家可用<b>管理员账户</b>登录，用于修改数据和管理权限；或者使用<b>普通账户</b>查看数据。</p>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="注册" />
-        </div>
-    </div>
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}
+
+@section css{
+    <link rel="stylesheet" type="text/css" href="~/App/CSS/Account/Register.css" />
 }

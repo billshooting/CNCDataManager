@@ -180,9 +180,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\CSS\Account\Login.css" />
+    <Content Include="App\CSS\Account\Register.css" />
+    <Content Include="App\CSS\Home\About.css" />
+    <Content Include="App\CSS\Home\Contact.css" />
     <Content Include="App\CSS\Home\Index.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
     <Content Include="App\Scripts\Home\Index.js" />
+    <Content Include="Assets\back-to-top-icon.png" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
     <Content Include="Assets\Cover\driver.jpg" />
