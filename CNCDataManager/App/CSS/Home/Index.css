@@ -1,5 +1,5 @@
 ﻿* {
-    font-family:'Microsoft YaHei'
+    font-family:'Microsoft YaHei';
     font-size:16px;
     margin:0;
     padding:0;
@@ -23,7 +23,7 @@ body {
     margin-top:auto;
     width:50px;
     border-radius:25px;
-    border:solid 4px white;
+    /*border:solid 4px white;*/
     left:30px;
     right:auto;
     padding:0;
@@ -38,7 +38,7 @@ body {
     width:100%;
     left:0;
     right:auto;
-    top:13px;
+    top:10px;
     bottom:auto;
 }
 
@@ -55,7 +55,7 @@ body {
     margin-top:auto;
     width:50px;
     border-radius:25px;
-    border:solid 4px white;
+    /*border:solid 4px white;*/
     left:auto;
     right:30px;
     padding:0;
@@ -70,7 +70,7 @@ body {
     width:100%;
     left:auto;
     right:0;
-    top:13px;
+    top:10px;
     bottom:auto;
 }
 

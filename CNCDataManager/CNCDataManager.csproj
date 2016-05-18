@@ -189,6 +189,7 @@
     <Content Include="App\CSS\Home\Contact.css" />
     <Content Include="App\CSS\Home\Index.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
+    <Content Include="App\CSS\Shared\_LayoutPage_Data.css" />
     <Content Include="App\Scripts\CNCData\Index.js" />
     <Content Include="App\Scripts\Home\Index.js" />
     <Content Include="Assets\back-to-top-icon.png" />

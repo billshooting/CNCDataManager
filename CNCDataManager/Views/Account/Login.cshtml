@@ -22,8 +22,8 @@
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
 
-                <div class="checkbox">
-                    @Html.CheckBoxFor(m => m.RememberMe)
+                <div class="checkbox form-group">
+                    @Html.CheckBoxFor(m => m.RememberMe, new { style = "margin-left:0"})
                     @Html.LabelFor(m => m.RememberMe)
                 </div>
                 <input type="hidden" name="returnUrl" value={@ViewBag.ReturnUrl} />

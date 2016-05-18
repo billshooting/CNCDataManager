@@ -2,6 +2,35 @@
     Layout = "~/Views/Shared/_LayoutPage_Data.cshtml";
 }
 
+@section css
+{
+    <link href="~/App/CSS/CNCData/Index.css" type="text/css" rel="stylesheet" />
+}
+@section scripts{
+    <script type="text/javascript" src="~/App/Scripts/CNCData/Index.js"></script>
+}
 <div>
-
+    <h3 class="desc-header" id="desc-header-1">进给伺服电机简介</h3>
+    <div class="row desc-body" id="desc-body-1">
+        <div class="col-sm-4 motor-desc">
+            <p>数控机床的分类:</p>
+            <p>(1)进给轴伺服电机</p>
+            <p>(2)主轴伺服电机</p>
+            <img src="~/Assets/Motors/伺服电机-介绍.jpg" />
+        </div>
+        <div class="col-sm-8 motor-desc">
+            <p>数控机床对进给伺服电机的要求：</p>
+            <p>(1)机械特性:要求伺服电机的速降小、刚度大;</p>
+            <p>(2)快速响应的要求:这在轮廓加工，特别对曲率大的加工对象进行高速加工时要求较严格;</p>
+            <p>(3)调速范围:这可以使数控机床适用于各种不同的刀具、加工材质;适应于各种不同的加工工艺;</p>
+            <p>(4)一定的输出转矩，并要求一定的过载转矩。机床进给机械负载的性质主要是克服工作台的摩擦力和切削的阻力，因此主要是恒转矩的性质。</p>
+            <br />
+            <p style="text-indent:0">数控机床对主轴电机的要求：</p>
+            <p>(1)足够的输出功率，数控机床的主轴负载性质近似于恒功率，也就是当机床的主轴转速高时，输出转矩较小;主轴转速低时，输出转矩大;即要求主轴驱动装置要具有恒功率的性质;</p>
+            <p>(2)调速范围:为保证数控机床适用于各种不同的刀具、加工材质;适应于各种不同的加工工艺，要求主轴电机具有一定的调速范围。但对主轴的要求比进给低;</p>
+            <p>(3)速度精度:一般要求静差度小于5 ％，更高的要求为小于1％;</p>
+            <p>(4)快速:主轴驱动装置有时也用在定位功能上，这就要求它也具有一定的快速性。</p>
+        </div>
+    </div>
 </div>
+
