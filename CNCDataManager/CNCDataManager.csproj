@@ -191,7 +191,10 @@
     <Content Include="App\CSS\Shared\_Layout.css" />
     <Content Include="App\CSS\Shared\_LayoutPage_Data.css" />
     <Content Include="App\Scripts\CNCData\Index.js" />
+    <Content Include="App\Scripts\CNCData\List.js" />
     <Content Include="App\Scripts\Home\Index.js" />
+    <Content Include="App\Scripts\ngViews\AligningBallBearings\AligningBallBearings.js" />
+    <Content Include="App\Scripts\ngViews\AligningBallBearings\ListController.js" />
     <Content Include="Assets\back-to-top-icon.png" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
@@ -263,6 +266,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -274,6 +279,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -326,6 +332,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutPage_Data.cshtml" />
     <Content Include="Views\CNCData\Index.cshtml" />
+    <Content Include="Views\CNCData\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Scripts\Account\" />
