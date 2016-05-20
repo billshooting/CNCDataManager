@@ -213,7 +213,7 @@ div.motor-desc >p:first-child{
     border-bottom:0;
     border-right:1px solid #4d4c4c;
 
-    background-color:#6e9709;
+    background-color:#337ab7;
 
     border-bottom-left-radius:0;
     border-bottom-right-radius:0;
@@ -233,7 +233,7 @@ div.motor-desc >p:first-child{
     display:block;
     width:96%;
     border-color:#4d4c4c;
-    background-color:#6e9709;
+    background-color:#337ab7;
     cursor:pointer;
 }
 .desc-header-open:hover
@@ -241,7 +241,7 @@ div.motor-desc >p:first-child{
     display:block;
     width:auto;
     border-color:#4d4c4c;
-    background-color:#6e9709;
+    background-color:#337ab7;
     cursor:pointer;
 }
 /*标题样式结束*/
@@ -296,3 +296,44 @@ div.motor-desc >p:first-child{
     -webkit-border-top-right-radius: 0;
 }
 /*主题样式结束*/
+
+/*侧边导航栏*/
+
+.cncdata-side-bar{
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+.side-nav-head-1{
+    position:relative;
+}
+
+.side-nav-head-2{
+    display:block;
+    position:relative;
+    margin-left:37px;
+}
+
+.side-nav-head-3{
+    position:relative;
+    margin-left:20px;
+}
+.side-nav-head-3 >li{
+    font-size:14px;
+}
+
+.side-nav-head-1 >a{
+    list-style:none;
+}
+
+.side-nav-head-1 li{
+    list-style:none;
+}
+
+.nav-icon:hover{
+    color:#610087;
+    cursor:pointer;
+}
+/*侧边导航栏结束*/

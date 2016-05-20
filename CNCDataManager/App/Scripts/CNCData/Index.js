@@ -87,4 +87,7 @@ $(function () {
             $(this).addClass("desc-body-open");
         });
     });
+    
+    //侧边导航
+    $("#nav-icon-motor")
 });
