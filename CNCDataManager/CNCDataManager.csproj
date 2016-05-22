@@ -188,13 +188,16 @@
     <Content Include="App\CSS\Home\About.css" />
     <Content Include="App\CSS\Home\Contact.css" />
     <Content Include="App\CSS\Home\Index.css" />
+    <Content Include="App\CSS\ngViews\list.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
     <Content Include="App\CSS\Shared\_LayoutPage_Data.css" />
+    <Content Include="App\ngViews\AligingBallBearings\list.html" />
     <Content Include="App\Scripts\CNCData\Index.js" />
     <Content Include="App\Scripts\CNCData\List.js" />
     <Content Include="App\Scripts\Home\Index.js" />
     <Content Include="App\Scripts\ngViews\AligningBallBearings\AligningBallBearings.js" />
     <Content Include="App\Scripts\ngViews\AligningBallBearings\ListController.js" />
+    <Content Include="App\Scripts\Shared\_LayoutPage_Data.js" />
     <Content Include="Assets\back-to-top-icon.png" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
@@ -254,6 +257,9 @@
     <Content Include="Assets\Motors\伺服电机.jpg" />
     <Content Include="Assets\Motors\进给电机-表.jpg" />
     <Content Include="Assets\Motors\进给电机尺寸图-表.jpg" />
+    <Content Include="Assets\ProgressRing_Black64x64.gif" />
+    <Content Include="Assets\ProgressRing_Blue64x64.gif" />
+    <Content Include="Assets\ProgressRing_skyblue64x64.gif" />
     <Content Include="Assets\Servo\伺服部分.jpg" />
     <Content Include="Assets\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
     <Content Include="Assets\Servo\电机驱动-介绍.jpg" />

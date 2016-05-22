@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_LayoutPage_Data.cshtml";
 }
 
+@section css{
+    <link href="~/App/CSS/ngViews/list.css" type="text/css" rel="stylesheet" />    
+}
+
 @section scripts{
     <script src="~/Scripts/angular.js"></script>
     <script src="~/Scripts/angular-route.js"></script>
@@ -11,25 +15,10 @@
     <script src="~/App/Scripts/ngViews/AligningBallBearings/ListController.js"></script>
 }
 
-<div data-ng-app=@(ViewData["viewname"])>
-    <div ng-controller="ListController">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>型号</td>
-                    <td>生产厂家</td>
-                    <td>内径d</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="model in list">
-                    <td>{{model.TypeNo}}</td>
-                    <td>{{model.Manufacturer}}</td>
-                    <td>{{model.InnerDiameter_d}}</td>
-                </tr>
-            </tbody>
-        </table>
+
+<div class="col-sm-10 col-xs-12">
+    <div data-ng-app=@(ViewData["viewname"])>
+        <ng-view></ng-view>
     </div>
 </div>
-
 

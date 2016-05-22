@@ -1,0 +1,36 @@
+﻿<div ng-controller="ListController">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>型号</td>
+                <td>生产厂家</td>
+                <td>内径d</td>
+                <td>外径D</td>
+                <td>基本额定动载荷</td>
+                <td>基本额定静载荷</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="model in list">
+                <td>{{model.TypeNo}}</td>
+                <td>{{model.Manufacturer}}</td>
+                <td>{{model.InnerDiameter_d}}</td>
+                <td>{{model.Diameter_D}}</td>
+                <td>{{model.BasicRatedDynamicLoad}}</td>
+                <td>{{model.BasicRatedStaticLoad}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="list-desc">
+        <h4>尺寸说明</h4>
+        <div class="row">
+            <div class="col-sm-6 list-desc-img">
+                <img src="../../../Assets/Mechanics/滚动轴承-表/6-调心球轴承-表.jpg" />
+            </div>
+            <div class="col-sm-6 list-desc-txt">
+                <p>主要承受径向载荷，也可承受少量双向轴向载荷。内、外圈轴线允许相对偏斜2°~3°，适用于
+                多支点轴、弯曲刚度小的轴以及难以精确对中的轴。</p>
+            </div>
+        </div>
+    </div>
+</div>

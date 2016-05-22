@@ -1,0 +1,26 @@
+﻿/*尺寸描述部分*/
+.list-desc{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.list-desc >h4{
+    display: block;
+    padding: 5px 0 5px 10px;
+    background-color: #ccc;
+    letter-spacing: 2px;
+}
+
+.list-desc-img >img{
+    width: 100%;
+    vertical-align: central;
+}
+.list-desc-txt >p{
+    font-size: 14px;
+    text-indent:40px;
+    margin-top:20px;
+    vertical-align: middle;
+}
+/*尺寸描述部分结束*/
