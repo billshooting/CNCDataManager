@@ -16,7 +16,7 @@ namespace CNCDataApi
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/cncdata/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

@@ -1,28 +1,96 @@
 ﻿<div ng-controller="ListController">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <td>型号</td>
-                <td>生产厂家</td>
-                <td>内径d</td>
-                <td>外径D</td>
-                <td>基本额定动载荷</td>
-                <td>基本额定静载荷</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="model in list">
-                <td>{{model.TypeNo}}</td>
-                <td>{{model.Manufacturer}}</td>
-                <td>{{model.InnerDiameter_d}}</td>
-                <td>{{model.Diameter_D}}</td>
-                <td>{{model.BasicRatedDynamicLoad}}</td>
-                <td>{{model.BasicRatedStaticLoad}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <h4 class="head-title">调心球轴承参数表</h4>
+        <div class="cncdata-table-select">
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[0]" ng-click="toggleCol(0)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>内径d</span>
+            </div>
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[1]" ng-click="toggleCol(1)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>外径D</span>
+            </div>
+            <div class="cncdata-table-col" ng-switch ="colState[2]" ng-click="toggleCol(2)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>其他尺寸参数</span>
+            </div>
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[3]" ng-click="toggleCol(3)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>载荷参数</span>
+            </div>
+            <div class="cncdata-table-col" ng-switch ="colState[4]" ng-click="toggleCol(4)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>速度参数</span>
+            </div>
+            <div class="cncdata-table-col" ng-switch ="colState[5]" ng-click="toggleCol(5)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>其他参数</span>
+            </div>
+            <div class="cncdata-table-col" ng-switch ="colState[6]" ng-click="toggleCol(6)">
+                <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
+                <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
+                <span>说明</span>
+            </div>
+        </div>
+        <table class="table table-striped cncdata-table">
+            <thead>
+                <tr>
+                    <td>型号</td>
+                    <td>生产厂家</td>
+                    <td ng-if="colState[0]">内径d</td>
+                    <td ng-if="colState[1]">外径D</td>
+                    <td ng-if="colState[2]">宽度B</td>
+                    <td ng-if="colState[2]">尺寸rasmin</td>
+                    <td ng-if="colState[2]">尺寸damin</td>
+                    <td ng-if="colState[2]">尺寸damax</td>
+                    <td ng-if="colState[2]">尺寸rasmax</td>
+                    <td ng-if="colState[2]">e</td>
+                    <td ng-if="colState[2]">Y1</td>
+                    <td ng-if="colState[2]">Y2</td>
+                    <td ng-if="colState[2]">Yo</td>
+                    <td ng-if="colState[3]">基本额定动载荷</td>
+                    <td ng-if="colState[3]">基本额定静载荷</td>
+                    <td ng-if="colState[4]">脂润滑极限速度</td>
+                    <td ng-if="colState[4]">油润滑极限速度</td>
+                    <td ng-if="colState[5]">轴承轴向刚度</td>
+                    <td ng-if="colState[5]">轴承启动转矩</td>
+                    <td ng-if="colState[6]">说明</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="model in list">
+                    <td>{{model.TypeNo}}</td>
+                    <td>{{model.Manufacturer}}</td>
+                    <td ng-if="colState[0]">{{model.InnerDiameter_d}}</td>
+                    <td ng-if="colState[1]">{{model.Diameter_D}}</td>
+                    <td ng-if="colState[2]">{{model.Width_B}}</td>
+                    <td ng-if="colState[2]">{{model.Size_rsmin}}</td>
+                    <td ng-if="colState[2]">{{model.Size_damin}}</td>
+                    <td ng-if="colState[2]">{{model.Size_Damax}}</td>
+                    <td ng-if="colState[2]">{{model.Size_rasmax}}</td>
+                    <td ng-if="colState[2]">{{model.e}}</td>
+                    <td ng-if="colState[2]">{{model.Y1}}</td>
+                    <td ng-if="colState[2]">{{model.Y2}}</td>
+                    <td ng-if="colState[2]">{{model.Yo}}</td>
+                    <td ng-if="colState[3]">{{model.BasicRatedDynamicLoad}}</td>
+                    <td ng-if="colState[3]">{{model.BasicRatedStaticLoad}}</td>
+                    <td ng-if="colState[4]">{{model.SpeedLimitOfGrease}}</td>
+                    <td ng-if="colState[4]">{{model.SpeedLimitOfOil}}</td>
+                    <td ng-if="colState[5]">{{model.BearingAxialStiffness}}</td>
+                    <td ng-if="colState[5]">{{model.BearingStartingTorque}}</td>
+                    <td ng-if="colState[6]">{{model.Description}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="list-desc">
-        <h4>尺寸说明</h4>
+        <h4 class="head-title">尺寸说明</h4>
         <div class="row">
             <div class="col-sm-6 list-desc-img">
                 <img src="../../../Assets/Mechanics/滚动轴承-表/6-调心球轴承-表.jpg" />

@@ -1,4 +1,34 @@
-﻿/*尺寸描述部分*/
+﻿/*表格列选择部分*/
+.cncdata-table-select{
+    display: block;
+}
+
+.cncdata-table-col{
+    display: inline-block;
+    float: left;
+    margin: auto 10px;
+    color: #555;
+}
+div.cncdata-table-col:last-child::after{
+    clear:both;
+}
+
+.cncdata-table-col:hover{
+    cursor: pointer;
+    color: black;
+}
+
+
+.cncdata-table-col-checked >span{
+    color: black;
+}
+.cncdata-table-col-checked >span:first-child{
+    color: indianred;
+}
+/*表格列选择部分结束*/
+
+
+/*尺寸描述部分*/
 .list-desc{
     display: block;
     width: 100%;
@@ -6,7 +36,7 @@
     margin-bottom: 20px;
 }
 
-.list-desc >h4{
+h4.head-title{
     display: block;
     padding: 5px 0 5px 10px;
     background-color: #ccc;
@@ -22,5 +52,23 @@
     text-indent:40px;
     margin-top:20px;
     vertical-align: middle;
+}
+
+.cncdata-table >thead{
+    background-color:#ccc;
+}
+.cncdata-table td{
+    text-wrap: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+.cncdata-table{
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    text-wrap: none;
 }
 /*尺寸描述部分结束*/

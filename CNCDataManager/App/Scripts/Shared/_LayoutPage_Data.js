@@ -1,10 +1,30 @@
 ﻿$(function () {
     $(window).scroll(function () {
-        if ($(window).scrollTop() > 300) {
+        if ($(window).scrollTop() > 280) {
             $("#cncdata-side-bar").addClass("cncdata-side-bar-fixed");
+            var clientWidth = $(window).width();
+            if(clientWidth >= 1200)
+            {
+                var left = ($(window).innerWidth() - 1170) / 2 + 1170 * 5 / 6 + 15;
+                $("#cncdata-side-bar").css({ left: left + "px" });
+            }
+            else if(clientWidth >= 992 && clientWidth < 1200)
+            {
+                var left = ($(window).innerWidth() - 970) / 2 + 970 * 5 / 6 + 15;
+                $("#cncdata-side-bar").css({ left: left + "px" });
+            }
+            else if(clientWidth >= 768 && clientWidth < 992)
+            {
+                var left = ($(window).innerWidth() - 750) / 2 + 750 * 5 / 6 + 15;
+                $("#cncdata-side-bar").css({ left: left + "px" });
+            }
+            else {
+                $("#cncdata-side-bar").css({ left: "auto", right: "0" });
+            }
         }
         else {
-            $("#cncdata-side-bar").removeClass("cncdata-side-bar-fixed");
+            $("#cncdata-side-bar").removeClass("cncdata-side-bar-fixed")
+                                  .css({ left: "auto" });
         }
     });
 
