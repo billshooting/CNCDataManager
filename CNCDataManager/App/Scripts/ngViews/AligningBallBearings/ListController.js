@@ -13,14 +13,14 @@
 
         //添加scope的处理方法
         //显示与取消表格列
-        $scope.toggleCol = function (id) {
+        $scope.toggleCol = function (id, e) {
             if ($scope.colState[id]) {
                 $scope.colState[id] = false;
-                $(this).removeClass("cncdata-table-col-checked");
+                angular.element(e.currentTarget).removeClass("cncdata-table-col-checked");
             }
             else {
                 $scope.colState[id] = true;
-                $(this).addClass("cncdata-table-col-checked");
+                angular.element(e.currentTarget).addClass("cncdata-table-col-checked");
             }
         };
     };

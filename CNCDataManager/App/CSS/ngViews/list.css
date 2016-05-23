@@ -58,6 +58,7 @@ h4.head-title{
     background-color:#ccc;
 }
 .cncdata-table td{
+    min-width: 100px;
     text-wrap: none;
     word-break: keep-all;
     white-space: nowrap;
@@ -66,7 +67,7 @@ h4.head-title{
     
 }
 .cncdata-table{
-    display: block;
+    display:block;
     width: 100%;
     overflow-x: scroll;
     text-wrap: none;

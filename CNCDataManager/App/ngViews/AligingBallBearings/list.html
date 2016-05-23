@@ -2,37 +2,37 @@
     <div>
         <h4 class="head-title">调心球轴承参数表</h4>
         <div class="cncdata-table-select">
-            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[0]" ng-click="toggleCol(0)">
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[0]" ng-click="toggleCol(0, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>内径d</span>
             </div>
-            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[1]" ng-click="toggleCol(1)">
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[1]" ng-click="toggleCol(1, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>外径D</span>
             </div>
-            <div class="cncdata-table-col" ng-switch ="colState[2]" ng-click="toggleCol(2)">
+            <div class="cncdata-table-col" ng-switch ="colState[2]" ng-click="toggleCol(2, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>其他尺寸参数</span>
             </div>
-            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[3]" ng-click="toggleCol(3)">
+            <div class="cncdata-table-col cncdata-table-col-checked" ng-switch ="colState[3]" ng-click="toggleCol(3, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>载荷参数</span>
             </div>
-            <div class="cncdata-table-col" ng-switch ="colState[4]" ng-click="toggleCol(4)">
+            <div class="cncdata-table-col" ng-switch ="colState[4]" ng-click="toggleCol(4, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>速度参数</span>
             </div>
-            <div class="cncdata-table-col" ng-switch ="colState[5]" ng-click="toggleCol(5)">
+            <div class="cncdata-table-col" ng-switch ="colState[5]" ng-click="toggleCol(5, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>其他参数</span>
             </div>
-            <div class="cncdata-table-col" ng-switch ="colState[6]" ng-click="toggleCol(6)">
+            <div class="cncdata-table-col" ng-switch ="colState[6]" ng-click="toggleCol(6, $event)">
                 <span class="glyphicon glyphicon-check" ng-switch-when="true"></span>
                 <span class="glyphicon glyphicon-unchecked" ng-switch-when="false"></span>
                 <span>说明</span>
@@ -43,19 +43,19 @@
                 <tr>
                     <td>型号</td>
                     <td>生产厂家</td>
-                    <td ng-if="colState[0]">内径d</td>
-                    <td ng-if="colState[1]">外径D</td>
-                    <td ng-if="colState[2]">宽度B</td>
-                    <td ng-if="colState[2]">尺寸rasmin</td>
-                    <td ng-if="colState[2]">尺寸damin</td>
-                    <td ng-if="colState[2]">尺寸damax</td>
-                    <td ng-if="colState[2]">尺寸rasmax</td>
-                    <td ng-if="colState[2]">e</td>
-                    <td ng-if="colState[2]">Y1</td>
-                    <td ng-if="colState[2]">Y2</td>
-                    <td ng-if="colState[2]">Yo</td>
-                    <td ng-if="colState[3]">基本额定动载荷</td>
-                    <td ng-if="colState[3]">基本额定静载荷</td>
+                    <td ng-show="colState[0]">内径d/mm</td>
+                    <td ng-show="colState[1]">外径D/mm</td>
+                    <td ng-if="colState[2]">宽度B/mm</td>
+                    <td ng-if="colState[2]">尺寸rasmin/mm</td>
+                    <td ng-if="colState[2]">尺寸damin/mm</td>
+                    <td ng-if="colState[2]">尺寸damax/mm</td>
+                    <td ng-if="colState[2]">尺寸rasmax/mm</td>
+                    <td ng-if="colState[2]">e/mm</td>
+                    <td ng-if="colState[2]">Y1/mm</td>
+                    <td ng-if="colState[2]">Y2/mm</td>
+                    <td ng-if="colState[2]">Yo/mm</td>
+                    <td ng-show="colState[3]">基本额定动载荷</td>
+                    <td ng-show="colState[3]">基本额定静载荷</td>
                     <td ng-if="colState[4]">脂润滑极限速度</td>
                     <td ng-if="colState[4]">油润滑极限速度</td>
                     <td ng-if="colState[5]">轴承轴向刚度</td>
@@ -67,8 +67,8 @@
                 <tr ng-repeat="model in list">
                     <td>{{model.TypeNo}}</td>
                     <td>{{model.Manufacturer}}</td>
-                    <td ng-if="colState[0]">{{model.InnerDiameter_d}}</td>
-                    <td ng-if="colState[1]">{{model.Diameter_D}}</td>
+                    <td ng-show="colState[0]">{{model.InnerDiameter_d}}</td>
+                    <td ng-show="colState[1]">{{model.Diameter_D}}</td>
                     <td ng-if="colState[2]">{{model.Width_B}}</td>
                     <td ng-if="colState[2]">{{model.Size_rsmin}}</td>
                     <td ng-if="colState[2]">{{model.Size_damin}}</td>
@@ -78,8 +78,8 @@
                     <td ng-if="colState[2]">{{model.Y1}}</td>
                     <td ng-if="colState[2]">{{model.Y2}}</td>
                     <td ng-if="colState[2]">{{model.Yo}}</td>
-                    <td ng-if="colState[3]">{{model.BasicRatedDynamicLoad}}</td>
-                    <td ng-if="colState[3]">{{model.BasicRatedStaticLoad}}</td>
+                    <td ng-show="colState[3]">{{model.BasicRatedDynamicLoad}}</td>
+                    <td ng-show="colState[3]">{{model.BasicRatedStaticLoad}}</td>
                     <td ng-if="colState[4]">{{model.SpeedLimitOfGrease}}</td>
                     <td ng-if="colState[4]">{{model.SpeedLimitOfOil}}</td>
                     <td ng-if="colState[5]">{{model.BearingAxialStiffness}}</td>

@@ -98,6 +98,43 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AligningBallBearingsController.cs" />
+    <Compile Include="Controllers\AligningRollerBearingController.cs" />
+    <Compile Include="Controllers\AngularContactBallBearingsController.cs" />
+    <Compile Include="Controllers\ArcCylindricalWormGearController.cs" />
+    <Compile Include="Controllers\BallLeadScrewSupportBearingsController.cs" />
+    <Compile Include="Controllers\BrakeWheelElasticSleevePinCouplingController.cs" />
+    <Compile Include="Controllers\CommonCylindricalWormGearController.cs" />
+    <Compile Include="Controllers\CrossTaperedRollerBearingsController.cs" />
+    <Compile Include="Controllers\CylindricalRollerBearingsController.cs" />
+    <Compile Include="Controllers\DeepGrooveBallBearingsController.cs" />
+    <Compile Include="Controllers\DoubleRowCylindricalRollerBearingsController.cs" />
+    <Compile Include="Controllers\DoubleThrustAngularContactBallBearingsController.cs" />
+    <Compile Include="Controllers\DriverOfServoMotorOfPMSACFSController.cs" />
+    <Compile Include="Controllers\ElasticSleevePinCouplingController.cs" />
+    <Compile Include="Controllers\FlangeCouplingController.cs" />
+    <Compile Include="Controllers\FlexiblePinCouplingController.cs" />
+    <Compile Include="Controllers\GearCouplingController.cs" />
+    <Compile Include="Controllers\HelicalCylindricalGearController.cs" />
+    <Compile Include="Controllers\HubShapedCouplingsController.cs" />
+    <Compile Include="Controllers\LinearRollingGuideController.cs" />
+    <Compile Include="Controllers\NCSystemController.cs" />
+    <Compile Include="Controllers\NeedleRollerAndThrustRollerBearingsController.cs" />
+    <Compile Include="Controllers\OldhamCouplingController.cs" />
+    <Compile Include="Controllers\ParaOfElectricSpindleController.cs" />
+    <Compile Include="Controllers\ParaOfServoMotorOfPMSACFSController.cs" />
+    <Compile Include="Controllers\ParaOfServoMotorOfSpindleController.cs" />
+    <Compile Include="Controllers\ParaOfStepperMotorController.cs" />
+    <Compile Include="Controllers\PlumShapedFlexibleCouplingController.cs" />
+    <Compile Include="Controllers\RotaryTableController.cs" />
+    <Compile Include="Controllers\SizeOfElectricSpindleController.cs" />
+    <Compile Include="Controllers\SizeOfServoMotorOfPMSACFSController.cs" />
+    <Compile Include="Controllers\SizeOfServoMotorOfSpindleController.cs" />
+    <Compile Include="Controllers\SizeOfStepperMotorController.cs" />
+    <Compile Include="Controllers\SolidBallScrewNutPairsController.cs" />
+    <Compile Include="Controllers\SpurGearController.cs" />
+    <Compile Include="Controllers\StraightBevelGear_Controller.cs" />
+    <Compile Include="Controllers\sysdiagramsController.cs" />
+    <Compile Include="Controllers\TaperedRollerBearingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,7 +203,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52414</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
