@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,65 +10,65 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "ç”µæœºç±»å‹")]
+        [Display(Name = "µç»úÀàĞÍ")]
         public double? TypeOfMotor { get; set; }
 
-        [Display(Name = "æ­¥è·è§’")]
+        [Display(Name = "²½¾à½Ç")]
         public double? AngleOfStep { get; set; }
 
-        [Display(Name = "ç›¸æ•°")]
+        [Display(Name = "ÏàÊı")]
         public int? NumberOfPhase { get; set; }
 
-        [Display(Name = "æ‹æ•°")]
+        [Display(Name = "ÅÄÊı")]
         public int? Pace { get; set; }
 
-        [Display(Name = "å®šä½è½¬çŸ©")]
+        [Display(Name = "¶¨Î»×ª¾Ø")]
         public double? PositionTorque { get; set; }
 
-        [Display(Name = "ä¿æŒè½¬çŸ©")]
+        [Display(Name = "±£³Ö×ª¾Ø")]
         public double? HoldingTorque { get; set; }
 
         [StringLength(25)]
-        [Display(Name = "æ­¥è·è§’ç²¾åº¦")]
+        [Display(Name = "²½¾à½Ç¾«¶È")]
         public string StepAngleAccuracy { get; set; }
 
-        [Display(Name = "ç”µæ„Ÿç³»æ•°")]
+        [Display(Name = "µç¸ĞÏµÊı")]
         public double? InductanceCoefficient { get; set; }
 
-        [Display(Name = "é¢å®šç”µå‹")]
+        [Display(Name = "¶î¶¨µçÑ¹")]
         public double? RatedVoltage { get; set; }
 
-        [Display(Name = "é¢å®šç”µæµ")]
+        [Display(Name = "¶î¶¨µçÁ÷")]
         public double? RatedCurrency { get; set; }
 
-        [Display(Name = "ç»•ç»„ç”µé˜»")]
+        [Display(Name = "ÈÆ×éµç×è")]
         public double? WindingResistance { get; set; }
 
-        [Display(Name = "å…è®¸å·¥ä½œæ¸©åº¦")]
+        [Display(Name = "ÔÊĞí¹¤×÷ÎÂ¶È")]
         public double? AllowableWorkingTemperature { get; set; }
 
-        [Display(Name = "å¼•çº¿æ•°")]
+        [Display(Name = "ÒıÏßÊı")]
         public int? NumberOfLeads { get; set; }
 
-        [Display(Name = "è½¬åŠ¨æƒ¯é‡")]
+        [Display(Name = "×ª¶¯¹ßÁ¿")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "è´¨é‡")]
+        [Display(Name = "ÖÊÁ¿")]
         public double? Mass { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "è¯´æ˜")]
+        [Display(Name = "ËµÃ÷")]
         public string Description { get; set; }
 
-        [Display(Name = "æ­¥è¿›ç”µæœºå°ºå¯¸")]
+        [Display(Name = "²½½øµç»ú³ß´ç")]
         public virtual Motor_SizeOfStepperMotor Motor_SizeOfStepperMotor { get; set; }
     }
 }

@@ -132,7 +132,7 @@
     <Compile Include="Controllers\SizeOfStepperMotorController.cs" />
     <Compile Include="Controllers\SolidBallScrewNutPairsController.cs" />
     <Compile Include="Controllers\SpurGearController.cs" />
-    <Compile Include="Controllers\StraightBevelGear_Controller.cs" />
+    <Compile Include="Controllers\StraightBevelGearController.cs" />
     <Compile Include="Controllers\sysdiagramsController.cs" />
     <Compile Include="Controllers\TaperedRollerBearingsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -161,7 +161,7 @@
     <Compile Include="Models\Driver_DriverOfServoMotorOfPMSACFS.cs" />
     <Compile Include="Models\Gear_HelicalCylindricalGear.cs" />
     <Compile Include="Models\Gear_SpurGear.cs" />
-    <Compile Include="Models\Gear_StraightBevelGear_.cs" />
+    <Compile Include="Models\Gear_StraightBevelGear.cs" />
     <Compile Include="Models\Guide_LinearRollingGuide.cs" />
     <Compile Include="Models\Motor_ParaOfElectricSpindle.cs" />
     <Compile Include="Models\Motor_ParaOfServoMotorOfPMSACFS.cs" />
@@ -181,6 +181,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\AzureConfig.pubxml" />
+    <None Include="Properties\PublishProfiles\CNCDataApi - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\CNCDataApi - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\LocalConfig.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

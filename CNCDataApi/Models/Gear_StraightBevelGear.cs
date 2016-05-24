@@ -7,7 +7,7 @@ namespace CNCDataApi.Models
     using System.Data.Entity.Spatial;
 
     [Table("Gear_StraightBevelGear ")]
-    public partial class Gear_StraightBevelGear_
+    public partial class Gear_StraightBevelGear
     {
         [Key]
         [StringLength(50)]

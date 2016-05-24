@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,33 +10,33 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name ="å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "å°ºå¯¸A")]
+        [Display(Name = "³ß´çA")]
         public double? Size_A { get; set; }
 
-        [Display(Name = "å°ºå¯¸B")]
+        [Display(Name = "³ß´çB")]
         public double? Size_B { get; set; }
 
-        [Display(Name = "å°ºå¯¸C")]
+        [Display(Name = "³ß´çC")]
         public double? Size_C { get; set; }
 
-        [Display(Name = "å°ºå¯¸D")]
+        [Display(Name = "³ß´çD")]
         public double? Size_D { get; set; }
 
-        [Display(Name = "å°ºå¯¸F")]
+        [Display(Name = "³ß´çF")]
         public double? Size_F { get; set; }
 
-        [Display(Name = "å°ºå¯¸G")]
+        [Display(Name = "³ß´çG")]
         public double? Size_G { get; set; }
 
-        [Display(Name = "æ­¥è¿›ç”µæœºæŠ€æœ¯å‚æ•°")]
+        [Display(Name = "²½½øµç»ú¼¼Êõ²ÎÊı")]
         public virtual Motor_ParaOfStepperMotor Motor_ParaOfStepperMotor { get; set; }
     }
 }

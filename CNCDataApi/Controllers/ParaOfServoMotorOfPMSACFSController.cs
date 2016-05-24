@@ -13,7 +13,6 @@ using CNCDataApi.Models;
 
 namespace CNCDataApi.Controllers
 {
-    //永磁同步交流进给系统伺服电机技术   ParaOfServoMotorOfPMSACFS (Permanent magnet synchronous AC servo motor feeding system Parameter)
     public class ParaOfServoMotorOfPMSACFSController : ApiController
     {
         private CNCMachineComponentData db = new CNCMachineComponentData();

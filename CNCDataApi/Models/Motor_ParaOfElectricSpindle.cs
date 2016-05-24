@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,55 +10,55 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "é¢å®šè½¬çŸ©")]
+        [Display(Name = "¶î¶¨×ª¾Ø")]
         public double? RatedTorque { get; set; }
 
-        [Display(Name = "é¢å®šè½¬é€Ÿ")]
+        [Display(Name = "¶î¶¨×ªËÙ")]
         public int? RatedRotationSpeed { get; set; }
 
-        [Display(Name = "æœ€å¤§è½¬é€Ÿ")]
+        [Display(Name = "×î´ó×ªËÙ")]
         public int? MaxRotationSpeed { get; set; }
 
-        [Display(Name = "è½¬åŠ¨æƒ¯é‡")]
+        [Display(Name = "×ª¶¯¹ßÁ¿")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "é¢å®šåŠŸç‡")]
+        [Display(Name = "¶î¶¨¹¦ÂÊ")]
         public double? RatedPower { get; set; }
 
-        [Display(Name = "é¢å®šç”µæµ")]
+        [Display(Name = "¶î¶¨µçÁ÷")]
         public double? RatedCurrent { get; set; }
 
-        [Display(Name = "æœ€å¤§ç”µæµ")]
+        [Display(Name = "×î´óµçÁ÷")]
         public double? MaxCurrent { get; set; }
 
-        [Display(Name = "ç›´æµæ¯çº¿ç”µå‹")]
+        [Display(Name = "Ö±Á÷Ä¸ÏßµçÑ¹")]
         public double? DCLinkVoltage { get; set; }
 
-        [Display(Name = "åç”µåŠ¨åŠ¿ç³»æ•°")]
+        [Display(Name = "·´µç¶¯ÊÆÏµÊı")]
         public double? BackEMFCoefficient { get; set; }
 
-        [Display(Name = "çƒ­æ—¶é—´å¸¸æ•°")]
+        [Display(Name = "ÈÈÊ±¼ä³£Êı")]
         public double? ThermalTimeConstant { get; set; }
 
-        [Display(Name = "è½¬å­è´¨é‡")]
+        [Display(Name = "×ª×ÓÖÊÁ¿")]
         public double? MassOfRotor { get; set; }
 
-        [Display(Name = "å®šå­è´¨é‡")]
+        [Display(Name = "¶¨×ÓÖÊÁ¿")]
         public double? MassOfStator { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "è¯´æ˜")]
+        [Display(Name = "ËµÃ÷")]
         public string Description { get; set; }
 
-        [Display(Name = "ç”µä¸»è½´å°ºå¯¸æ•°æ®")]
+        [Display(Name = "µçÖ÷Öá³ß´çÊı¾İ")]
         public virtual Motor_SizeOfElectricSpindle Motor_SizeOfElectricSpindle { get; set; }
     }
 }

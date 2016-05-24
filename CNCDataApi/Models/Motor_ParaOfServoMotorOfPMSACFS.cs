@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,83 +10,80 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "é¢å®šè½¬çŸ©")]
+        [Display(Name = "¶î¶¨×ª¾Ø")]
         public double? RatedTorque { get; set; }
 
-        [Display(Name = "æœ€å¤§è½¬çŸ©")]
+        [Display(Name = "×î´ó×ª¾Ø")]
         public double? MaxTorque { get; set; }
 
-        [Display(Name = "é¢å®šè½¬é€Ÿ")]
+        [Display(Name = "¶î¶¨×ªËÙ")]
         public int? RatedRotationSpeed { get; set; }
 
-        [Display(Name = "æœ€å¤§è½¬é€Ÿ")]
+        [Display(Name = "×î´ó×ªËÙ")]
         public int? MaxRotationSpeed { get; set; }
 
-        [Display(Name = "è½¬åŠ¨æƒ¯é‡")]
+        [Display(Name = "×ª¶¯¹ßÁ¿")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "é¢å®šåŠŸç‡")]
+        [Display(Name = "¶î¶¨¹¦ÂÊ")]
         public double? RatedPower { get; set; }
 
-        [Display(Name = "é™åŠ›çŸ©")]
+        [Display(Name = "¾²Á¦¾Ø")]
         public double? StaticTorque { get; set; }
 
-        [Display(Name = "ç”µæœºç£æå¯¹æ•°")]
+        [Display(Name = "µç»ú´Å¼«¶ÔÊı")]
         public int? PairsOfMotorPole { get; set; }
 
-        [Display(Name = "ç›´æµæ¯çº¿ç”µå‹")]
+        [Display(Name = "Ö±Á÷Ä¸ÏßµçÑ¹")]
         public double? DCLinkVoltage { get; set; }
 
-        [Display(Name = "é¢å®šç”µæµ")]
+        [Display(Name = "¶î¶¨µçÁ÷")]
         public double? RatedCurrent { get; set; }
 
-        [Display(Name = "æœ€å¤§ç”µæµ")]
+        [Display(Name = "×î´óµçÁ÷")]
         public double? MaxCurrent { get; set; }
 
-        [Display(Name = "æœºæ¢°äº‹ä»¶å¸¸æ•°")]
+        [Display(Name = "»úĞµÊÂ¼ş³£Êı")]
         public double? MechanicalTimeConstant { get; set; }
 
-        [Display(Name = "è´¨é‡")]
+        [Display(Name = "ÖÊÁ¿")]
         public double? Mass { get; set; }
 
-        [Display(Name = "é™å­ç”µé˜»")]
+        [Display(Name = "¾²×Óµç×è")]
         public double? StatorResistance { get; set; }
 
-        [Display(Name = "æ¯ç›¸é™å­ç»•ç»„æ¼æ„Ÿ")]
+        [Display(Name = "Ã¿Ïà¾²×ÓÈÆ×éÂ©¸Ğ")]
         public double? LeakageInductanceOfEachPhaseOfStatorWinding { get; set; }
 
-        [Display(Name = "åç”µåŠ¨åŠ¿")]
+        [Display(Name = "·´µç¶¯ÊÆ")]
         public double? CounterElectromotiveForce { get; set; }
 
-        [Display(Name = "é¢å®šé¢‘ç‡")]
+        [Display(Name = "¶î¶¨ÆµÂÊ")]
         public int? RatedFrequency { get; set; }
 
-        [Display(Name = "ç”µæœºè½¬å­è½¬åŠ¨æƒ¯é‡")]
+        [Display(Name = "µç»ú×ª×Ó×ª¶¯¹ßÁ¿")]
         public double? MomentOfInertiaOfMotorRotor { get; set; }
 
-        [Display(Name = "æ¯ç›¸ç»•ç»„ç”µé˜»")]
+        [Display(Name = "Ã¿ÏàÈÆ×éµç×è")]
         public double? ResistanceOfPhaseWinding { get; set; }
 
-        [Display(Name = "æ¯ç›¸ç»•ç»„ç”µæ„Ÿ")]
+        [Display(Name = "Ã¿ÏàÈÆ×éµç¸Ğ")]
         public double? InductanceOfPhaseWinding { get; set; }
 
         [StringLength(10)]
-        [Display(Name = "æ˜¯å¦å¸¦æŠ±é—¸")]
+        [Display(Name = "ÊÇ·ñ´ø±§Õ¢")]
         public string IfWithBrake { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "è¯´æ˜")]
+        [Display(Name = "ËµÃ÷")]
         public string Description { get; set; }
-
-        [Display(Name = "æ°¸ç£åŒæ­¥äº¤æµè¿›ç»™ç³»ç»Ÿä¼ºæœç”µæœºå°ºå¯¸æ•°æ®")]
-        public virtual Motor_SizeOfServoMotorOfPMSACFS Motor_SizeOfServoMotorOfPMSACFS { get; set; }
     }
 }

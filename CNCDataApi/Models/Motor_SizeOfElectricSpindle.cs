@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,38 +10,38 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "å°ºå¯¸C")]
+        [Display(Name = "³ß´çC")]
         public double? Size_C { get; set; }
 
-        [Display(Name = "å°ºå¯¸D1")]
+        [Display(Name = "³ß´çD1")]
         public double? Size_D1 { get; set; }
 
-        [Display(Name = "å°ºå¯¸D2")]
+        [Display(Name = "³ß´çD2")]
         public double? Size_D2 { get; set; }
 
-        [Display(Name = "å°ºå¯¸J")]
+        [Display(Name = "³ß´çJ")]
         public double? Size_J { get; set; }
 
-        [Display(Name = "å°ºå¯¸K")]
+        [Display(Name = "³ß´çK")]
         public double? Size_K { get; set; }
 
-        [Display(Name = "å°ºå¯¸L")]
+        [Display(Name = "³ß´çL")]
         public double? Size_L { get; set; }
 
-        [Display(Name = "å°ºå¯¸M")]
+        [Display(Name = "³ß´çM")]
         public double? Size_M { get; set; }
 
-        [Display(Name = "å°ºå¯¸N")]
+        [Display(Name = "³ß´çN")]
         public double? Size_N { get; set; }
 
-        [Display(Name = "ç”µä¸»è½´æŠ€æœ¯å‚æ•°")]
+        [Display(Name = "µçÖ÷Öá¼¼Êõ²ÎÊı")]
         public virtual Motor_ParaOfElectricSpindle Motor_ParaOfElectricSpindle { get; set; }
     }
 }

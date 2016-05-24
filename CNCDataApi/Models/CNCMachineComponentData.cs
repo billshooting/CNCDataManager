@@ -34,8 +34,9 @@
         public virtual DbSet<Driver_DriverOfServoMotorOfPMSACFS> Driver_DriverOfServoMotorOfPMSACFS { get; set; }
         public virtual DbSet<Gear_HelicalCylindricalGear> Gear_HelicalCylindricalGear { get; set; }
         public virtual DbSet<Gear_SpurGear> Gear_SpurGear { get; set; }
-        public virtual DbSet<Gear_StraightBevelGear_> Gear_StraightBevelGear_ { get; set; }
+        public virtual DbSet<Gear_StraightBevelGear> Gear_StraightBevelGear { get; set; }
         public virtual DbSet<Guide_LinearRollingGuide> Guide_LinearRollingGuide { get; set; }
+
         public virtual DbSet<Motor_ParaOfElectricSpindle> Motor_ParaOfElectricSpindle { get; set; }
         public virtual DbSet<Motor_ParaOfServoMotorOfPMSACFS> Motor_ParaOfServoMotorOfPMSACFS { get; set; }
         public virtual DbSet<Motor_ParaOfServoMotorOfSpindle> Motor_ParaOfServoMotorOfSpindle { get; set; }
@@ -44,6 +45,7 @@
         public virtual DbSet<Motor_SizeOfServoMotorOfPMSACFS> Motor_SizeOfServoMotorOfPMSACFS { get; set; }
         public virtual DbSet<Motor_SizeOfServoMotorOfSpindle> Motor_SizeOfServoMotorOfSpindle { get; set; }
         public virtual DbSet<Motor_SizeOfStepperMotor> Motor_SizeOfStepperMotor { get; set; }
+
         public virtual DbSet<NutPairs_SolidBallScrewNutPairs> NutPairs_SolidBallScrewNutPairs { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<System_NCSystem> System_NCSystem { get; set; }
@@ -284,7 +286,7 @@
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Gear_StraightBevelGear_>()
+            modelBuilder.Entity<Gear_StraightBevelGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
@@ -338,10 +340,6 @@
             modelBuilder.Entity<Motor_ParaOfServoMotorOfPMSACFS>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Motor_ParaOfServoMotorOfPMSACFS>()
-                .HasOptional(e => e.Motor_SizeOfServoMotorOfPMSACFS)
-                .WithRequired(e => e.Motor_ParaOfServoMotorOfPMSACFS);
 
             modelBuilder.Entity<Motor_ParaOfServoMotorOfSpindle>()
                 .Property(e => e.Description)

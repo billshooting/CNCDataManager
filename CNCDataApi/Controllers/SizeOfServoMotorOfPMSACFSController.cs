@@ -13,7 +13,6 @@ using CNCDataApi.Models;
 
 namespace CNCDataApi.Controllers
 {
-    //永磁同步交流进给系统伺服电机尺寸   SizeOfServoMotorOfPMSACFS (Permanent magnet synchronous AC servo motor feeding system size)
     public class SizeOfServoMotorOfPMSACFSController : ApiController
     {
         private CNCMachineComponentData db = new CNCMachineComponentData();

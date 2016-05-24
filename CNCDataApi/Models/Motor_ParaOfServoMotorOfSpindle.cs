@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -10,46 +10,46 @@
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
         public string TypeNo { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "é¢å®šè½¬çŸ©")]
+        [Display(Name = "¶î¶¨×ª¾Ø")]
         public double? RatedTorque { get; set; }
 
-        [Display(Name = "æœ€å¤§è½¬çŸ©")]
+        [Display(Name = "×î´ó×ª¾Ø")]
         public double? MaxTorque { get; set; }
 
-        [Display(Name = "é¢å®šé€Ÿåº¦")]
+        [Display(Name = "¶î¶¨ËÙ¶È")]
         public int? RatedRotationSpeed { get; set; }
 
-        [Display(Name = "æœ€å¤§è½¬é€Ÿ")]
+        [Display(Name = "×î´ó×ªËÙ")]
         public int? MaxRotationSpeed { get; set; }
 
-        [Display(Name = "è½¬åŠ¨æƒ¯é‡")]
+        [Display(Name = "×ª¶¯¹ßÁ¿")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "é¢å®šåŠŸç‡")]
+        [Display(Name = "¶î¶¨¹¦ÂÊ")]
         public double? RatedPower { get; set; }
 
-        [Display(Name = "é¢å®šç”µæµ")]
+        [Display(Name = "¶î¶¨µçÁ÷")]
         public double? RatedCurrent { get; set; }
 
-        [Display(Name = "æœ€å¤§ç”µæµ")]
+        [Display(Name = "×î´óµçÁ÷")]
         public double? MaxCurrent { get; set; }
 
-        [Display(Name = "è¯´æ˜")]
+        [Display(Name = "ËµÃ÷")]
         public double? Weight { get; set; }
 
         [Column(TypeName = "text")]
-        [Display(Name = "è¯´æ˜")]
+        [Display(Name = "ËµÃ÷")]
         public string Description { get; set; }
 
-        [Display(Name = "ä¸»è½´ç³»ç»Ÿä¼ºæœç”µæœºå°ºå¯¸æ•°æ®")]
+        [Display(Name = "Ö÷ÖáÏµÍ³ËÅ·şµç»ú³ß´çÊı¾İ")]
         public virtual Motor_SizeOfServoMotorOfSpindle Motor_SizeOfServoMotorOfSpindle { get; set; }
     }
 }

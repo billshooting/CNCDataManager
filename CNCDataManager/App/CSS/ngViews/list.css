@@ -27,6 +27,26 @@ div.cncdata-table-col:last-child::after{
 }
 /*表格列选择部分结束*/
 
+/*表格列排序部分*/
+.table-td-orderable{
+    color: white;
+    background-color: #4caf50;
+}
+
+.table-td-orderable:hover{
+    cursor: pointer;
+    color: #4caf50;
+    background-color: white;
+}
+
+.table-td-ordered{
+    color: white;
+    background-color: #4caf50;
+}
+
+
+/*表格列排序部分结束*/
+
 
 /*尺寸描述部分*/
 .list-desc{

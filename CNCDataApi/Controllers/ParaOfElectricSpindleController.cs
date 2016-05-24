@@ -13,7 +13,6 @@ using CNCDataApi.Models;
 
 namespace CNCDataApi.Controllers
 {
-    //电主轴技术参数
     public class ParaOfElectricSpindleController : ApiController
     {
         private CNCMachineComponentData db = new CNCMachineComponentData();
