@@ -10,11 +10,16 @@
         //2. 显示初始化
         $(".overlay-container").css({ display: 'block' });//显示加载图标
 
-        $http.get("http://localhost:8000/api/AligningBallBearings").success(function (data) {
-            $scope.list = data;
-            setTimeout(function () {
+        $http.get("http://localhost:8000/api/cncdata/AligningBallBearings").then(
+            function (response) {
+                $scope.list = response.data;
+                setTimeout(function () {
                 $(".overlay-container").css({ display: 'none' });//关闭加载图标
             }, 500);          
+            }, function (response) {
+                $(".overlay-container >span").css({ display: 'inline' });
+                $(".overlay-container >div").css({ display: 'none' });
+                $(".overlay-container >h2").replaceWith("<h2>请求出错，请刷新重试。错误为：" + response.status.toString() + response.statusText.toString() + "</h2>");
         });
 
         //3. 添加scope的处理方法

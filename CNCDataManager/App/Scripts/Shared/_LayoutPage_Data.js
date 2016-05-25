@@ -106,4 +106,8 @@
 
     //关闭加载动画
     $(".overlay-container").css({ display: 'none' });
+    //关闭提示页
+    $(".overlay-container >span").click(function () {
+        $(".overlay-container").css({ display: 'none' });
+    });
 });

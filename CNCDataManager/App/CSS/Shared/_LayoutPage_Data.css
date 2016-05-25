@@ -150,6 +150,17 @@ a.navbar-brand :hover{ color: lightgray;}
     background-color:#f1eded;
 }
 
+.overlay-container >span{
+    display:none;
+    position:relative;
+    float:right;
+    margin-right:5px;
+}
+
+.overlay-container >span:hover{
+    cursor: pointer;
+}
+
 .overlay-container h2 {
     line-height: 1.25;
     margin: 0 0 0 0;
@@ -158,6 +169,7 @@ a.navbar-brand :hover{ color: lightgray;}
     position: relative;
     color: #0072c6;
     text-align: center;
+    clear:both;
 }
 
 #loading-animation {
