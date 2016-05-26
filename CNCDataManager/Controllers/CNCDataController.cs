@@ -16,7 +16,6 @@ namespace CNCDataManager.Controllers
 
         public ActionResult List(string listname)
         {
-            ViewData["viewname"] = "AligningBallBearings";
             return View();
         }
     }

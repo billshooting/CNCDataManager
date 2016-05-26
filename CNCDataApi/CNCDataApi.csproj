@@ -181,10 +181,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\AzureConfig.pubxml" />
-    <None Include="Properties\PublishProfiles\CNCDataApi - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\CNCDataApi - Web Deploy.pubxml" />
-    <None Include="Properties\PublishProfiles\LocalConfig.pubxml" />
+    <None Include="Properties\PublishProfiles\Azure.pubxml" />
+    <None Include="Properties\PublishProfiles\TabletConfig.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

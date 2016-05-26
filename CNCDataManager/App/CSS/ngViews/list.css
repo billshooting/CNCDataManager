@@ -27,6 +27,9 @@ div.cncdata-table-col:last-child::after{
 }
 /*表格列选择部分结束*/
 
+/*表格动画*/
+/*表格动画结束*/
+
 /*表格列排序部分*/
 .table-td-orderable{
     color: white;
@@ -78,13 +81,14 @@ h4.head-title{
     background-color:#ccc;
 }
 .cncdata-table td{
-    min-width: 100px;
+    /*min-width: 100px;*/
     text-wrap: none;
     word-break: keep-all;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+    /*transition: width linear 0.5s;*/
+    width:150px;
 }
 .cncdata-table{
     display:block;

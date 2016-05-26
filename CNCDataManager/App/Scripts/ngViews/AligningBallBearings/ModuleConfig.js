@@ -1,6 +1,6 @@
 ﻿
 (function () {
-    var app = angular.module("AligningBallBearings", ["ngRoute"]);
+    var app = angular.module("AligningBallBearings", ["ngRoute", "ngAnimate"]);
 
     var config = function ($routeProvider) {
         $routeProvider.when("/list", { templateUrl: "/App/ngViews/AligingBallBearings/list.html" })

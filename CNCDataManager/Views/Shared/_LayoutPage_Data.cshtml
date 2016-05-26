@@ -42,7 +42,7 @@
         </div>
 
     </div>
-    <div class="overlay-container">
+    <div class="overlay-container" style="display:none">
         <span class="glyphicon glyphicon-remove"></span>
         <h2 class="text-center">Loading...</h2>
         <div title="Loading..." id="loading-animation"></div>
@@ -54,19 +54,19 @@
                 <ul class="side-nav-head-1">
                     <li>
                         <span id="nav-icon-motor" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="#">伺服电机</a>
+                        <a href="/CNCData/List?listname=ServoMotorOfPMSACFS">伺服电机</a>
                         <ul id="nav-motor-ul" class="side-nav-2-hide">
-                            <li><a>永磁同步交流电机</a></li>
-                            <li><a>永磁异步交流电机</a></li>
-                            <li><a>步进电机</a></li>
-                            <li><a>电主轴</a></li>
+                            <li><a href="/CNCData/List?listname=ServoMotorOfPMSACFS">永磁同步交流电机</a></li>
+                            <li><a href="/CNCData/List?listname=ServoMotorOfSpindle">主轴伺服电机</a></li>
+                            <li><a href="/CNCData/List?listname=StepperMotor">步进电机</a></li>
+                            <li><a href="/CNCData/List?listname=ElectricSpindle">电主轴</a></li>
                         </ul>
                     </li>
                     <li>
                         <span id="nav-icon-driver" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="#">伺服驱动器</a>
+                        <a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">伺服驱动器</a>
                         <ul id="nav-driver-ul" class="side-nav-2-hide">
-                            <li><a>同步交流电机驱动器</a></li>
+                            <li><a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">同步交流电机驱动器</a></li>
                             <li><a>异步交流电机驱动器</a></li>
                             <li><a>步进电机驱动器</a></li>
                             <li><a>电主轴驱动器</a></li>
@@ -74,88 +74,93 @@
                     </li>
                     <li>
                         <span id="nav-icon-system" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a>数控系统</a>
+                        <a href="/CNCData/List?listname=NCSystem">数控系统</a>
                     </li>
                     <li>
                         <span id="nav-icon-mech" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a>机械传动部件</a>
+                        <a href="/CNCData/List?listname=AligningBallBearings">机械传动部件</a>
                         <ul id="nav-mech-ul" class="side-nav-2-hide">
                             <li>
                                 <span id="nav-icon-mech-coupling" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>联轴器</a>
+                                <a href="/CNCData/List?listname=BrakeWheelElasticSleevePinCoupling">联轴器</a>
                                 <ul id="nav-mech-coupling-ul" class="side-nav-3-hide">
-                                    <li>凹缘式联轴器</li>
-                                    <li>十字滑块联轴器</li>
-                                    <li>齿式联轴器</li>
-                                    <li>带制动套柱销联轴器</li>
-                                    <li>弹性柱销联轴器</li>
-                                    <li>弹性套柱销联轴器</li>
-                                    <li>梅花弹性联轴器</li>
+                                    <li><a href="/CNCData/List?listname=FlangeCoupling">凹缘式联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=OldhamCoupling">十字滑块联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=GearCoupling">齿式联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=BrakeWheelElasticSleevePinCoupling">带制动套柱销联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=FlexiblePinCoupling">弹性柱销联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=ElasticSleevePinCoupling">弹性套柱销联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=PlumShapedFlexibleCoupling">梅花弹性联轴器</a></li>
+                                    <li><a href="/CNCData/List?listname=HubShapedCouplings">轮毂型联轴器</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-bearing" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List">滚动轴承</a>
+                                <a href="/CNCData/List?listname=AligningBallBearings">滚动轴承</a>
                                 <ul id="nav-mech-bearing-ul" class="side-nav-3-hide">
-                                    <li>角接触球轴承</li>
-                                    <li>深沟球轴承</li>
-                                    <li>圆锥滚子轴承</li>
-                                    <li>圆柱滚子轴承</li>
-                                    <li>调心滚子轴承</li>
-                                    <li>调心球轴承</li>
-                                    <li>滚珠丝杠支撑轴承</li>
+                                    <li><a href="/CNCData/List?listname=AngularContactBallBearings">角接触球轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=DeepGrooveBallBearings">深沟球轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=TaperedRollerBearings">圆锥滚子轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=CylindricalRollerBearings">圆柱滚子轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=AligningRollerBearing">调心滚子轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=AligningBallBearings">调心球轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=BallLeadScrewSupportBearings">滚珠丝杠支撑轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=CrossTaperedRollerBearings">交叉圆锥滚子轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=DoubleRowCylindricalRollerBearings">双列圆柱滚子轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=DoubleThrustAngularContactBallBearings">双向推力角接触球轴承</a></li>
+                                    <li><a href="/CNCData/List?listname=NeedleRollerAndThrustRollerBearings">滚针轴承和推力滚子组合轴承</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-guide" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>导轨</a>
+                                <a href="/CNCData/List?listname=LinearRollingGuide">导轨</a>
                                 <ul id="nav-mech-guide-ul" class="side-nav-3-hide">
-                                    <li>普通滑动导轨</li>
-                                    <li>直线滚动导轨</li>
-                                    <li>贴塑导轨</li>
-                                    <li>注塑导轨</li>
-                                    <li>静压导轨</li>
+                                    <li><a>普通滑动导轨</a></li>
+                                    <li><a href="/CNCData/List?listname=LinearRollingGuide">直线滚动导轨</a></li>
+                                    <li><a>贴塑导轨</a></li>
+                                    <li><a>注塑导轨</a></li>
+                                    <li><a>静压导轨</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-screw" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>滚珠丝杠</a>
+                                <a href="/CNCData/List?listname=SolidBallScrewNutPairs">滚珠丝杠</a>
                                 <ul id="nav-mech-screw-ul" class="side-nav-3-hide">
-                                    <li>内循环式滚珠丝杠</li>
-                                    <li>外循环式滚珠丝杠</li>
+                                    <li><a href="/CNCData/List?listname=SolidBallScrewNutPairs">内循环式滚珠丝杠</a></li>
+                                    <li><a>外循环式滚珠丝杠</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-table" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>回转工作台</a>
+                                <a href="/CNCData/List?listname=RotaryTable">回转工作台</a>
                                 <ul id="nav-mech-table-ul" class="side-nav-3-hide">
-                                    <li>数控回转工作台</li>
-                                    <li>分度回转工作台</li>
+                                    <li><a>数控回转工作台</a></li>
+                                    <li><a>分度回转工作台</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-gear" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>齿轮</a>
+                                <a href="/CNCData/List?listname=SpurGear">齿轮</a>
                                 <ul id="nav-mech-gear-ul" class="side-nav-3-hide">
-                                    <li>直齿圆柱齿轮</li>
-                                    <li>斜齿圆柱齿轮</li>
-                                    <li>直齿锥齿轮</li>
+                                    <li><a href="/CNCData/List?listname=SpurGear">直齿圆柱齿轮</a></li>
+                                    <li><a href="/CNCData/List?listname=HelicalCylindricalGear">斜齿圆柱齿轮</a></li>
+                                    <li><a href="/CNCData/List?listname=StraightBevelGear">直齿锥齿轮</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-worm" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>蜗轮蜗杆</a>
+                                <a href="/CNCData/List?listname=ArcCylindricalWormGear">蜗轮蜗杆</a>
                                 <ul id="nav-mech-worm-ul" class="side-nav-3-hide">
-                                    <li>普通圆柱蜗轮蜗杆</li>
-                                    <li>圆弧圆柱蜗轮蜗杆</li>
+                                    <li><a href="/CNCData/List?listname=ArcCylindricalWormGear">圆弧圆柱蜗轮蜗杆</a></li>
+                                    <li><a href="/CNCData/List?listname=CommonCylindricalWormGear">普通圆柱蜗轮蜗杆</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <span id="nav-icon-mech-belt" class="glyphicon glyphicon-plus nav-icon"></span>
                                 <a>传动带</a>
                                 <ul id="nav-mech-belt-ul" class="side-nav-3-hide">
-                                    <li>V型带</li>
-                                    <li>同步带</li>
+                                    <li ><a>V型带</a></li>
+                                    <li><a>同步带</a></li>
                                 </ul>
                             </li>
                         </ul>

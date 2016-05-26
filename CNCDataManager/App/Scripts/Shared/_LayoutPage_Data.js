@@ -1,4 +1,5 @@
 ﻿$(function () {
+    //侧边导航固定
     $(window).scroll(function () {
         if ($(window).scrollTop() > 280) {
             $("#cncdata-side-bar").addClass("cncdata-side-bar-fixed");
