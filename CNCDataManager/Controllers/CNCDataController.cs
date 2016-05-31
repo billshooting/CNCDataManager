@@ -16,6 +16,7 @@ namespace CNCDataManager.Controllers
 
         public ActionResult List(string listname)
         {
+            ViewData["viewname"] = listname;
             return View();
         }
     }

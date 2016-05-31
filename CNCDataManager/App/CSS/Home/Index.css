@@ -5,8 +5,11 @@
     padding:0;
 }
 body {
-    background-image: url('../../../Assets/Home/home-background-img.png');
-    background-size:1920px 630px;
+    background: linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -webkit-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -moz-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -o-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background-size:100% 630px;
     background-repeat:no-repeat;
 }
 /*轮播封面 css*/
@@ -104,7 +107,7 @@ a.home-index-nav-link{
     margin-top:auto;
     margin-bottom:auto;
     vertical-align:central;
-    font-family:'Times New Roman';
+    font-family:'Microsoft YaHei';
     font-size:16px;
     color:white;
     font-weight:600;

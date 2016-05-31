@@ -1,6 +1,6 @@
 ﻿
 (function (app) {
-    var ListController = function ($scope, $http) {
+    var ListController = function ($scope, $http, ApiUrl) {
         //1. scope模型初始化
         $scope.list = null;
         $scope.orderProperty = "TypeNo";
@@ -10,7 +10,7 @@
         //2. 显示初始化
         $(".overlay-container").css({ display: 'block' });//显示加载图标
 
-        $http.get("http://localhost:8000/api/cncdata/AligningBallBearings").then(
+        $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/AligningBallBearings").then(
             function (response) {
                 $scope.list = response.data;
                 setTimeout(function () {

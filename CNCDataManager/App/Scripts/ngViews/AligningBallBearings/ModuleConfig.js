@@ -9,5 +9,5 @@
     };
 
     app.config(config);
-    app.constant("ApiUrl", "localhost:8000/api/")
+    app.constant("ApiUrl", "http://cncdataapi.azurewebsites.net/api/cncdata/")
 }());

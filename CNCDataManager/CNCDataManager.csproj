@@ -303,6 +303,7 @@
     <Content Include="Assets\Cover\system.jpg" />
     <Content Include="Assets\Home\angular.png" />
     <Content Include="Assets\Home\asp-net.png" />
+    <Content Include="Assets\Home\Azure.png" />
     <Content Include="Assets\Home\bootstrap-logo.png" />
     <Content Include="Assets\Home\home-background-img.png" />
     <Content Include="Assets\Home\jQuery.png" />
@@ -385,6 +386,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
