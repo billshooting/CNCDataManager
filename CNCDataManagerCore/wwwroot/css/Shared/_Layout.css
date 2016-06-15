@@ -1,0 +1,55 @@
+﻿* {
+    font-family:'Microsoft YaHei';
+    font-size:16px;
+    margin:0;
+    padding:0;
+}
+body {
+    background: linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -webkit-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -moz-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background: -o-linear-gradient(30deg, #2c0138 0%, #47006c 51%, #5c0063 75%);
+    background-size:100% 630px;
+    background-repeat:no-repeat;
+}
+
+
+/*#region 导航栏的css */
+div.navbar {
+    border:none;
+}
+
+
+a.home-index-nav-link{
+    margin-top:auto;
+    margin-bottom:auto;
+    vertical-align:central;
+    font-family:'Microsoft YaHei';
+    font-size:16px;
+    color:white;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+a.home-index-nav-link :visited{
+    background-color: transparent;
+}
+
+ul.navbar-nav li >a{ color: white;}
+
+ul.navbar-nav li :hover{
+    color:lightgray;
+    background-color:transparent; 
+}
+
+
+a.navbar-brand { 
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+    letter-spacing:2px;
+}
+
+a.navbar-brand :hover{ color: lightgray;}
+
+/*#endregion */

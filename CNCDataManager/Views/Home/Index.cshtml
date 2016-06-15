@@ -8,7 +8,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
     <title>主页-数控机床数据库管理系统</title>
@@ -65,7 +64,7 @@
             <a href="/CNCData/Index" class="btn btn-primary btn-lg">点击查看数据</a>
         </div>
 
-        <div class="carousel slide" id="home-index-cover" data-interval="4000">
+        <div class="carousel slide" id="home-index-cover" data-ride="carousel" data-interval="4000">
             <ol class="carousel-indicators">
                 <li data-target="#home-index-cover" data-slide-to="0" class="active"></li>
                 <li data-target="#home-index-cover" data-slide-to="1" class=""></li>
@@ -75,26 +74,36 @@
             </ol>
             <div class="carousel-inner">
                 <div class="item active home-index-cover-img" id="home-index-cover1">
-                    <img src="~/Assets/Cover/CNC.jpg" alt="数控机床"/>
+                    <img src="~/Assets/Cover/CNC.jpg" alt="数控机床" class="img-responsive"/>
                 </div>
                 <div class="item home-index-cover-img" id="home-index-cover2">
-                   <a href="/CNCData/Index"><img src="~/Assets/Cover/driver.jpg" alt="伺服驱动" /></a> 
+                    <a href="/CNCData/Index">
+                        <img src="~/Assets/Cover/driver.jpg" alt="伺服驱动" class="img-responsive" />
+                    </a> 
                 </div>
                 <div class="item home-index-cover-img" id="home-index-cover3">
-                    <a href="/CNCData/Index"><img src="~/Assets/Cover/machine.jpg" alt="机械部件" /></a>
+                    <a href="/CNCData/Index">
+                        <img src="~/Assets/Cover/machine.jpg" alt="机械部件" class="img-responsive"/>
+                    </a>
                 </div>
                 <div class="item home-index-cover-img" id="home-index-cover4">
-                    <a href="/CNCData/Index"><img src="~/Assets/Cover/motor.jpg" alt="电机" /></a>
+                    <a href="/CNCData/Index">
+                        <img src="~/Assets/Cover/motor.jpg" alt="电机" class="img-responsive"/>
+                    </a>
                 </div>
                 <div class="item home-index-cover-img" id="home-index-cover5">
-                    <a href="/CNCData/Index"><img src="~/Assets/Cover/system.jpg" alt="数控系统" /></a>
+                    <a href="/CNCData/Index">
+                        <img src="~/Assets/Cover/system.jpg" alt="数控系统" class="img-responsive"/>
+                    </a>
                 </div>
             </div>
             <a class="left carousel-control" href="#home-index-cover" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" id="home-index-cover-prev-arrow"></span>
+                <span class="glyphicon glyphicon-chevron-left" id="home-index-cover-prev-arrow" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
             </a>
             <a class="right carousel-control " href="#home-index-cover" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" id="home-index-cover-next-arrow"></span>
+                <span class="glyphicon glyphicon-chevron-right" id="home-index-cover-next-arrow" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
 

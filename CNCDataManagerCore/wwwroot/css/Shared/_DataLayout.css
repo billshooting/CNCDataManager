@@ -1,0 +1,182 @@
+﻿* {
+    font-family:'Microsoft YaHei';
+    font-size:16px;
+    margin:0;
+    padding:0;
+}
+body {
+}
+
+div.navbar {
+    border:none;
+
+}
+/*数据页头部背景*/
+.layout-header{
+    height:250px;
+    width: 100%;
+    background: linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -webkit-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -moz-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -o-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    opacity:0.9;
+}
+.layout-header h1{
+    text-align:left;
+    font-weight:400;
+    font-size:60px;
+    padding-top:20px;
+    margin-top: 0;
+    margin-bottom:10px;
+    letter-spacing:10px;
+    color:white;
+}
+
+.layout-header p{
+    text-align:left;
+    font-size: 20px;
+    font-weight:300;
+    letter-spacing:2px;
+    line-height:1.4;
+    color:white;
+}
+/*数据也头部背景结束*/
+
+a.home-index-nav-link{
+    margin-top:auto;
+    margin-bottom:auto;
+    vertical-align:central;
+    font-family:'Microsoft YaHei';
+    font-size:16px;
+    color:white;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+a.home-index-nav-link :visited{
+    background-color: transparent;
+}
+
+ul.navbar-nav li >a{ color: white;}
+
+ul.navbar-nav li :hover{
+    color:lightgray;
+    background-color:transparent; 
+}
+
+
+a.navbar-brand { 
+    font-size:16px;
+    font-weight:bold;
+    color:white;
+    letter-spacing:2px;
+}
+
+a.navbar-brand :hover{ color: lightgray;}
+
+/*侧边导航栏*/
+.cncdata-side-bar{
+    margin-left:0;
+    margin-right:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+.cncdata-side-bar-fixed{
+    position: fixed;
+    top: 50px;
+    float:right;
+}
+.cncdata-side-bar-fixed:after{
+    clear:both;
+}
+
+.side-nav-head-1{
+    position:relative;
+}
+
+.side-nav-head-2{
+    display:block;
+    position:relative;
+    margin-left:37px;
+}
+.side-nav-2-hide{
+    display:none;
+    margin-left:37px;
+}
+.side-nav-head-3{
+    display:block;
+    position:relative;
+    margin-left:20px;
+}
+.side-nav-3-hide{
+    display:none;
+    position:relative;
+    margin-left:20px;
+}
+.side-nav-head-3 >li{
+    font-size:14px;
+}
+.side-nav-3-hide >li{ font-size:14px;}
+
+.side-nav-head-1 >a{
+    list-style:none;
+}
+
+.side-nav-head-1 li{
+    list-style:none;
+}
+
+.nav-icon:hover{
+    color:#610087;
+    cursor:pointer;
+}
+
+
+/*侧边导航栏结束*/
+
+/*加载*/
+.overlay-container {
+    position:fixed;
+    margin: 0;
+    padding: 1em;
+    clear: both;
+    line-height: 150%;
+    vertical-align: middle;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    z-index:1;
+    background-color:#f1eded;
+}
+
+.overlay-container >span{
+    display:none;
+    position:relative;
+    float:right;
+    margin-right:5px;
+}
+
+.overlay-container >span:hover{
+    cursor: pointer;
+}
+
+.overlay-container h2 {
+    line-height: 1.25;
+    margin: 0 0 0 0;
+    font-size: 150%;
+    font-weight: 600;
+    position: relative;
+    color: #0072c6;
+    text-align: center;
+    clear:both;
+}
+
+#loading-animation {
+    background: url('../../../Assets/ProgressRing_skyblue64x64.gif') no-repeat;
+    width: 64px;
+    height: 64px;
+    margin: 40px auto;
+}
+
+/*加载结束*/
