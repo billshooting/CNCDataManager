@@ -168,6 +168,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\DataManage\DataManageAreaRegistration.cs" />
+    <Compile Include="Areas\Selection\SelectionAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CNCDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -386,6 +388,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Areas\Selection\Views\web.config" />
+    <Content Include="Areas\DataManage\Views\web.config" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -444,6 +448,12 @@
   <ItemGroup>
     <Folder Include="App\Scripts\Account\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DataManage\Controllers\" />
+    <Folder Include="Areas\DataManage\Models\" />
+    <Folder Include="Areas\DataManage\Views\Shared\" />
+    <Folder Include="Areas\Selection\Controllers\" />
+    <Folder Include="Areas\Selection\Models\" />
+    <Folder Include="Areas\Selection\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
