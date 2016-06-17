@@ -5,20 +5,23 @@
     padding:0;
 }
 body {
-}
-
-div.navbar {
-    border:none;
-
-}
-/*数据页头部背景*/
-.layout-header{
-    height:250px;
-    width: 100%;
     background: linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
     background: -webkit-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
     background: -moz-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
     background: -o-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    opacity:0.9;
+    background-size: 100% 320px;
+    background-repeat :no-repeat;
+}
+/*#region 数据页头部 */
+
+.layout-header{
+    height:250px;
+    width: 100%;
+    /*background: linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -webkit-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -moz-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);
+    background: -o-linear-gradient(30deg, #280155 0%, #5c0063 51%, #610087 75%);*/
     opacity:0.9;
 }
 .layout-header h1{
@@ -40,7 +43,14 @@ div.navbar {
     line-height:1.4;
     color:white;
 }
-/*数据也头部背景结束*/
+
+/*#endregion */
+
+/*#region 顶部导航 */
+div.navbar {
+    border:none;
+}
+
 
 a.home-index-nav-link{
     margin-top:auto;
@@ -74,68 +84,11 @@ a.navbar-brand {
 
 a.navbar-brand :hover{ color: lightgray;}
 
-/*侧边导航栏*/
-.cncdata-side-bar{
-    margin-left:0;
-    margin-right:0;
-    padding-left:0;
-    padding-right:0;
-}
 
-.cncdata-side-bar-fixed{
-    position: fixed;
-    top: 50px;
-    float:right;
-}
-.cncdata-side-bar-fixed:after{
-    clear:both;
-}
+/*#endregion */
 
-.side-nav-head-1{
-    position:relative;
-}
+/*#region 加载 */
 
-.side-nav-head-2{
-    display:block;
-    position:relative;
-    margin-left:37px;
-}
-.side-nav-2-hide{
-    display:none;
-    margin-left:37px;
-}
-.side-nav-head-3{
-    display:block;
-    position:relative;
-    margin-left:20px;
-}
-.side-nav-3-hide{
-    display:none;
-    position:relative;
-    margin-left:20px;
-}
-.side-nav-head-3 >li{
-    font-size:14px;
-}
-.side-nav-3-hide >li{ font-size:14px;}
-
-.side-nav-head-1 >a{
-    list-style:none;
-}
-
-.side-nav-head-1 li{
-    list-style:none;
-}
-
-.nav-icon:hover{
-    color:#610087;
-    cursor:pointer;
-}
-
-
-/*侧边导航栏结束*/
-
-/*加载*/
 .overlay-container {
     position:fixed;
     margin: 0;
@@ -173,10 +126,47 @@ a.navbar-brand :hover{ color: lightgray;}
 }
 
 #loading-animation {
-    background: url('../../../Assets/ProgressRing_skyblue64x64.gif') no-repeat;
+    background: url('../../images/load64x64.gif') no-repeat;
     width: 64px;
     height: 64px;
     margin: 40px auto;
 }
 
-/*加载结束*/
+/*#endregion */
+
+/*#region 回到顶部 */
+#back-to-top{
+    position: fixed;
+    right:50px;
+    bottom: 100px;
+    width: 50px;
+    height:50px;
+}
+#back-to-top a{
+    width:100%;
+    height:100%;
+    display: block;
+    text-align:center;
+    color:white;
+    background-color: #555;
+    border-radius: 4px;
+}
+
+#back-to-top-tooltips{
+    visibility: hidden;
+    width: 100px;
+    background-color: white;
+    color: #555;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    border:1px solid #555;
+    left:-20px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+#back-tp-top a:hover #back-to-top-tooltips{
+    visibility: visible;
+}
+/*#endregion */

@@ -1,0 +1,84 @@
+﻿/*#region 左侧导航栏 */
+
+.cncdata-side-bar{
+    margin-left:0;
+    margin-right:0;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:black;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.cncdata-side-bar-fixed{
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+}
+.cncdata-side-bar-fixed:after{
+    clear:both;
+}
+
+.side-nav-head-1{
+    display: block;
+    position:relative;
+    font-family:'Microsoft YaHei';
+    color: white;
+    font-weight:bold;
+}
+
+.side-nav-head-2{
+    display:block;
+    position:relative;
+    margin-left:37px;
+}
+.side-nav-2-hide{
+    display:none;
+    margin-left:37px;
+}
+.side-nav-head-3{
+    display:block;
+    position:relative;
+    margin-left:20px;
+}
+.side-nav-3-hide{
+    display:none;
+    position:relative;
+    margin-left:20px;
+}
+.side-nav-head-3 >li{
+    font-size:14px;
+}
+.side-nav-3-hide >li{ font-size:14px;}
+
+.side-nav-head-1 li{
+    list-style:none;
+}
+/*鼠标悬停效果*/
+.side-nav-head-1 a{
+    display:block;
+    list-style:none;
+    text-decoration:none;
+    color: white;
+}
+
+.side-nav-head-1 a:hover{
+    background-color:#ccc;
+}
+div.side-nav-icon-bar >a{
+    display:inline;
+}
+div.side-nav-icon-bar:hover{
+    background-color: #ccc;
+}
+/*前面的+-标志*/
+.nav-icon:hover{
+    color:#610087;
+    cursor:pointer;
+}
+
+/*#endregion */
