@@ -15,15 +15,18 @@
 }
 
 
-<div class="col-sm-2" >
-    <div class="cncdata-side-bar" id="cncdata-side-bar">
+<div class="side-nav-container" id="side-nav-container">
+    <div class="cncdata-side-bar">
+        <div class="side-bar-title">
+            <h4>数控机床分类索引</h4>
+        </div>
         <ul class="side-nav-head-1">
             <li>
                 <div class="side-nav-icon-bar">
                     <span id="nav-icon-motor" class="glyphicon glyphicon-plus nav-icon"></span>
                     <a href="/CNCData/List?listname=ServoMotorOfPMSACFS">伺服电机</a>
                 </div>
-                <ul id="nav-motor-ul" class="side-nav-2-hide">
+                <ul id="nav-motor-ul" class="side-nav-head-2">
                     <li><a href="/CNCData/List?listname=ServoMotorOfPMSACFS">永磁同步交流电机</a></li>
                     <li><a href="/CNCData/List?listname=ServoMotorOfSpindle">主轴伺服电机</a></li>
                     <li><a href="/CNCData/List?listname=StepperMotor">步进电机</a></li>
@@ -35,7 +38,7 @@
                     <span id="nav-icon-driver" class="glyphicon glyphicon-plus nav-icon"></span>
                     <a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">伺服驱动器</a>
                 </div>
-                <ul id="nav-driver-ul" class="side-nav-2-hide">
+                <ul id="nav-driver-ul" class="side-nav-head-2">
                     <li><a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">同步交流电机驱动器</a></li>
                     <li><a>异步交流电机驱动器</a></li>
                     <li><a>步进电机驱动器</a></li>
@@ -53,13 +56,13 @@
                     <span id="nav-icon-mech" class="glyphicon glyphicon-plus nav-icon"></span>
                     <a href="/CNCData/List?listname=AligningBallBearings">机械传动部件</a>
                 </div>
-                <ul id="nav-mech-ul" class="side-nav-2-hide">
+                <ul id="nav-mech-ul" class="side-nav-head-2">
                     <li>
                         <div class="side-nav-icon-bar">
                             <span id="nav-icon-mech-coupling" class="glyphicon glyphicon-plus nav-icon"></span>
                             <a href="/CNCData/List?listname=BrakeWheelElasticSleevePinCoupling">联轴器</a>
                         </div>
-                        <ul id="nav-mech-coupling-ul" class="side-nav-3-hide">
+                        <ul id="nav-mech-coupling-ul" class="side-nav-head-3">
                             <li><a href="/CNCData/List?listname=FlangeCoupling">凹缘式联轴器</a></li>
                             <li><a href="/CNCData/List?listname=OldhamCoupling">十字滑块联轴器</a></li>
                             <li><a href="/CNCData/List?listname=GearCoupling">齿式联轴器</a></li>
@@ -75,7 +78,7 @@
                             <span id="nav-icon-mech-bearing" class="glyphicon glyphicon-plus nav-icon"></span>
                             <a href="/CNCData/List?listname=AligningBallBearings">滚动轴承</a>
                         </div>
-                        <ul id="nav-mech-bearing-ul" class="side-nav-3-hide">
+                        <ul id="nav-mech-bearing-ul" class="side-nav-head-3">
                             <li><a href="/CNCData/List?listname=AngularContactBallBearings">角接触球轴承</a></li>
                             <li><a href="/CNCData/List?listname=DeepGrooveBallBearings">深沟球轴承</a></li>
                             <li><a href="/CNCData/List?listname=TaperedRollerBearings">圆锥滚子轴承</a></li>

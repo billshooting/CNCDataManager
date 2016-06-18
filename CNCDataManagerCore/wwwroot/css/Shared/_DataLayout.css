@@ -13,6 +13,14 @@ body {
     background-size: 100% 320px;
     background-repeat :no-repeat;
 }
+/*最外层容器*/
+.full-wide-body-content{
+    padding: 0;
+    padding-right: 15px;
+    overflow-x: no-display;
+    width: 100%;
+    max-width: 100%;
+}
 /*#region 数据页头部 */
 
 .layout-header{
