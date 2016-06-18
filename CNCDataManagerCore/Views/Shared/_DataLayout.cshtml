@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+
+    <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/Shared/_DataLayout.css" type="text/css" />
+        <link rel="stylesheet" href="~/css/Shared/_LeftNavPartial.css" />
+        @await RenderSectionAsync("css", required: false)
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/Shared/_DataLayout.css" type="text/css" asp-append-version="true" />
+        @await RenderSectionAsync("css", required: false)
+    </environment>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top" id="navbar" style="background:none">
+        <div class="container navbar-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--以下链接可以用html辅助函数来防止被攻击-->
+                <a href="/" class="navbar-brand home-index-nav-link" area=""><span></span>数控机床数据管理</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index" class="home-index-nav-link" role="navigation"><span>主页</span></a></li>
+                    <li><a asp-controller="CNCData" asp-action="Index" class="home-index-nav-link" role="navigation"><span>查看数据</span></a></li>
+                    <li><a asp-controller="Home" asp-action="About" class="home-index-nav-link" role="navigation"><span>关于</span></a></li>
+                    <li><a asp-controller="Home" asp-action="Contact" class="home-index-nav-link" role="navigation"><span>联系我们</span></a></li>
+                </ul>
+                @await Html.PartialAsync("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <!--标题头以及加载动画-->
+    <div class="layout-header">
+        <div class="container">
+            <h1>数据</h1>
+            <p>详尽，包括伺服电机、伺服驱动、数控系统和机械部件等各项数据。</p>
+        </div>
+
+    </div>
+    <div class="overlay-container" style="display:none">
+        <span class="glyphicon glyphicon-remove"></span>
+        <h2 class="text-center">Loading...</h2>
+        <div title="Loading..." id="loading-animation"></div>
+    </div>
+    <!--标题头以及加载动画结束-->
+    <!--回到顶部-->
+    <div>
+        <div id="back-to-top">
+            <a id="back-tp-top-a" href="#"><img src="~/images/back-to-top-icon.png" width="50" height="50" /></a>
+        </div>
+        <p id="back-to-top-tooltips">回到顶部</p>
+    </div>
+    <!--回到顶部结束-->
+    <div class="full-wide-body-content">
+        @await Html.PartialAsync("_LeftNavPartial")
+        @RenderBody()
+    </div>
+
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>To do.</p>
+                </div>
+                <div class="col-md-4">
+                    <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+                    <p>邮编：430074</p>
+                </div>
+                <div class="col-md-4">
+                    <p>电话：027-87541114</p>
+                    <p>传真：027-87545438</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/Shared/_DataLayout.js" asp-append-version="true"></script>
+        <script src="~/js/Shared/_LeftNavPartial.js"></script>
+        @await RenderSectionAsync("scripts", required: false)
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/Shared/_DataLayout.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("scripts", required: false)
+    </environment>
+    
+</body>
+</html>

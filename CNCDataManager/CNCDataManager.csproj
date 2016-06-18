@@ -391,6 +391,7 @@
     <Content Include="Areas\Selection\Views\web.config" />
     <Content Include="Areas\DataManage\Views\web.config" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalConfig.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -1,0 +1,56 @@
+﻿* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:16px;
+    margin:0;
+    padding:0;
+}
+
+#login-block {
+    display:block;
+    width:30%;
+    max-width: 320px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:80px;
+    margin-bottom:auto;
+    padding:20px;
+    border-radius:6px;
+    background-color: white;
+}
+
+#login-block label{
+    display:none;
+}
+#login-block label:last-child{
+    display:inline;
+}
+#login-block input[type=submit]{
+    font-size: 18px;
+    font-weight:600;
+}
+
+#login-icon p{
+    text-align:center;
+}
+
+#login-icon p:first-child{
+    font-size:20px;
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+#login-icon p:last-child
+{
+    font-size:18px;
+    font-weight:600;
+    letter-spacing:1px;
+    color:#555;
+}
+
+#login-desc{
+    font-size:16px;
+    letter-spacing:1px;
+    color: #555;
+    text-indent:35px;
+}
