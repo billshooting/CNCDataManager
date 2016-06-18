@@ -187,12 +187,15 @@
     <Content Include="App\CSS\Account\Login.css" />
     <Content Include="App\CSS\Account\Register.css" />
     <Content Include="App\CSS\CNCData\Index.css" />
+    <Content Include="App\CSS\CNCData\List.css" />
     <Content Include="App\CSS\Home\About.css" />
     <Content Include="App\CSS\Home\Contact.css" />
     <Content Include="App\CSS\Home\Index.css" />
     <Content Include="App\CSS\ngViews\list.css" />
+    <Content Include="App\CSS\Shared\_BgImageLayout.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
     <Content Include="App\CSS\Shared\_LayoutPage_Data.css" />
+    <Content Include="App\CSS\Shared\_LeftNavPartial.css" />
     <Content Include="App\ngViews\AligingBallBearings\list.html" />
     <Content Include="App\ngViews\AligningRollerBearing\list.html" />
     <Content Include="App\ngViews\AngularContactBallBearings\list.html" />
@@ -295,7 +298,9 @@
     <Content Include="App\Scripts\ngViews\StraightBevelGear\ModuleConfig.js" />
     <Content Include="App\Scripts\ngViews\TaperedRollerBearings\ListController.js" />
     <Content Include="App\Scripts\ngViews\TaperedRollerBearings\ModuleConfig.js" />
+    <Content Include="App\Scripts\Shared\_Layout.js" />
     <Content Include="App\Scripts\Shared\_LayoutPage_Data.js" />
+    <Content Include="App\Scripts\Shared\_LeftaNavPartial.js" />
     <Content Include="Assets\back-to-top-icon.png" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
@@ -303,6 +308,7 @@
     <Content Include="Assets\Cover\machine.jpg" />
     <Content Include="Assets\Cover\motor.jpg" />
     <Content Include="Assets\Cover\system.jpg" />
+    <Content Include="Assets\favicon.ico" />
     <Content Include="Assets\Home\angular.png" />
     <Content Include="Assets\Home\asp-net.png" />
     <Content Include="Assets\Home\Azure.png" />
@@ -312,6 +318,7 @@
     <Content Include="Assets\Home\left-part-head-img.png" />
     <Content Include="Assets\Home\login-bg.png" />
     <Content Include="Assets\Home\login-bg1.png" />
+    <Content Include="Assets\load64x64.gif" />
     <Content Include="Assets\Mechanics\1-滚动轴承-介绍.jpg" />
     <Content Include="Assets\Mechanics\2-联轴器-介绍.jpg" />
     <Content Include="Assets\Mechanics\3-导轨-介绍.jpg" />
@@ -356,9 +363,6 @@
     <Content Include="Assets\Motors\伺服电机.jpg" />
     <Content Include="Assets\Motors\进给电机-表.jpg" />
     <Content Include="Assets\Motors\进给电机尺寸图-表.jpg" />
-    <Content Include="Assets\ProgressRing_Black64x64.gif" />
-    <Content Include="Assets\ProgressRing_Blue64x64.gif" />
-    <Content Include="Assets\ProgressRing_skyblue64x64.gif" />
     <Content Include="Assets\Servo\伺服部分.jpg" />
     <Content Include="Assets\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
     <Content Include="Assets\Servo\电机驱动-介绍.jpg" />
@@ -445,6 +449,8 @@
     <Content Include="Views\Shared\_LayoutPage_Data.cshtml" />
     <Content Include="Views\CNCData\Index.cshtml" />
     <Content Include="Views\CNCData\List.cshtml" />
+    <Content Include="Views\Shared\_LeftNavPartial.cshtml" />
+    <Content Include="Views\Shared\_BgImageLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\Scripts\Account\" />
