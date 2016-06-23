@@ -1,0 +1,15 @@
+﻿
+<div class="menu-collapse">
+    <div>
+        <h2><a ui-sref="CNCType" class="text-center">数控机床</a></h2>
+        <div class="list-group">
+            <p><a ui-sref="CNCType" class="list-group-item text-center">机床类型</a></p>
+            <p><a ui-sref="CNCType.WorkingCondition" class="list-group-item text-center">工作需求</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(".menu-collapse").accordion({
+        header: "h2"
+    })
+</script>

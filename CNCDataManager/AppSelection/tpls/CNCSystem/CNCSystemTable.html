@@ -1,0 +1,61 @@
+﻿<div ng-controller="CNCSystemTable">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="manufacturer" class="col-md-2 control-label">生产厂家：</label>
+                <div class="col-md-2">
+                    <select class="form-control">
+                        <option>--请选择--</option>
+                        <option>华中数控</option>
+                        <option>广州数控</option>
+                        <option>沈阳高精</option>
+                        <option>北京航天数控</option>
+                    </select>
+                </div>
+                <label for="MaxControlNumberOfSpindle" class="col-md-2 control-label">最大主轴数：</label>
+                <div class="col-md-2">
+                    <div class="input-group spinner">
+                        <input type="text" class="form-control" id="MaxControlNumberOfSpindle" value="1">
+                        <div class="input-group-btn-vertical">
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <label for="MaxControlNumberOfFeedAxis" class="col-md-2 control-label">最大进给轴数：</label>
+                <div class="col-md-2">
+                    <div class="input-group spinner">
+                        <input type="text" class="form-control" id="MaxControlNumberOfFeedAxis" value="1">
+                        <div class="input-group-btn-vertical">
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                            <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="btn-primary">型号</th>
+                <th class="btn-primary">生产厂家</th>
+                <th class="btn-primary">支持机床类型</th>
+                <th class="btn-primary">支持通道数</th>
+                <th class="btn-primary">进给轴最大控制轴数</th>
+                <th class="btn-primary">主轴最大控制轴数</th>
+                <th class="btn-primary">最大联动轴数</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="NCSystem in NCSystems">
+                <td>{{NCSystem.TypeNo}}</td>
+                <td>{{NCSystem.Manufacturer}}</td>
+                <td>{{NCSystem.SupportTypeOfMachine}}</td>
+                <td>{{NCSystem.SupportNumberOfChannels}}</td>
+                <td>{{NCSystem.MaxControlNumberOfFeedAxis}}</td>
+                <td>{{NCSystem.MaxControlNumberOfSpindle}}</td>
+                <td>{{NCSystem.MaxNumberOfLinkageAxis}}</td>
+                <td>{{NCSystem.TypeNo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
