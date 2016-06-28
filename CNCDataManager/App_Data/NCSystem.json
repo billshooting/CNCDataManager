@@ -1,0 +1,25 @@
+﻿{
+  "data":
+  [
+    {
+      "TypeNo": "ABC",
+      "Manufacturer": "华中数控",
+      "SupportTypeOfMachine": "C",
+      "SupportNumberOfChannels": "1",
+      "MaxControlNumberOfFeedAxis": "1",
+      "MaxControlNumberOfSpindle": "1",
+      "MaxNumberOfLinkageAxis": "1",
+      "CNCImage": "cdma"
+    },
+    {
+      "TypeNo": "CDF",
+      "Manufacturer": "沈阳高精",
+      "SupportTypeOfMachine": "X",
+      "SupportNumberOfChannels": "2",
+      "MaxControlNumberOfFeedAxis": "2",
+      "MaxControlNumberOfSpindle": "2",
+      "MaxNumberOfLinkageAxis": "2",
+      "CNCImage": "cdma"
+    }
+  ]
+}
