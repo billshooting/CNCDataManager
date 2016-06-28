@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="selectionApp">
+<html ng-app="selection">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
@@ -8,21 +8,10 @@
     <title>@ViewBag.Title - 数控机床数据库管理系统</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    <link href="~/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
-    <link href="~/Content/ui-grid.min.css" rel="stylesheet" />
-    <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
-    <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-ui-router.min.js"></script>
-    <script src="~/Scripts/ui-grid.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
-
-    <script src="~/AppSelection/js/demo.js"></script>
-    <script src="~/AppSelection/js/app.js"></script>
-    <script src="~/AppSelection/js/controllers.js"></script>
+    <link rel="stylesheet" href="~/App/CSS/Shared/_LayoutPage_Data.css" type="text/css" />
+    <link href="~/Content/ng-grid.min.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/Views/Selection/CSS/style.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/Views/Selection/CSS/flexslider.css" rel="stylesheet" />
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -49,53 +38,70 @@
             </div>
         </div>
     </div>
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h1>数控机床选型</h1>
-            <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
-        </div>
-    </header>
-    <div class="middleNav">
-        <div class="container">
-            <div class="row">
-                <ul class="nav nav-tabs">
-                    <li class="col-md-2 active"><a ui-sref="CNCType" class="text-center btn-primary">数控机床</a></li>
-                    <li class="col-md-2"><a ui-sref="CNCSystem" class="text-center">数控系统</a></li>
-                    <li class="col-md-2"><a ui-sref="FeedSystem" class="text-center">进给轴x轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">进给轴y轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">进给轴z轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">主轴</a></li>
-                </ul>
+    <div class="content">
+        <div class="portfolio">
+            <div class="portfolio-header">
+                <h3>TASTE IT THE GOOD PROJECTS</h3>
+            </div>
+            <div class="filter_box">
+                <div class="filter_grid">
+                    <div class="col-md-10 filter_nav">
+                        <ul id="filters">
+                            <li><span class="filter active" data-filter="app card icon web ">All</span></li>
+                            <li><span class="filter" data-filter="app">web design</span></li>
+                            <li><span class="filter" data-filter="card">advertsing</span></li>
+                            <li><span class="filter" data-filter="icon">identity</span></li>
+                            <li><span class="filter" data-filter="web">illustration</span></li>
+                            <div class="clearfix"> </div>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 dropdown-button">
+                        <select class="dropdown" tabindex="6" data-settings='{"wrapperClass":"flat"}'>
+                            <option value="0">CATEGORY</option>
+                            <option value="1">Lorem</option>
+                            <option value="2">Ipsum</option>
+                            <option value="3">Dolar</option>
+                            <option value="4">Sit Amet</option>
+                            <option value="5">Kullar</option>
+                        </select>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
             </div>
         </div>
-    </div>
 
-    @RenderBody()
+            @RenderBody()
 
-    <hr />
-    <div class="container">
-        <footer>
-            <div class="row">
-                <div class="col-md-4">
-                    <p>To do.</p>
+            <hr />
+            <footer>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>To do.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+                        <p>邮编：430074</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>电话：027-87541114</p>
+                        <p>传真：027-87545438</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
-                    <p>邮编：430074</p>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>电话：027-87541114</p>
-                    <p>传真：027-87545438</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-    @RenderSection("scripts", required: false)
+
+            </footer>
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/bootstrap")
+            <script src="~/Scripts/angular.min.js"></script>
+            <script src="~/Scripts/ng-grid.min.js"></script>
+            <script src="~/Scripts/angular-ui-router.min.js"></script>
+            @RenderSection("scripts", required: false)
+            <script src="~/App/Scripts/Shared/_LayoutPage_Data.js"></script>
 </body>
 </html>
-
