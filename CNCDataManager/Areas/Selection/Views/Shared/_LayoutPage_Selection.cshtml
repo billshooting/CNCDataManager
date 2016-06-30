@@ -17,12 +17,15 @@
 
     <script src="~/Scripts/angular.min.js"></script>
     <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
     <script src="~/Scripts/ui-grid.min.js"></script>
     <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
 
     <script src="~/AppSelection/js/demo.js"></script>
     <script src="~/AppSelection/js/app.js"></script>
     <script src="~/AppSelection/js/controllers.js"></script>
+    <script src="~/AppSelection/js/services.js"></script>
+    <script src="~/AppSelection/js/filters.js"></script>
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -55,23 +58,26 @@
             <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
         </div>
     </header>
-    <div class="middleNav">
-        <div class="container">
-            <div class="row">
-                <ul class="nav nav-tabs">
-                    <li class="col-md-2 active"><a ui-sref="CNCType" class="text-center btn-primary">数控机床</a></li>
-                    <li class="col-md-2"><a ui-sref="CNCSystem" class="text-center">数控系统</a></li>
-                    <li class="col-md-2"><a ui-sref="FeedSystem" class="text-center">进给轴x轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">进给轴y轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">进给轴z轴</a></li>
-                    <li class="col-md-2"><a href="#" class="text-center">主轴</a></li>
-                </ul>
+    <div ng-controller="CNCNavCtrl">
+        <div class="middleNav">
+            <div class="container">
+                <div class="row">
+                    <ul class="nav nav-tabs">
+                        <li class="col-md-2" ng-show="nav[0]"><a ui-sref="CNCType" class="text-center">数控机床</a></li>
+                        <li class="col-md-2" ng-show="nav[1]"><a ui-sref="CNCSystem" class="text-center">数控系统</a></li>
+                        <li class="col-md-2" ng-show="nav[2]"><a ui-sref="FeedSystem({FeedSystemType:'XY'})" class="text-center">进给轴x/y轴</a></li>
+                        <li class="col-md-2" ng-show="nav[3]"><a ui-sref="FeedSystem({FeedSystemType:'X'})" class="text-center">进给轴x轴</a></li>
+                        <li class="col-md-2" ng-show="nav[4]"><a ui-sref="FeedSystem({FeedSystemType:'Y'})" class="text-center">进给轴y轴</a></li>
+                        <li class="col-md-2" ng-show="nav[5]"><a ui-sref="FeedSystem({FeedSystemType:'Z'})" class="text-center">进给轴z轴</a></li>
+                        <li class="col-md-2" ng-show="nav[6]"><a href="#" class="text-center">主轴</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
     @RenderBody()
 
+    </div>
     <hr />
     <div class="container">
         <footer>

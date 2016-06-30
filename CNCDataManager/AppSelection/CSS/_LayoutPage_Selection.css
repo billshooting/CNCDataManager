@@ -102,5 +102,21 @@ div.navbar {
   left: 4px;
 }
 
+.imgSelected{
+  border:2px solid #0099CC;
+}
+
+.CNCImgTable{
+  border-radius: 25px;
+  border: 2px solid #DDD;
+  padding: 20px; 
+}
+
+.tableSelected{
+  background: red;
+}
+
+
+
 
 

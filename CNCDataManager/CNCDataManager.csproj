@@ -676,6 +676,9 @@
     <Content Include="AppSelection\imgs\磨床.jpg" />
     <Content Include="AppSelection\imgs\立式车床.jpg" />
     <Content Include="AppSelection\imgs\立式铣床.jpg" />
+    <Content Include="AppSelection\imgs\立铣Z轴导轨.jpg" />
+    <Content Include="AppSelection\imgs\立铣水平上导轨.jpg" />
+    <Content Include="AppSelection\imgs\立铣水平导轨下.jpg" />
     <Content Include="AppSelection\imgs\龙门铣床.jpg" />
     <Content Include="AppSelection\Index.html" />
     <Content Include="AppSelection\js\app.js" />
@@ -690,8 +693,12 @@
     <Content Include="AppSelection\tpls\CNCType\CNCTypeList.html" />
     <Content Include="AppSelection\tpls\CNCType\CNCTypeTable.html" />
     <Content Include="AppSelection\tpls\CNCType\CNCWorkingCondition.html" />
+    <Content Include="AppSelection\tpls\FeedSystem\Bearings\BearingsTable.html" />
+    <Content Include="AppSelection\tpls\FeedSystem\Coupling\CouplingTable.html" />
+    <Content Include="AppSelection\tpls\FeedSystem\Driver\DriverTable.html" />
     <Content Include="AppSelection\tpls\FeedSystem\FeedSystemList.html" />
     <Content Include="AppSelection\tpls\FeedSystem\LinearRollingGuide\LinearRollingGuideTable.html" />
+    <Content Include="AppSelection\tpls\FeedSystem\ServoMotor\ServoMotorTable.html" />
     <Content Include="AppSelection\tpls\FeedSystem\SolidBallScrewNutPairs\SolidBallScrewNutPairsTable.html" />
     <Content Include="AppSelection\tpls\home.html" />
     <Content Include="App\CSS\Account\Login.css" />
@@ -806,11 +813,6 @@
     <Content Include="App\Scripts\ngViews\TaperedRollerBearings\ListController.js" />
     <Content Include="App\Scripts\ngViews\TaperedRollerBearings\ModuleConfig.js" />
     <Content Include="App\Scripts\Shared\_LayoutPage_Data.js" />
-    <Content Include="App_Data\ComputerNumericalControlMachineTools_Database.mdf" />
-    <Content Include="App_Data\ComputerNumericalControlMachineTools_Database_log.ldf">
-      <DependentUpon>ComputerNumericalControlMachineTools_Database.mdf</DependentUpon>
-    </Content>
-    <None Include="App_Data\NCSystem.json" />
     <Content Include="Content\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
@@ -865,6 +867,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Content\ui-grid.css" />
     <Content Include="Content\ui-grid.min.css" />
     <Content Include="Content\_LayoutPage_Selection.css" />
@@ -962,6 +965,10 @@
     <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -1378,10 +1385,8 @@
     <Content Include="Views\CNCData\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppSelection\tpls\FeedSystem\Bearings\" />
-    <Folder Include="AppSelection\tpls\FeedSystem\Driver\" />
-    <Folder Include="AppSelection\tpls\FeedSystem\ServoMotor\" />
     <Folder Include="App\Scripts\Account\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Areas\DataManage\Controllers\" />
     <Folder Include="Areas\DataManage\Models\" />
     <Folder Include="Areas\DataManage\Views\Shared\" />
