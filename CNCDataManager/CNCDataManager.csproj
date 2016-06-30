@@ -817,9 +817,7 @@
     <Content Include="App\Scripts\ngViews\TaperedRollerBearings\ModuleConfig.js" />
     <Content Include="App\Scripts\Shared\_Layout.js" />
     <Content Include="App\Scripts\Shared\_LayoutPage_Data.js" />
-<<<<<<< HEAD
     <Content Include="App\Scripts\Shared\_LeftaNavPartial.js" />
-=======
     <Content Include="Content\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
@@ -878,7 +876,6 @@
     <Content Include="Content\ui-grid.css" />
     <Content Include="Content\ui-grid.min.css" />
     <Content Include="Content\_LayoutPage_Selection.css" />
->>>>>>> 491ec3d21562cc16107a5d0a439ff0065a21b518
     <Content Include="Assets\back-to-top-icon.png" />
     <Content Include="Assets\CNC\数控系统-表.jpg" />
     <Content Include="Assets\Cover\CNC.jpg" />
