@@ -6,12 +6,13 @@ namespace CNCDataApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Motor_ParaOfServoMotorOfPMSACFS
+    [Table(name: "Motor_ParaOfServoMotorOfPMSACFS")]
+    public partial class PMSrvMotorPara
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "ÐÍºÅ")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]

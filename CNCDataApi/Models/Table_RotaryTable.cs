@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Table_RotaryTable
+    [Table(name: "Table_RotaryTable")]
+    public partial class RotaryTable
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(50)]
         [Display(Name = "生产厂家")]

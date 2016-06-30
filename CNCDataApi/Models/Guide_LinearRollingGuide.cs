@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Guide_LinearRollingGuide
+    [Table(name: "Guide_LinearRollingGuide")]
+    public partial class LineRollingGuide
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]

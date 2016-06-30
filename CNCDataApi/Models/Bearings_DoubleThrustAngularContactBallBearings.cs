@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Bearings_DoubleThrustAngularContactBallBearings
+    [Table(name: "Bearings_DoubleThrustAngularContactBallBearings")]
+    public partial class DoubleThrustAngContactBallBrg
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(50)]
         [Display(Name = "生产厂家")]

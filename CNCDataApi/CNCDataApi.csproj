@@ -97,44 +97,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AligningBallBearingsController.cs" />
-    <Compile Include="Controllers\AligningRollerBearingController.cs" />
-    <Compile Include="Controllers\AngularContactBallBearingsController.cs" />
-    <Compile Include="Controllers\ArcCylindricalWormGearController.cs" />
-    <Compile Include="Controllers\BallLeadScrewSupportBearingsController.cs" />
-    <Compile Include="Controllers\BrakeWheelElasticSleevePinCouplingController.cs" />
-    <Compile Include="Controllers\CommonCylindricalWormGearController.cs" />
-    <Compile Include="Controllers\CrossTaperedRollerBearingsController.cs" />
-    <Compile Include="Controllers\CylindricalRollerBearingsController.cs" />
-    <Compile Include="Controllers\DeepGrooveBallBearingsController.cs" />
-    <Compile Include="Controllers\DoubleRowCylindricalRollerBearingsController.cs" />
-    <Compile Include="Controllers\DoubleThrustAngularContactBallBearingsController.cs" />
-    <Compile Include="Controllers\DriverOfServoMotorOfPMSACFSController.cs" />
-    <Compile Include="Controllers\ElasticSleevePinCouplingController.cs" />
-    <Compile Include="Controllers\FlangeCouplingController.cs" />
-    <Compile Include="Controllers\FlexiblePinCouplingController.cs" />
-    <Compile Include="Controllers\GearCouplingController.cs" />
-    <Compile Include="Controllers\HelicalCylindricalGearController.cs" />
-    <Compile Include="Controllers\HubShapedCouplingsController.cs" />
-    <Compile Include="Controllers\LinearRollingGuideController.cs" />
-    <Compile Include="Controllers\NCSystemController.cs" />
-    <Compile Include="Controllers\NeedleRollerAndThrustRollerBearingsController.cs" />
-    <Compile Include="Controllers\OldhamCouplingController.cs" />
-    <Compile Include="Controllers\ParaOfElectricSpindleController.cs" />
-    <Compile Include="Controllers\ParaOfServoMotorOfPMSACFSController.cs" />
-    <Compile Include="Controllers\ParaOfServoMotorOfSpindleController.cs" />
-    <Compile Include="Controllers\ParaOfStepperMotorController.cs" />
-    <Compile Include="Controllers\PlumShapedFlexibleCouplingController.cs" />
-    <Compile Include="Controllers\RotaryTableController.cs" />
-    <Compile Include="Controllers\SizeOfElectricSpindleController.cs" />
-    <Compile Include="Controllers\SizeOfServoMotorOfPMSACFSController.cs" />
-    <Compile Include="Controllers\SizeOfServoMotorOfSpindleController.cs" />
-    <Compile Include="Controllers\SizeOfStepperMotorController.cs" />
+    <Compile Include="Controllers\AlignBallBrgsController.cs" />
+    <Compile Include="Controllers\AlignRollerBrgsController.cs" />
+    <Compile Include="Controllers\AngContactBallBrgsController.cs" />
+    <Compile Include="Controllers\ArcCylinWormGearsController.cs" />
+    <Compile Include="Controllers\BallLeadScrewSptBrgsController.cs" />
+    <Compile Include="Controllers\BWElasticSlvPinCoupsController.cs" />
+    <Compile Include="Controllers\CommonCylinWormGearsController.cs" />
+    <Compile Include="Controllers\CylinRollerBrgsController.cs" />
+    <Compile Include="Controllers\DeepGrooveBallBrgsController.cs" />
+    <Compile Include="Controllers\DoubleRowCylinRollerBrgsController.cs" />
+    <Compile Include="Controllers\DoubleThrustAngContactBallBrgsController.cs" />
+    <Compile Include="Controllers\ElasticSlvPinCoupsController.cs" />
+    <Compile Include="Controllers\ElecSpindleParasController.cs" />
+    <Compile Include="Controllers\ElecSpindleSizesController.cs" />
+    <Compile Include="Controllers\FlangeCoupsController.cs" />
+    <Compile Include="Controllers\FlexiblePinCoupsController.cs" />
+    <Compile Include="Controllers\GearCoupsController.cs" />
+    <Compile Include="Controllers\HeliCylinGearsController.cs" />
+    <Compile Include="Controllers\HubShapedCoupsController.cs" />
+    <Compile Include="Controllers\LineRollingGuidesController.cs" />
+    <Compile Include="Controllers\NCSystemsController.cs" />
+    <Compile Include="Controllers\NeedleRollerThrustRollerBrgsController.cs" />
+    <Compile Include="Controllers\OldhamCoupsController.cs" />
+    <Compile Include="Controllers\PlumShapedFlexibleCoupsController.cs" />
+    <Compile Include="Controllers\PMSrvMotorDriversController.cs" />
+    <Compile Include="Controllers\PMSrvMotorParasController.cs" />
+    <Compile Include="Controllers\PMSrvMotorSizesController.cs" />
+    <Compile Include="Controllers\RotaryTablesController.cs" />
     <Compile Include="Controllers\SolidBallScrewNutPairsController.cs" />
-    <Compile Include="Controllers\SpurGearController.cs" />
-    <Compile Include="Controllers\StraightBevelGearController.cs" />
-    <Compile Include="Controllers\sysdiagramsController.cs" />
-    <Compile Include="Controllers\TaperedRollerBearingsController.cs" />
+    <Compile Include="Controllers\SpindleSrvMotorParasController.cs" />
+    <Compile Include="Controllers\SpindleSrvMotorSizesController.cs" />
+    <Compile Include="Controllers\SpurGearsController.cs" />
+    <Compile Include="Controllers\StepMotorParasController.cs" />
+    <Compile Include="Controllers\StepMotorSizesController.cs" />
+    <Compile Include="Controllers\StraightBevelGearsController.cs" />
+    <Compile Include="Controllers\TaperedRollerBrgsController.cs" />
+    <Compile Include="Controllers\XTaperedRollerBrgsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -172,7 +171,6 @@
     <Compile Include="Models\Motor_SizeOfServoMotorOfSpindle.cs" />
     <Compile Include="Models\Motor_SizeOfStepperMotor.cs" />
     <Compile Include="Models\NutPairs_SolidBallScrewNutPairs.cs" />
-    <Compile Include="Models\sysdiagrams.cs" />
     <Compile Include="Models\System_NCSystem.cs" />
     <Compile Include="Models\Table_RotaryTable.cs" />
     <Compile Include="Models\Worm_ArcCylindricalWormGear.cs" />
@@ -182,7 +180,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Azure.pubxml" />
-    <None Include="Properties\PublishProfiles\TabletConfig.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

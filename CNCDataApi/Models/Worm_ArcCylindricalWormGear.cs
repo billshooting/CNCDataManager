@@ -6,12 +6,13 @@ namespace CNCDataApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Worm_ArcCylindricalWormGear
+    [Table(name: "Worm_ArcCylindricalWormGear")]
+    public partial class ArcCylinWormGear
     {
         [Key]
         [StringLength(50)]
         [Display(Name ="型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
