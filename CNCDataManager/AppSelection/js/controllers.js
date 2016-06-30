@@ -2,19 +2,24 @@
 //中间导航栏控制器
 controllers.controller('CNCNavCtrl',function($scope){
 	//控制中间导航栏是否显示
-	$scope.nav=[true,false,false,false,false,false];
+	$scope.navShow=[true,false,false,false,false,false];
 	$scope.$on("CNCTypeChange",function(event,data){
 		if(data=="X"){
-			$scope.nav=[true,true,false,true,true,true,true];
+			$scope.navShow=[true,true,false,true,true,true,true];
 		}
 		else if(data=="C"){
-			$scope.nav=[true,true,true,false,false,true,true];
+			$scope.navShow=[true,true,true,false,false,true,true];
 		}
 	});
+    //控制中间导航栏选项是否active
+    $scope.navActive=0;
+    $scope.navClick=function(e){
+        $scope.navActive=e;
+    }
 });
 
 //机床类型控制器
-controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCType){
+controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCSelected){
 	$scope.type=-1;
 	$scope.support="";
 	//点击图片显示图片被选中
@@ -25,8 +30,8 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCType){
 	//点击下一步按钮将机床类型存入$CNCType服务对象实例中
 	$scope.nextStep=function(){
 		var CNCType=["立式车床","立式铣床","龙门铣床","卧式车床","卧式铣床","斜床身车床","磨床"];
-		$CNCType.type=CNCType[$scope.type];
-		$CNCType.support=$scope.support;
+		$CNCSelected.CNCType.type=CNCType[$scope.type];
+		$CNCSelected.CNCType.support=$scope.support;
 		$scope.$emit("CNCTypeChange",$scope.support);
 		$state.go("CNCType.WorkingCondition");
 	};
@@ -47,7 +52,7 @@ controllers.controller('CNCWorkingConditionCtrl', function ($scope) {
 });
 
 //数控系统选型控制器
-controllers.controller('CNCSystemTable', function ($scope,$http,$CNCType) {
+controllers.controller('CNCSystemTable', function ($scope,$http,$state,$CNCSelected) {
 	  //表头排序
      $scope.title="TypeID";
      $scope.desc=1;
@@ -57,7 +62,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$CNCType) {
      	Manufacturer:null,
      	SupportNumberOfChannels:1,
      	MaxControlNumberOfFeedAxis:1,
-     	SupportTypeOfMachine:$CNCType.support,
+     	SupportTypeOfMachine:$CNCSelected.CNCType.support,
      };
      //所选数控系统类型
      $scope.CNCSystemSelected={};
@@ -99,14 +104,26 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$CNCType) {
     //数控系统数据分页
     $scope.Page={
     	currentPage:1,
-    	pageSize:12,
+    	pageSize:10,
     };
     //单击表格选择数控系统型号
 	$scope.Selected=function(CNCSystem){
-		for(var i in CNCSystem){
+		/*for(var i in CNCSystem){
 			$scope.CNCSystemSelected[i]=CNCSystem[i];
-		}
+        }*/
+        $scope.CNCSystemSelected=CNCSystem;//直接引用传递即可
 	};
+    //点击下一步按钮将数控系统类型存入$CNCSelected服务对象实例中
+    $scope.nextStep=function(){
+        for(var i in $scope.CNCSystemSelected){
+            $CNCSelected.CNCSystem[i]=$scope.CNCSystemSelected[i];
+        }
+        $state.go("CNCSystem.Accessories");
+    };
+    // 点击取消按钮恢复表格中选中行为未选中状态
+    $scope.reset=function(){
+        $scope.CNCSystemSelected={};
+    };
 });
 
 //直线导轨选型控制器

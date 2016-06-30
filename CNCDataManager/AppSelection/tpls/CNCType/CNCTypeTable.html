@@ -1,5 +1,5 @@
 ﻿<div ng-controller="CNCTypeCtrl">
-    <div class="CNCImgTable">
+    <div class="CNCTable">
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail" ng-click="imgClick(0,'C')" ng-class="{imgSelected:type==0}">
@@ -52,7 +52,7 @@
             <div class="col-md-offset-8 col-md-2">
                 <button type="button" class="btn btn-primary" ng-click="nextStep()" ng-disabled="type==-1">下 一 步</button>
             </div>
-            <div>
+            <div class="col-md-2">
                 <button type="button" class="btn btn-primary" ng-click="reset()">取 消</button>
             </div>
         </div>

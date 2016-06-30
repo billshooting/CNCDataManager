@@ -1,5 +1,5 @@
 ﻿var filters=angular.module("filters",[]);
-//数控系统过滤器
+//数控系统主过滤器
 filters.filter("CNCSystemFilt",function(){
 	return function(e,filtNum){
 		var result=[];
