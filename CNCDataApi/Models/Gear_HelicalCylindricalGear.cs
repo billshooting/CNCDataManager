@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Gear_HelicalCylindricalGear
+    [Table(name: "Gear_HelicalCylindricalGear")]
+    public partial class HeliCylinGear
     {
         [Key]
         [StringLength(10)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(10)]
         [Display(Name = "生产厂家")]

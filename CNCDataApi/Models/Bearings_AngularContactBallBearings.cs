@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Bearings_AngularContactBallBearings
+    [Table(name: "Bearings_AngularContactBallBearings")]
+    public partial class AngContactBallBrg
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Display(Name = "生产厂家")]
         [StringLength(50)]

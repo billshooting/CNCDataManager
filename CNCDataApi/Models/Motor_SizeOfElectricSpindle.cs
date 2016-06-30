@@ -1,17 +1,19 @@
 namespace CNCDataApi.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Motor_SizeOfElectricSpindle
+    [Table(name: "Motor_SizeOfElectricSpindle")]
+    public partial class ElecSpindleSize
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(50)]
         [Display(Name = "生产厂家")]
@@ -41,7 +43,8 @@ namespace CNCDataApi.Models
         [Display(Name = "尺寸N")]
         public double? Size_N { get; set; }
 
+        [JsonIgnore]
         [Display(Name = "电主轴技术参数")]
-        public virtual Motor_ParaOfElectricSpindle Motor_ParaOfElectricSpindle { get; set; }
+        public virtual ElecSpindlePara Motor_ParaOfElectricSpindle { get; set; }
     }
 }
