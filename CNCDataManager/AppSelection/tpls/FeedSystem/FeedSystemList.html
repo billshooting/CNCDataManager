@@ -1,0 +1,18 @@
+﻿<div class="menu-collapse">
+    <div>
+        <h2><a ui-sref="CNCType" class="text-center">进给轴x轴</a></h2>
+        <div class="list-group">
+            <p><a ui-sref="FeedSystem" class="list-group-item text-center">导轨</a></p>
+            <p><a ui-sref="FeedSystem.SolidBallScrewNutPairs" class="list-group-item text-center">滚珠丝杠</a></p>
+            <p><a ui-sref="FeedSystemX.Bearings" class="list-group-item text-center">轴承</a></p>
+            <p><a ui-sref="FeedSystemX.Coupling" class="list-group-item text-center">联轴器</a></p>
+            <p><a ui-sref="FeedSystemX.ServoMotor" class="list-group-item text-center">伺服电机</a></p>
+            <p><a ui-sref="FeedSystemX.Driver" class="list-group-item text-center">伺服驱动</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(".menu-collapse").accordion({
+        header: "h2"
+    })
+</script>
