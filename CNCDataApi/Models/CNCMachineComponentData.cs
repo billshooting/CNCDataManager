@@ -12,423 +12,422 @@
         {
         }
 
-        public virtual DbSet<Bearings_AligningBallBearings> Bearings_AligningBallBearings { get; set; }
-        public virtual DbSet<Bearings_AligningRollerBearing> Bearings_AligningRollerBearing { get; set; }
-        public virtual DbSet<Bearings_AngularContactBallBearings> Bearings_AngularContactBallBearings { get; set; }
-        public virtual DbSet<Bearings_BallLeadScrewSupportBearings> Bearings_BallLeadScrewSupportBearings { get; set; }
-        public virtual DbSet<Bearings_CrossTaperedRollerBearings> Bearings_CrossTaperedRollerBearings { get; set; }
-        public virtual DbSet<Bearings_CylindricalRollerBearings> Bearings_CylindricalRollerBearings { get; set; }
-        public virtual DbSet<Bearings_DeepGrooveBallBearings> Bearings_DeepGrooveBallBearings { get; set; }
-        public virtual DbSet<Bearings_DoubleRowCylindricalRollerBearings> Bearings_DoubleRowCylindricalRollerBearings { get; set; }
-        public virtual DbSet<Bearings_DoubleThrustAngularContactBallBearings> Bearings_DoubleThrustAngularContactBallBearings { get; set; }
-        public virtual DbSet<Bearings_NeedleRollerAndThrustRollerBearings> Bearings_NeedleRollerAndThrustRollerBearings { get; set; }
-        public virtual DbSet<Bearings_TaperedRollerBearings> Bearings_TaperedRollerBearings { get; set; }
-        public virtual DbSet<Coupling_BrakeWheelElasticSleevePinCoupling> Coupling_BrakeWheelElasticSleevePinCoupling { get; set; }
-        public virtual DbSet<Coupling_ElasticSleevePinCoupling> Coupling_ElasticSleevePinCoupling { get; set; }
-        public virtual DbSet<Coupling_FlangeCoupling> Coupling_FlangeCoupling { get; set; }
-        public virtual DbSet<Coupling_FlexiblePinCoupling> Coupling_FlexiblePinCoupling { get; set; }
-        public virtual DbSet<Coupling_GearCoupling> Coupling_GearCoupling { get; set; }
-        public virtual DbSet<Coupling_HubShapedCouplings> Coupling_HubShapedCouplings { get; set; }
-        public virtual DbSet<Coupling_OldhamCoupling> Coupling_OldhamCoupling { get; set; }
-        public virtual DbSet<Coupling_PlumShapedFlexibleCoupling> Coupling_PlumShapedFlexibleCoupling { get; set; }
-        public virtual DbSet<Driver_DriverOfServoMotorOfPMSACFS> Driver_DriverOfServoMotorOfPMSACFS { get; set; }
-        public virtual DbSet<Gear_HelicalCylindricalGear> Gear_HelicalCylindricalGear { get; set; }
-        public virtual DbSet<Gear_SpurGear> Gear_SpurGear { get; set; }
-        public virtual DbSet<Gear_StraightBevelGear> Gear_StraightBevelGear { get; set; }
-        public virtual DbSet<Guide_LinearRollingGuide> Guide_LinearRollingGuide { get; set; }
+        public virtual DbSet<AlignBallBrg>                      AligningBallBearings                { get; set; }
+        public virtual DbSet<AlignRollerBrg>                    AligningRollerBearing               { get; set; }
+        public virtual DbSet<AngContactBallBrg>                 AngularContactBallBearings          { get; set; }
+        public virtual DbSet<BallLeadScrewSptBrg>               BallLeadScrewSupportBearings        { get; set; }
+        public virtual DbSet<XTaperedRollerBrg>                 CrossTaperedRollerBearings          { get; set; }
+        public virtual DbSet<CylinRollerBrg>                    CylindricalRollerBearings           { get; set; }
+        public virtual DbSet<DeepGrooveBallBrg>                 DeepGrooveBallBearings              { get; set; }
+        public virtual DbSet<DoubleRowCylinRollerBrg>           DoubleRowCylindricalRollerBearings  { get; set; }
+        public virtual DbSet<DoubleThrustAngContactBallBrg>     DoubleThrustAngularContactBallBearings { get; set; }
+        public virtual DbSet<NeedleRollerThrustRollerBrg>       NeedleRollerAndThrustRollerBearings { get; set; }
+        public virtual DbSet<TaperedRollerBrg>                  TaperedRollerBearings               { get; set; }
+        public virtual DbSet<BWElasticSlvPinCoup>               BrakeWheelElasticSleevePinCoupling  { get; set; }
+        public virtual DbSet<ElasticSlvPinCoup>                 ElasticSleevePinCoupling            { get; set; }
+        public virtual DbSet<FlangeCoup>                        FlangeCoupling                      { get; set; }
+        public virtual DbSet<FlexiblePinCoup>                   FlexiblePinCoupling                 { get; set; }
+        public virtual DbSet<GearCoup>                          GearCoupling                        { get; set; }
+        public virtual DbSet<HubShapedCoup>                     HubShapedCouplings                  { get; set; }
+        public virtual DbSet<OldhamCoup>                        OldhamCoupling                      { get; set; }
+        public virtual DbSet<PlumShapedFlexibleCoup>            PlumShapedFlexibleCoupling          { get; set; }
+        public virtual DbSet<PMSrvMotorDriver>                  DriverOfServoMotorOfPMSACFS         { get; set; }
+        public virtual DbSet<HeliCylinGear>                     HelicalCylindricalGear              { get; set; }
+        public virtual DbSet<SpurGear>                          SpurGear                            { get; set; }
+        public virtual DbSet<StraightBevelGear>                 StraightBevelGear                   { get; set; }
+        public virtual DbSet<LineRollingGuide>                  LinearRollingGuide                  { get; set; }
 
-        public virtual DbSet<Motor_ParaOfElectricSpindle> Motor_ParaOfElectricSpindle { get; set; }
-        public virtual DbSet<Motor_ParaOfServoMotorOfPMSACFS> Motor_ParaOfServoMotorOfPMSACFS { get; set; }
-        public virtual DbSet<Motor_ParaOfServoMotorOfSpindle> Motor_ParaOfServoMotorOfSpindle { get; set; }
-        public virtual DbSet<Motor_ParaOfStepperMotor> Motor_ParaOfStepperMotor { get; set; }
-        public virtual DbSet<Motor_SizeOfElectricSpindle> Motor_SizeOfElectricSpindle { get; set; }
-        public virtual DbSet<Motor_SizeOfServoMotorOfPMSACFS> Motor_SizeOfServoMotorOfPMSACFS { get; set; }
-        public virtual DbSet<Motor_SizeOfServoMotorOfSpindle> Motor_SizeOfServoMotorOfSpindle { get; set; }
-        public virtual DbSet<Motor_SizeOfStepperMotor> Motor_SizeOfStepperMotor { get; set; }
+        public virtual DbSet<ElecSpindlePara>                   ParaOfElectricSpindle               { get; set; }
+        public virtual DbSet<PMSrvMotorPara>                    ParaOfServoMotorOfPMSACFS           { get; set; }
+        public virtual DbSet<SpindleSrvMotorPara>               ParaOfServoMotorOfSpindle           { get; set; }
+        public virtual DbSet<StepMotorPara>                     ParaOfStepperMotor                  { get; set; }
+        public virtual DbSet<ElecSpindleSize>                   SizeOfElectricSpindle               { get; set; }
+        public virtual DbSet<PMSrvMotorSize>                    SizeOfServoMotorOfPMSACFS           { get; set; }
+        public virtual DbSet<SpindleSrvMotorSize>               SizeOfServoMotorOfSpindle           { get; set; }
+        public virtual DbSet<StepMotorSize>                     SizeOfStepperMotor                  { get; set; }
 
-        public virtual DbSet<NutPairs_SolidBallScrewNutPairs> NutPairs_SolidBallScrewNutPairs { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
-        public virtual DbSet<System_NCSystem> System_NCSystem { get; set; }
-        public virtual DbSet<Table_RotaryTable> Table_RotaryTable { get; set; }
-        public virtual DbSet<Worm_ArcCylindricalWormGear> Worm_ArcCylindricalWormGear { get; set; }
-        public virtual DbSet<Worm_CommonCylindricalWormGear> Worm_CommonCylindricalWormGear { get; set; }
+        public virtual DbSet<SolidBallScrewNutPairs>            SolidBallScrewNutPairs              { get; set; }
+        public virtual DbSet<NCSystem>                          NCSystem                            { get; set; }
+        public virtual DbSet<RotaryTable>                       RotaryTable                         { get; set; }
+        public virtual DbSet<ArcCylinWormGear>                  ArcCylindricalWormGear              { get; set; }
+        public virtual DbSet<CommonCylinWormGear>               CommonCylindricalWormGear           { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Bearings_AligningBallBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<AlignBallBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AligningBallBearings>()
+            modelBuilder.Entity<AlignBallBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AligningBallBearings>()
+            modelBuilder.Entity<AlignBallBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AligningRollerBearing>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<AlignRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AligningRollerBearing>()
+            modelBuilder.Entity<AlignRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AligningRollerBearing>()
+            modelBuilder.Entity<AlignRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AngularContactBallBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<AngContactBallBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AngularContactBallBearings>()
+            modelBuilder.Entity<AngContactBallBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_AngularContactBallBearings>()
+            modelBuilder.Entity<AngContactBallBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_BallLeadScrewSupportBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<BallLeadScrewSptBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_BallLeadScrewSupportBearings>()
+            modelBuilder.Entity<BallLeadScrewSptBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_BallLeadScrewSupportBearings>()
+            modelBuilder.Entity<BallLeadScrewSptBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CrossTaperedRollerBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<XTaperedRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CrossTaperedRollerBearings>()
+            modelBuilder.Entity<XTaperedRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CrossTaperedRollerBearings>()
+            modelBuilder.Entity<XTaperedRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CylindricalRollerBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<CylinRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CylindricalRollerBearings>()
+            modelBuilder.Entity<CylinRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_CylindricalRollerBearings>()
+            modelBuilder.Entity<CylinRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DeepGrooveBallBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<DeepGrooveBallBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DeepGrooveBallBearings>()
+            modelBuilder.Entity<DeepGrooveBallBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DeepGrooveBallBearings>()
+            modelBuilder.Entity<DeepGrooveBallBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleRowCylindricalRollerBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<DoubleRowCylinRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleRowCylindricalRollerBearings>()
+            modelBuilder.Entity<DoubleRowCylinRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleRowCylindricalRollerBearings>()
+            modelBuilder.Entity<DoubleRowCylinRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleThrustAngularContactBallBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleThrustAngularContactBallBearings>()
+            modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_DoubleThrustAngularContactBallBearings>()
+            modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_NeedleRollerAndThrustRollerBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_NeedleRollerAndThrustRollerBearings>()
+            modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_NeedleRollerAndThrustRollerBearings>()
+            modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_TaperedRollerBearings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<TaperedRollerBrg>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_TaperedRollerBearings>()
+            modelBuilder.Entity<TaperedRollerBrg>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Bearings_TaperedRollerBearings>()
+            modelBuilder.Entity<TaperedRollerBrg>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_BrakeWheelElasticSleevePinCoupling>()
+            modelBuilder.Entity<BWElasticSlvPinCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_ElasticSleevePinCoupling>()
+            modelBuilder.Entity<ElasticSlvPinCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_FlangeCoupling>()
+            modelBuilder.Entity<FlangeCoup>()
                 .Property(e => e.DiameterOfBolts)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_FlangeCoupling>()
+            modelBuilder.Entity<FlangeCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_FlexiblePinCoupling>()
+            modelBuilder.Entity<FlexiblePinCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_GearCoupling>()
+            modelBuilder.Entity<GearCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_HubShapedCouplings>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<HubShapedCoup>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_HubShapedCouplings>()
+            modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_HubShapedCouplings>()
+            modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.DiameterOfShaftHole_d1)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_HubShapedCouplings>()
+            modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.DiameterOfShaftHole_d2)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_HubShapedCouplings>()
+            modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_OldhamCoupling>()
+            modelBuilder.Entity<OldhamCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Coupling_PlumShapedFlexibleCoupling>()
+            modelBuilder.Entity<PlumShapedFlexibleCoup>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Driver_DriverOfServoMotorOfPMSACFS>()
+            modelBuilder.Entity<PMSrvMotorDriver>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Gear_HelicalCylindricalGear>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<HeliCylinGear>()
+                .Property(e => e.TypeID)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Gear_HelicalCylindricalGear>()
+            modelBuilder.Entity<HeliCylinGear>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Gear_HelicalCylindricalGear>()
+            modelBuilder.Entity<HeliCylinGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Gear_SpurGear>()
+            modelBuilder.Entity<SpurGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Gear_StraightBevelGear>()
+            modelBuilder.Entity<StraightBevelGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<LineRollingGuide>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfGuideFixedBolt)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.RollerType)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_K)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_M)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_T2)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Guide_LinearRollingGuide>()
+            modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_ParaOfElectricSpindle>()
+            modelBuilder.Entity<ElecSpindlePara>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_ParaOfServoMotorOfPMSACFS>()
+            modelBuilder.Entity<PMSrvMotorPara>()
                 .Property(e => e.IfWithBrake)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Motor_ParaOfServoMotorOfPMSACFS>()
+            modelBuilder.Entity<PMSrvMotorPara>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_ParaOfServoMotorOfSpindle>()
+            modelBuilder.Entity<SpindleSrvMotorPara>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_ParaOfStepperMotor>()
+            modelBuilder.Entity<StepMotorPara>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_SizeOfElectricSpindle>()
+            modelBuilder.Entity<ElecSpindleSize>()
                 .HasOptional(e => e.Motor_ParaOfElectricSpindle)
                 .WithRequired(e => e.Motor_SizeOfElectricSpindle);
 
-            modelBuilder.Entity<Motor_SizeOfServoMotorOfPMSACFS>()
+            modelBuilder.Entity<PMSrvMotorSize>()
                 .Property(e => e.Size_F)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_SizeOfServoMotorOfPMSACFS>()
+            modelBuilder.Entity<PMSrvMotorSize>()
                 .Property(e => e.Size_D)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Motor_SizeOfServoMotorOfSpindle>()
+            modelBuilder.Entity<SpindleSrvMotorSize>()
                 .HasOptional(e => e.Motor_ParaOfServoMotorOfSpindle)
                 .WithRequired(e => e.Motor_SizeOfServoMotorOfSpindle);
 
-            modelBuilder.Entity<Motor_SizeOfStepperMotor>()
+            modelBuilder.Entity<StepMotorSize>()
                 .HasOptional(e => e.Motor_ParaOfStepperMotor)
                 .WithRequired(e => e.Motor_SizeOfStepperMotor);
 
-            modelBuilder.Entity<NutPairs_SolidBallScrewNutPairs>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<SolidBallScrewNutPairs>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<NutPairs_SolidBallScrewNutPairs>()
+            modelBuilder.Entity<SolidBallScrewNutPairs>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<NutPairs_SolidBallScrewNutPairs>()
+            modelBuilder.Entity<SolidBallScrewNutPairs>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
-                .Property(e => e.TypeNo)
+            modelBuilder.Entity<RotaryTable>()
+                .Property(e => e.TypeID)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.Manufacturer)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.SizeOfWorkingTable)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.SizeOfCentrallyLocatedHole)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.TotalDriveRatio)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.PitchAccuracy)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.RepeatAccuracy)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Table_RotaryTable>()
+            modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Worm_ArcCylindricalWormGear>()
+            modelBuilder.Entity<ArcCylinWormGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Worm_CommonCylindricalWormGear>()
+            modelBuilder.Entity<CommonCylinWormGear>()
                 .Property(e => e.Description)
                 .IsUnicode(false);
         }

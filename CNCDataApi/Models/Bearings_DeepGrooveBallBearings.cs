@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Bearings_DeepGrooveBallBearings
+    [Table(name: "Bearings_DeepGrooveBallBearings")]
+    public partial class DeepGrooveBallBrg
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(50)]
         [Display(Name = "生产厂家")]

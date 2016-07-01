@@ -2,18 +2,20 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>@ViewBag.Title - 数控机床数据库管理系统</title>
+    <link rel="shortcut icon" href="~/Assets/favicon.ico" />
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/App/CSS/Shared/_LayoutPage_Data.css" type="text/css" />
+    <link rel="stylesheet" href="~/App/CSS/Shared/_LeftNavPartial.css" />
     @RenderSection("css", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top transparent">
-        <div class="container">
+    <div class="navbar navbar-fixed-top" id="navbar" style="background: none">
+        <div class="container navbar-container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
@@ -48,128 +50,21 @@
         <h2 class="text-center">Loading...</h2>
         <div title="Loading..." id="loading-animation"></div>
     </div>
-    <div class="container body-content">
-        <div class="row">
-            @RenderBody()
-            <div class="col-sm-2 cncdata-side-bar" id="cncdata-side-bar">
-                <ul class="side-nav-head-1">
-                    <li>
-                        <span id="nav-icon-motor" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="/CNCData/List?listname=ServoMotorOfPMSACFS">伺服电机</a>
-                        <ul id="nav-motor-ul" class="side-nav-2-hide">
-                            <li><a href="/CNCData/List?listname=ServoMotorOfPMSACFS">永磁同步交流电机</a></li>
-                            <li><a href="/CNCData/List?listname=ServoMotorOfSpindle">主轴伺服电机</a></li>
-                            <li><a href="/CNCData/List?listname=StepperMotor">步进电机</a></li>
-                            <li><a href="/CNCData/List?listname=ElectricSpindle">电主轴</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span id="nav-icon-driver" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">伺服驱动器</a>
-                        <ul id="nav-driver-ul" class="side-nav-2-hide">
-                            <li><a href="/CNCData/List?listname=DriverOfServoMotorOfPMSACFS">同步交流电机驱动器</a></li>
-                            <li><a>异步交流电机驱动器</a></li>
-                            <li><a>步进电机驱动器</a></li>
-                            <li><a>电主轴驱动器</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <span id="nav-icon-system" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="/CNCData/List?listname=NCSystem">数控系统</a>
-                    </li>
-                    <li>
-                        <span id="nav-icon-mech" class="glyphicon glyphicon-plus nav-icon"></span>
-                        <a href="/CNCData/List?listname=AligningBallBearings">机械传动部件</a>
-                        <ul id="nav-mech-ul" class="side-nav-2-hide">
-                            <li>
-                                <span id="nav-icon-mech-coupling" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=BrakeWheelElasticSleevePinCoupling">联轴器</a>
-                                <ul id="nav-mech-coupling-ul" class="side-nav-3-hide">
-                                    <li><a href="/CNCData/List?listname=FlangeCoupling">凹缘式联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=OldhamCoupling">十字滑块联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=GearCoupling">齿式联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=BrakeWheelElasticSleevePinCoupling">带制动套柱销联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=FlexiblePinCoupling">弹性柱销联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=ElasticSleevePinCoupling">弹性套柱销联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=PlumShapedFlexibleCoupling">梅花弹性联轴器</a></li>
-                                    <li><a href="/CNCData/List?listname=HubShapedCouplings">轮毂型联轴器</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-bearing" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=AligningBallBearings">滚动轴承</a>
-                                <ul id="nav-mech-bearing-ul" class="side-nav-3-hide">
-                                    <li><a href="/CNCData/List?listname=AngularContactBallBearings">角接触球轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=DeepGrooveBallBearings">深沟球轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=TaperedRollerBearings">圆锥滚子轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=CylindricalRollerBearings">圆柱滚子轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=AligningRollerBearing">调心滚子轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=AligningBallBearings">调心球轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=BallLeadScrewSupportBearings">滚珠丝杠支撑轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=CrossTaperedRollerBearings">交叉圆锥滚子轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=DoubleRowCylindricalRollerBearings">双列圆柱滚子轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=DoubleThrustAngularContactBallBearings">双向推力角接触球轴承</a></li>
-                                    <li><a href="/CNCData/List?listname=NeedleRollerAndThrustRollerBearings">滚针轴承和推力滚子组合轴承</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-guide" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=LinearRollingGuide">导轨</a>
-                                <ul id="nav-mech-guide-ul" class="side-nav-3-hide">
-                                    <li><a>普通滑动导轨</a></li>
-                                    <li><a href="/CNCData/List?listname=LinearRollingGuide">直线滚动导轨</a></li>
-                                    <li><a>贴塑导轨</a></li>
-                                    <li><a>注塑导轨</a></li>
-                                    <li><a>静压导轨</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-screw" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=SolidBallScrewNutPairs">滚珠丝杠</a>
-                                <ul id="nav-mech-screw-ul" class="side-nav-3-hide">
-                                    <li><a href="/CNCData/List?listname=SolidBallScrewNutPairs">内循环式滚珠丝杠</a></li>
-                                    <li><a>外循环式滚珠丝杠</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-table" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=RotaryTable">回转工作台</a>
-                                <ul id="nav-mech-table-ul" class="side-nav-3-hide">
-                                    <li><a>数控回转工作台</a></li>
-                                    <li><a>分度回转工作台</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-gear" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=SpurGear">齿轮</a>
-                                <ul id="nav-mech-gear-ul" class="side-nav-3-hide">
-                                    <li><a href="/CNCData/List?listname=SpurGear">直齿圆柱齿轮</a></li>
-                                    <li><a href="/CNCData/List?listname=HelicalCylindricalGear">斜齿圆柱齿轮</a></li>
-                                    <li><a href="/CNCData/List?listname=StraightBevelGear">直齿锥齿轮</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-worm" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a href="/CNCData/List?listname=ArcCylindricalWormGear">蜗轮蜗杆</a>
-                                <ul id="nav-mech-worm-ul" class="side-nav-3-hide">
-                                    <li><a href="/CNCData/List?listname=ArcCylindricalWormGear">圆弧圆柱蜗轮蜗杆</a></li>
-                                    <li><a href="/CNCData/List?listname=CommonCylindricalWormGear">普通圆柱蜗轮蜗杆</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span id="nav-icon-mech-belt" class="glyphicon glyphicon-plus nav-icon"></span>
-                                <a>传动带</a>
-                                <ul id="nav-mech-belt-ul" class="side-nav-3-hide">
-                                    <li ><a>V型带</a></li>
-                                    <li><a>同步带</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+    <!--回到顶部-->
+    <div>
+        <div id="back-to-top">
+            <a id="back-tp-top-a" href="#"><img src="~/Assets/back-to-top-icon.png" width="50" height="50" /></a>
         </div>
-        
+        <p id="back-to-top-tooltips">回到顶部</p>
+    </div>
+    <!--回到顶部结束-->
+
+    <div class="full-wide-body-content">
+        @Html.Partial("_LeftNavPartial")
+        @RenderBody()
+    </div>
+
+    <div class="container body-content">      
         <hr />
         <footer>
             <div class="row">
@@ -198,6 +93,7 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/App/Scripts/Shared/_LayoutPage_Data.js"></script>
+    <script src="~/App/Scripts/Shared/_LeftaNavPartial.js"></script>
 </body>
 </html>
 

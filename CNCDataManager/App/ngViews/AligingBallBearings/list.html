@@ -38,59 +38,62 @@
                 <span>说明</span>
             </div>
         </div>
-        <table class="table table-striped cncdata-table">
-            <thead>
-                <tr>
-                    <td>序号</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('TypeNo', $event)">型号</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('Manufacturer', $event)">生产厂家</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('InnerDiameter_d', $event)" ng-show="colState[0]">内径d/mm</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('Diameter_D', $event)" ng-show="colState[1]">外径D/mm</td>
-                    <td ng-if="colState[2]">宽度B/mm</td>
-                    <td ng-if="colState[2]">尺寸rasmin/mm</td>
-                    <td ng-if="colState[2]">尺寸damin/mm</td>
-                    <td ng-if="colState[2]">尺寸damax/mm</td>
-                    <td ng-if="colState[2]">尺寸rasmax/mm</td>
-                    <td ng-if="colState[2]">e/mm</td>
-                    <td ng-if="colState[2]">Y1/mm</td>
-                    <td ng-if="colState[2]">Y2/mm</td>
-                    <td ng-if="colState[2]">Yo/mm</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('BasicRatedDynamicLoad', $event)" ng-show="colState[3]">基本额定动载荷</td>
-                    <td class="table-td-orderable" ng-click="changeOrderProperty('BasicRatedStaticLoad', $event)" ng-show="colState[3]">基本额定静载荷</td>
-                    <td ng-if="colState[4]">脂润滑极限速度</td>
-                    <td ng-if="colState[4]">油润滑极限速度</td>
-                    <td ng-if="colState[5]">轴承轴向刚度</td>
-                    <td ng-if="colState[5]">轴承启动转矩</td>
-                    <td ng-if="colState[6]">说明</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="model in list | orderBy: orderProperty">
-                    <td>{{$index + 1}}</td>
-                    <td class={{colIfOrdered['TypeNo']}}>{{model.TypeNo}}</td>
-                    <td class={{colIfOrdered['Manufacturer']}}>{{model.Manufacturer}}</td>
-                    <td class={{colIfOrdered['InnerDiameter_d']}} ng-show="colState[0]">{{model.InnerDiameter_d}}</td>
-                    <td class={{colIfOrdered['Diameter_D']}} ng-show="colState[1]">{{model.Diameter_D}}</td>
-                    <td ng-if="colState[2]">{{model.Width_B}}</td>
-                    <td ng-if="colState[2]">{{model.Size_rsmin}}</td>
-                    <td ng-if="colState[2]">{{model.Size_damin}}</td>
-                    <td ng-if="colState[2]">{{model.Size_Damax}}</td>
-                    <td ng-if="colState[2]">{{model.Size_rasmax}}</td>
-                    <td ng-if="colState[2]">{{model.e}}</td>
-                    <td ng-if="colState[2]">{{model.Y1}}</td>
-                    <td ng-if="colState[2]">{{model.Y2}}</td>
-                    <td ng-if="colState[2]">{{model.Yo}}</td>
-                    <td class={{colIfOrdered['BasicRatedDynamicLoad']}} ng-show="colState[3]">{{model.BasicRatedDynamicLoad}}</td>
-                    <td class={{colIfOrdered['BasicRatedStaticLoad']}} ng-show="colState[3]">{{model.BasicRatedStaticLoad}}</td>
-                    <td ng-if="colState[4]">{{model.SpeedLimitOfGrease}}</td>
-                    <td ng-if="colState[4]">{{model.SpeedLimitOfOil}}</td>
-                    <td ng-if="colState[5]">{{model.BearingAxialStiffness}}</td>
-                    <td ng-if="colState[5]">{{model.BearingStartingTorque}}</td>
-                    <td ng-if="colState[6]">{{model.Description}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="cncdata-table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('TypeNo', $event)">型号</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('Manufacturer', $event)">生产厂家</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('InnerDiameter_d', $event)" ng-show="colState[0]">内径d/mm</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('Diameter_D', $event)" ng-show="colState[1]">外径D/mm</td>
+                        <td ng-if="colState[2]">宽度B/mm</td>
+                        <td ng-if="colState[2]">尺寸rasmin/mm</td>
+                        <td ng-if="colState[2]">尺寸damin/mm</td>
+                        <td ng-if="colState[2]">尺寸damax/mm</td>
+                        <td ng-if="colState[2]">尺寸rasmax/mm</td>
+                        <td ng-if="colState[2]">e/mm</td>
+                        <td ng-if="colState[2]">Y1/mm</td>
+                        <td ng-if="colState[2]">Y2/mm</td>
+                        <td ng-if="colState[2]">Yo/mm</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('BasicRatedDynamicLoad', $event)" ng-show="colState[3]">基本额定动载荷</td>
+                        <td class="table-td-orderable" ng-click="changeOrderProperty('BasicRatedStaticLoad', $event)" ng-show="colState[3]">基本额定静载荷</td>
+                        <td ng-if="colState[4]">脂润滑极限速度</td>
+                        <td ng-if="colState[4]">油润滑极限速度</td>
+                        <td ng-if="colState[5]">轴承轴向刚度</td>
+                        <td ng-if="colState[5]">轴承启动转矩</td>
+                        <td ng-if="colState[6]">说明</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="model in list | orderBy: orderProperty">
+                        <td>{{$index + 1}}</td>
+                        <td class={{colIfOrdered['TypeNo']}}>{{model.TypeNo}}</td>
+                        <td class={{colIfOrdered['Manufacturer']}}>{{model.Manufacturer}}</td>
+                        <td class={{colIfOrdered['InnerDiameter_d']}} ng-show="colState[0]">{{model.InnerDiameter_d}}</td>
+                        <td class={{colIfOrdered['Diameter_D']}} ng-show="colState[1]">{{model.Diameter_D}}</td>
+                        <td ng-if="colState[2]">{{model.Width_B}}</td>
+                        <td ng-if="colState[2]">{{model.Size_rsmin}}</td>
+                        <td ng-if="colState[2]">{{model.Size_damin}}</td>
+                        <td ng-if="colState[2]">{{model.Size_Damax}}</td>
+                        <td ng-if="colState[2]">{{model.Size_rasmax}}</td>
+                        <td ng-if="colState[2]">{{model.e}}</td>
+                        <td ng-if="colState[2]">{{model.Y1}}</td>
+                        <td ng-if="colState[2]">{{model.Y2}}</td>
+                        <td ng-if="colState[2]">{{model.Yo}}</td>
+                        <td class={{colIfOrdered['BasicRatedDynamicLoad']}} ng-show="colState[3]">{{model.BasicRatedDynamicLoad}}</td>
+                        <td class={{colIfOrdered['BasicRatedStaticLoad']}} ng-show="colState[3]">{{model.BasicRatedStaticLoad}}</td>
+                        <td ng-if="colState[4]">{{model.SpeedLimitOfGrease}}</td>
+                        <td ng-if="colState[4]">{{model.SpeedLimitOfOil}}</td>
+                        <td ng-if="colState[5]">{{model.BearingAxialStiffness}}</td>
+                        <td ng-if="colState[5]">{{model.BearingStartingTorque}}</td>
+                        <td ng-if="colState[6]">{{model.Description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>       
     </div>
+
     <div class="list-desc">
         <h4 class="head-title">尺寸说明</h4>
         <div class="row">

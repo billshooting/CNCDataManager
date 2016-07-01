@@ -6,12 +6,13 @@ namespace CNCDataApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Gear_SpurGear
+    [Table(name: "Gear_SpurGear")]
+    public partial class SpurGear
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>@ViewBag.Title - 数控机床数据库管理系统</title>
+    <link rel="shortcut icon" href="~/Assets/favicon.ico" type="image/x-icon" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/App/CSS/Shared/_BgImageLayout.css" type="text/css" />
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="navbar navbar-fixed-top" id="navbar" style="background:none">
+        <div class="container navbar-container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--以下链接可以用html辅助函数来防止被攻击-->
+                <a href="/" class="navbar-brand home-index-nav-link" area=""><span></span>数控机床数据管理</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index" class="home-index-nav-link"><span>主页</span></a></li>
+                    <li><a href="/CNCData/Index" class="home-index-nav-link"><span>查看数据</span></a></li>
+                    <li><a href="/Home/About" class="home-index-nav-link"><span>关于</span></a></li>
+                    <li><a href="/Home/Contact" class="home-index-nav-link"><span>联系我们</span></a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

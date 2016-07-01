@@ -6,13 +6,13 @@ namespace CNCDataApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Gear_StraightBevelGear ")]
-    public partial class Gear_StraightBevelGear
+    [Table(name: "Gear_StraightBevelGear")]
+    public partial class StraightBevelGear
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [StringLength(50)]
         [Display(Name = "生产厂家")]

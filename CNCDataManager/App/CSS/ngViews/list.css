@@ -1,6 +1,7 @@
 ﻿/*表格列选择部分*/
 .cncdata-table-select{
     display: block;
+    height: 25px;
 }
 
 .cncdata-table-col{
@@ -9,9 +10,7 @@
     margin: auto 10px;
     color: #555;
 }
-div.cncdata-table-col:last-child::after{
-    clear:both;
-}
+
 
 .cncdata-table-col:hover{
     cursor: pointer;
@@ -71,7 +70,7 @@ h4.head-title{
     vertical-align: central;
 }
 .list-desc-txt >p{
-    font-size: 14px;
+    font-size: 16px;
     text-indent:40px;
     margin-top:20px;
     vertical-align: middle;
@@ -92,8 +91,9 @@ h4.head-title{
 }
 .cncdata-table{
     display:block;
+    overflow-x: auto;
+}
+.table{
     width: 100%;
-    overflow-x: scroll;
-    text-wrap: none;
 }
 /*尺寸描述部分结束*/

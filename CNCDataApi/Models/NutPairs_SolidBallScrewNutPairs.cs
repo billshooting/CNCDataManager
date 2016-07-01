@@ -6,12 +6,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class NutPairs_SolidBallScrewNutPairs
+    [Table(name: "NutPairs_SolidBallScrewNutPairs")]
+    public partial class SolidBallScrewNutPairs
     {
         [Key]
         [StringLength(50)]
         [Display(Name = "型号")]
-        public string TypeNo { get; set; }
+        public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]

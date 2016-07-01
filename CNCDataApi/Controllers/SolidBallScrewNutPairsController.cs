@@ -13,45 +13,44 @@ using CNCDataApi.Models;
 
 namespace CNCDataApi.Controllers
 {
-    //实心滚珠丝杠螺母副
     public class SolidBallScrewNutPairsController : ApiController
     {
         private CNCMachineComponentData db = new CNCMachineComponentData();
 
         // GET: api/SolidBallScrewNutPairs
-        public IQueryable<NutPairs_SolidBallScrewNutPairs> GetNutPairs_SolidBallScrewNutPairs()
+        public IQueryable<SolidBallScrewNutPairs> GetSolidBallScrewNutPairs()
         {
-            return db.NutPairs_SolidBallScrewNutPairs;
+            return db.SolidBallScrewNutPairs;
         }
 
         // GET: api/SolidBallScrewNutPairs/5
-        [ResponseType(typeof(NutPairs_SolidBallScrewNutPairs))]
-        public async Task<IHttpActionResult> GetNutPairs_SolidBallScrewNutPairs(string id)
+        [ResponseType(typeof(SolidBallScrewNutPairs))]
+        public async Task<IHttpActionResult> GetSolidBallScrewNutPairs(string id)
         {
-            NutPairs_SolidBallScrewNutPairs nutPairs_SolidBallScrewNutPairs = await db.NutPairs_SolidBallScrewNutPairs.FindAsync(id);
-            if (nutPairs_SolidBallScrewNutPairs == null)
+            SolidBallScrewNutPairs solidBallScrewNutPairs = await db.SolidBallScrewNutPairs.FindAsync(id);
+            if (solidBallScrewNutPairs == null)
             {
                 return NotFound();
             }
 
-            return Ok(nutPairs_SolidBallScrewNutPairs);
+            return Ok(solidBallScrewNutPairs);
         }
 
         // PUT: api/SolidBallScrewNutPairs/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutNutPairs_SolidBallScrewNutPairs(string id, NutPairs_SolidBallScrewNutPairs nutPairs_SolidBallScrewNutPairs)
+        public async Task<IHttpActionResult> PutSolidBallScrewNutPairs(string id, SolidBallScrewNutPairs solidBallScrewNutPairs)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != nutPairs_SolidBallScrewNutPairs.TypeNo)
+            if (id != solidBallScrewNutPairs.TypeID)
             {
                 return BadRequest();
             }
 
-            db.Entry(nutPairs_SolidBallScrewNutPairs).State = EntityState.Modified;
+            db.Entry(solidBallScrewNutPairs).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +58,7 @@ namespace CNCDataApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!NutPairs_SolidBallScrewNutPairsExists(id))
+                if (!SolidBallScrewNutPairsExists(id))
                 {
                     return NotFound();
                 }
@@ -73,15 +72,15 @@ namespace CNCDataApi.Controllers
         }
 
         // POST: api/SolidBallScrewNutPairs
-        [ResponseType(typeof(NutPairs_SolidBallScrewNutPairs))]
-        public async Task<IHttpActionResult> PostNutPairs_SolidBallScrewNutPairs(NutPairs_SolidBallScrewNutPairs nutPairs_SolidBallScrewNutPairs)
+        [ResponseType(typeof(SolidBallScrewNutPairs))]
+        public async Task<IHttpActionResult> PostSolidBallScrewNutPairs(SolidBallScrewNutPairs solidBallScrewNutPairs)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.NutPairs_SolidBallScrewNutPairs.Add(nutPairs_SolidBallScrewNutPairs);
+            db.SolidBallScrewNutPairs.Add(solidBallScrewNutPairs);
 
             try
             {
@@ -89,7 +88,7 @@ namespace CNCDataApi.Controllers
             }
             catch (DbUpdateException)
             {
-                if (NutPairs_SolidBallScrewNutPairsExists(nutPairs_SolidBallScrewNutPairs.TypeNo))
+                if (SolidBallScrewNutPairsExists(solidBallScrewNutPairs.TypeID))
                 {
                     return Conflict();
                 }
@@ -99,23 +98,23 @@ namespace CNCDataApi.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = nutPairs_SolidBallScrewNutPairs.TypeNo }, nutPairs_SolidBallScrewNutPairs);
+            return CreatedAtRoute("DefaultApi", new { id = solidBallScrewNutPairs.TypeID }, solidBallScrewNutPairs);
         }
 
         // DELETE: api/SolidBallScrewNutPairs/5
-        [ResponseType(typeof(NutPairs_SolidBallScrewNutPairs))]
-        public async Task<IHttpActionResult> DeleteNutPairs_SolidBallScrewNutPairs(string id)
+        [ResponseType(typeof(SolidBallScrewNutPairs))]
+        public async Task<IHttpActionResult> DeleteSolidBallScrewNutPairs(string id)
         {
-            NutPairs_SolidBallScrewNutPairs nutPairs_SolidBallScrewNutPairs = await db.NutPairs_SolidBallScrewNutPairs.FindAsync(id);
-            if (nutPairs_SolidBallScrewNutPairs == null)
+            SolidBallScrewNutPairs solidBallScrewNutPairs = await db.SolidBallScrewNutPairs.FindAsync(id);
+            if (solidBallScrewNutPairs == null)
             {
                 return NotFound();
             }
 
-            db.NutPairs_SolidBallScrewNutPairs.Remove(nutPairs_SolidBallScrewNutPairs);
+            db.SolidBallScrewNutPairs.Remove(solidBallScrewNutPairs);
             await db.SaveChangesAsync();
 
-            return Ok(nutPairs_SolidBallScrewNutPairs);
+            return Ok(solidBallScrewNutPairs);
         }
 
         protected override void Dispose(bool disposing)
@@ -127,9 +126,9 @@ namespace CNCDataApi.Controllers
             base.Dispose(disposing);
         }
 
-        private bool NutPairs_SolidBallScrewNutPairsExists(string id)
+        private bool SolidBallScrewNutPairsExists(string id)
         {
-            return db.NutPairs_SolidBallScrewNutPairs.Count(e => e.TypeNo == id) > 0;
+            return db.SolidBallScrewNutPairs.Count(e => e.TypeID == id) > 0;
         }
     }
 }
