@@ -1,0 +1,14 @@
+﻿<div class="menu-collapse">
+    <div>
+        <h2><a ui-sref="CNCSystem" class="text-center">数控系统</a></h2>
+        <div class="list-group">
+            <p><a ui-sref="CNCSystem" class="list-group-item text-center">数控系统类型</a></p>
+            <p><a ui-sref="CNCSystem.Accessories" class="list-group-item text-center">数控系统辅件</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(".menu-collapse").accordion({
+        header: "h2"
+    })
+</script>

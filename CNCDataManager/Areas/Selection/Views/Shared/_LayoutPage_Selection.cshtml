@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html ng-app="selectionApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>@ViewBag.Title - 数控机床数据库管理系统</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
+    <link href="~/Content/ui-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/ui-grid.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script src="~/AppSelection/js/demo.js"></script>
+    <script src="~/AppSelection/js/app.js"></script>
+    <script src="~/AppSelection/js/controllers.js"></script>
+    <script src="~/AppSelection/js/services.js"></script>
+    <script src="~/AppSelection/js/filters.js"></script>
+    @RenderSection("css", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    @*data-toggle表示collapse时生效 data-target表示折叠的对象*@
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--以下链接可以用html辅助函数来防止被攻击-->
+                <a href="/" class="navbar-brand home-index-nav-link" area="">数控机床数据管理</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index" class="home-index-nav-link">主页</a></li>
+                    <li><a href="/CNCData/Index" class="home-index-nav-link">查看数据</a></li>
+                    <li><a href="/Home/About" class="home-index-nav-link">关于</a></li>
+                    <li><a href="/Home/Contact" class="home-index-nav-link">联系我们</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <header class="jumbotron subhead" id="overview">
+        <div class="container">
+            <h1>数控机床选型</h1>
+            <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
+        </div>
+    </header>
+    <div ng-controller="CNCNavCtrl">
+        <div class="middleNav">
+            <div class="container">
+                <div class="row">
+                    <ul class="nav nav-tabs">
+                        <li class="col-md-2" ng-show="navShow[0]" ng-click="navClick(0)" ng-class="{active:navActive==0}"><a ui-sref="CNCType" class="text-center">数控机床</a></li>
+                        <li class="col-md-2" ng-show="navShow[1]" ng-click="navClick(1)" ng-class="{active:navActive==1}"><a ui-sref="CNCSystem" class="text-center">数控系统</a></li>
+                        <li class="col-md-2" ng-show="navShow[2]" ng-click="navClick(2)" ng-class="{active:navActive==2}"><a ui-sref="FeedSystem({FeedSystemType:'XY'})" class="text-center">进给轴x/y轴</a></li>
+                        <li class="col-md-2" ng-show="navShow[3]" ng-click="navClick(3)" ng-class="{active:navActive==3}"><a ui-sref="FeedSystem({FeedSystemType:'X'})" class="text-center">进给轴x轴</a></li>
+                        <li class="col-md-2" ng-show="navShow[4]" ng-click="navClick(4)" ng-class="{active:navActive==4}"><a ui-sref="FeedSystem({FeedSystemType:'Y'})" class="text-center">进给轴y轴</a></li>
+                        <li class="col-md-2" ng-show="navShow[5]" ng-click="navClick(5)" ng-class="{active:navActive==5}"><a ui-sref="FeedSystem({FeedSystemType:'Z'})" class="text-center">进给轴z轴</a></li>
+                        <li class="col-md-2" ng-show="navShow[6]" ng-click="navClick(6)" ng-class="{active:navActive==6}"><a href="#" class="text-center">主轴</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    @RenderBody()
+
+    </div>
+    <hr />
+    <div class="container">
+        <footer>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>To do.</p>
+                </div>
+                <div class="col-md-4">
+                    <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+                    <p>邮编：430074</p>
+                </div>
+                <div class="col-md-4">
+                    <p>电话：027-87541114</p>
+                    <p>传真：027-87545438</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
