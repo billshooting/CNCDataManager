@@ -1,5 +1,5 @@
 ﻿<div ng-controller="CNCWorkingConditionCtrl">
-    <form class="form-horizontal" role="form" name="CNCWorkingConditionForm" ng-submit="submitForm(CNCWorkingConditionForm.$valid)">
+    <form class="form-horizontal" role="form" name="CNCWorkingConditionForm">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -146,9 +146,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-md-offset-8">
-                <button type="submit" class="btn btn-info" ng-disabled="CNCWorkingConditionForm.$invalid">下 一 步</button>
+            <div class="col-md-2 col-md-offset-8">
+                <button type="submit" class="btn btn-primary" ng-disabled="CNCWorkingConditionForm.$invalid" ng-click="nextStep()">下 一 步</button>
             </div>
-        </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" ng-click="reset()">取 消</button>
+            </div>
+         </div>
     </form>
 </div>

@@ -47,3 +47,22 @@ filters.filter("paging",function(){
 		return e.slice(start,start+pageSize);
 	}
 });
+
+filters.filter("distinct",function(){
+	return function(e){
+		if(e){
+			return [];
+		}
+		var result=[];
+		var map={};
+		var elem;
+		for(var i=0;i<e.length;i++){
+			elem=e[i];
+			if(!map[elem]){
+				result.push(elem);
+				map[elem]=true;
+			}
+		}
+		return result;
+	}
+});

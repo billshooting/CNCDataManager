@@ -1,4 +1,4 @@
-﻿var services=angular.module("services",[]);
+﻿/*var services=angular.module("services",[]);
 services.service("$CNCSelected",function(){
 	this.CNCType={
 		type:"",//机床类型
@@ -6,3 +6,4 @@ services.service("$CNCSelected",function(){
 	};
 	this.CNCSystem={};
 });
+*/

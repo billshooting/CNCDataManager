@@ -1,17 +1,114 @@
 ﻿<div ng-controller="LinnearRollingGuideCtrl">
-	<div>
-		{{FeedSystemType}}
-	</div>
-	<div class="col-md-6">
-		<img src="{{imgsrc}}" class="img-rounded" />
-	</div>
-	<div class="col-md-3">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title">相关尺寸</h3>
+	<div class="CNCTable">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="{{imgsrc}}" class="img-thumbnail" alt="直线导轨尺寸"/>
 			</div>
-			<div class="panel-body">
+			<div class="col-md-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">相关尺寸</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="sizeL0" class="control-label">尺寸L0:</label>
+								<input type="number" id="sizeL0" ng-model="sizePara.sizeL0" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="sizeL1" class="control-label">尺寸L1:</label>
+								<input type="number" id="sizeL1" ng-model="sizePara.sizeL1" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="sizeL2" class="control-label">尺寸L2:</label>
+								<input type="number" id="sizeL2" ng-model="sizePara.sizeL2" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="sizeL3" class="control-label">尺寸L3:</label>
+								<input type="number" id="sizeL3" ng-model="sizePara.sizeL3" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="sizeL4" class="control-label">尺寸L4:</label>
+								<input type="number" id="sizeL4" ng-model="sizePara.sizeL4" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="sizeL5" class="control-label">尺寸L5:</label>
+								<input type="number" id="sizeL5" ng-model="sizePara.sizeL5" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group" ng-show="{{isShow6}}">
+								<label for="sizeL6" class="control-label">尺寸L6:</label>
+								<input type="number" id="sizeL6" ng-model="sizePara.sizeL6" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">mm</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">导轨参数</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="life" class="control-label">寿命:</label>
+								<input type="number" id="life" ng-model="life" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label">h</label>
+							</div>
+							<div class="form-group">
+								<label for="safety" class="control-label">安全系数:</label>
+								<input type="number" id="safety" ng-model="safety" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="load" class="control-label">载荷系数:</label>
+								<input type="number" id="load" ng-model="load" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="contact" class="control-label">接触系数:</label>
+								<input type="number" id="contact" ng-model="contact" class="form-control" palceholder="请输入值" style="width:50%" />
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label class="control-label">最小额定静载荷:</label>
+								<label class="control-label">{{minStaticLoad}}</label>
+							</div>
+							<div class="form-group">
+								<label class="control-label">最小额定动载荷:</label>
+								<label class="control-label">{{minLiveLoad}}</label>
+							</div>
+						</div>
+						<div class="row">
+							<button type="button" ng-click="caculate()" class="btn btn-primary col-md-offset-2 col-md-3 text-center">计算</button>
+							<button type="button" ng-click="reset()" class="btn btn-primary col-md-offset-2 col-md-3 text-center">重置</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
+	<div class="CNCTable">
+		<table class="table table-hover table-striped">
+			<thead>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+				<th class="btn-primary"></th>
+			</thead>
+		</table>
 	</div>
 </div>

@@ -1,25 +1,47 @@
-﻿var controllers = angular.module('controllers', ["services","ui.bootstrap"]);
+var controllers = angular.module('controllers', []);
+var injector=angular.injector(["ng"]);
 //中间导航栏控制器
-controllers.controller('CNCNavCtrl',function($scope){
-	//控制中间导航栏是否显示
-	$scope.navShow=[true,false,false,false,false,false];
-	$scope.$on("CNCTypeChange",function(event,data){
+controllers.controller('CNCNavCtrl',function($scope,$cookies){
+	//中间导航栏初始化方法，控制中间导航栏是否显示
+    var reset=function(){
+        var CNCType=$cookies.getObject("CNCType");
+        if(CNCType==undefined){
+            $scope.navShow=[true,false,false,false,false,false];
+        }
+        else{
+            if(CNCType.support=="X"){
+                $scope.navShow=[true,true,false,true,true,true,true];
+            }
+            else if(CNCType.support=="C"){
+                $scope.navShow=[true,true,true,false,false,true,true];
+            }
+        }
+    };
+    injector.invoke(reset);
+    //监控子作用域传播来的事件，并初始化中间导航栏
+    $scope.$on("CNCTypeChange",function(event,data){
+        injector.invoke(reset);
+    });
+	/*$scope.navShow=[true,false,false,false,false,false];*/
+	/*$scope.$on("CNCTypeChange",function(event,data){
 		if(data=="X"){
 			$scope.navShow=[true,true,false,true,true,true,true];
 		}
 		else if(data=="C"){
 			$scope.navShow=[true,true,true,false,false,true,true];
 		}
-	});
+	});*/
     //控制中间导航栏选项是否active
     $scope.navActive=0;
     $scope.navClick=function(e){
         $scope.navActive=e;
-    }
+    };
+    //初始化导航栏方法
+    
 });
 
 //机床类型控制器
-controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCSelected){
+controllers.controller("CNCTypeCtrl",function($scope,$state,$cookies){
 	$scope.type=-1;
 	$scope.support="";
 	//点击图片显示图片被选中
@@ -27,12 +49,14 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCSelected){
 		$scope.type=type;
 		$scope.support=support;
 	};
-	//点击下一步按钮将机床类型存入$CNCType服务对象实例中
+	//点击下一步按钮将机床类型存入cookies键为CNCType中
 	$scope.nextStep=function(){
 		var CNCType=["立式车床","立式铣床","龙门铣床","卧式车床","卧式铣床","斜床身车床","磨床"];
-		$CNCSelected.CNCType.type=CNCType[$scope.type];
-		$CNCSelected.CNCType.support=$scope.support;
-		$scope.$emit("CNCTypeChange",$scope.support);
+		$cookies.putObject("CNCType",{
+            type:CNCType[$scope.type],
+            support:$scope.support,
+        });
+        $scope.$emit("CNCTypeChange");
 		$state.go("CNCType.WorkingCondition");
 	};
 	//点击取消按钮恢复图片为未被选中状态
@@ -43,16 +67,25 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$CNCSelected){
 });
 
 //机床工作需求控制器
-controllers.controller('CNCWorkingConditionCtrl', function ($scope) {
-    $scope.submitForm = function (isValid) {
-        if (isValid) {
-            alert('yes');
-        }
+controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$cookies) {
+    //点击下一步按钮
+    $scope.nextStep=function(){
+        var CNCType=$cookies.getObject("CNCType");
+         if(CNCType.support=="X"){
+                $state.go("FeedSystem",{FeedSystemType:'X'});
+            }
+        else if(CNCType.support=="C"){
+                $state.go("FeedSystem",{FeedSystemType:'XY'});
+            }
+        
+    };
+    $scope.reset=function(){
+
     };
 });
 
 //数控系统选型控制器
-controllers.controller('CNCSystemTable', function ($scope,$http,$state,$CNCSelected) {
+controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies) {
 	  //表头排序
      $scope.title="TypeID";
      $scope.desc=1;
@@ -62,7 +95,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$CNCSelec
      	Manufacturer:null,
      	SupportNumberOfChannels:1,
      	MaxControlNumberOfFeedAxis:1,
-     	SupportTypeOfMachine:$CNCSelected.CNCType.support,
+     	SupportTypeOfMachine:$cookies.getObject("CNCType").support,
      };
      //所选数控系统类型
      $scope.CNCSystemSelected={};
@@ -108,16 +141,11 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$CNCSelec
     };
     //单击表格选择数控系统型号
 	$scope.Selected=function(CNCSystem){
-		/*for(var i in CNCSystem){
-			$scope.CNCSystemSelected[i]=CNCSystem[i];
-        }*/
         $scope.CNCSystemSelected=CNCSystem;//直接引用传递即可
 	};
     //点击下一步按钮将数控系统类型存入$CNCSelected服务对象实例中
     $scope.nextStep=function(){
-        for(var i in $scope.CNCSystemSelected){
-            $CNCSelected.CNCSystem[i]=$scope.CNCSystemSelected[i];
-        }
+        $cookies.putObject("CNCSystem",$scope.CNCSystemSelected);
         $state.go("CNCSystem.Accessories");
     };
     // 点击取消按钮恢复表格中选中行为未选中状态
@@ -127,6 +155,54 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$CNCSelec
 });
 
 //直线导轨选型控制器
-controllers.controller("LinnearRollingGuideCtrl",function($scope,$CNCType,$StateParams){
-	$scope.FeedSystemType=$rootScope.$StateParams.FeedSystemType;
-})
+controllers.controller("LinnearRollingGuideCtrl",function($scope,$stateParams){
+	var FeedSystemType=$stateParams.FeedSystemType;
+    //根据进给轴类型切换导轨尺寸图片
+    if(FeedSystemType=="XY"||FeedSystemType=="X"){
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平上导轨.jpg";
+    }
+    else if(FeedSystemType=="Y"){
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平下导轨.jpg";
+    }
+    else if(FeedSystemType=="Z"){
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣Z轴导轨.jpg";
+    }
+    //绑定相关尺寸和导轨参数数据并计算得出结果
+    $scope.reset=function(){
+        if(FeedSystemType=="XY"||FeedSystemType=="X"){
+            $scope.isShow6=false;
+            $scope.sizePara={
+                sizeL0:500,
+                sizeL1:500,
+                sizeL2:200,
+                sizeL3:150,
+                sizeL4:50,
+                sizeL5:100,
+            };
+        }
+        else if(FeedSystemType=="Y"){
+            $scope.isShow6=false;
+            $scope.sizePara={
+                sizeL0:600,
+                sizeL1:800,
+                sizeL2:250,
+                sizeL3:200,
+                sizeL4:150,
+                sizeL5:100,
+            };
+        }
+        else if(FeedSystemType=="Z"){
+            $scope.isShow6=true;
+            $scope.sizePara={
+                sizeL0:600,
+                sizeL1:400,
+                sizeL2:500,
+                sizeL3:250,
+                sizeL4:100,
+                sizeL5:150,
+                sizeL6:60,
+            };
+        }
+    };
+    $scope.reset();
+});
