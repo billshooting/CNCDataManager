@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class PlumShapedFlexibleCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/PlumShapedFlexibleCoups
-        public IQueryable<PlumShapedFlexibleCoup> GetPlumShapedFlexibleCoupling()
+        public IQueryable<PlumShapedFlexibleCoup> GetPlumShapedFlexibleCouplings()
         {
-            return db.PlumShapedFlexibleCoupling;
+            return db.PlumShapedFlexibleCouplings;
         }
 
         // GET: api/PlumShapedFlexibleCoups/5
         [ResponseType(typeof(PlumShapedFlexibleCoup))]
         public async Task<IHttpActionResult> GetPlumShapedFlexibleCoup(string id)
         {
-            PlumShapedFlexibleCoup plumShapedFlexibleCoup = await db.PlumShapedFlexibleCoupling.FindAsync(id);
+            PlumShapedFlexibleCoup plumShapedFlexibleCoup = await db.PlumShapedFlexibleCouplings.FindAsync(id);
             if (plumShapedFlexibleCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.PlumShapedFlexibleCoupling.Add(plumShapedFlexibleCoup);
+            db.PlumShapedFlexibleCouplings.Add(plumShapedFlexibleCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(PlumShapedFlexibleCoup))]
         public async Task<IHttpActionResult> DeletePlumShapedFlexibleCoup(string id)
         {
-            PlumShapedFlexibleCoup plumShapedFlexibleCoup = await db.PlumShapedFlexibleCoupling.FindAsync(id);
+            PlumShapedFlexibleCoup plumShapedFlexibleCoup = await db.PlumShapedFlexibleCouplings.FindAsync(id);
             if (plumShapedFlexibleCoup == null)
             {
                 return NotFound();
             }
 
-            db.PlumShapedFlexibleCoupling.Remove(plumShapedFlexibleCoup);
+            db.PlumShapedFlexibleCouplings.Remove(plumShapedFlexibleCoup);
             await db.SaveChangesAsync();
 
             return Ok(plumShapedFlexibleCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool PlumShapedFlexibleCoupExists(string id)
         {
-            return db.PlumShapedFlexibleCoupling.Count(e => e.TypeID == id) > 0;
+            return db.PlumShapedFlexibleCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

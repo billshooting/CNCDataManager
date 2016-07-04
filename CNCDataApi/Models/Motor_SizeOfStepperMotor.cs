@@ -1,45 +1,39 @@
 namespace CNCDataApi.Models
 {
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "Motor_SizeOfStepperMotor")]
+    [Table("æ­¥è¿›ç”µæœºå°ºå¯¸æ•°æ®_TAB")]
     public partial class StepMotorSize
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "ĞÍºÅ")]
+        [Column(name: "å‹å·")]
         public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Éú²ú³§¼Ò")]
+        [Column(name: "ç”Ÿäº§å‚å®¶")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "³ß´çA")]
+        [Column("å°ºå¯¸A")]
         public double? Size_A { get; set; }
 
-        [Display(Name = "³ß´çB")]
+        [Column("å°ºå¯¸B")]
         public double? Size_B { get; set; }
 
-        [Display(Name = "³ß´çC")]
+        [Column("å°ºå¯¸C")]
         public double? Size_C { get; set; }
 
-        [Display(Name = "³ß´çD")]
+        [Column("å°ºå¯¸D")]
         public double? Size_D { get; set; }
 
-        [Display(Name = "³ß´çF")]
+        [Column("å°ºå¯¸F")]
         public double? Size_F { get; set; }
 
-        [Display(Name = "³ß´çG")]
+        [Column("å°ºå¯¸G")]
         public double? Size_G { get; set; }
 
-        [JsonIgnore]
-        [Display(Name = "²½½øµç»ú¼¼Êõ²ÎÊı")]
-        public virtual StepMotorPara Motor_ParaOfStepperMotor { get; set; }
+        public virtual StepMotorPara ParaOfStepMotor { get; set; }
     }
 }

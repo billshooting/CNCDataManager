@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class ElecSpindleParasController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ElecSpindleParas
-        public IQueryable<ElecSpindlePara> GetParaOfElectricSpindle()
+        public IQueryable<ElecSpindlePara> GetElecSpindleParas()
         {
-            return db.ParaOfElectricSpindle;
+            return db.ElecSpindleParas;
         }
 
         // GET: api/ElecSpindleParas/5
         [ResponseType(typeof(ElecSpindlePara))]
         public async Task<IHttpActionResult> GetElecSpindlePara(string id)
         {
-            ElecSpindlePara elecSpindlePara = await db.ParaOfElectricSpindle.FindAsync(id);
+            ElecSpindlePara elecSpindlePara = await db.ElecSpindleParas.FindAsync(id);
             if (elecSpindlePara == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ParaOfElectricSpindle.Add(elecSpindlePara);
+            db.ElecSpindleParas.Add(elecSpindlePara);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(ElecSpindlePara))]
         public async Task<IHttpActionResult> DeleteElecSpindlePara(string id)
         {
-            ElecSpindlePara elecSpindlePara = await db.ParaOfElectricSpindle.FindAsync(id);
+            ElecSpindlePara elecSpindlePara = await db.ElecSpindleParas.FindAsync(id);
             if (elecSpindlePara == null)
             {
                 return NotFound();
             }
 
-            db.ParaOfElectricSpindle.Remove(elecSpindlePara);
+            db.ElecSpindleParas.Remove(elecSpindlePara);
             await db.SaveChangesAsync();
 
             return Ok(elecSpindlePara);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool ElecSpindleParaExists(string id)
         {
-            return db.ParaOfElectricSpindle.Count(e => e.TypeID == id) > 0;
+            return db.ElecSpindleParas.Count(e => e.TypeID == id) > 0;
         }
     }
 }

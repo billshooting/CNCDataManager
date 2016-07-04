@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class DoubleRowCylinRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/DoubleRowCylinRollerBrgs
-        public IQueryable<DoubleRowCylinRollerBrg> GetDoubleRowCylindricalRollerBearings()
+        public IQueryable<DoubleRowCylinRollerBrg> GetDoubleRowCylinRollerBearings()
         {
-            return db.DoubleRowCylindricalRollerBearings;
+            return db.DoubleRowCylinRollerBearings;
         }
 
         // GET: api/DoubleRowCylinRollerBrgs/5
         [ResponseType(typeof(DoubleRowCylinRollerBrg))]
         public async Task<IHttpActionResult> GetDoubleRowCylinRollerBrg(string id)
         {
-            DoubleRowCylinRollerBrg doubleRowCylinRollerBrg = await db.DoubleRowCylindricalRollerBearings.FindAsync(id);
+            DoubleRowCylinRollerBrg doubleRowCylinRollerBrg = await db.DoubleRowCylinRollerBearings.FindAsync(id);
             if (doubleRowCylinRollerBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.DoubleRowCylindricalRollerBearings.Add(doubleRowCylinRollerBrg);
+            db.DoubleRowCylinRollerBearings.Add(doubleRowCylinRollerBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(DoubleRowCylinRollerBrg))]
         public async Task<IHttpActionResult> DeleteDoubleRowCylinRollerBrg(string id)
         {
-            DoubleRowCylinRollerBrg doubleRowCylinRollerBrg = await db.DoubleRowCylindricalRollerBearings.FindAsync(id);
+            DoubleRowCylinRollerBrg doubleRowCylinRollerBrg = await db.DoubleRowCylinRollerBearings.FindAsync(id);
             if (doubleRowCylinRollerBrg == null)
             {
                 return NotFound();
             }
 
-            db.DoubleRowCylindricalRollerBearings.Remove(doubleRowCylinRollerBrg);
+            db.DoubleRowCylinRollerBearings.Remove(doubleRowCylinRollerBrg);
             await db.SaveChangesAsync();
 
             return Ok(doubleRowCylinRollerBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool DoubleRowCylinRollerBrgExists(string id)
         {
-            return db.DoubleRowCylindricalRollerBearings.Count(e => e.TypeID == id) > 0;
+            return db.DoubleRowCylinRollerBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class BWElasticSlvPinCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/BWElasticSlvPinCoups
-        public IQueryable<BWElasticSlvPinCoup> GetBrakeWheelElasticSleevePinCoupling()
+        public IQueryable<BWElasticSlvPinCoup> GetBWElasticSlvPinCouplings()
         {
-            return db.BrakeWheelElasticSleevePinCoupling;
+            return db.BWElasticSlvPinCouplings;
         }
 
         // GET: api/BWElasticSlvPinCoups/5
         [ResponseType(typeof(BWElasticSlvPinCoup))]
         public async Task<IHttpActionResult> GetBWElasticSlvPinCoup(string id)
         {
-            BWElasticSlvPinCoup bWElasticSlvPinCoup = await db.BrakeWheelElasticSleevePinCoupling.FindAsync(id);
+            BWElasticSlvPinCoup bWElasticSlvPinCoup = await db.BWElasticSlvPinCouplings.FindAsync(id);
             if (bWElasticSlvPinCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.BrakeWheelElasticSleevePinCoupling.Add(bWElasticSlvPinCoup);
+            db.BWElasticSlvPinCouplings.Add(bWElasticSlvPinCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(BWElasticSlvPinCoup))]
         public async Task<IHttpActionResult> DeleteBWElasticSlvPinCoup(string id)
         {
-            BWElasticSlvPinCoup bWElasticSlvPinCoup = await db.BrakeWheelElasticSleevePinCoupling.FindAsync(id);
+            BWElasticSlvPinCoup bWElasticSlvPinCoup = await db.BWElasticSlvPinCouplings.FindAsync(id);
             if (bWElasticSlvPinCoup == null)
             {
                 return NotFound();
             }
 
-            db.BrakeWheelElasticSleevePinCoupling.Remove(bWElasticSlvPinCoup);
+            db.BWElasticSlvPinCouplings.Remove(bWElasticSlvPinCoup);
             await db.SaveChangesAsync();
 
             return Ok(bWElasticSlvPinCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool BWElasticSlvPinCoupExists(string id)
         {
-            return db.BrakeWheelElasticSleevePinCoupling.Count(e => e.TypeID == id) > 0;
+            return db.BWElasticSlvPinCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class DoubleThrustAngContactBallBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/DoubleThrustAngContactBallBrgs
-        public IQueryable<DoubleThrustAngContactBallBrg> GetDoubleThrustAngularContactBallBearings()
+        public IQueryable<DoubleThrustAngContactBallBrg> GetDoubleThrustAngContactBallBearings()
         {
-            return db.DoubleThrustAngularContactBallBearings;
+            return db.DoubleThrustAngContactBallBearings;
         }
 
         // GET: api/DoubleThrustAngContactBallBrgs/5
         [ResponseType(typeof(DoubleThrustAngContactBallBrg))]
         public async Task<IHttpActionResult> GetDoubleThrustAngContactBallBrg(string id)
         {
-            DoubleThrustAngContactBallBrg doubleThrustAngContactBallBrg = await db.DoubleThrustAngularContactBallBearings.FindAsync(id);
+            DoubleThrustAngContactBallBrg doubleThrustAngContactBallBrg = await db.DoubleThrustAngContactBallBearings.FindAsync(id);
             if (doubleThrustAngContactBallBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.DoubleThrustAngularContactBallBearings.Add(doubleThrustAngContactBallBrg);
+            db.DoubleThrustAngContactBallBearings.Add(doubleThrustAngContactBallBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(DoubleThrustAngContactBallBrg))]
         public async Task<IHttpActionResult> DeleteDoubleThrustAngContactBallBrg(string id)
         {
-            DoubleThrustAngContactBallBrg doubleThrustAngContactBallBrg = await db.DoubleThrustAngularContactBallBearings.FindAsync(id);
+            DoubleThrustAngContactBallBrg doubleThrustAngContactBallBrg = await db.DoubleThrustAngContactBallBearings.FindAsync(id);
             if (doubleThrustAngContactBallBrg == null)
             {
                 return NotFound();
             }
 
-            db.DoubleThrustAngularContactBallBearings.Remove(doubleThrustAngContactBallBrg);
+            db.DoubleThrustAngContactBallBearings.Remove(doubleThrustAngContactBallBrg);
             await db.SaveChangesAsync();
 
             return Ok(doubleThrustAngContactBallBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool DoubleThrustAngContactBallBrgExists(string id)
         {
-            return db.DoubleThrustAngularContactBallBearings.Count(e => e.TypeID == id) > 0;
+            return db.DoubleThrustAngContactBallBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

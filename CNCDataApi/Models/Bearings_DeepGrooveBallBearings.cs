@@ -1,64 +1,60 @@
-﻿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "Bearings_DeepGrooveBallBearings")]
+    [Table(name: "深沟球轴承数据_TAB")]
     public partial class DeepGrooveBallBrg
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "型号")]
+        [Column(name: "型号")]
         public string TypeID { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "生产厂家")]
+        [Column(name: "生产厂家")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "内径d")]
+        [Column(name: "内径d")]
         public double? InnerDiameter_d { get; set; }
 
-        [Display(Name = "直径D")]
+        [Column(name: "直径D")]
         public double? Diameter_D { get; set; }
 
-        [Display(Name = "宽度B")]
+        [Column(name: "宽B")]
         public double? Width_B { get; set; }
 
-        [Display(Name = "尺寸rsmin")]
+        [Column(name: "尺寸rsmin")]
         public double? Size_rsmin { get; set; }
 
-        [Display(Name = "尺寸damin")]
+        [Column(name: "尺寸damin")]
         public double? Size_damin { get; set; }
 
-        [Display(Name = "尺寸Damax")]
+        [Column(name: "尺寸Damax")]
         public double? Size_Damax { get; set; }
 
-        [Display(Name = "尺寸rasmax")]
+        [Column(name: "尺寸rasmax")]
         public double? Size_rasmax { get; set; }
 
-        [Display(Name = "基本额定动载荷")]
+        [Column(name: "基本额定动负荷")]
         public double? BasicRatedDynamicLoad { get; set; }
 
-        [Display(Name = "基本额定静载荷")]
+        [Column(name: "基本额定静负荷")]
         public double? BasicRatedStaticLoad { get; set; }
 
-        [Display(Name = "脂润滑极限转速")]
+        [Column(name: "脂极限转速")]
         public double? SpeedLimitOfGrease { get; set; }
 
-        [Display(Name = "油润滑极限转速")]
+        [Column(name: "油极限转速")]
         public double? SpeedLimitOfOil { get; set; }
 
-        [Display(Name = "轴承轴向刚度")]
+        [Column(name: "轴承轴向刚度")]
         public double? BearingAxialStiffness { get; set; }
 
-        [Display(Name = "轴承启动转矩")]
+        [Column(name: "轴承启动力矩")]
         public double? BearingStartingTorque { get; set; }
 
-        [Column(TypeName = "text")]
-        [Display(Name = "说明")]
+        [Column(name: "说明", TypeName = "text")]
         public string Description { get; set; }
     }
 }

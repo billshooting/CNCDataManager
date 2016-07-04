@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class NeedleRollerThrustRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/NeedleRollerThrustRollerBrgs
-        public IQueryable<NeedleRollerThrustRollerBrg> GetNeedleRollerAndThrustRollerBearings()
+        public IQueryable<NeedleRollerThrustRollerBrg> GetNeedleRollerThrustRollerBearings()
         {
-            return db.NeedleRollerAndThrustRollerBearings;
+            return db.NeedleRollerThrustRollerBearings;
         }
 
         // GET: api/NeedleRollerThrustRollerBrgs/5
         [ResponseType(typeof(NeedleRollerThrustRollerBrg))]
         public async Task<IHttpActionResult> GetNeedleRollerThrustRollerBrg(string id)
         {
-            NeedleRollerThrustRollerBrg needleRollerThrustRollerBrg = await db.NeedleRollerAndThrustRollerBearings.FindAsync(id);
+            NeedleRollerThrustRollerBrg needleRollerThrustRollerBrg = await db.NeedleRollerThrustRollerBearings.FindAsync(id);
             if (needleRollerThrustRollerBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.NeedleRollerAndThrustRollerBearings.Add(needleRollerThrustRollerBrg);
+            db.NeedleRollerThrustRollerBearings.Add(needleRollerThrustRollerBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(NeedleRollerThrustRollerBrg))]
         public async Task<IHttpActionResult> DeleteNeedleRollerThrustRollerBrg(string id)
         {
-            NeedleRollerThrustRollerBrg needleRollerThrustRollerBrg = await db.NeedleRollerAndThrustRollerBearings.FindAsync(id);
+            NeedleRollerThrustRollerBrg needleRollerThrustRollerBrg = await db.NeedleRollerThrustRollerBearings.FindAsync(id);
             if (needleRollerThrustRollerBrg == null)
             {
                 return NotFound();
             }
 
-            db.NeedleRollerAndThrustRollerBearings.Remove(needleRollerThrustRollerBrg);
+            db.NeedleRollerThrustRollerBearings.Remove(needleRollerThrustRollerBrg);
             await db.SaveChangesAsync();
 
             return Ok(needleRollerThrustRollerBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool NeedleRollerThrustRollerBrgExists(string id)
         {
-            return db.NeedleRollerAndThrustRollerBearings.Count(e => e.TypeID == id) > 0;
+            return db.NeedleRollerThrustRollerBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

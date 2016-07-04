@@ -15,7 +15,7 @@ namespace CNCDataApi.Controllers
 {
     public class SolidBallScrewNutPairsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SolidBallScrewNutPairs
         public IQueryable<SolidBallScrewNutPairs> GetSolidBallScrewNutPairs()

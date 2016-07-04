@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class LineRollingGuidesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/LineRollingGuides
-        public IQueryable<LineRollingGuide> GetLinearRollingGuide()
+        public IQueryable<LineRollingGuide> GetLineRollingGuides()
         {
-            return db.LinearRollingGuide;
+            return db.LineRollingGuides;
         }
 
         // GET: api/LineRollingGuides/5
         [ResponseType(typeof(LineRollingGuide))]
         public async Task<IHttpActionResult> GetLineRollingGuide(string id)
         {
-            LineRollingGuide lineRollingGuide = await db.LinearRollingGuide.FindAsync(id);
+            LineRollingGuide lineRollingGuide = await db.LineRollingGuides.FindAsync(id);
             if (lineRollingGuide == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.LinearRollingGuide.Add(lineRollingGuide);
+            db.LineRollingGuides.Add(lineRollingGuide);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(LineRollingGuide))]
         public async Task<IHttpActionResult> DeleteLineRollingGuide(string id)
         {
-            LineRollingGuide lineRollingGuide = await db.LinearRollingGuide.FindAsync(id);
+            LineRollingGuide lineRollingGuide = await db.LineRollingGuides.FindAsync(id);
             if (lineRollingGuide == null)
             {
                 return NotFound();
             }
 
-            db.LinearRollingGuide.Remove(lineRollingGuide);
+            db.LineRollingGuides.Remove(lineRollingGuide);
             await db.SaveChangesAsync();
 
             return Ok(lineRollingGuide);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool LineRollingGuideExists(string id)
         {
-            return db.LinearRollingGuide.Count(e => e.TypeID == id) > 0;
+            return db.LineRollingGuides.Count(e => e.TypeID == id) > 0;
         }
     }
 }

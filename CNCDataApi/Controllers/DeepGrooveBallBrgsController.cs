@@ -15,7 +15,7 @@ namespace CNCDataApi.Controllers
 {
     public class DeepGrooveBallBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/DeepGrooveBallBrgs
         public IQueryable<DeepGrooveBallBrg> GetDeepGrooveBallBearings()

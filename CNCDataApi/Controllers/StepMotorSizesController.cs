@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class StepMotorSizesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/StepMotorSizes
-        public IQueryable<StepMotorSize> GetSizeOfStepperMotor()
+        public IQueryable<StepMotorSize> GetStepMotorSizes()
         {
-            return db.SizeOfStepperMotor;
+            return db.StepMotorSizes;
         }
 
         // GET: api/StepMotorSizes/5
         [ResponseType(typeof(StepMotorSize))]
         public async Task<IHttpActionResult> GetStepMotorSize(string id)
         {
-            StepMotorSize stepMotorSize = await db.SizeOfStepperMotor.FindAsync(id);
+            StepMotorSize stepMotorSize = await db.StepMotorSizes.FindAsync(id);
             if (stepMotorSize == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.SizeOfStepperMotor.Add(stepMotorSize);
+            db.StepMotorSizes.Add(stepMotorSize);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(StepMotorSize))]
         public async Task<IHttpActionResult> DeleteStepMotorSize(string id)
         {
-            StepMotorSize stepMotorSize = await db.SizeOfStepperMotor.FindAsync(id);
+            StepMotorSize stepMotorSize = await db.StepMotorSizes.FindAsync(id);
             if (stepMotorSize == null)
             {
                 return NotFound();
             }
 
-            db.SizeOfStepperMotor.Remove(stepMotorSize);
+            db.StepMotorSizes.Remove(stepMotorSize);
             await db.SaveChangesAsync();
 
             return Ok(stepMotorSize);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool StepMotorSizeExists(string id)
         {
-            return db.SizeOfStepperMotor.Count(e => e.TypeID == id) > 0;
+            return db.StepMotorSizes.Count(e => e.TypeID == id) > 0;
         }
     }
 }

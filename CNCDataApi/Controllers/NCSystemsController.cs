@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class NCSystemsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/NCSystems
-        public IQueryable<NCSystem> GetNCSystem()
+        public IQueryable<NCSystem> GetNCSystems()
         {
-            return db.NCSystem;
+            return db.NCSystems;
         }
 
         // GET: api/NCSystems/5
         [ResponseType(typeof(NCSystem))]
-        public async Task<IHttpActionResult> GetNCSystem(string id)
+        public async Task<IHttpActionResult> GetNCSystem(int id)
         {
-            NCSystem nCSystem = await db.NCSystem.FindAsync(id);
+            NCSystem nCSystem = await db.NCSystems.FindAsync(id);
             if (nCSystem == null)
             {
                 return NotFound();
@@ -38,14 +38,14 @@ namespace CNCDataApi.Controllers
 
         // PUT: api/NCSystems/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutNCSystem(string id, NCSystem nCSystem)
+        public async Task<IHttpActionResult> PutNCSystem(int id, NCSystem nCSystem)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != nCSystem.TypeID)
+            if (id != nCSystem.Id)
             {
                 return BadRequest();
             }
@@ -80,38 +80,23 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.NCSystem.Add(nCSystem);
+            db.NCSystems.Add(nCSystem);
+            await db.SaveChangesAsync();
 
-            try
-            {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (NCSystemExists(nCSystem.TypeID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtRoute("DefaultApi", new { id = nCSystem.TypeID }, nCSystem);
+            return CreatedAtRoute("DefaultApi", new { id = nCSystem.Id }, nCSystem);
         }
 
         // DELETE: api/NCSystems/5
         [ResponseType(typeof(NCSystem))]
-        public async Task<IHttpActionResult> DeleteNCSystem(string id)
+        public async Task<IHttpActionResult> DeleteNCSystem(int id)
         {
-            NCSystem nCSystem = await db.NCSystem.FindAsync(id);
+            NCSystem nCSystem = await db.NCSystems.FindAsync(id);
             if (nCSystem == null)
             {
                 return NotFound();
             }
 
-            db.NCSystem.Remove(nCSystem);
+            db.NCSystems.Remove(nCSystem);
             await db.SaveChangesAsync();
 
             return Ok(nCSystem);
@@ -126,9 +111,9 @@ namespace CNCDataApi.Controllers
             base.Dispose(disposing);
         }
 
-        private bool NCSystemExists(string id)
+        private bool NCSystemExists(int id)
         {
-            return db.NCSystem.Count(e => e.TypeID == id) > 0;
+            return db.NCSystems.Count(e => e.Id == id) > 0;
         }
     }
 }

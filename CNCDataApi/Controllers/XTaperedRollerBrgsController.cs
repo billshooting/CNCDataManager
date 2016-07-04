@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class XTaperedRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/XTaperedRollerBrgs
-        public IQueryable<XTaperedRollerBrg> GetCrossTaperedRollerBearings()
+        public IQueryable<XTaperedRollerBrg> GetXTaperedRollerBearings()
         {
-            return db.CrossTaperedRollerBearings;
+            return db.XTaperedRollerBearings;
         }
 
         // GET: api/XTaperedRollerBrgs/5
         [ResponseType(typeof(XTaperedRollerBrg))]
         public async Task<IHttpActionResult> GetXTaperedRollerBrg(string id)
         {
-            XTaperedRollerBrg xTaperedRollerBrg = await db.CrossTaperedRollerBearings.FindAsync(id);
+            XTaperedRollerBrg xTaperedRollerBrg = await db.XTaperedRollerBearings.FindAsync(id);
             if (xTaperedRollerBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.CrossTaperedRollerBearings.Add(xTaperedRollerBrg);
+            db.XTaperedRollerBearings.Add(xTaperedRollerBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(XTaperedRollerBrg))]
         public async Task<IHttpActionResult> DeleteXTaperedRollerBrg(string id)
         {
-            XTaperedRollerBrg xTaperedRollerBrg = await db.CrossTaperedRollerBearings.FindAsync(id);
+            XTaperedRollerBrg xTaperedRollerBrg = await db.XTaperedRollerBearings.FindAsync(id);
             if (xTaperedRollerBrg == null)
             {
                 return NotFound();
             }
 
-            db.CrossTaperedRollerBearings.Remove(xTaperedRollerBrg);
+            db.XTaperedRollerBearings.Remove(xTaperedRollerBrg);
             await db.SaveChangesAsync();
 
             return Ok(xTaperedRollerBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool XTaperedRollerBrgExists(string id)
         {
-            return db.CrossTaperedRollerBearings.Count(e => e.TypeID == id) > 0;
+            return db.XTaperedRollerBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

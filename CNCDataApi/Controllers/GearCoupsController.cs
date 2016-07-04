@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class GearCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/GearCoups
-        public IQueryable<GearCoup> GetGearCoupling()
+        public IQueryable<GearCoup> GetGearCouplings()
         {
-            return db.GearCoupling;
+            return db.GearCouplings;
         }
 
         // GET: api/GearCoups/5
         [ResponseType(typeof(GearCoup))]
         public async Task<IHttpActionResult> GetGearCoup(string id)
         {
-            GearCoup gearCoup = await db.GearCoupling.FindAsync(id);
+            GearCoup gearCoup = await db.GearCouplings.FindAsync(id);
             if (gearCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.GearCoupling.Add(gearCoup);
+            db.GearCouplings.Add(gearCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(GearCoup))]
         public async Task<IHttpActionResult> DeleteGearCoup(string id)
         {
-            GearCoup gearCoup = await db.GearCoupling.FindAsync(id);
+            GearCoup gearCoup = await db.GearCouplings.FindAsync(id);
             if (gearCoup == null)
             {
                 return NotFound();
             }
 
-            db.GearCoupling.Remove(gearCoup);
+            db.GearCouplings.Remove(gearCoup);
             await db.SaveChangesAsync();
 
             return Ok(gearCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool GearCoupExists(string id)
         {
-            return db.GearCoupling.Count(e => e.TypeID == id) > 0;
+            return db.GearCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CNCDataApi.Controllers
 {
     public class HubShapedCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/HubShapedCoups
         public IQueryable<HubShapedCoup> GetHubShapedCouplings()

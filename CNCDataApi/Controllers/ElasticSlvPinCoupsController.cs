@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class ElasticSlvPinCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ElasticSlvPinCoups
-        public IQueryable<ElasticSlvPinCoup> GetElasticSleevePinCoupling()
+        public IQueryable<ElasticSlvPinCoup> GetElasticSlvPinCouplings()
         {
-            return db.ElasticSleevePinCoupling;
+            return db.ElasticSlvPinCouplings;
         }
 
         // GET: api/ElasticSlvPinCoups/5
         [ResponseType(typeof(ElasticSlvPinCoup))]
         public async Task<IHttpActionResult> GetElasticSlvPinCoup(string id)
         {
-            ElasticSlvPinCoup elasticSlvPinCoup = await db.ElasticSleevePinCoupling.FindAsync(id);
+            ElasticSlvPinCoup elasticSlvPinCoup = await db.ElasticSlvPinCouplings.FindAsync(id);
             if (elasticSlvPinCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ElasticSleevePinCoupling.Add(elasticSlvPinCoup);
+            db.ElasticSlvPinCouplings.Add(elasticSlvPinCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(ElasticSlvPinCoup))]
         public async Task<IHttpActionResult> DeleteElasticSlvPinCoup(string id)
         {
-            ElasticSlvPinCoup elasticSlvPinCoup = await db.ElasticSleevePinCoupling.FindAsync(id);
+            ElasticSlvPinCoup elasticSlvPinCoup = await db.ElasticSlvPinCouplings.FindAsync(id);
             if (elasticSlvPinCoup == null)
             {
                 return NotFound();
             }
 
-            db.ElasticSleevePinCoupling.Remove(elasticSlvPinCoup);
+            db.ElasticSlvPinCouplings.Remove(elasticSlvPinCoup);
             await db.SaveChangesAsync();
 
             return Ok(elasticSlvPinCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool ElasticSlvPinCoupExists(string id)
         {
-            return db.ElasticSleevePinCoupling.Count(e => e.TypeID == id) > 0;
+            return db.ElasticSlvPinCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

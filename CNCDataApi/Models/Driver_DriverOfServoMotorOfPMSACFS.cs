@@ -1,67 +1,64 @@
-﻿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "Driver_DriverOfServoMotorOfPMSACFS")]
+    [Table(name: "永磁同步交流进给系统伺服电机驱动器数据_TAB")]
     public partial class PMSrvMotorDriver
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "型号")]
+        [Column(name: "型号")]
         public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "生产厂家")]
+        [Column(name: "生产厂家")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "连续电流")]
+        [Column(name: "连续电流")]
         public double? ContinuousCurrent { get; set; }
 
-        [Display(Name = "峰值电流")]
+        [Column(name: "短时最大电流")]
         public double? PeakCurrent { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "电源电压")]
+        [Column(name: "电源电压")]
         public string SupplyVoltage { get; set; }
 
-        [Display(Name = "最大适配电机功率")]
+        [Column(name: "最大适配电机功率")]
         public double? MaxAdaptableMotorPower { get; set; }
 
-        [Display(Name = "最大制动电流")]
+        [Column(name: "最大制动电流")]
         public double? MaxBrakingCurrent { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "外接制动电阻")]
+        [Column(name: "外接制动电阻")]
         public string ExternalBrakingResistance { get; set; }
 
-        [Display(Name = "PWM周期")]
+        [Column(name: "PWM周期")]
         public double? CycleOfPWM { get; set; }
 
-        [Display(Name = "直流供电电压")]
-        public double? SupplyVoltageOfDC { get; set; }
+        [StringLength(50)]
+        [Column(name: "直流供电电压")]
+        public string SupplyVoltageOfDC { get; set; }
 
-        [Display(Name = "位置环增益")]
+        [Column(name: "位置环增益")]
         public double? PositionLoopGain { get; set; }
 
-        [Display(Name = "速度环增益")]
+        [Column(name: "速度环增益")]
         public double? SpeedLoopGain { get; set; }
 
-        [Display(Name = "速度环积分常数")]
+        [Column(name: "速度环积分常数")]
         public double? IntegralConstantOfSpeedLoop { get; set; }
 
-        [Display(Name = "d轴电流增益值")]
-        public double? GainOfDaxisCurrent { get; set; }
+        [Column(name: "d轴电流增益值")]
+        public double? DaxisCurrentGain { get; set; }
 
-        [Display(Name = "d轴电流积分常数")]
+        [Column(name: "d轴电流积分常熟")]
         public double? IntegralConstantOfDaxisCurrent { get; set; }
 
-        [Display(Name = "说明")]
-        [Column(TypeName = "text")]
+        [Column(name: "说明", TypeName = "text")]
         public string Description { get; set; }
     }
 }

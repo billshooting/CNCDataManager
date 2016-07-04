@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class OldhamCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/OldhamCoups
-        public IQueryable<OldhamCoup> GetOldhamCoupling()
+        public IQueryable<OldhamCoup> GetOldhamCouplings()
         {
-            return db.OldhamCoupling;
+            return db.OldhamCouplings;
         }
 
         // GET: api/OldhamCoups/5
         [ResponseType(typeof(OldhamCoup))]
         public async Task<IHttpActionResult> GetOldhamCoup(string id)
         {
-            OldhamCoup oldhamCoup = await db.OldhamCoupling.FindAsync(id);
+            OldhamCoup oldhamCoup = await db.OldhamCouplings.FindAsync(id);
             if (oldhamCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.OldhamCoupling.Add(oldhamCoup);
+            db.OldhamCouplings.Add(oldhamCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(OldhamCoup))]
         public async Task<IHttpActionResult> DeleteOldhamCoup(string id)
         {
-            OldhamCoup oldhamCoup = await db.OldhamCoupling.FindAsync(id);
+            OldhamCoup oldhamCoup = await db.OldhamCouplings.FindAsync(id);
             if (oldhamCoup == null)
             {
                 return NotFound();
             }
 
-            db.OldhamCoupling.Remove(oldhamCoup);
+            db.OldhamCouplings.Remove(oldhamCoup);
             await db.SaveChangesAsync();
 
             return Ok(oldhamCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool OldhamCoupExists(string id)
         {
-            return db.OldhamCoupling.Count(e => e.TypeID == id) > 0;
+            return db.OldhamCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

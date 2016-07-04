@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class PMSrvMotorSizesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/PMSrvMotorSizes
-        public IQueryable<PMSrvMotorSize> GetSizeOfServoMotorOfPMSACFS()
+        public IQueryable<PMSrvMotorSize> GetPMSrvMotorSizes()
         {
-            return db.SizeOfServoMotorOfPMSACFS;
+            return db.PMSrvMotorSizes;
         }
 
         // GET: api/PMSrvMotorSizes/5
         [ResponseType(typeof(PMSrvMotorSize))]
         public async Task<IHttpActionResult> GetPMSrvMotorSize(string id)
         {
-            PMSrvMotorSize pMSrvMotorSize = await db.SizeOfServoMotorOfPMSACFS.FindAsync(id);
+            PMSrvMotorSize pMSrvMotorSize = await db.PMSrvMotorSizes.FindAsync(id);
             if (pMSrvMotorSize == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.SizeOfServoMotorOfPMSACFS.Add(pMSrvMotorSize);
+            db.PMSrvMotorSizes.Add(pMSrvMotorSize);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(PMSrvMotorSize))]
         public async Task<IHttpActionResult> DeletePMSrvMotorSize(string id)
         {
-            PMSrvMotorSize pMSrvMotorSize = await db.SizeOfServoMotorOfPMSACFS.FindAsync(id);
+            PMSrvMotorSize pMSrvMotorSize = await db.PMSrvMotorSizes.FindAsync(id);
             if (pMSrvMotorSize == null)
             {
                 return NotFound();
             }
 
-            db.SizeOfServoMotorOfPMSACFS.Remove(pMSrvMotorSize);
+            db.PMSrvMotorSizes.Remove(pMSrvMotorSize);
             await db.SaveChangesAsync();
 
             return Ok(pMSrvMotorSize);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool PMSrvMotorSizeExists(string id)
         {
-            return db.SizeOfServoMotorOfPMSACFS.Count(e => e.TypeID == id) > 0;
+            return db.PMSrvMotorSizes.Count(e => e.TypeID == id) > 0;
         }
     }
 }

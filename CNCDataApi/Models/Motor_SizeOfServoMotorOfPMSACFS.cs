@@ -1,50 +1,50 @@
 namespace CNCDataApi.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "Motor_SizeOfServoMotorOfPMSACFS")]
+    [Table(name: "æ°¸ç£åŒæ­¥äº¤æµè¿›ç»™ç³»ç»Ÿä¼ºæœç”µæœºå°ºå¯¸æ•°æ®_TAB")]
     public partial class PMSrvMotorSize
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "ĞÍºÅ")]
+        [Column(name: "å‹å·")]
         public string TypeID { get; set; }
 
+        [Required]
         [StringLength(50)]
-        [Display(Name = "Éú²ú³§¼Ò")]
+        [Column(name: "ç”Ÿäº§å‚å®¶")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "³ß´çB")]
+        [Column("å°ºå¯¸B(mm)")]
         public double? Size_B { get; set; }
 
-        [Display(Name = "³ß´çC")]
+        [Column("å°ºå¯¸C(mm)")]
         public double? Size_C { get; set; }
 
-        [Display(Name = "³ß´çK")]
+        [Column("å°ºå¯¸K(mm)")]
         public double? Size_K { get; set; }
 
+        [Column("å°ºå¯¸F(mm)")]
         [StringLength(25)]
-        [Display(Name = "³ß´çF")]
         public string Size_F { get; set; }
 
-        [Display(Name = "³ß´çG")]
+        [Column("å°ºå¯¸G(mm)")]
         public double? Size_G { get; set; }
 
+        [Column("å°ºå¯¸D(mm)")]
         [StringLength(25)]
-        [Display(Name = "³ß´çD")]
         public string Size_D { get; set; }
 
-        [Display(Name = "³ß´çE1")]
+        [Column("å°ºå¯¸E1(mm)")]
         public double? Size_E1 { get; set; }
 
-        [Display(Name = "³ß´çE2")]
+        [Column("å°ºå¯¸E2(mm)")]
         public double? Size_E2 { get; set; }
 
-        [Display(Name = "³ß´çE3")]
+        [Column("å°ºå¯¸E3(mm)")]
         public double? Size_E3 { get; set; }
+
+        public virtual PMSrvMotorPara ParaOfPMSrvMotor { get; set; }
     }
 }
