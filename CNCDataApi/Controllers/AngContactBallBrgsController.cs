@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -15,19 +11,19 @@ namespace CNCDataApi.Controllers
 {
     public class AngContactBallBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        public CNCMachineData db = new CNCMachineData();
 
         // GET: api/AngContactBallBrgs
-        public IQueryable<AngContactBallBrg> GetAngularContactBallBearings()
+        public IQueryable<AngContactBallBrg> GetAngContactBallBearings()
         {
-            return db.AngularContactBallBearings;
+            return db.AngContactBallBearings;
         }
 
         // GET: api/AngContactBallBrgs/5
         [ResponseType(typeof(AngContactBallBrg))]
         public async Task<IHttpActionResult> GetAngContactBallBrg(string id)
         {
-            AngContactBallBrg angContactBallBrg = await db.AngularContactBallBearings.FindAsync(id);
+            AngContactBallBrg angContactBallBrg = await db.AngContactBallBearings.FindAsync(id);
             if (angContactBallBrg == null)
             {
                 return NotFound();
@@ -80,7 +76,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.AngularContactBallBearings.Add(angContactBallBrg);
+            db.AngContactBallBearings.Add(angContactBallBrg);
 
             try
             {
@@ -105,13 +101,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(AngContactBallBrg))]
         public async Task<IHttpActionResult> DeleteAngContactBallBrg(string id)
         {
-            AngContactBallBrg angContactBallBrg = await db.AngularContactBallBearings.FindAsync(id);
+            AngContactBallBrg angContactBallBrg = await db.AngContactBallBearings.FindAsync(id);
             if (angContactBallBrg == null)
             {
                 return NotFound();
             }
 
-            db.AngularContactBallBearings.Remove(angContactBallBrg);
+            db.AngContactBallBearings.Remove(angContactBallBrg);
             await db.SaveChangesAsync();
 
             return Ok(angContactBallBrg);
@@ -128,7 +124,7 @@ namespace CNCDataApi.Controllers
 
         private bool AngContactBallBrgExists(string id)
         {
-            return db.AngularContactBallBearings.Count(e => e.TypeID == id) > 0;
+            return db.AngContactBallBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

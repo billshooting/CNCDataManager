@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class HeliCylinGearsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/HeliCylinGears
-        public IQueryable<HeliCylinGear> GetHelicalCylindricalGear()
+        public IQueryable<HeliCylinGear> GetHeliCylinGears()
         {
-            return db.HelicalCylindricalGear;
+            return db.HeliCylinGears;
         }
 
         // GET: api/HeliCylinGears/5
         [ResponseType(typeof(HeliCylinGear))]
         public async Task<IHttpActionResult> GetHeliCylinGear(string id)
         {
-            HeliCylinGear heliCylinGear = await db.HelicalCylindricalGear.FindAsync(id);
+            HeliCylinGear heliCylinGear = await db.HeliCylinGears.FindAsync(id);
             if (heliCylinGear == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.HelicalCylindricalGear.Add(heliCylinGear);
+            db.HeliCylinGears.Add(heliCylinGear);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(HeliCylinGear))]
         public async Task<IHttpActionResult> DeleteHeliCylinGear(string id)
         {
-            HeliCylinGear heliCylinGear = await db.HelicalCylindricalGear.FindAsync(id);
+            HeliCylinGear heliCylinGear = await db.HeliCylinGears.FindAsync(id);
             if (heliCylinGear == null)
             {
                 return NotFound();
             }
 
-            db.HelicalCylindricalGear.Remove(heliCylinGear);
+            db.HeliCylinGears.Remove(heliCylinGear);
             await db.SaveChangesAsync();
 
             return Ok(heliCylinGear);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool HeliCylinGearExists(string id)
         {
-            return db.HelicalCylindricalGear.Count(e => e.TypeID == id) > 0;
+            return db.HeliCylinGears.Count(e => e.TypeID == id) > 0;
         }
     }
 }

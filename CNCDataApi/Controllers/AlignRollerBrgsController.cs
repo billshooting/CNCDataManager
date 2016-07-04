@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class AlignRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/AlignRollerBrgs
-        public IQueryable<AlignRollerBrg> GetAligningRollerBearing()
+        public IQueryable<AlignRollerBrg> GetAlignRollerBearings()
         {
-            return db.AligningRollerBearing;
+            return db.AlignRollerBearings;
         }
 
         // GET: api/AlignRollerBrgs/5
         [ResponseType(typeof(AlignRollerBrg))]
         public async Task<IHttpActionResult> GetAlignRollerBrg(string id)
         {
-            AlignRollerBrg alignRollerBrg = await db.AligningRollerBearing.FindAsync(id);
+            AlignRollerBrg alignRollerBrg = await db.AlignRollerBearings.FindAsync(id);
             if (alignRollerBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.AligningRollerBearing.Add(alignRollerBrg);
+            db.AlignRollerBearings.Add(alignRollerBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(AlignRollerBrg))]
         public async Task<IHttpActionResult> DeleteAlignRollerBrg(string id)
         {
-            AlignRollerBrg alignRollerBrg = await db.AligningRollerBearing.FindAsync(id);
+            AlignRollerBrg alignRollerBrg = await db.AlignRollerBearings.FindAsync(id);
             if (alignRollerBrg == null)
             {
                 return NotFound();
             }
 
-            db.AligningRollerBearing.Remove(alignRollerBrg);
+            db.AlignRollerBearings.Remove(alignRollerBrg);
             await db.SaveChangesAsync();
 
             return Ok(alignRollerBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool AlignRollerBrgExists(string id)
         {
-            return db.AligningRollerBearing.Count(e => e.TypeID == id) > 0;
+            return db.AlignRollerBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

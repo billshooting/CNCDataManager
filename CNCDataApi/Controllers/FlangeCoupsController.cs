@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class FlangeCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/FlangeCoups
-        public IQueryable<FlangeCoup> GetFlangeCoupling()
+        public IQueryable<FlangeCoup> GetFlangeCouplings()
         {
-            return db.FlangeCoupling;
+            return db.FlangeCouplings;
         }
 
         // GET: api/FlangeCoups/5
         [ResponseType(typeof(FlangeCoup))]
         public async Task<IHttpActionResult> GetFlangeCoup(string id)
         {
-            FlangeCoup flangeCoup = await db.FlangeCoupling.FindAsync(id);
+            FlangeCoup flangeCoup = await db.FlangeCouplings.FindAsync(id);
             if (flangeCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.FlangeCoupling.Add(flangeCoup);
+            db.FlangeCouplings.Add(flangeCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(FlangeCoup))]
         public async Task<IHttpActionResult> DeleteFlangeCoup(string id)
         {
-            FlangeCoup flangeCoup = await db.FlangeCoupling.FindAsync(id);
+            FlangeCoup flangeCoup = await db.FlangeCouplings.FindAsync(id);
             if (flangeCoup == null)
             {
                 return NotFound();
             }
 
-            db.FlangeCoupling.Remove(flangeCoup);
+            db.FlangeCouplings.Remove(flangeCoup);
             await db.SaveChangesAsync();
 
             return Ok(flangeCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool FlangeCoupExists(string id)
         {
-            return db.FlangeCoupling.Count(e => e.TypeID == id) > 0;
+            return db.FlangeCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class BallLeadScrewSptBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/BallLeadScrewSptBrgs
-        public IQueryable<BallLeadScrewSptBrg> GetBallLeadScrewSupportBearings()
+        public IQueryable<BallLeadScrewSptBrg> GetBallLeadScrewSptBearings()
         {
-            return db.BallLeadScrewSupportBearings;
+            return db.BallLeadScrewSptBearings;
         }
 
         // GET: api/BallLeadScrewSptBrgs/5
         [ResponseType(typeof(BallLeadScrewSptBrg))]
         public async Task<IHttpActionResult> GetBallLeadScrewSptBrg(string id)
         {
-            BallLeadScrewSptBrg ballLeadScrewSptBrg = await db.BallLeadScrewSupportBearings.FindAsync(id);
+            BallLeadScrewSptBrg ballLeadScrewSptBrg = await db.BallLeadScrewSptBearings.FindAsync(id);
             if (ballLeadScrewSptBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.BallLeadScrewSupportBearings.Add(ballLeadScrewSptBrg);
+            db.BallLeadScrewSptBearings.Add(ballLeadScrewSptBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(BallLeadScrewSptBrg))]
         public async Task<IHttpActionResult> DeleteBallLeadScrewSptBrg(string id)
         {
-            BallLeadScrewSptBrg ballLeadScrewSptBrg = await db.BallLeadScrewSupportBearings.FindAsync(id);
+            BallLeadScrewSptBrg ballLeadScrewSptBrg = await db.BallLeadScrewSptBearings.FindAsync(id);
             if (ballLeadScrewSptBrg == null)
             {
                 return NotFound();
             }
 
-            db.BallLeadScrewSupportBearings.Remove(ballLeadScrewSptBrg);
+            db.BallLeadScrewSptBearings.Remove(ballLeadScrewSptBrg);
             await db.SaveChangesAsync();
 
             return Ok(ballLeadScrewSptBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool BallLeadScrewSptBrgExists(string id)
         {
-            return db.BallLeadScrewSupportBearings.Count(e => e.TypeID == id) > 0;
+            return db.BallLeadScrewSptBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

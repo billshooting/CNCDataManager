@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class SpurGearsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SpurGears
-        public IQueryable<SpurGear> GetSpurGear()
+        public IQueryable<SpurGear> GetSpurGears()
         {
-            return db.SpurGear;
+            return db.SpurGears;
         }
 
         // GET: api/SpurGears/5
         [ResponseType(typeof(SpurGear))]
         public async Task<IHttpActionResult> GetSpurGear(string id)
         {
-            SpurGear spurGear = await db.SpurGear.FindAsync(id);
+            SpurGear spurGear = await db.SpurGears.FindAsync(id);
             if (spurGear == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.SpurGear.Add(spurGear);
+            db.SpurGears.Add(spurGear);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(SpurGear))]
         public async Task<IHttpActionResult> DeleteSpurGear(string id)
         {
-            SpurGear spurGear = await db.SpurGear.FindAsync(id);
+            SpurGear spurGear = await db.SpurGears.FindAsync(id);
             if (spurGear == null)
             {
                 return NotFound();
             }
 
-            db.SpurGear.Remove(spurGear);
+            db.SpurGears.Remove(spurGear);
             await db.SaveChangesAsync();
 
             return Ok(spurGear);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool SpurGearExists(string id)
         {
-            return db.SpurGear.Count(e => e.TypeID == id) > 0;
+            return db.SpurGears.Count(e => e.TypeID == id) > 0;
         }
     }
 }

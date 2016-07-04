@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class StraightBevelGearsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/StraightBevelGears
-        public IQueryable<StraightBevelGear> GetStraightBevelGear()
+        public IQueryable<StraightBevelGear> GetStraightBevelGears()
         {
-            return db.StraightBevelGear;
+            return db.StraightBevelGears;
         }
 
         // GET: api/StraightBevelGears/5
         [ResponseType(typeof(StraightBevelGear))]
         public async Task<IHttpActionResult> GetStraightBevelGear(string id)
         {
-            StraightBevelGear straightBevelGear = await db.StraightBevelGear.FindAsync(id);
+            StraightBevelGear straightBevelGear = await db.StraightBevelGears.FindAsync(id);
             if (straightBevelGear == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.StraightBevelGear.Add(straightBevelGear);
+            db.StraightBevelGears.Add(straightBevelGear);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(StraightBevelGear))]
         public async Task<IHttpActionResult> DeleteStraightBevelGear(string id)
         {
-            StraightBevelGear straightBevelGear = await db.StraightBevelGear.FindAsync(id);
+            StraightBevelGear straightBevelGear = await db.StraightBevelGears.FindAsync(id);
             if (straightBevelGear == null)
             {
                 return NotFound();
             }
 
-            db.StraightBevelGear.Remove(straightBevelGear);
+            db.StraightBevelGears.Remove(straightBevelGear);
             await db.SaveChangesAsync();
 
             return Ok(straightBevelGear);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool StraightBevelGearExists(string id)
         {
-            return db.StraightBevelGear.Count(e => e.TypeID == id) > 0;
+            return db.StraightBevelGears.Count(e => e.TypeID == id) > 0;
         }
     }
 }

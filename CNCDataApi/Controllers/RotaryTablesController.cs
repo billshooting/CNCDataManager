@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class RotaryTablesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/RotaryTables
-        public IQueryable<RotaryTable> GetRotaryTable()
+        public IQueryable<RotaryTable> GetRotaryTables()
         {
-            return db.RotaryTable;
+            return db.RotaryTables;
         }
 
         // GET: api/RotaryTables/5
         [ResponseType(typeof(RotaryTable))]
         public async Task<IHttpActionResult> GetRotaryTable(string id)
         {
-            RotaryTable rotaryTable = await db.RotaryTable.FindAsync(id);
+            RotaryTable rotaryTable = await db.RotaryTables.FindAsync(id);
             if (rotaryTable == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.RotaryTable.Add(rotaryTable);
+            db.RotaryTables.Add(rotaryTable);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(RotaryTable))]
         public async Task<IHttpActionResult> DeleteRotaryTable(string id)
         {
-            RotaryTable rotaryTable = await db.RotaryTable.FindAsync(id);
+            RotaryTable rotaryTable = await db.RotaryTables.FindAsync(id);
             if (rotaryTable == null)
             {
                 return NotFound();
             }
 
-            db.RotaryTable.Remove(rotaryTable);
+            db.RotaryTables.Remove(rotaryTable);
             await db.SaveChangesAsync();
 
             return Ok(rotaryTable);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool RotaryTableExists(string id)
         {
-            return db.RotaryTable.Count(e => e.TypeID == id) > 0;
+            return db.RotaryTables.Count(e => e.TypeID == id) > 0;
         }
     }
 }

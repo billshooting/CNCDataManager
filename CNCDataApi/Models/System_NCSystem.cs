@@ -1,4 +1,4 @@
-ï»¿namespace CNCDataApi.Models
+namespace CNCDataApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,36 +6,51 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table(name: "System_NCSystem")]
+    [Table("CNCSystem")]
     public partial class NCSystem
     {
-        [Key]
+        public int Id { get; set; }
+
+        [Required]
         [StringLength(50)]
-        [Display(Name ="å‹å·")]
+        [Display(Name = "ĞÍºÅ")]
+        [Column(name: "ModelNum")]
         public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "ç”Ÿäº§å‚å®¶")]
+        [Display(Name = "Éú²ú³§¼Ò")]
         public string Manufacturer { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "æ”¯æŒæœºåºŠç±»å‹")]
-        public string SupportTypeOfMachine { get; set; }
+        [Display(Name = "ÏµÁĞ")]
+        public string series { get; set; }
 
-        [Display(Name = "æ”¯æŒé€šé“æ•°")]
-        public int? SupportNumberOfChannels { get; set; }
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "Ö§³Ö»ú´²ÀàĞÍ")]
+        [Column(name: "MachineType")]
+        public string SupportMachineType { get; set; }
 
-        [Display(Name = "è¿›ç»™è½´æœ€å¤§æ§åˆ¶è½´æ•°")]
-        public int? MaxControlNumberOfFeedAxis { get; set; }
+        [Display(Name = "Ö§³ÖÍ¨µÀÊı")]
+        [Column(name: "Channels")]
+        public int? SupportChannels { get; set; }
 
-        [Display(Name = "ä¸»è½´æœ€å¤§æ§åˆ¶è½´æ•°")]
-        public int? MaxControlNumberOfSpindle { get; set; }
+        [Display(Name = "½ø¸øÖá×î´ó¿ØÖÆÖáÊı")]
+        [Column(name: "FeedShafts")]
+        public int? MaxNumberOfFeedShafts { get; set; }
 
-        [Display(Name = "æœ€å¤§è”è½´æ•°")]
+        [Display(Name = "Ö÷Öá×î´ó¿ØÖÆÖáÊı")]
+        [Column(name: "Spindels")]
+        public int? MaxNumberOfSpindels { get; set; }
+
+        [Display(Name = "×î´óÁªÖáÊı")]
+        [Column(name: "LinkageAxes")]
         public int? MaxNumberOfLinkageAxis { get; set; }
 
-        //[Display(Name = "å›¾ç‰‡")]
-        //public byte[] CNCImage { get; set; }
+        public bool? IsMask { get; set; }
+
+        [StringLength(500)]
+        public string PictureUrl { get; set; }
     }
 }

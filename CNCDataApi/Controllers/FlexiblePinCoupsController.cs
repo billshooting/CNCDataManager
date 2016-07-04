@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class FlexiblePinCoupsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/FlexiblePinCoups
-        public IQueryable<FlexiblePinCoup> GetFlexiblePinCoupling()
+        public IQueryable<FlexiblePinCoup> GetFlexiblePinCouplings()
         {
-            return db.FlexiblePinCoupling;
+            return db.FlexiblePinCouplings;
         }
 
         // GET: api/FlexiblePinCoups/5
         [ResponseType(typeof(FlexiblePinCoup))]
         public async Task<IHttpActionResult> GetFlexiblePinCoup(string id)
         {
-            FlexiblePinCoup flexiblePinCoup = await db.FlexiblePinCoupling.FindAsync(id);
+            FlexiblePinCoup flexiblePinCoup = await db.FlexiblePinCouplings.FindAsync(id);
             if (flexiblePinCoup == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.FlexiblePinCoupling.Add(flexiblePinCoup);
+            db.FlexiblePinCouplings.Add(flexiblePinCoup);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(FlexiblePinCoup))]
         public async Task<IHttpActionResult> DeleteFlexiblePinCoup(string id)
         {
-            FlexiblePinCoup flexiblePinCoup = await db.FlexiblePinCoupling.FindAsync(id);
+            FlexiblePinCoup flexiblePinCoup = await db.FlexiblePinCouplings.FindAsync(id);
             if (flexiblePinCoup == null)
             {
                 return NotFound();
             }
 
-            db.FlexiblePinCoupling.Remove(flexiblePinCoup);
+            db.FlexiblePinCouplings.Remove(flexiblePinCoup);
             await db.SaveChangesAsync();
 
             return Ok(flexiblePinCoup);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool FlexiblePinCoupExists(string id)
         {
-            return db.FlexiblePinCoupling.Count(e => e.TypeID == id) > 0;
+            return db.FlexiblePinCouplings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

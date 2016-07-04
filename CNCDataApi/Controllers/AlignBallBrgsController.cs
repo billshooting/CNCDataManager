@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class AlignBallBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/AlignBallBrgs
-        public IQueryable<AlignBallBrg> GetAligningBallBearings()
+        public IQueryable<AlignBallBrg> GetAlignBallBearings()
         {
-            return db.AligningBallBearings;
+            return db.AlignBallBearings;
         }
 
         // GET: api/AlignBallBrgs/5
         [ResponseType(typeof(AlignBallBrg))]
         public async Task<IHttpActionResult> GetAlignBallBrg(string id)
         {
-            AlignBallBrg alignBallBrg = await db.AligningBallBearings.FindAsync(id);
+            AlignBallBrg alignBallBrg = await db.AlignBallBearings.FindAsync(id);
             if (alignBallBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.AligningBallBearings.Add(alignBallBrg);
+            db.AlignBallBearings.Add(alignBallBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(AlignBallBrg))]
         public async Task<IHttpActionResult> DeleteAlignBallBrg(string id)
         {
-            AlignBallBrg alignBallBrg = await db.AligningBallBearings.FindAsync(id);
+            AlignBallBrg alignBallBrg = await db.AlignBallBearings.FindAsync(id);
             if (alignBallBrg == null)
             {
                 return NotFound();
             }
 
-            db.AligningBallBearings.Remove(alignBallBrg);
+            db.AlignBallBearings.Remove(alignBallBrg);
             await db.SaveChangesAsync();
 
             return Ok(alignBallBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool AlignBallBrgExists(string id)
         {
-            return db.AligningBallBearings.Count(e => e.TypeID == id) > 0;
+            return db.AlignBallBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

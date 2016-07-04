@@ -1,67 +1,60 @@
 namespace CNCDataApi.Models
 {
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "ParaOfElectricSpindle")]
+    [Table(name: "ç”µä¸»è½´æŠ€æœ¯æ•°æ®_TAB")]
     public partial class ElecSpindlePara
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "ĞÍºÅ")]
+        [Column(name: "å‹å·")]
         public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Éú²ú³§¼Ò")]
+        [Column(name: "ç”Ÿäº§å‚å®¶")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "¶î¶¨×ª¾Ø")]
+        [Column(name: "é¢å®šè½¬çŸ©")]
         public double? RatedTorque { get; set; }
 
-        [Display(Name = "¶î¶¨×ªËÙ")]
+        [Column(name: "é¢å®šè½¬é€Ÿ")]
         public int? RatedRotationSpeed { get; set; }
 
-        [Display(Name = "×î´ó×ªËÙ")]
+        [Column(name: "æœ€å¤§è½¬é€Ÿ")]
         public int? MaxRotationSpeed { get; set; }
 
-        [Display(Name = "×ª¶¯¹ßÁ¿")]
+        [Column(name: "è½¬åŠ¨æƒ¯é‡")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "¶î¶¨¹¦ÂÊ")]
+        [Column(name: "é¢å®šåŠŸç‡")]
         public double? RatedPower { get; set; }
 
-        [Display(Name = "¶î¶¨µçÁ÷")]
+        [Column(name: "é¢å®šç”µæµ")]
         public double? RatedCurrent { get; set; }
 
-        [Display(Name = "×î´óµçÁ÷")]
+        [Column(name: "æœ€å¤§ç”µæµ")]
         public double? MaxCurrent { get; set; }
 
-        [Display(Name = "Ö±Á÷Ä¸ÏßµçÑ¹")]
+        [Column(name: "ç›´æµæ¯çº¿ç”µå‹")]
         public double? DCLinkVoltage { get; set; }
 
-        [Display(Name = "·´µç¶¯ÊÆÏµÊı")]
+        [Column(name: "åç”µåŠ¨åŠ¿ç³»æ•°")]
         public double? BackEMFCoefficient { get; set; }
 
-        [Display(Name = "ÈÈÊ±¼ä³£Êı")]
+        [Column(name: "çƒ­æ—¶é—´å¸¸æ•°")]
         public double? ThermalTimeConstant { get; set; }
 
-        [Display(Name = "×ª×ÓÖÊÁ¿")]
+        [Column(name: "è½¬å­è´¨é‡")]
         public double? MassOfRotor { get; set; }
 
-        [Display(Name = "¶¨×ÓÖÊÁ¿")]
+        [Column(name: "å®šå­è´¨é‡")]
         public double? MassOfStator { get; set; }
 
-        [Column(TypeName = "text")]
-        [Display(Name = "ËµÃ÷")]
+        [Column(name: "è¯´æ˜",TypeName = "text")]
         public string Description { get; set; }
 
-
-        [Display(Name = "µçÖ÷Öá³ß´çÊı¾İ")]
-        public virtual ElecSpindleSize Motor_SizeOfElectricSpindle { get; set; }
+        public virtual ElecSpindleSize SizeOfElecSpindle { get; set; }
     }
 }

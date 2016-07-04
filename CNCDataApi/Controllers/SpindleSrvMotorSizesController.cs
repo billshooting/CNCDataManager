@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class SpindleSrvMotorSizesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SpindleSrvMotorSizes
-        public IQueryable<SpindleSrvMotorSize> GetSizeOfServoMotorOfSpindle()
+        public IQueryable<SpindleSrvMotorSize> GetSpindleSrvMotorSizes()
         {
-            return db.SizeOfServoMotorOfSpindle;
+            return db.SpindleSrvMotorSizes;
         }
 
         // GET: api/SpindleSrvMotorSizes/5
         [ResponseType(typeof(SpindleSrvMotorSize))]
         public async Task<IHttpActionResult> GetSpindleSrvMotorSize(string id)
         {
-            SpindleSrvMotorSize spindleSrvMotorSize = await db.SizeOfServoMotorOfSpindle.FindAsync(id);
+            SpindleSrvMotorSize spindleSrvMotorSize = await db.SpindleSrvMotorSizes.FindAsync(id);
             if (spindleSrvMotorSize == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.SizeOfServoMotorOfSpindle.Add(spindleSrvMotorSize);
+            db.SpindleSrvMotorSizes.Add(spindleSrvMotorSize);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(SpindleSrvMotorSize))]
         public async Task<IHttpActionResult> DeleteSpindleSrvMotorSize(string id)
         {
-            SpindleSrvMotorSize spindleSrvMotorSize = await db.SizeOfServoMotorOfSpindle.FindAsync(id);
+            SpindleSrvMotorSize spindleSrvMotorSize = await db.SpindleSrvMotorSizes.FindAsync(id);
             if (spindleSrvMotorSize == null)
             {
                 return NotFound();
             }
 
-            db.SizeOfServoMotorOfSpindle.Remove(spindleSrvMotorSize);
+            db.SpindleSrvMotorSizes.Remove(spindleSrvMotorSize);
             await db.SaveChangesAsync();
 
             return Ok(spindleSrvMotorSize);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool SpindleSrvMotorSizeExists(string id)
         {
-            return db.SizeOfServoMotorOfSpindle.Count(e => e.TypeID == id) > 0;
+            return db.SpindleSrvMotorSizes.Count(e => e.TypeID == id) > 0;
         }
     }
 }

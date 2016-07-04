@@ -15,7 +15,7 @@ namespace CNCDataApi.Controllers
 {
     public class TaperedRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/TaperedRollerBrgs
         public IQueryable<TaperedRollerBrg> GetTaperedRollerBearings()

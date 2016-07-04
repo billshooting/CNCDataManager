@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class PMSrvMotorDriversController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/PMSrvMotorDrivers
-        public IQueryable<PMSrvMotorDriver> GetDriverOfServoMotorOfPMSACFS()
+        public IQueryable<PMSrvMotorDriver> GetPMSrvMotorDrivers()
         {
-            return db.DriverOfServoMotorOfPMSACFS;
+            return db.PMSrvMotorDrivers;
         }
 
         // GET: api/PMSrvMotorDrivers/5
         [ResponseType(typeof(PMSrvMotorDriver))]
         public async Task<IHttpActionResult> GetPMSrvMotorDriver(string id)
         {
-            PMSrvMotorDriver pMSrvMotorDriver = await db.DriverOfServoMotorOfPMSACFS.FindAsync(id);
+            PMSrvMotorDriver pMSrvMotorDriver = await db.PMSrvMotorDrivers.FindAsync(id);
             if (pMSrvMotorDriver == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.DriverOfServoMotorOfPMSACFS.Add(pMSrvMotorDriver);
+            db.PMSrvMotorDrivers.Add(pMSrvMotorDriver);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(PMSrvMotorDriver))]
         public async Task<IHttpActionResult> DeletePMSrvMotorDriver(string id)
         {
-            PMSrvMotorDriver pMSrvMotorDriver = await db.DriverOfServoMotorOfPMSACFS.FindAsync(id);
+            PMSrvMotorDriver pMSrvMotorDriver = await db.PMSrvMotorDrivers.FindAsync(id);
             if (pMSrvMotorDriver == null)
             {
                 return NotFound();
             }
 
-            db.DriverOfServoMotorOfPMSACFS.Remove(pMSrvMotorDriver);
+            db.PMSrvMotorDrivers.Remove(pMSrvMotorDriver);
             await db.SaveChangesAsync();
 
             return Ok(pMSrvMotorDriver);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool PMSrvMotorDriverExists(string id)
         {
-            return db.DriverOfServoMotorOfPMSACFS.Count(e => e.TypeID == id) > 0;
+            return db.PMSrvMotorDrivers.Count(e => e.TypeID == id) > 0;
         }
     }
 }

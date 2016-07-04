@@ -1,90 +1,95 @@
 namespace CNCDataApi.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
-    [Table(name: "Motor_ParaOfServoMotorOfPMSACFS")]
+    [Table(name: "æ°¸ç£åŒæ­¥äº¤æµè¿›ç»™ç³»ç»Ÿä¼ºæœç”µæœºæŠ€æœ¯æ•°æ®_TAB")]
     public partial class PMSrvMotorPara
     {
         [Key]
         [StringLength(50)]
-        [Display(Name = "ĞÍºÅ")]
+        [Column(name: "å‹å·")]
         public string TypeID { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Éú²ú³§¼Ò")]
+        [Column(name: "ç”Ÿäº§å‚å®¶")]
         public string Manufacturer { get; set; }
 
-        [Display(Name = "¶î¶¨×ª¾Ø")]
+        [Column(name: "é¢å®šè½¬çŸ©")]
         public double? RatedTorque { get; set; }
 
-        [Display(Name = "×î´ó×ª¾Ø")]
+        [Column(name: "æœ€å¤§è½¬çŸ©")]
         public double? MaxTorque { get; set; }
 
-        [Display(Name = "¶î¶¨×ªËÙ")]
+        [Column(name: "é¢å®šè½¬é€Ÿ")]
         public int? RatedRotationSpeed { get; set; }
 
-        [Display(Name = "×î´ó×ªËÙ")]
+        [Column(name: "æœ€å¤§è½¬é€Ÿ")]
         public int? MaxRotationSpeed { get; set; }
 
-        [Display(Name = "×ª¶¯¹ßÁ¿")]
+        [Column(name: "è½¬åŠ¨æƒ¯é‡")]
         public double? MomentOfInertia { get; set; }
 
-        [Display(Name = "¶î¶¨¹¦ÂÊ")]
+        [Column(name: "é¢å®šåŠŸç‡")]
         public double? RatedPower { get; set; }
 
-        [Display(Name = "¾²Á¦¾Ø")]
+        [Column(name: "é™è½¬çŸ©")]
         public double? StaticTorque { get; set; }
 
-        [Display(Name = "µç»ú´Å¼«¶ÔÊı")]
+        [Column(name: "ç”µæœºç£æå¯¹æ•°")]
         public int? PairsOfMotorPole { get; set; }
 
-        [Display(Name = "Ö±Á÷Ä¸ÏßµçÑ¹")]
+        [Column(name: "ç›´æµæ¯çº¿ç”µå‹")]
         public double? DCLinkVoltage { get; set; }
 
-        [Display(Name = "¶î¶¨µçÁ÷")]
+        [Column(name: "é¢å®šç”µæµ")]
         public double? RatedCurrent { get; set; }
 
-        [Display(Name = "×î´óµçÁ÷")]
+        [Column(name: "æœ€å¤§ç”µæµ")]
         public double? MaxCurrent { get; set; }
 
-        [Display(Name = "»úĞµÊÂ¼ş³£Êı")]
+        [Column(name: "æœºæ¢°æ—¶é—´å¸¸æ•°")]
         public double? MechanicalTimeConstant { get; set; }
 
-        [Display(Name = "ÖÊÁ¿")]
+        [Column(name: "è´¨é‡")]
         public double? Mass { get; set; }
 
-        [Display(Name = "¾²×Óµç×è")]
+        [Column(name: "å®šå­ç”µé˜»")]
         public double? StatorResistance { get; set; }
 
-        [Display(Name = "Ã¿Ïà¾²×ÓÈÆ×éÂ©¸Ğ")]
+        [Column(name: "å®šå­ç»•ç»„æ¯é¡¹æ¼ç”µæ„Ÿ")]
         public double? LeakageInductanceOfEachPhaseOfStatorWinding { get; set; }
 
-        [Display(Name = "·´µç¶¯ÊÆ")]
+        [Column(name: "åç”µåŠ¨åŠ¿")]
         public double? CounterElectromotiveForce { get; set; }
 
-        [Display(Name = "¶î¶¨ÆµÂÊ")]
+        [Column(name: "é¢å®šé¢‘ç‡")]
         public int? RatedFrequency { get; set; }
 
-        [Display(Name = "µç»ú×ª×Ó×ª¶¯¹ßÁ¿")]
+        [Column(name: "ç”µæœºè½¬å­è½¬åŠ¨æƒ¯é‡")]
         public double? MomentOfInertiaOfMotorRotor { get; set; }
 
-        [Display(Name = "Ã¿ÏàÈÆ×éµç×è")]
+        [Column(name: "ç›¸ç»•ç»„ç”µé˜»")]
         public double? ResistanceOfPhaseWinding { get; set; }
 
-        [Display(Name = "Ã¿ÏàÈÆ×éµç¸Ğ")]
+        [Column(name: "ç›¸ç»•ç»„ç”µæ„Ÿ")]
         public double? InductanceOfPhaseWinding { get; set; }
 
         [StringLength(10)]
-        [Display(Name = "ÊÇ·ñ´ø±§Õ¢")]
+        [Column(name: "æ˜¯å¦å¸¦æŠ±é—¸")]
         public string IfWithBrake { get; set; }
 
-        [Column(TypeName = "text")]
-        [Display(Name = "ËµÃ÷")]
+        [Column(name: "å·¥ä½œç”µå‹")]
+        public int? WorkVoltage { get; set; }
+
+        [StringLength(50)]
+        [Column(name: "å®‰è£…æ–¹å¼")]
+        public string Installment { get; set; }
+
+        [Column(name: "è¯´æ˜", TypeName = "text")]
         public string Description { get; set; }
+
+        public virtual PMSrvMotorSize SizeOfPMSrvMotor { get; set; }
     }
 }

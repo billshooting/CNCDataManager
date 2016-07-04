@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class ArcCylinWormGearsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ArcCylinWormGears
-        public IQueryable<ArcCylinWormGear> GetArcCylindricalWormGear()
+        public IQueryable<ArcCylinWormGear> GetArcCylinWormGears()
         {
-            return db.ArcCylindricalWormGear;
+            return db.ArcCylinWormGears;
         }
 
         // GET: api/ArcCylinWormGears/5
         [ResponseType(typeof(ArcCylinWormGear))]
         public async Task<IHttpActionResult> GetArcCylinWormGear(string id)
         {
-            ArcCylinWormGear arcCylinWormGear = await db.ArcCylindricalWormGear.FindAsync(id);
+            ArcCylinWormGear arcCylinWormGear = await db.ArcCylinWormGears.FindAsync(id);
             if (arcCylinWormGear == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.ArcCylindricalWormGear.Add(arcCylinWormGear);
+            db.ArcCylinWormGears.Add(arcCylinWormGear);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(ArcCylinWormGear))]
         public async Task<IHttpActionResult> DeleteArcCylinWormGear(string id)
         {
-            ArcCylinWormGear arcCylinWormGear = await db.ArcCylindricalWormGear.FindAsync(id);
+            ArcCylinWormGear arcCylinWormGear = await db.ArcCylinWormGears.FindAsync(id);
             if (arcCylinWormGear == null)
             {
                 return NotFound();
             }
 
-            db.ArcCylindricalWormGear.Remove(arcCylinWormGear);
+            db.ArcCylinWormGears.Remove(arcCylinWormGear);
             await db.SaveChangesAsync();
 
             return Ok(arcCylinWormGear);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool ArcCylinWormGearExists(string id)
         {
-            return db.ArcCylindricalWormGear.Count(e => e.TypeID == id) > 0;
+            return db.ArcCylinWormGears.Count(e => e.TypeID == id) > 0;
         }
     }
 }

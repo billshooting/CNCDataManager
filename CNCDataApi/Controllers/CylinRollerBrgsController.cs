@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class CylinRollerBrgsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/CylinRollerBrgs
-        public IQueryable<CylinRollerBrg> GetCylindricalRollerBearings()
+        public IQueryable<CylinRollerBrg> GetCylinRollerBearings()
         {
-            return db.CylindricalRollerBearings;
+            return db.CylinRollerBearings;
         }
 
         // GET: api/CylinRollerBrgs/5
         [ResponseType(typeof(CylinRollerBrg))]
         public async Task<IHttpActionResult> GetCylinRollerBrg(string id)
         {
-            CylinRollerBrg cylinRollerBrg = await db.CylindricalRollerBearings.FindAsync(id);
+            CylinRollerBrg cylinRollerBrg = await db.CylinRollerBearings.FindAsync(id);
             if (cylinRollerBrg == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.CylindricalRollerBearings.Add(cylinRollerBrg);
+            db.CylinRollerBearings.Add(cylinRollerBrg);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(CylinRollerBrg))]
         public async Task<IHttpActionResult> DeleteCylinRollerBrg(string id)
         {
-            CylinRollerBrg cylinRollerBrg = await db.CylindricalRollerBearings.FindAsync(id);
+            CylinRollerBrg cylinRollerBrg = await db.CylinRollerBearings.FindAsync(id);
             if (cylinRollerBrg == null)
             {
                 return NotFound();
             }
 
-            db.CylindricalRollerBearings.Remove(cylinRollerBrg);
+            db.CylinRollerBearings.Remove(cylinRollerBrg);
             await db.SaveChangesAsync();
 
             return Ok(cylinRollerBrg);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool CylinRollerBrgExists(string id)
         {
-            return db.CylindricalRollerBearings.Count(e => e.TypeID == id) > 0;
+            return db.CylinRollerBearings.Count(e => e.TypeID == id) > 0;
         }
     }
 }

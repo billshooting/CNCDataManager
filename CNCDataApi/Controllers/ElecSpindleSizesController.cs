@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class ElecSpindleSizesController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ElecSpindleSizes
-        public IQueryable<ElecSpindleSize> GetSizeOfElectricSpindle()
+        public IQueryable<ElecSpindleSize> GetElecSpindleSizes()
         {
-            return db.SizeOfElectricSpindle;
+            return db.ElecSpindleSizes;
         }
 
         // GET: api/ElecSpindleSizes/5
         [ResponseType(typeof(ElecSpindleSize))]
         public async Task<IHttpActionResult> GetElecSpindleSize(string id)
         {
-            ElecSpindleSize elecSpindleSize = await db.SizeOfElectricSpindle.FindAsync(id);
+            ElecSpindleSize elecSpindleSize = await db.ElecSpindleSizes.FindAsync(id);
             if (elecSpindleSize == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.SizeOfElectricSpindle.Add(elecSpindleSize);
+            db.ElecSpindleSizes.Add(elecSpindleSize);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(ElecSpindleSize))]
         public async Task<IHttpActionResult> DeleteElecSpindleSize(string id)
         {
-            ElecSpindleSize elecSpindleSize = await db.SizeOfElectricSpindle.FindAsync(id);
+            ElecSpindleSize elecSpindleSize = await db.ElecSpindleSizes.FindAsync(id);
             if (elecSpindleSize == null)
             {
                 return NotFound();
             }
 
-            db.SizeOfElectricSpindle.Remove(elecSpindleSize);
+            db.ElecSpindleSizes.Remove(elecSpindleSize);
             await db.SaveChangesAsync();
 
             return Ok(elecSpindleSize);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool ElecSpindleSizeExists(string id)
         {
-            return db.SizeOfElectricSpindle.Count(e => e.TypeID == id) > 0;
+            return db.ElecSpindleSizes.Count(e => e.TypeID == id) > 0;
         }
     }
 }

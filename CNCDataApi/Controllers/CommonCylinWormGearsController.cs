@@ -15,19 +15,19 @@ namespace CNCDataApi.Controllers
 {
     public class CommonCylinWormGearsController : ApiController
     {
-        private CNCMachineComponentData db = new CNCMachineComponentData();
+        private CNCMachineData db = new CNCMachineData();
 
         // GET: api/CommonCylinWormGears
-        public IQueryable<CommonCylinWormGear> GetCommonCylindricalWormGear()
+        public IQueryable<CommonCylinWormGear> GetCommonCylinWormGears()
         {
-            return db.CommonCylindricalWormGear;
+            return db.CommonCylinWormGears;
         }
 
         // GET: api/CommonCylinWormGears/5
         [ResponseType(typeof(CommonCylinWormGear))]
         public async Task<IHttpActionResult> GetCommonCylinWormGear(string id)
         {
-            CommonCylinWormGear commonCylinWormGear = await db.CommonCylindricalWormGear.FindAsync(id);
+            CommonCylinWormGear commonCylinWormGear = await db.CommonCylinWormGears.FindAsync(id);
             if (commonCylinWormGear == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CNCDataApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            db.CommonCylindricalWormGear.Add(commonCylinWormGear);
+            db.CommonCylinWormGears.Add(commonCylinWormGear);
 
             try
             {
@@ -105,13 +105,13 @@ namespace CNCDataApi.Controllers
         [ResponseType(typeof(CommonCylinWormGear))]
         public async Task<IHttpActionResult> DeleteCommonCylinWormGear(string id)
         {
-            CommonCylinWormGear commonCylinWormGear = await db.CommonCylindricalWormGear.FindAsync(id);
+            CommonCylinWormGear commonCylinWormGear = await db.CommonCylinWormGears.FindAsync(id);
             if (commonCylinWormGear == null)
             {
                 return NotFound();
             }
 
-            db.CommonCylindricalWormGear.Remove(commonCylinWormGear);
+            db.CommonCylinWormGears.Remove(commonCylinWormGear);
             await db.SaveChangesAsync();
 
             return Ok(commonCylinWormGear);
@@ -128,7 +128,7 @@ namespace CNCDataApi.Controllers
 
         private bool CommonCylinWormGearExists(string id)
         {
-            return db.CommonCylindricalWormGear.Count(e => e.TypeID == id) > 0;
+            return db.CommonCylinWormGears.Count(e => e.TypeID == id) > 0;
         }
     }
 }
