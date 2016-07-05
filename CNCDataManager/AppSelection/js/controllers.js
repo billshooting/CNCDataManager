@@ -22,15 +22,6 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
     $scope.$on("CNCTypeChange",function(event,data){
         injector.invoke(reset);
     });
-	/*$scope.navShow=[true,false,false,false,false,false];*/
-	/*$scope.$on("CNCTypeChange",function(event,data){
-		if(data=="X"){
-			$scope.navShow=[true,true,false,true,true,true,true];
-		}
-		else if(data=="C"){
-			$scope.navShow=[true,true,true,false,false,true,true];
-		}
-	});*/
     //控制中间导航栏选项是否active
     $scope.navActive=0;
     $scope.navClick=function(e){
@@ -68,20 +59,61 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$cookies){
 
 //机床工作需求控制器
 controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$cookies) {
-    //点击下一步按钮
+    //负载性质选项绑定
+    $scope.loadCharacterOptions=["无冲击","轻微冲击","有冲击或振动"];
+    //点击下一步按钮，将工作需求数据存入cookie中，进入数控系统选型
     $scope.nextStep=function(){
-        var CNCType=$cookies.getObject("CNCType");
-         if(CNCType.support=="X"){
-                $state.go("FeedSystem",{FeedSystemType:'X'});
-            }
-        else if(CNCType.support=="C"){
-                $state.go("FeedSystem",{FeedSystemType:'XY'});
-            }
-        
+        $cookies.putObject("CNCWorkingCondition",{
+            cuttingCondition:$scope.cuttingCondition,
+            productCondition:$scope.productCondition,
+        });
+        $state.go("CNCSystem");
     };
+    //点击取消按钮，初始化界面
     $scope.reset=function(){
-
+        //切削条件
+        $scope.cuttingCondition=[
+            {
+                lengthwaysForce:2000,
+                verticalForce:1200,
+                feedSpeed:0.6,
+                timeScale:10,
+            },
+            {
+                lengthwaysForce:1000,
+                verticalForce:500,
+                feedSpeed:0.8,
+                timeScale:30,
+            },
+            {
+                lengthwaysForce:500,
+                verticalForce:200,
+                feedSpeed:1,
+                timeScale:50,
+            },
+            {
+                lengthwaysForce:0,
+                verticalForce:0,
+                feedSpeed:15,
+                timeScale:10,
+            }];
+        //工况
+        $scope.productCondition={
+            maxFeedSpeed:15,
+            tableTravel:1000,
+            productMaxMass:300,
+            tableMass:100,
+            productMaxHeight:400,
+            loadCharacter:"无冲击",
+            productMaxLength:400,
+            feedAcceleration:1,
+            productMaxWidth:400,
+            spindleBoxMass:100,
+            tableLength:1200,
+            productStiffness:1150000000,
+        };
     };
+    $scope.reset();
 });
 
 //数控系统选型控制器
@@ -90,7 +122,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
      $scope.title="TypeID";
      $scope.desc=1;
      // 生产厂家选项绑定
-     $scope.Manufacturer=["华中数控","广州数控","沈阳高精","北京航天数控"];
+     $scope.ManufacturerOptions=["华中数控","广州数控","沈阳高精","北京航天数控"];
      $scope.filtNum={
      	Manufacturer:null,
      	SupportNumberOfChannels:1,
@@ -154,55 +186,17 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
     };
 });
 
-//直线导轨选型控制器
-controllers.controller("LinnearRollingGuideCtrl",function($scope,$stateParams){
-	var FeedSystemType=$stateParams.FeedSystemType;
-    //根据进给轴类型切换导轨尺寸图片
-    if(FeedSystemType=="XY"||FeedSystemType=="X"){
-        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平上导轨.jpg";
-    }
-    else if(FeedSystemType=="Y"){
-        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平下导轨.jpg";
-    }
-    else if(FeedSystemType=="Z"){
-        $scope.imgsrc="../../../../AppSelection/imgs/立铣Z轴导轨.jpg";
-    }
-    //绑定相关尺寸和导轨参数数据并计算得出结果
-    $scope.reset=function(){
-        if(FeedSystemType=="XY"||FeedSystemType=="X"){
-            $scope.isShow6=false;
-            $scope.sizePara={
-                sizeL0:500,
-                sizeL1:500,
-                sizeL2:200,
-                sizeL3:150,
-                sizeL4:50,
-                sizeL5:100,
-            };
+//数控系统辅件选型
+controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookies){
+    $scope.nextStep=function(){
+        var CNCSupport=$cookies.getObject("CNCType").support;
+        console.log(CNCSupport);
+        if(CNCSupport=="C"){
+            $state.go("FeedSystem",{FeedSystemType:"XY"});
         }
-        else if(FeedSystemType=="Y"){
-            $scope.isShow6=false;
-            $scope.sizePara={
-                sizeL0:600,
-                sizeL1:800,
-                sizeL2:250,
-                sizeL3:200,
-                sizeL4:150,
-                sizeL5:100,
-            };
-        }
-        else if(FeedSystemType=="Z"){
-            $scope.isShow6=true;
-            $scope.sizePara={
-                sizeL0:600,
-                sizeL1:400,
-                sizeL2:500,
-                sizeL3:250,
-                sizeL4:100,
-                sizeL5:150,
-                sizeL6:60,
-            };
+        else if(CNCSupport=="X"){
+            $state.go("FeedSystem",{FeedSystemType:"X"});
         }
     };
-    $scope.reset();
 });
+

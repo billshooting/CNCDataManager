@@ -8,9 +8,9 @@ filters.filter("CNCSystemFilt",function(){
 			if(e!=null)
 			for(var i=0;i<e.length;i++){
 				if(e[i].Manufacturer==filtNum.Manufacturer
-					&&e[i].SupportTypeOfMachine.indexOf(filtNum.SupportTypeOfMachine)>=0
-					&&e[i].SupportNumberOfChannels>=filtNum.SupportNumberOfChannels
-					&&e[i].MaxControlNumberOfFeedAxis>=filtNum.MaxControlNumberOfFeedAxis){
+					&&e[i].SupportMachineType.indexOf(filtNum.SupportTypeOfMachine)>=0
+					&&e[i].SupportChannels>=filtNum.SupportNumberOfChannels
+					&&e[i].MaxNumberOfFeedShafts>=filtNum.MaxControlNumberOfFeedAxis){
 					result.push(e[i]);
 				}
 			}
@@ -19,9 +19,9 @@ filters.filter("CNCSystemFilt",function(){
 		{
 			if(e!=null)
 			for(var i=0;i<e.length;i++){
-				if(e[i].SupportTypeOfMachine.indexOf(filtNum.SupportTypeOfMachine)>=0
-					&&e[i].SupportNumberOfChannels>=filtNum.SupportNumberOfChannels
-					&&e[i].MaxControlNumberOfFeedAxis>=filtNum.MaxControlNumberOfFeedAxis){
+				if(e[i].SupportMachineType.indexOf(filtNum.SupportTypeOfMachine)>=0
+					&&e[i].SupportChannels>=filtNum.SupportNumberOfChannels
+					&&e[i].MaxNumberOfFeedShafts>=filtNum.MaxControlNumberOfFeedAxis){
 					result.push(e[i]);
 				}
 			}

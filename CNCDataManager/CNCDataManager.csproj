@@ -686,6 +686,7 @@
     <Content Include="AppSelection\js\demo.js" />
     <Content Include="AppSelection\js\directives.js" />
     <Content Include="AppSelection\js\filters.js" />
+    <Content Include="AppSelection\js\LinnearRollingGuideCtrl.js" />
     <Content Include="AppSelection\js\services.js" />
     <Content Include="AppSelection\tpls\CNCSystem\CNCSystemAccessories.html" />
     <Content Include="AppSelection\tpls\CNCSystem\CNCSystemList.html" />
