@@ -30,6 +30,25 @@ filters.filter("CNCSystemFilt",function(){
 	}
 });
 
+//进给系统导轨主过滤器
+filters.filter("LinnearRollingGuideFilt",function(){
+	return function(e,rollerType,minLiveLoad,minStaticLoad){
+		if(!e){
+			return [];
+		}
+		var result=[];
+		var rollerTypeOptions=["球滚子","圆柱滚子"];
+		for(var i=0;i<e.length;i++){
+			if(e[i].RollerType.indexOf(rollerTypeOptions[rollerType])>=0
+				&&e[i].BasicRatedDynamicLoad_C>=(minLiveLoad*0.001)
+				&&e[i].BasicRatedStaticLoad_C0>=(minStaticLoad*0.001)){
+				result.push(e[i]);
+			}
+		}
+		return result;
+	}
+});
+
 //分页控件获取筛选后数组的长度
 filters.filter("size",function(){
 	return function(e){

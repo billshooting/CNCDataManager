@@ -670,15 +670,18 @@
     <Content Include="AppSelection\framework\ui-bootstrap-tpls-0.11.0.js" />
     <Content Include="AppSelection\imgs\bus1.jpg" />
     <Content Include="AppSelection\imgs\icon-eye.png" />
+    <Content Include="AppSelection\imgs\IO.jpg" />
+    <Content Include="AppSelection\imgs\UPS电源.jpg" />
     <Content Include="AppSelection\imgs\卧式车床.jpg" />
     <Content Include="AppSelection\imgs\卧式铣床.jpg" />
+    <Content Include="AppSelection\imgs\手操盘.jpg" />
     <Content Include="AppSelection\imgs\斜床身车床.jpg" />
     <Content Include="AppSelection\imgs\磨床.jpg" />
     <Content Include="AppSelection\imgs\立式车床.jpg" />
     <Content Include="AppSelection\imgs\立式铣床.jpg" />
     <Content Include="AppSelection\imgs\立铣Z轴导轨.jpg" />
     <Content Include="AppSelection\imgs\立铣水平上导轨.jpg" />
-    <Content Include="AppSelection\imgs\立铣水平导轨下.jpg" />
+    <Content Include="AppSelection\imgs\立铣水平下导轨.jpg" />
     <Content Include="AppSelection\imgs\龙门铣床.jpg" />
     <Content Include="AppSelection\Index.html" />
     <Content Include="AppSelection\js\app.js" />
@@ -694,6 +697,7 @@
     <Content Include="AppSelection\tpls\CNCType\CNCTypeList.html" />
     <Content Include="AppSelection\tpls\CNCType\CNCTypeTable.html" />
     <Content Include="AppSelection\tpls\CNCType\CNCWorkingCondition.html" />
+    <Content Include="AppSelection\tpls\directivetemplate\tsInputgroup.html" />
     <Content Include="AppSelection\tpls\FeedSystem\Bearings\BearingsTable.html" />
     <Content Include="AppSelection\tpls\FeedSystem\Coupling\CouplingTable.html" />
     <Content Include="AppSelection\tpls\FeedSystem\Driver\DriverTable.html" />
@@ -702,6 +706,8 @@
     <Content Include="AppSelection\tpls\FeedSystem\ServoMotor\ServoMotorTable.html" />
     <Content Include="AppSelection\tpls\FeedSystem\SolidBallScrewNutPairs\SolidBallScrewNutPairsTable.html" />
     <Content Include="AppSelection\tpls\home.html" />
+    <Content Include="AppSelection\tpls\list.html" />
+    <Content Include="AppSelection\tpls\table.html" />
     <Content Include="App\CSS\Account\Login.css" />
     <Content Include="App\CSS\Account\Register.css" />
     <Content Include="App\CSS\CNCData\Index.css" />

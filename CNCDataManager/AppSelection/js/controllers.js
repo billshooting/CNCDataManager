@@ -24,11 +24,33 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
     });
     //控制中间导航栏选项是否active
     $scope.navActive=0;
-    $scope.navClick=function(e){
-        $scope.navActive=e;
-    };
-    //初始化导航栏方法
-    
+    $scope.$on("$stateChangeSuccess",function(event,toState,toParams,fromState,fromParams){
+        var statename=toState.name;
+        if(statename.indexOf("CNCType")>=0){
+            $scope.navActive=0;
+        }
+        else if(statename.indexOf("CNCSystem")>=0){
+            $scope.navActive=1;
+        }
+        else if(statename.indexOf("FeedSystem")>=0){
+            switch(toParams.FeedSystemType){
+                case "XY":
+                    $scope.navActive=2;
+                    break;
+                case "X":
+                    $scope.navActive=3;
+                    break;
+                case "Y":
+                    $scope.navActive=4;
+                    break;
+                case "Z":
+                    $scope.navActive=5;
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
 });
 
 //机床类型控制器
@@ -187,7 +209,72 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
 });
 
 //数控系统辅件选型
-controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookies){
+controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookies,$http){
+    $scope.controlTypeOptions=["全闭环","半闭环","开环"];
+    $scope.IOUnit={
+        controlType:"全闭环",
+        baseboardId:"",
+        baseboardNum:0,
+        communicationboardId:"",
+        communicationboardNum:0,
+        IOModuleId:"",
+        IOModuleNum:0,
+        inputboardNum:0,
+        outputboardNum:0,
+    };
+    $scope.UPSPower={
+        isAdd:false,
+        UPSId:"",
+        UPSNum:0,
+    };
+    $scope.manul={
+        isAdd:false,
+        manulId:"",
+        manulNum:0,
+    }
+    $scope.baseboardOptions=[];
+    $scope.communicationboardOptions=[];
+    $scope.IOModuleOptions=[];
+    $scope.UPSOptions=[];
+    $scope.manulOptions=[];
+    //从服务端获取IO单元相关选项
+    $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/NCSystemIOUnits")
+    .then(function(response){
+        var IOUnits=response.data;
+        for(var i=0;i<IOUnits.length;i++){
+            if(IOUnits[i].Category=="底板"){
+                $scope.baseboardOptions.push(IOUnits[i].TypeID);
+            }
+            else if(IOUnits[i].Category=="通讯"){
+                $scope.communicationboardOptions.push(IOUnits[i].TypeID);
+            }
+            else if(IOUnits[i].Category="I/O"){
+                $scope.IOModuleOptions.push(IOUnits[i].TypeID);
+            }
+        }
+        $scope.IOUnit.baseboardId=$scope.baseboardOptions[0];
+        $scope.IOUnit.communicationboardId=$scope.communicationboardOptions[0];
+        $scope.IOUnit.IOModuleId=$scope.IOModuleOptions[0];
+    });
+    //从服务端获取UPS电源型号选项
+    $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/NCSystemPowerUnits")
+    .then(function(response){
+        var UPSPowers=response.data;
+        for(var i=0;i<UPSPowers.length;i++){
+            $scope.UPSOptions.push(UPSPowers[i].TypeID);
+        }
+        $scope.UPSPower.UPSId=$scope.UPSOptions[0];
+    })
+    //从服务端获取手操盘型号选项
+    $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/NCSystemManuals")
+    .then(function(response){
+        var manuls=response.data;
+        for(var i=0;i<manuls.length;i++){
+            $scope.manulOptions.push(manuls[i].TypeID);
+        }
+        $scope.manul.manulId=$scope.manulOptions[0];
+    })
+    //点击下一步按钮
     $scope.nextStep=function(){
         var CNCSupport=$cookies.getObject("CNCType").support;
         console.log(CNCSupport);
