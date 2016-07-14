@@ -1,1 +1,100 @@
-﻿123344
+﻿<div ng-controller="SolidBallScrewNutPairsTableCtrl">
+	<div class="CNCTable">
+		<div class="row">
+			<div class="col-md-5">
+				<img src="../../../../AppSelection/imgs/滚珠丝杠.jpg" class="img-thumbnail" alt="滚珠丝杠">
+			</div>
+			<div class="col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">滚珠丝杠参数</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-inline">
+							<div class="form-group">
+								<label for="accuracyClass" class="control-label">精度等级:</label>
+								<select id="accuracyClass" class="form-control" ng-options="data for data in accuracyClassOptions" ng-model="ballscrewPara.accuracyClass">
+								</select>
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="reliability" class="control-label">可靠性:</label>
+								<select id="reliability" class="form-control" ng-options="data for data in reliabilityOptions" ng-model="ballscrewPara.reliability">
+								</select>
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="supportMode" class="control-label">支撑方式:</label>
+								<select id="supportMode" class="form-control" ng-options="data for data in supportModeOptions" ng-model="ballscrewPara.supportMode">
+								</select>
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="preloadType" class="control-label">预载类型:</label>
+								<select id="preloadType" class="form-control" ng-options="data for data in preloadTypeOptions" ng-model="ballscrewPara.preloadType">
+								</select>
+								<label class="control-label"></label>
+							</div>
+							<div class="form-group">
+								<label for="screwLength" class="control-label">丝杠总长:</label>
+								<input type="number" id="screwLength" class="form-control" ng-model="ballscrewPara.screwLength" style="width:40%">
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label for="locationAccuracy" class="control-label">定位精度:</label>
+								<input type="number" id="locationAccuracy" class="form-control" ng-model="ballscrewPara.locationAccuracy" style="width:40%">
+								<label class="control-label">μm</label>
+							</div>
+							<div class="form-group">
+								<label for="repeatLocationAccuracy" class="control-label">重复定位精度:</label>
+								<input type="number" id="repeatLocationAccuracy" class="form-control" ng-model="ballscrewPara.repeatLocationAccuracy" style="width:40%">
+								<label class="control-label">μm</label>
+							</div>
+							<div class="form-group">
+								<label for="motorMaxSpeed" class="control-label">初选点击最大转速:</label>
+								<input type="number" id="motorMaxSpeed" class="form-control" ng-model="ballscrewPara.motorMaxSpeed" style="width:30%">
+								<label class="control-label">r/min</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">计算结果</h3>
+					</div>
+					<div class="panel-body">
+						<div class="form-inline">
+							<div class="form-group">
+								<label class="control-label">导程:</label>
+								<p class="form-control-static">{{caculation.lead}}</p>
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label class="control-label">额定动载荷:</label>
+								<p class="form-control-static">{{caculation.dynamicLoad}}</p>
+								<label class="control-label">kN</label>
+							</div>
+							<div class="form-group">
+								<label class="control-label">最小底径:</label>
+								<p class="form-control-static">{{caculation.minDiameter}}</p>
+								<label class="control-label">mm</label>
+							</div>
+							<div class="form-group">
+								<label class="control-label">等效转矩:</label>
+								<p class="form-control-static">{{caculation.torque}}</p>
+								<label class="control-label">N·m</label>
+							</div>
+						</div>
+						<p class="text-danger" ng-bind="message"></p>
+						<div class="row">
+							<button type="button" class="btn btn-primary col-md-3 col-md-offset-2" ng-click="caculate()">计算</button>
+							<button type="button" class="btn btn-primary col-md-3 col-md-offset-2" ng-click="reset()">重置</button> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

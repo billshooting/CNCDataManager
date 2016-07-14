@@ -176,7 +176,6 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
      		case 1:
      			if($scope.filtNum.MaxControlNumberOfFeedAxis>=2){
      				$scope.filtNum.MaxControlNumberOfFeedAxis=parseInt($scope.filtNum.MaxControlNumberOfFeedAxis,10)-1;
-     			break;
      			}
      			break;
      		default:
@@ -199,7 +198,12 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
 	};
     //点击下一步按钮将数控系统类型存入$CNCSelected服务对象实例中
     $scope.nextStep=function(){
-        $cookies.putObject("CNCSystem",$scope.CNCSystemSelected);
+        var CNCSystem=$cookies.getObject("CNCSystem");
+        if(!CNCSystem){
+            CNCSystem={};
+        }
+        CNCSystem.CNCSystemType=$scope.CNCSystemSelected;
+        $cookies.putObject("CNCSystem",CNCSystem);
         $state.go("CNCSystem.Accessories");
     };
     // 点击取消按钮恢复表格中选中行为未选中状态
@@ -208,7 +212,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies)
     };
 });
 
-//数控系统辅件选型
+//数控系统辅件选型控制器
 controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookies,$http){
     $scope.controlTypeOptions=["全闭环","半闭环","开环"];
     $scope.IOUnit={
@@ -264,7 +268,7 @@ controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookie
             $scope.UPSOptions.push(UPSPowers[i].TypeID);
         }
         $scope.UPSPower.UPSId=$scope.UPSOptions[0];
-    })
+    });
     //从服务端获取手操盘型号选项
     $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/NCSystemManuals")
     .then(function(response){
@@ -273,11 +277,91 @@ controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookie
             $scope.manulOptions.push(manuls[i].TypeID);
         }
         $scope.manul.manulId=$scope.manulOptions[0];
-    })
+    });
+    //点击数字输入框增加按钮
+    $scope.add=function(id){
+        switch(id){
+            case 0:
+                $scope.IOUnit.baseboardNum=parseInt($scope.IOUnit.baseboardNum,10)+1;
+                break;
+            case 1:
+                $scope.IOUnit.communicationboardNum=parseInt($scope.IOUnit.communicationboardNum,10)+1;
+                break;
+            case 2:
+                $scope.IOUnit.IOModuleNum=parseInt($scope.IOUnit.IOModuleNum,10)+1;
+                break;
+            case 3:
+                $scope.IOUnit.inputboardNum=parseInt($scope.IOUnit.inputboardNum,10)+1;
+                break;
+            case 4:
+                $scope.IOUnit.outputboardNum=parseInt($scope.IOUnit.outputboardNum,10)+1;
+                break;
+            case 5:
+                $scope.UPSPower.UPSNum=parseInt($scope.UPSPower.UPSNum,10)+1;
+                break;
+            case 6:
+                $scope.manul.manulNum=parseInt($scope.manul.manulNum,10)+1;
+                break;
+            default:
+                break;
+        }
+    };
+    //点击数字输入框减少按钮
+    $scope.minus=function(id){
+        switch(id){
+            case 0:
+                if($scope.IOUnit.baseboardNum>=1){
+                    $scope.IOUnit.baseboardNum=parseInt($scope.IOUnit.baseboardNum,10)-1;
+                }
+                break;
+            case 1:
+                 if($scope.IOUnit.communicationboardNum>=1){
+                    $scope.IOUnit.communicationboardNum=parseInt($scope.IOUnit.communicationboardNum,10)-1;
+                }
+                break;
+            case 2:
+                if($scope.IOUnit.IOModuleNum>=1){
+                    $scope.IOUnit.IOModuleNum=parseInt($scope.IOUnit.IOModuleNum,10)-1;
+                }
+                break;
+            case 3:
+                if($scope.IOUnit.inputboardNum>=1){
+                    $scope.IOUnit.inputboardNum=parseInt($scope.IOUnit.inputboardNum,10)-1;
+                }
+                break;
+            case 4:
+                if($scope.IOUnit.outputboardNum>=1){
+                    $scope.IOUnit.outputboardNum=parseInt($scope.IOUnit.outputboardNum,10)-1;
+                }
+                break;
+            case 5:
+                if($scope.UPSPower.UPSNum>=1){
+                    $scope.UPSPower.UPSNum=parseInt($scope.UPSPower.UPSNum,10)-1;
+                }
+                break;
+            case 6:
+                 if($scope.manul.manulNum>=1){
+                    $scope.manul.manulNum=parseInt($scope.manul.manulNum,10)-1;
+                }
+                break;
+            default:
+                break;
+        }
+    };
     //点击下一步按钮
     $scope.nextStep=function(){
+        var CNCSystemAccessories={
+            IOUnit:$scope.IOUnit,
+            UPSPower:$scope.UPSPower,
+            maunl:$scope.manul,
+        };
+        var CNCSystem=$cookies.getObject("CNCSystem");
+        if(!CNCSystem){
+            CNCSystem={};
+        }
+        CNCSystem.CNCSystemAccessories=CNCSystemAccessories;
+        $cookies.putObject("CNCSystem",CNCSystem);
         var CNCSupport=$cookies.getObject("CNCType").support;
-        console.log(CNCSupport);
         if(CNCSupport=="C"){
             $state.go("FeedSystem",{FeedSystemType:"XY"});
         }
@@ -285,5 +369,11 @@ controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookie
             $state.go("FeedSystem",{FeedSystemType:"X"});
         }
     };
+});
+
+//进给系统列表控制器
+controllers.controller("FeedSystemListCtrl",function($scope,$stateParams){
+    $scope.feedSystemType=$stateParams.FeedSystemType;
+    
 });
 

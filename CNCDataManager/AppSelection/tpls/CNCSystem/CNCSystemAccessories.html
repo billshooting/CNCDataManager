@@ -26,9 +26,11 @@
 								<div class="input-group">
 									<input type="text" class="form-control" id="baseboardNum" ng-model="IOUnit.baseboardNum" placeholder="请输入值">
 									<div class="input-group-btn-vertical">
-										<button class="btn btn-default" type="button" ng-click="add(0)"> <i class="fa fa-caret-up"></i>
+										<button class="btn btn-default" type="button" ng-click="add(0)">
+											<i class="fa fa-caret-up"></i>
 										</button>
-										<button class="btn btn-default" type="button" ng-click="minus(0)"> <i class="fa fa-caret-down"></i>
+										<button class="btn btn-default" type="button" ng-click="minus(0)">
+											<i class="fa fa-caret-down"></i>
 										</button>
 									</div>
 								</div>
@@ -44,10 +46,10 @@
 								<div class="input-group">
 									<input type="text" class="form-control" id="communicationboardNum" ng-model="IOUnit.communicationboardNum" placeholder="请输入值">
 									<div class="input-group-btn-vertical">
-										<button class="btn btn-default" type="button" ng-click="add(0)">
+										<button class="btn btn-default" type="button" ng-click="add(1)">
 											<i class="fa fa-caret-up"></i>
 										</button>
-										<button class="btn btn-default" type="button" ng-click="minus(0)">
+										<button class="btn btn-default" type="button" ng-click="minus(1)">
 											<i class="fa fa-caret-down"></i>
 										</button>
 									</div>
@@ -64,10 +66,10 @@
 								<div class="input-group">
 									<input type="text" class="form-control" id="IOModuleNum" ng-model="IOUnit.IOModuleNum" placeholder="请输入值">
 									<div class="input-group-btn-vertical">
-										<button class="btn btn-default" type="button" ng-click="add(0)">
+										<button class="btn btn-default" type="button" ng-click="add(2)">
 											<i class="fa fa-caret-up"></i>
 										</button>
-										<button class="btn btn-default" type="button" ng-click="minus(0)">
+										<button class="btn btn-default" type="button" ng-click="minus(2)">
 											<i class="fa fa-caret-down"></i>
 										</button>
 									</div>
@@ -80,10 +82,10 @@
 								<div class="input-group">
 									<input type="text" class="form-control" id="inputboardNum" ng-model="IOUnit.inputboardNum" placeholder="请输入值">
 									<div class="input-group-btn-vertical">
-										<button class="btn btn-default" type="button" ng-click="add(0)">
+										<button class="btn btn-default" type="button" ng-click="add(3)">
 											<i class="fa fa-caret-up"></i>
 										</button>
-										<button class="btn btn-default" type="button" ng-click="minus(0)">
+										<button class="btn btn-default" type="button" ng-click="minus(3)">
 											<i class="fa fa-caret-down"></i>
 										</button>
 									</div>
@@ -94,10 +96,10 @@
 								<div class="input-group">
 									<input type="text" class="form-control" id="outputboardNum" ng-model="IOUnit.outputboardNum" placeholder="请输入值">
 									<div class="input-group-btn-vertical">
-										<button class="btn btn-default" type="button" ng-click="add(0)">
+										<button class="btn btn-default" type="button" ng-click="add(4)">
 											<i class="fa fa-caret-up"></i>
 										</button>
-										<button class="btn btn-default" type="button" ng-click="minus(0)">
+										<button class="btn btn-default" type="button" ng-click="minus(4)">
 											<i class="fa fa-caret-down"></i>
 										</button>
 									</div>
@@ -134,10 +136,10 @@
 										<div class="input-group">
 											<input type="text" class="form-control" id="UPSNum" ng-model="UPSPower.UPSNum" placeholder="请输入值" ng-disabled="!UPSPower.isAdd">
 											<div class="input-group-btn-vertical">
-												<button class="btn btn-default" type="button" ng-click="add(0)">
+												<button class="btn btn-default" type="button" ng-click="add(5)" ng-disabled="!UPSPower.isAdd">
 													<i class="fa fa-caret-up"></i>
 												</button>
-												<button class="btn btn-default" type="button" ng-click="minus(0)">
+												<button class="btn btn-default" type="button" ng-click="minus(5)" ng-disabled="!UPSPower.isAdd">
 													<i class="fa fa-caret-down"></i>
 												</button>
 											</div>
@@ -174,10 +176,10 @@
 										<div class="input-group">
 											<input type="text" class="form-control" id="manulNum" ng-model="manul.manulNum" placeholder="请输入值" ng-disabled="!manul.isAdd">
 											<div class="input-group-btn-vertical">
-												<button class="btn btn-default" type="button" ng-click="add(0)">
+												<button class="btn btn-default" type="button" ng-click="add(6)" ng-disabled="!manul.isAdd">
 													<i class="fa fa-caret-up"></i>
 												</button>
-												<button class="btn btn-default" type="button" ng-click="minus(0)">
+												<button class="btn btn-default" type="button" ng-click="minus(6)" ng-disabled="!manul.isAdd">
 													<i class="fa fa-caret-down"></i>
 												</button>
 											</div>
@@ -191,7 +193,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-offset-8 col-md-2">
-					<button type="button" ng-click="nextStep()" class="btn btn-primary">下 一 步</button>
+					<button type="button" ng-click="nextStep()" class="btn btn-primary">下 一 步</button> 
 				</div>
 				<div class="col-md-2">
 					<button type="button" ng-click="reset()" class="btn btn-primary">取 消</button>
@@ -200,8 +202,3 @@
 		</div>
 	</div>
 </div>
-<script>
-	$(function(){
-		$('.spinner').spinner();
-	})
-</script>

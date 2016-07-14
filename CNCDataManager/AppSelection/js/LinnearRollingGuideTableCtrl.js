@@ -1,7 +1,8 @@
-var LinnearRollingGuideCtrl=angular.module("LinnearRollingGuideCtrl",[]);
+var LinnearRollingGuideTableCtrl=angular.module("LinnearRollingGuideTableCtrl",[]);
 //直线导轨选型控制器
-LinnearRollingGuideCtrl.controller("LinnearRollingGuideCtrl",function($scope,$stateParams,$cookies,$http,$state){
+LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function($scope,$stateParams,$cookies,$http,$state){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
+    $scope.guidTypeOptions=["滚动导轨","滑动导轨"];
 	$scope.rollerTypeOptions=[{id:0,name:"球滚子"},{id:1,name:"圆柱滚子"}];
     var CNCWorkingCondition=$cookies.getObject("CNCWorkingCondition");
     //计算静载荷安全系数
@@ -444,10 +445,12 @@ LinnearRollingGuideCtrl.controller("LinnearRollingGuideCtrl",function($scope,$st
         	safety:safetyFactor[CNCWorkingCondition.productCondition.loadCharacter],
         	load:1.2,
         	contact:1.2,
+            friction:0.003,
         	minStaticLoad:0,
         	minLiveLoad:0,
         	XMass:400,
         	rollerType:0,
+            guidType:"滚动导轨",
         };
 		$scope.caculate();
     };
@@ -467,19 +470,22 @@ LinnearRollingGuideCtrl.controller("LinnearRollingGuideCtrl",function($scope,$st
     //点击表格中任意一行选中
     $scope.selected=function(LineRollingGuide){
         $scope.LineRollingGuideSelected=LineRollingGuide;
-    }
+    };
     //点击下一步按钮，将导轨数据保存到相应cookie中,并跳转到下一个页面
     $scope.nextStep=function(){
-        var FeedSystem=$cookies.getObject("FeedSystem"+$scope.FeedSystemType);
+       /* var FeedSystem=$cookies.getObject("FeedSystem"+$scope.FeedSystemType);
         if(!FeedSystem){
             FeedSystem={};
-        }
+        };
         FeedSystem.LineRollingGuide=$scope.LineRollingGuideSelected;
-        $cookies.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);
+        $cookies.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);*/
+        $scope.LineRollingGuideSelected.guidType=$scope.guidPara.guidType;//将导轨类型存入cookies
+        $scope.LineRollingGuideSelected.friction=$scope.guidPara.friction;//将库伦摩擦系数存入cookies
+        $cookies.putObject($scope.FeedSystemType+"LinearRollingGuide",$scope.LineRollingGuideSelected);
         $state.go("FeedSystem.SolidBallScrewNutPairs");
     }
     //点击取消按钮，取消表格行被选中状态
     $scope.cancel=function(){
         $scope.LineRollingGuideSelected={};
-    }
+    };
 });
