@@ -64,7 +64,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
         		}
         	}
         }
-        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*100)/100;
+        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*1000)/1000;
     };
     //计算导轨支撑轴最小静载荷，即Y轴
     var computeSupportingAxisMinStaticLoad=function(){
@@ -117,7 +117,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
         		}
         	}
         }
-        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*100)/100;
+        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*1000)/1000;
     };
     //计算导轨主轴最小静载荷，即Z轴
     var computeSpindleAxisMinStaticLoad=function(){
@@ -168,7 +168,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
         		}
         	}
         }
-        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*100)/100;
+        $scope.guidPara.minStaticLoad=Math.round(maxworkLoads*$scope.guidPara.safety*1000)/1000;
     };
     //计算导轨加工轴最小动载荷,即X轴
     var computeWorkingAxisMinDynamicLoad=function(){
@@ -237,7 +237,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
             var rollingElementFormIndex=100;
         }
         averageLoad=Math.pow(averageLoad/100,1/3);
-        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*100)/100;
+        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*1000)/1000;
     };
     //计算导轨支撑轴最小动载荷，即Y轴
     var computeSupportingAxisMinDynamicLoad=function(){
@@ -310,7 +310,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
             var rollingElementFormIndex=100;
         }
         averageLoad=Math.pow(averageLoad/100,1/3);
-        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*100)/100;
+        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*1000)/1000;
     };
     //计算导轨主轴最小动载荷
     var computeSpindleAxisMinDynamicLoad=function(){
@@ -381,7 +381,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
             var rollingElementFormIndex=100;
         }
         averageLoad=Math.pow(averageLoad/100,1/3);
-        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*100)/100;
+        $scope.guidPara.minLiveLoad=Math.round(averageLoad*$scope.guidPara.load*Math.pow($scope.guidPara.life*60*averageSpeed*0.001/rollingElementFormIndex,1/lifeIndex)/$scope.guidPara.contact*1000)/1000;
 
     };
     //点击计算按钮，计算出相关计算结果
@@ -414,6 +414,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
                 sizeL3:150,
                 sizeL4:50,
                 sizeL5:100,
+                sizeL6:60,
             };
         }
         else if($scope.FeedSystemType=="Y"){
@@ -424,6 +425,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
                 sizeL3:200,
                 sizeL4:150,
                 sizeL5:100,
+                sizeL6:60,
                 varL6:200,
                 varL9:150,
                 varL10:100,

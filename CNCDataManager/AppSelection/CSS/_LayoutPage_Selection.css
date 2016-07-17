@@ -125,6 +125,15 @@ div.navbar {
   background: #CCCCCC;
 }
 
+.filterTable{
+  overflow-y:auto;
+}
+
+table th{
+  min-width:100px;
+}
+
+
 
 
 

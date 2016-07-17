@@ -1,4 +1,19 @@
 ﻿var SolidBallScrewNutPairsDetailCtrl=angular.module("SolidBallScrewNutPairsDetailCtrl",[]);
-SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",function($scope){
-
+SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",function($scope,$http,$stateParams,$cookies,$state){
+	$http({
+		method:"GET",
+		url:"http://cncdataapi.azurewebsites.net/api/cncdata/SolidBallScrewNutPairs",
+		params:{
+			id:$stateParams.id
+		}
+	}).success(function(data){
+		$scope.ballscrew=data;
+	});
+	$scope.nextStep=function(){
+		$cookies.putObject($stateParams.FeedSystemType+"SolidBallScrewNutPairs",$scope.ballscrew);
+		$state.go("FeedSystem.Bearings");
+	};
+	$scope.back=function(){
+		$state.go("FeedSystem.SolidBallScrewNutPairs");
+	}
 });

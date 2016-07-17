@@ -82,6 +82,14 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('FeedSystem.SolidBallScrewNutPairs.detail',{
+            url:'/detail/{id}',
+            views:{
+                'table@FeedSystem':{
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsDetail.html'
+                }
+            }
+        })
         .state('FeedSystem.Bearings',{
             url:'/Bearings',
             views:{
