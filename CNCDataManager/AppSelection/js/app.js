@@ -1,4 +1,4 @@
-﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","controllers","services","filters"]);
+﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers","directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl","SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl"]);
 
 selectionApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
@@ -66,6 +66,14 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('FeedSystem.detail',{
+            url:'/detail/{id}',
+            views:{
+                'table@FeedSystem':{
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/LinearRollingGuide/LinearRollingGuideDetail.html'
+                }
+            }
+        })
         .state('FeedSystem.SolidBallScrewNutPairs',{
             url:'/SolidBallScrewNutPairs',
             views:{
@@ -74,34 +82,42 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('FeedSystemX.Bearings',{
+        .state('FeedSystem.SolidBallScrewNutPairs.detail',{
+            url:'/detail/{id}',
+            views:{
+                'table@FeedSystem':{
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsDetail.html'
+                }
+            }
+        })
+        .state('FeedSystem.Bearings',{
             url:'/Bearings',
             views:{
-                'table@FeedSystemX':{
+                'table@FeedSystem':{
                     templateUrl:'../../../../AppSelection/tpls/FeedSystem/Bearings/BearingsTable.html'
                 }
             }
         })
-        .state('FeedSystemX.Coupling',{
+        .state('FeedSystem.Coupling',{
             url:'/Coupling',
             views:{
-                'table@FeedSystemX':{
+                'table@FeedSystem':{
                     templateUrl:'../../../../AppSelection/tpls/FeedSystem/Coupling/CouplingTable.html'
                 }
             }
         })
-        .state('FeedSystemX.ServoMotor',{
+        .state('FeedSystem.ServoMotor',{
             url:'/ServoMotor',
             views:{
-                'table@FeedSystemX':{
+                'table@FeedSystem':{
                     templateUrl:'../../../../AppSelection/tpls/FeedSystem/ServoMotor/ServoMotorTable.html'
                 }
             }
         })
-        .state('FeedSystemX.Driver',{
+        .state('FeedSystem.Driver',{
             url:'/Driver',
             views:{
-                'table@FeedSystemX':{
+                'table@FeedSystem':{
                     templateUrl:'../../../../AppSelection/tpls/FeedSystem/Driver/DriverTable.html'
                 }
             }
