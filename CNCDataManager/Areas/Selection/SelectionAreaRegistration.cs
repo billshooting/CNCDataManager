@@ -17,7 +17,7 @@ namespace CNCDataManager.Areas.Selection
             context.MapRoute(
                 "Selection_default",
                 "Selection/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", controller= "Selection", id = UrlParameter.Optional }
             );
         }
     }

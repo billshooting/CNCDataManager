@@ -4,7 +4,7 @@
             <div class="form-group">
                 <label for="Manufacturer" class="col-md-2 control-label">生产厂家：</label>
                 <div class="col-md-2">
-                    <select class="form-control" id="Manufacturer" ng-model="filtNum.Manufacturer" ng-options="data for data in Manufacturer">
+                    <select class="form-control" id="Manufacturer" ng-model="filtNum.Manufacturer" ng-options="data for data in ManufacturerOptions">
                         <option value="">--请选择--</option>
                     </select>
                 </div>
@@ -30,28 +30,28 @@
                 </div>
             </div>
         </form>
-    <table class="table table-hover table-striped">
+    <table class="table">
         <thead>
             <tr>
-                <th class="btn-primary" ng-click="title='TypeID';desc=!desc">型号</th>
-                <th class="btn-primary" ng-click="title='Manufacturer';desc=!desc">生产厂家</th>
-                <th class="btn-primary" ng-click="title='SupportTypeOfMachine';desc=!desc">支持机床类型</th>
-                <th class="btn-primary" ng-click="title='SupportNumberOfChannels';desc=!desc">支持通道数</th>
-                <th class="btn-primary" ng-click="title='MaxControlNumberOfFeedAxis';desc=!desc">进给轴最大控制轴数</th>
-                <th class="btn-primary" ng-click="title='MaxControlNumberOfSpindle';desc=!desc">主轴最大控制轴数</th>
-                <th class="btn-primary" ng-click="title='MaxNumberOfLinkageAxis';desc=!desc">最大联动轴数</th>
+                <th class="btn-primary" ng-click="title='TypeID';desc=!desc" role="button">型号</th>
+                <th class="btn-primary" ng-click="title='Manufacturer';desc=!desc" role="button">生产厂家</th>
+                <th class="btn-primary" ng-click="title='SupportMachineType';desc=!desc" role="button">支持机床类型</th>
+                <th class="btn-primary" ng-click="title='SupportChannels';desc=!desc" role="button">支持通道数</th>
+                <th class="btn-primary" ng-click="title='MaxNumberOfFeedShafts';desc=!desc" role="button">进给轴最大控制轴数</th>
+                <th class="btn-primary" ng-click="title='MaxNumberOfSpindels';desc=!desc" role="button">主轴最大控制轴数</th>
+                <th class="btn-primary" ng-click="title='MaxNumberOfLinkageAxis';desc=!desc" role="button">最大联动轴数</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="NCSystem in NCSystems|CNCSystemFilt:filtNum|orderBy:title:desc|paging:Page.currentPage:Page.pageSize"
             ng-click="Selected(NCSystem)" 
-            ng-class="{tableSelected:$index==focus}">
+            ng-class="{tableSelected:NCSystem.TypeID==CNCSystemSelected.TypeID}">
                 <td>{{NCSystem.TypeID}}</td>
                 <td>{{NCSystem.Manufacturer}}</td>
-                <td>{{NCSystem.SupportTypeOfMachine}}</td>
-                <td>{{NCSystem.SupportNumberOfChannels}}</td>
-                <td>{{NCSystem.MaxControlNumberOfFeedAxis}}</td>
-                <td>{{NCSystem.MaxControlNumberOfSpindle}}</td>
+                <td>{{NCSystem.SupportMachineType}}</td>
+                <td>{{NCSystem.SupportChannels}}</td>
+                <td>{{NCSystem.MaxNumberOfFeedShafts}}</td>
+                <td>{{NCSystem.MaxNumberOfSpindels}}</td>
                 <td>{{NCSystem.MaxNumberOfLinkageAxis}}</td>
             </tr>
         </tbody>
