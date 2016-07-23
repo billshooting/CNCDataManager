@@ -685,9 +685,12 @@
     <Content Include="AppSelection\imgs\立铣Z轴导轨.jpg" />
     <Content Include="AppSelection\imgs\立铣水平上导轨.jpg" />
     <Content Include="AppSelection\imgs\立铣水平下导轨.jpg" />
+    <Content Include="AppSelection\imgs\轴承.jpg" />
     <Content Include="AppSelection\imgs\龙门铣床.jpg" />
     <Content Include="AppSelection\Index.html" />
     <Content Include="AppSelection\js\app.js" />
+    <Content Include="AppSelection\js\BearingsDetailCtrl.js" />
+    <Content Include="AppSelection\js\BearingsTableCtrl.js" />
     <Content Include="AppSelection\js\controllers.js" />
     <Content Include="AppSelection\js\demo.js" />
     <Content Include="AppSelection\js\directives.js" />

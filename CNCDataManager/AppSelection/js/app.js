@@ -1,4 +1,4 @@
-﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers","directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl","SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl"]);
+﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers","directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl","SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl","BearingsTableCtrl"]);
 
 selectionApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;

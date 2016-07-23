@@ -1,1 +1,89 @@
-﻿100
+﻿<div ng-controller="BearingsTableCtrl">
+	<div class="CNCTable">
+		<div class="row">
+			<div class="col-md-6">
+				<img src="../../../../AppSelection/imgs/轴承.jpg" class="img-thumbnail" alt="轴承">
+			</div>
+			<form name="bearingForm">
+				<div class="col-md-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">轴承参数</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-inline">
+								<div class="form-group">
+									<label class="control-label" for="bearingType">轴承类型:</label>
+									<select id="bearingType" class="form-control" ng-options="data for data in bearingTypeOptions" ng-model="bearingPara.bearingType" style="width:100%;padding-left:0">
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="compoundMode">组合方式:</label>
+									<select id="compoundMode" class="form-control" ng-options="data as data.name for data in compoundModeOptions" ng-model="bearingPara.compoundMode">
+									</select>
+								</div>
+								<div class="form-group">
+									<label class="contol-label" for="lubricationMethod">润滑方式:</label>
+									<select id="lubricationMethod" class="form-control" ng-options="data for data in lubricationMethodOptions" ng-model="bearingPara.lubricationMethod">
+									</select>
+								</div>
+								<div class="form-group" ng-class="{'has-error':bearingForm.lifetime.$invalid && !bearingForm.lifetime.$pristine}">
+									<label for="lifetime" class="control-label">使用寿命:</label>
+									<input id="lifetime" name="lifetime" class="form-control" type="number" ng-model="bearingPara.lifetime" palceholder="请输入值" style="width:50%" ng-pattern="/^(0*\.\d*[1-9]\d*|\d*[1-9]\d*\.\d*|\d*[1-9]\d*)$/" min="0" required>
+									<label class="control-label">h</label>
+								</div>
+								<div class="form-group" ng-class="{'has-error':bearingForm.impactLoadFactor.$invalid && !bearingForm.impactLoadFactor.$pristine}">
+									<label for="impactLoadFactor" class="control-label">冲击载荷系数:</label>
+									<input id="impactLoadFactor" name="impactLoadFactor" class="form-control" type="number" ng-model="bearingPara.impactLoadFactor" palceholder="请输入值" data-content="按1.2-1.8选取" style="width:40%" ng-pattern="/^(0*\.\d*[1-9]\d*|\d*[1-9]\d*\.\d*|\d*[1-9]\d*)$/" min="0" required>
+								</div>
+								<div class="form-group" ng-class="{'has-error':bearingForm.loadMomentFactor.$invalid && !bearingForm.loadMomentFactor.$pristine}">
+									<label for="loadMomentFactor" class="control-label">力矩载荷系数:</label>
+									<input id="loadMomentFactor" name="loadMomentFactor" class="form-control" type="number" ng-model="bearingPara.loadMomentFactor" palceholder="请输入值" data-content="力矩载荷较小时取1.5；力矩载荷较大时取2。" style="width:40%" ng-pattern="/^(0*\.\d*[1-9]\d*|\d*[1-9]\d*\.\d*|\d*[1-9]\d*)$/" min="0" required>
+								</div>
+								<div class="form-group" ng-class="{'has-error':bearingForm.temperatureVariation.$invalid && !bearingForm.temperatureVariation.$pristine}">
+									<label for="temperatureVariation" class="control-label">工作温度变化:</label>
+									<input id="temperatureVariation" name="temperatureVariation" class="form-control" type="number" ng-model="bearingPara.tempeartureVariation" palceholder="请输入值" data-content="按2-3°选取" style="width:40%" ng-pattern="/^(0*\.\d*[1-9]\d*|\d*[1-9]\d*\.\d*|\d*[1-9]\d*)$/" min="0" required>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">计算结果</h3>
+						</div>
+						<div class="panel-body">
+							<div class="form-inline">
+								<div class="form-group">
+									<label for="bearingBoreDiameter" class="control-label">轴承内径:</label>
+									<p class="form-control-static">{{caculation.bearingBoreDiameter}}</p>
+									<label class="control-label">mm</label>
+								</div>
+								<div class="form-group">
+									<label for="bearingLimitSpeed" class="control-label">极限转速:</label>
+									<p class="form-control-static">{{caculation.bearingLimitSpeed}}</p>
+									<label class="control-label">r/min</label>
+								</div>
+								<div class="form-group">
+									<label for="ratedDynamicLoad" class="control-label">额定动载荷:</label>
+									<p class="form-control-static">{{caculation.ratedDynamicLoad}}</p>
+									<label class="control-label">N</label>
+								</div>
+							</div>
+							<div class="row">
+								<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="caculate()" ng-disabled="bearingForm.$invalid">计算</button>
+								<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="reset()">重置</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$("#impactLoadFactor,#loadMomentFactor,#temperatureVariation").popover({trigger:"focus",placement:"right"});
+	});
+</script>
