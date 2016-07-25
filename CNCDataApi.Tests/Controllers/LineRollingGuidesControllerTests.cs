@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CNCDataApi.Models;
+using CNCDataManager.Models;
 using System.Web.Http.Results;
 using System.Linq;
 
-namespace CNCDataApi.Controllers.Tests
+namespace CNCDataManager.Controllers.Tests
 {
     [TestClass()]
     public class LineRollingGuidesControllerTests

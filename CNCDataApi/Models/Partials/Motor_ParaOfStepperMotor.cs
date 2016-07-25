@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
-namespace CNCDataApi.Models
+namespace CNCDataManager.Models
 {
     [MetadataType(typeof(StepMotorParaMD))]
     public partial class StepMotorPara

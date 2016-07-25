@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Http.Results;
 
-namespace CNCDataApi.Controllers.Tests
+namespace CNCDataManager.Controllers.Tests
 {
     [TestClass()]
     public class StepMotorParasControllerTests

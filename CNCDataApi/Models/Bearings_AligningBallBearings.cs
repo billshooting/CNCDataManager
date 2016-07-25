@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CNCDataApi.Models
+namespace CNCDataManager.Models
 {
     [Table(name: "调心球轴承数据_TAB")]
     public partial class AlignBallBrg

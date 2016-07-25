@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -48,6 +56,7 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +92,55 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\APIs\AlignBallBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\AlignRollerBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\AngContactBallBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\ArcCylinWormGearsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\BallLeadScrewSptBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\BWElasticSlvPinCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\CablesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\CommonCylinWormGearsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\CylinRollerBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\DeepGrooveBallBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\DoubleRowCylinRollerBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\DoubleThrustAngContactBallBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\ElasticSlvPinCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\ElecSpindleParasControllerTests.cs" />
+    <Compile Include="Controllers\APIs\ElecSpindleSizesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\FlangeCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\FlexiblePinCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\GearCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\HeliCylinGearsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\HubShapedCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\LineRollingGuidesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NCSystemFunctionalOptionsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NCSystemIOUnitsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NCSystemManualsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NCSystemPowerUnitsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NCSystemsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\NeedleRollerThrustRollerBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\OldhamCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\PlumShapedFlexibleCoupsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorDriversControllerTests.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorParasControllerTests.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorSizesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\RotaryTablesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SolidBallScrewNutPairsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltLengthsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltParasControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltSizesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorDriversControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorParasControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorSizesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SpurGearsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverBrakeResistorsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverReactorsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverTransformersControllerTests.cs" />
+    <Compile Include="Controllers\APIs\StepMotorParasControllerTests.cs" />
+    <Compile Include="Controllers\APIs\StepMotorSizesControllerTests.cs" />
+    <Compile Include="Controllers\APIs\StraightBevelGearsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\TaperedRollerBrgsControllerTests.cs" />
+    <Compile Include="Controllers\APIs\XTaperedRollerBrgsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -112,6 +170,7 @@
       <Name>CNCDataManager</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

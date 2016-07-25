@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CNCDataApi.Controllers;
+using CNCDataManager.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CNCDataApi.Models;
+using CNCDataManager.Models;
 using System.Web.Http.Results;
 
-namespace CNCDataApi.Controllers.Tests
+namespace CNCDataManager.Controllers.Tests
 {
     [TestClass()]
     public class AlignBallBrgsControllerTests

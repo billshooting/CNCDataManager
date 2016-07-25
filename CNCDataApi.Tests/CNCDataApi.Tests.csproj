@@ -106,7 +106,6 @@
     <Compile Include="Controllers\StraightBevelGearsControllerTests.cs" />
     <Compile Include="Controllers\TaperedRollerBrgsControllerTests.cs" />
     <Compile Include="Controllers\XTaperedRollerBrgsControllerTests.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 using System.Web.Http.Results;
-using CNCDataApi.Models;
+using CNCDataManager.Models;
 
-namespace CNCDataApi.Controllers.Tests
+namespace CNCDataManager.Controllers.Tests
 {
     [TestClass()]
     public class XTaperedRollerBrgsControllerTests

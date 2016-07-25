@@ -5,9 +5,9 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using CNCDataApi.Models;
+using CNCDataManager.Models;
 
-namespace CNCDataApi.Controllers
+namespace CNCDataManager.Controllers
 {
     public class AngContactBallBrgsController : ApiController
     {

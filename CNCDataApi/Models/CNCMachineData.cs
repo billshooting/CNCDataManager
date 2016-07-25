@@ -1,4 +1,4 @@
-﻿namespace CNCDataApi.Models
+﻿namespace CNCDataManager.Models
 {
     using System;
     using System.Data.Entity;

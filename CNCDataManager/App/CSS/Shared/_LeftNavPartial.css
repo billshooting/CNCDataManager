@@ -3,7 +3,6 @@
 /*#region 最外层容器 */
 
 .side-nav-container{
-    display: inline;
     position: relative;
     float: left;
     width: 300px;

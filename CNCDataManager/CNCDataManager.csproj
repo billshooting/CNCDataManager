@@ -60,12 +60,19 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\CNCDataApi.Tests\bin\Debug\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -168,10 +175,60 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\DataManage\DataManageAreaRegistration.cs" />
     <Compile Include="Areas\Selection\Controllers\SelectionController.cs" />
     <Compile Include="Areas\Selection\SelectionAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\APIs\AlignBallBrgsController.cs" />
+    <Compile Include="Controllers\APIs\AlignRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\AngContactBallBrgsController.cs" />
+    <Compile Include="Controllers\APIs\ArcCylinWormGearsController.cs" />
+    <Compile Include="Controllers\APIs\BallLeadScrewSptBrgsController.cs" />
+    <Compile Include="Controllers\APIs\BWElasticSlvPinCoupsController.cs" />
+    <Compile Include="Controllers\APIs\CablesController.cs" />
+    <Compile Include="Controllers\APIs\CommonCylinWormGearsController.cs" />
+    <Compile Include="Controllers\APIs\CylinRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\DeepGrooveBallBrgsController.cs" />
+    <Compile Include="Controllers\APIs\DoubleRowCylinRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\DoubleThrustAngContactBallBrgsController.cs" />
+    <Compile Include="Controllers\APIs\ElasticSlvPinCoupsController.cs" />
+    <Compile Include="Controllers\APIs\ElecSpindleParasController.cs" />
+    <Compile Include="Controllers\APIs\ElecSpindleSizesController.cs" />
+    <Compile Include="Controllers\APIs\FlangeCoupsController.cs" />
+    <Compile Include="Controllers\APIs\FlexiblePinCoupsController.cs" />
+    <Compile Include="Controllers\APIs\GearCoupsController.cs" />
+    <Compile Include="Controllers\APIs\HeliCylinGearsController.cs" />
+    <Compile Include="Controllers\APIs\HubShapedCoupsController.cs" />
+    <Compile Include="Controllers\APIs\LineRollingGuidesController.cs" />
+    <Compile Include="Controllers\APIs\NCSystemFunctionalOptionsController.cs" />
+    <Compile Include="Controllers\APIs\NCSystemIOUnitsController.cs" />
+    <Compile Include="Controllers\APIs\NCSystemManualsController.cs" />
+    <Compile Include="Controllers\APIs\NCSystemPowerUnitsController.cs" />
+    <Compile Include="Controllers\APIs\NCSystemsController.cs" />
+    <Compile Include="Controllers\APIs\NeedleRollerThrustRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\OldhamCoupsController.cs" />
+    <Compile Include="Controllers\APIs\PlumShapedFlexibleCoupsController.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorDriversController.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorParasController.cs" />
+    <Compile Include="Controllers\APIs\PMSrvMotorSizesController.cs" />
+    <Compile Include="Controllers\APIs\RotaryTablesController.cs" />
+    <Compile Include="Controllers\APIs\SolidBallScrewNutPairsController.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltLengthsController.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltParasController.cs" />
+    <Compile Include="Controllers\APIs\SpindleBeltSizesController.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorDriversController.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorParasController.cs" />
+    <Compile Include="Controllers\APIs\SpindleSrvMotorSizesController.cs" />
+    <Compile Include="Controllers\APIs\SpurGearsController.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverBrakeResistorsController.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverReactorsController.cs" />
+    <Compile Include="Controllers\APIs\SrvDriverTransformersController.cs" />
+    <Compile Include="Controllers\APIs\StepMotorParasController.cs" />
+    <Compile Include="Controllers\APIs\StepMotorSizesController.cs" />
+    <Compile Include="Controllers\APIs\StraightBevelGearsController.cs" />
+    <Compile Include="Controllers\APIs\TaperedRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\XTaperedRollerBrgsController.cs" />
     <Compile Include="Controllers\CNCDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -179,6 +236,62 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\APIs\Bearings_AligningBallBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_AligningRollerBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_AngularContactBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_BallLeadScrewSupportBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_CrossTaperedRollerBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_CylindricalRollerBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_DeepGrooveBallBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_DoubleRowCylindricalRollerBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_DoubleThrustAngularContactBallBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_NeedleRollerAndThrustRollerBearings.cs" />
+    <Compile Include="Models\APIs\Bearings_TaperedRollerBearings.cs" />
+    <Compile Include="Models\APIs\Belt_LengthOfSpindleBelt.cs" />
+    <Compile Include="Models\APIs\Belt_ParaOfSpindleBelt.cs" />
+    <Compile Include="Models\APIs\Belt_SizeOfSpindleBelt.cs" />
+    <Compile Include="Models\APIs\CNCMachineData.cs" />
+    <Compile Include="Models\APIs\Coupling_BrakeWheelElasticSleevePinCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_ElasticSleevePinCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_FlangeCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_FlexiblePinCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_GearCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_HubShapedCouplings.cs" />
+    <Compile Include="Models\APIs\Coupling_OldhamCoupling.cs" />
+    <Compile Include="Models\APIs\Coupling_PlumShapedFlexibleCoupling.cs" />
+    <Compile Include="Models\APIs\Driver_DriverOfServoMotorOfPMSACFS.cs" />
+    <Compile Include="Models\APIs\Driver_ServoDriverBrakeResistor.cs" />
+    <Compile Include="Models\APIs\Driver_ServoDriverReactor.cs" />
+    <Compile Include="Models\APIs\Driver_ServoDriverTransformer.cs" />
+    <Compile Include="Models\APIs\Driver_ServoMotorDriverOfSpindle.cs" />
+    <Compile Include="Models\APIs\Gear_HelicalCylindricalGear.cs" />
+    <Compile Include="Models\APIs\Gear_SpurGear.cs" />
+    <Compile Include="Models\APIs\Gear_StraightBevelGear.cs" />
+    <Compile Include="Models\APIs\Guide_LinearRollingGuide.cs" />
+    <Compile Include="Models\APIs\Motor_ParaOfElectricSpindle.cs" />
+    <Compile Include="Models\APIs\Motor_ParaOfServoMotorOfPMSACFS.cs" />
+    <Compile Include="Models\APIs\Motor_ParaOfServoMotorOfSpindle.cs" />
+    <Compile Include="Models\APIs\Motor_ParaOfStepperMotor.cs" />
+    <Compile Include="Models\APIs\Motor_SizeOfElectricSpindle.cs" />
+    <Compile Include="Models\APIs\Motor_SizeOfServoMotorOfPMSACFS.cs" />
+    <Compile Include="Models\APIs\Motor_SizeOfServoMotorOfSpindle.cs" />
+    <Compile Include="Models\APIs\Motor_SizeOfStepperMotor.cs" />
+    <Compile Include="Models\APIs\Others_Cables.cs" />
+    <Compile Include="Models\APIs\Others_RotaryTable.cs" />
+    <Compile Include="Models\APIs\Others_SolidBallScrewNutPairs.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_ParaOfElectricSpindle.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_ParaOfServoMotorOfPMSACFS.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_ParaOfStepperMotor.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_SizeOfElectricSpindle.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_SizeOfServoMotorOfPMSACFS.cs" />
+    <Compile Include="Models\APIs\Partials\Motor_SizeOfStepperMotor.cs" />
+    <Compile Include="Models\APIs\System_NCSystem.cs" />
+    <Compile Include="Models\APIs\System_NCSystemFunctionalOptions.cs" />
+    <Compile Include="Models\APIs\System_NCSystemIOUnit.cs" />
+    <Compile Include="Models\APIs\System_NCSystemManual.cs" />
+    <Compile Include="Models\APIs\System_NCSystemPowerUnit.cs" />
+    <Compile Include="Models\APIs\Worm_ArcCylindricalWormGear.cs" />
+    <Compile Include="Models\APIs\Worm_CommonCylindricalWormGear.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1908,7 +2021,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
