@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.Http.Results;
 using CNCDataManager.APIs.Controllers;
 using CNCDataManager.APIs.Models;
-using CNCDataManager.APIs.Controllers;
 
 namespace CNCDataManager.Controllers.Tests
 {

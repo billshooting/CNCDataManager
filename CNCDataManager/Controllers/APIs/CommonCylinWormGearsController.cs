@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class CommonCylinWormGearsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/CommonCylinWormGears
+        [AllowAnonymous]
         public IQueryable<CommonCylinWormGear> GetCommonCylinWormGears()
         {
             return db.CommonCylinWormGears;
         }
 
         // GET: api/CommonCylinWormGears/5
+        [AllowAnonymous]
         [ResponseType(typeof(CommonCylinWormGear))]
         public async Task<IHttpActionResult> GetCommonCylinWormGear(string id)
         {

@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class DoubleThrustAngContactBallBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/DoubleThrustAngContactBallBrgs
+        [AllowAnonymous]
         public IQueryable<DoubleThrustAngContactBallBrg> GetDoubleThrustAngContactBallBearings()
         {
             return db.DoubleThrustAngContactBallBearings;
         }
 
         // GET: api/DoubleThrustAngContactBallBrgs/5
+        [AllowAnonymous]
         [ResponseType(typeof(DoubleThrustAngContactBallBrg))]
         public async Task<IHttpActionResult> GetDoubleThrustAngContactBallBrg(string id)
         {

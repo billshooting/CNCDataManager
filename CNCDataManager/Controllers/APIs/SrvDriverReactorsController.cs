@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class SrvDriverReactorsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SrvDriverReactors
+        [AllowAnonymous]
         public IQueryable<SrvDriverReactor> GetSrvDriverReactors()
         {
             return db.SrvDriverReactors;
         }
 
         // GET: api/SrvDriverReactors/5
+        [AllowAnonymous]
         [ResponseType(typeof(SrvDriverReactor))]
         public async Task<IHttpActionResult> GetSrvDriverReactor(string id)
         {

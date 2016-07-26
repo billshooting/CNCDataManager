@@ -18,6 +18,10 @@
                 @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder ="注册邮箱"})
             </div>
             <div class="form-group">
+                <label class="control-label" for="UserName" style="display:none">用户名</label>
+                @Html.TextBoxFor(m=> m.UserName, new { @class = "form-control", placeholder = "用户名"})
+            </div>
+            <div class="form-group">
                 <label class="control-label" for="Password" style="display:none">密码</label>
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "密码" })
             </div>

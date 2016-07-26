@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class AlignRollerBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/AlignRollerBrgs
+        [AllowAnonymous]
         public IQueryable<AlignRollerBrg> GetAlignRollerBearings()
         {
             return db.AlignRollerBearings;
         }
 
         // GET: api/AlignRollerBrgs/5
+        [AllowAnonymous]
         [ResponseType(typeof(AlignRollerBrg))]
         public async Task<IHttpActionResult> GetAlignRollerBrg(string id)
         {

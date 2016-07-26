@@ -187,7 +187,7 @@ div.motor-desc >p:first-child{
     margin-right: 2%;
     margin-top:10px;
     margin-bottom:0;
-    padding:5px;
+    padding:8px 5px 8px 5px;
 
     border:1px solid #bbb;
     background-color:#ccc;
@@ -195,9 +195,12 @@ div.motor-desc >p:first-child{
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
 
-    transition:width 1s;
-    -moz-transition:width 1s;
-    -webkit-transition:width 1s;
+    letter-spacing: 2px;
+    font-size: 20px;
+
+    transition:width 0.5s;
+    -moz-transition:width 0.5s;
+    -webkit-transition:width 0.5s;
 }
 .desc-header-open{
     display:block;
@@ -206,14 +209,15 @@ div.motor-desc >p:first-child{
     margin-right: 2%;
     margin-top:10px;
     margin-bottom:0;
-    padding:5px;
+    padding:8px 5px 8px 5px;
 
-    border-top:1px solid #4d4c4c;
-    border-left:1px solid #4d4c4c;
+    border-top:1px solid #41bae2;
+    border-left:1px solid #41bae2;
     border-bottom:0;
-    border-right:1px solid #4d4c4c;
+    border-right:1px solid #41bae2;
 
-    background-color:#337ab7;
+    color: #fff;
+    background-color:#41bae2;
 
     border-bottom-left-radius:0;
     border-bottom-right-radius:0;
@@ -232,17 +236,24 @@ div.motor-desc >p:first-child{
 .desc-header:hover{
     display:block;
     width:96%;
-    border-color:#4d4c4c;
-    background-color:#337ab7;
+    border-color:#41bae2;
+    background-color:#41bae2;
+    color: #fff;
     cursor:pointer;
 }
 .desc-header-open:hover
 { 
     display:block;
     width:auto;
-    border-color:#4d4c4c;
-    background-color:#337ab7;
+    border-color:#41bae2;
+    background-color:#41bae2;
+    color: #fff;
     cursor:pointer;
+}
+
+.desc-header-icon{
+    margin-left: 10px;
+    margin-right: 20px;
 }
 /*标题样式结束*/
 
@@ -255,9 +266,9 @@ div.motor-desc >p:first-child{
     margin-bottom:0;
     
     border-top:0;
-    border-left:1px solid #4d4c4c;
-    border-bottom:1px solid #4d4c4c;
-    border-right:1px solid #4d4c4c;
+    border-left:1px solid #41bae2;
+    border-bottom:1px solid #41bae2;
+    border-right:1px solid #41bae2;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
     border-top-left-radius:0;
@@ -279,9 +290,9 @@ div.motor-desc >p:first-child{
     margin-bottom:0;
 
     border-top:0;
-    border-left:1px solid #4d4c4c;
-    border-bottom:1px solid #4d4c4c;
-    border-right:1px solid #4d4c4c;
+    border-left:1px solid #41bae2;
+    border-bottom:1px solid #41bae2;
+    border-right:1px solid #41bae2;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
     border-top-left-radius:0;

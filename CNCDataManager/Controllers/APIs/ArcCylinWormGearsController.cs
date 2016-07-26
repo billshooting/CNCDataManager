@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class ArcCylinWormGearsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ArcCylinWormGears
+        [AllowAnonymous]
         public IQueryable<ArcCylinWormGear> GetArcCylinWormGears()
         {
             return db.ArcCylinWormGears;
         }
 
         // GET: api/ArcCylinWormGears/5
+        [AllowAnonymous]
         [ResponseType(typeof(ArcCylinWormGear))]
         public async Task<IHttpActionResult> GetArcCylinWormGear(string id)
         {

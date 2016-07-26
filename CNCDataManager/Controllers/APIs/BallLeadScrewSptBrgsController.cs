@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,11 +10,13 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class BallLeadScrewSptBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/BallLeadScrewSptBrgs
+        [AllowAnonymous]
         public IQueryable<BallLeadScrewSptBrg> GetBallLeadScrewSptBearings()
         {
             return db.BallLeadScrewSptBearings;
@@ -21,6 +24,7 @@ namespace CNCDataManager.APIs.Controllers
 
         // GET: api/BallLeadScrewSptBrgs/5
         [ResponseType(typeof(BallLeadScrewSptBrg))]
+        [AllowAnonymous]
         public async Task<IHttpActionResult> GetBallLeadScrewSptBrg(string id)
         {
             BallLeadScrewSptBrg ballLeadScrewSptBrg = await db.BallLeadScrewSptBearings.FindAsync(id);

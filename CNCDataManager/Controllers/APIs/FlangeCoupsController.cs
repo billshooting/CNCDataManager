@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class FlangeCoupsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/FlangeCoups
+        [AllowAnonymous]
         public IQueryable<FlangeCoup> GetFlangeCouplings()
         {
             return db.FlangeCouplings;
         }
 
         // GET: api/FlangeCoups/5
+        [AllowAnonymous]
         [ResponseType(typeof(FlangeCoup))]
         public async Task<IHttpActionResult> GetFlangeCoup(string id)
         {

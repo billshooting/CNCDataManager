@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class SolidBallScrewNutPairsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SolidBallScrewNutPairs
+        [AllowAnonymous]
         public IQueryable<SolidBallScrewNutPairs> GetSolidBallScrewNutPairs()
         {
             return db.SolidBallScrewNutPairs;
         }
 
         // GET: api/SolidBallScrewNutPairs/5
+        [AllowAnonymous]
         [ResponseType(typeof(SolidBallScrewNutPairs))]
         public async Task<IHttpActionResult> GetSolidBallScrewNutPairs(string id)
         {

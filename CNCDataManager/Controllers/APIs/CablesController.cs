@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class CablesController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/Cables
+        [AllowAnonymous]
         public IQueryable<Cables> GetCables()
         {
             return db.Cables;
         }
 
         // GET: api/Cables/5
+        [AllowAnonymous]
         [ResponseType(typeof(Cables))]
         public async Task<IHttpActionResult> GetCables(string id)
         {

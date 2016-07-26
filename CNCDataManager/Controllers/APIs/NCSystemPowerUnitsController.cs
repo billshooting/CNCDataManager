@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class NCSystemPowerUnitsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/NCSystemPowerUnits
+        [AllowAnonymous]
         public IQueryable<NCSystemPowerUnit> GetNCSystemPowerUnits()
         {
             return db.NCSystemPowerUnits;
         }
 
         // GET: api/NCSystemPowerUnits/5
+        [AllowAnonymous]
         [ResponseType(typeof(NCSystemPowerUnit))]
         public async Task<IHttpActionResult> GetNCSystemPowerUnit(string id)
         {

@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class RotaryTablesController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/RotaryTables
+        [AllowAnonymous]
         public IQueryable<RotaryTable> GetRotaryTables()
         {
             return db.RotaryTables;
         }
 
         // GET: api/RotaryTables/5
+        [AllowAnonymous]
         [ResponseType(typeof(RotaryTable))]
         public async Task<IHttpActionResult> GetRotaryTable(string id)
         {

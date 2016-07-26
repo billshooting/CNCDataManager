@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class DeepGrooveBallBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/DeepGrooveBallBrgs
+        [AllowAnonymous]
         public IQueryable<DeepGrooveBallBrg> GetDeepGrooveBallBearings()
         {
             return db.DeepGrooveBallBearings;
         }
 
         // GET: api/DeepGrooveBallBrgs/5
+        [AllowAnonymous]
         [ResponseType(typeof(DeepGrooveBallBrg))]
         public async Task<IHttpActionResult> GetDeepGrooveBallBrg(string id)
         {

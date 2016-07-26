@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class ElasticSlvPinCoupsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/ElasticSlvPinCoups
+        [AllowAnonymous]
         public IQueryable<ElasticSlvPinCoup> GetElasticSlvPinCouplings()
         {
             return db.ElasticSlvPinCouplings;
         }
 
         // GET: api/ElasticSlvPinCoups/5
+        [AllowAnonymous]
         [ResponseType(typeof(ElasticSlvPinCoup))]
         public async Task<IHttpActionResult> GetElasticSlvPinCoup(string id)
         {

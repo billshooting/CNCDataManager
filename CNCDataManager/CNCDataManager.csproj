@@ -231,6 +231,7 @@
     <Compile Include="Controllers\APIs\XTaperedRollerBrgsController.cs" />
     <Compile Include="Controllers\CNCDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Internals\ApiAuthorizeAttribute.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

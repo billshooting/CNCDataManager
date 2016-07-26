@@ -1,4 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -9,17 +10,20 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class SpindleSrvMotorDriversController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/SpindleSrvMotorDrivers
+        [AllowAnonymous]
         public IQueryable<SpindleSrvMotorDriver> GetSpindleSrvMotorDrivers()
         {
             return db.SpindleSrvMotorDrivers;
         }
 
         // GET: api/SpindleSrvMotorDrivers/5
+        [AllowAnonymous]
         [ResponseType(typeof(SpindleSrvMotorDriver))]
         public async Task<IHttpActionResult> GetSpindleSrvMotorDriver(string id)
         {

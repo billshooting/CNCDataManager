@@ -1,16 +1,18 @@
 ﻿
 (function (app) {
-    var ListController = function ($scope, $http, ApiUrl) {
+    var ListController = function ($scope, $http, TestHost) {
         //1. scope模型初始化
         $scope.list = null;
         $scope.orderProperty = "TypeNo";
         $scope.colState = [true, true, false, true, false, false, false]; //控制是否显示
         $scope.colIfOrdered = { "TypeNo": "table-td-ordered", "Manufacturer": "", "InnerDiameter_d": "", "Diameter_D": "", "BasicRatedDynamicLoad": "", "BasicRatedStaticLoad": "" };
 
+        var url = "/api/cncdata/AlignBallBrgs";
+
         //2. 显示初始化
         $(".overlay-container").css({ display: 'block' });//显示加载图标
 
-        $http.get("http://cncdataapi.azurewebsites.net/api/cncdata/AligningBallBearings").then(
+        $http.get(url).then(
             function (response) {
                 $scope.list = response.data;
                 setTimeout(function () {

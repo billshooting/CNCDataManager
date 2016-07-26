@@ -6,20 +6,25 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using CNCDataManager.Controllers.Internals;
+
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class AngContactBallBrgsController : ApiController
     {
         public CNCMachineData db = new CNCMachineData();
 
         // GET: api/AngContactBallBrgs
+        [AllowAnonymous]
         public IQueryable<AngContactBallBrg> GetAngContactBallBearings()
         {
             return db.AngContactBallBearings;
         }
 
         // GET: api/AngContactBallBrgs/5
+        [AllowAnonymous]
         [ResponseType(typeof(AngContactBallBrg))]
         public async Task<IHttpActionResult> GetAngContactBallBrg(string id)
         {

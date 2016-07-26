@@ -70,6 +70,11 @@ namespace CNCDataManager.Models
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "用户名")]
+        [StringLength(20, ErrorMessage = "{0} 至少包含 {2} 个字符，至多包含 {1} 个字符。", MinimumLength = 3)]
+        public string UserName { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "{0} 必须至少包含 {2} 个字符。", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "密码")]

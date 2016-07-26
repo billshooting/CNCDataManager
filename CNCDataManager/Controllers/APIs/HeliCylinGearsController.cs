@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
+using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
+    [ApiAuthorize]
     public class HeliCylinGearsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
 
         // GET: api/HeliCylinGears
+        [AllowAnonymous]
         public IQueryable<HeliCylinGear> GetHeliCylinGears()
         {
             return db.HeliCylinGears;
         }
 
         // GET: api/HeliCylinGears/5
+        [AllowAnonymous]
         [ResponseType(typeof(HeliCylinGear))]
         public async Task<IHttpActionResult> GetHeliCylinGear(string id)
         {

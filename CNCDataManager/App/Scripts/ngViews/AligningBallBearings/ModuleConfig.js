@@ -9,5 +9,6 @@
     };
 
     app.config(config);
-    app.constant("ApiUrl", "http://cncdataapi.azurewebsites.net/api/cncdata/")
+    app.constant("ApiUrl", "http://cncdataapi.azurewebsites.net/api/cncdata/");
+    app.constant("TestHost", "http://localhost:55939");
 }());
