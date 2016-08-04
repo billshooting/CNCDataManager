@@ -177,6 +177,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\DataManage\DataManageAreaRegistration.cs" />
+    <Compile Include="Areas\Help\Controllers\DocumentsController.cs" />
+    <Compile Include="Areas\Help\HelpAreaRegistration.cs" />
     <Compile Include="Areas\Selection\Controllers\SelectionController.cs" />
     <Compile Include="Areas\Selection\SelectionAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -840,6 +842,7 @@
     <Content Include="App\CSS\Home\About.css" />
     <Content Include="App\CSS\Home\Contact.css" />
     <Content Include="App\CSS\Home\Index.css" />
+    <Content Include="App\CSS\Manage\Index.css" />
     <Content Include="App\CSS\ngViews\list.css" />
     <Content Include="App\CSS\Shared\_BgImageLayout.css" />
     <Content Include="App\CSS\Shared\_Layout.css" />
@@ -881,6 +884,7 @@
     <Content Include="App\Scripts\CNCData\Index.js" />
     <Content Include="App\Scripts\CNCData\List.js" />
     <Content Include="App\Scripts\Home\Index.js" />
+    <Content Include="App\Scripts\Manage\Index.js" />
     <Content Include="App\Scripts\ngViews\AligningBallBearings\ModuleConfig.js" />
     <Content Include="App\Scripts\ngViews\AligningBallBearings\ListController.js" />
     <Content Include="App\Scripts\ngViews\AligningRollerBearing\ListController.js" />
@@ -950,6 +954,8 @@
     <Content Include="App\Scripts\Shared\_Layout.js" />
     <Content Include="App\Scripts\Shared\_LayoutPage_Data.js" />
     <Content Include="App\Scripts\Shared\_LeftaNavPartial.js" />
+    <Content Include="Areas\Help\Content\CSS\DataAPI.css" />
+    <Content Include="Areas\Help\Content\JS\DataAPI.js" />
     <Content Include="Content\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
     <Content Include="Content\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
@@ -1175,6 +1181,11 @@
     <Content Include="Content\font-awesome-4.5.0\scss\_rotated-flipped.scss" />
     <Content Include="Content\font-awesome-4.5.0\scss\_stacked.scss" />
     <Content Include="Content\font-awesome-4.5.0\scss\_variables.scss" />
+    <Content Include="Areas\Help\Views\web.config" />
+    <Content Include="Areas\Help\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Help\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Help\Views\Documents\Index.cshtml" />
+    <Content Include="Areas\Help\Views\Documents\DataAPI.cshtml" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\LocalConfig.pubxml" />
     <Content Include="Scripts\angular.js" />
@@ -2018,6 +2029,7 @@
     <Folder Include="Areas\DataManage\Controllers\" />
     <Folder Include="Areas\DataManage\Models\" />
     <Folder Include="Areas\DataManage\Views\Shared\" />
+    <Folder Include="Areas\Help\Models\" />
     <Folder Include="Areas\Selection\Models\" />
   </ItemGroup>
   <ItemGroup>

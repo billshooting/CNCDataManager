@@ -1,4 +1,4 @@
-﻿
+﻿//CNCData/Index.js
 $(function () {
     var toggleDescBody = function (head, body, icon) {
         head.toggleClass("desc-header-open");

@@ -1,4 +1,6 @@
-﻿$(function () {
+﻿/*数据页CNCData/Index 以及List页的左侧导航栏 js文件
+*/
+$(function () {
     //侧边导航固定
     $(window).scroll(function () {
         if ($(window).scrollTop() > 280) {

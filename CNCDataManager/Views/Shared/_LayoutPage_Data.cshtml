@@ -10,7 +10,6 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/App/CSS/Shared/_LayoutPage_Data.css" type="text/css" />
-    <link rel="stylesheet" href="~/App/CSS/Shared/_LeftNavPartial.css" />
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -37,13 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="layout-header">
-        <div class="container">
-            <h1>数据</h1>
-            <p>详尽，包括伺服电机、伺服驱动、数控系统和机械部件等各项数据。</p>
-        </div>
-
-    </div>
+    @RenderBody()
     <!--加载动画-->
     <div class="overlay-container" style="display:none">
         <span class="glyphicon glyphicon-remove"></span>
@@ -59,28 +52,20 @@
     </div>
     <!--回到顶部结束-->
 
-    <div class="full-wide-body-content">
-        @Html.Partial("_LeftNavPartial")
-        @RenderBody()
-    </div>
-
     <div class="container body-content">      
         <hr />
         <footer>
-            <div class="row">
-                <div class="col-md-4">
-                    <p>To do.</p>
-                </div>
-                <div class="col-md-4">
+            <div class="row right-offset-footer">
+                <div class="col-md-5 col-xs-offset-1">
                     <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
                     <p>邮编：430074</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5 col-xs-offset-1">
                     <p>电话：027-87541114</p>
                     <p>传真：027-87545438</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row right-offset-footer">
                 <div class="col-sm-12 text-center">
                     <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
                 </div>
@@ -93,7 +78,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     <script src="~/App/Scripts/Shared/_LayoutPage_Data.js"></script>
-    <script src="~/App/Scripts/Shared/_LeftaNavPartial.js"></script>
 </body>
 </html>
 

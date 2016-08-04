@@ -15,7 +15,7 @@
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 <label class="control-label" for="Email">用户名</label>
-                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "用户名", style = "margin-top:20px" })
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "邮箱", style = "margin-top:20px" })
                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">

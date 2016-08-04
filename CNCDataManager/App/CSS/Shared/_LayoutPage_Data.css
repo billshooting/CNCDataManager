@@ -176,3 +176,11 @@ a.navbar-brand :hover{ color: lightgray;}
     visibility: visible;
 }
 /*#endregion */
+
+/*#region 向右偏移的footer */
+
+.right-offset-footer{
+    margin-left: 300px;
+}
+
+/*#endregion */

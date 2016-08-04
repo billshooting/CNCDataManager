@@ -8,7 +8,6 @@
     <title>主页-数控机床数据库管理系统</title>
     <link rel="shortcut icon" href="~/Assets/favicon.ico" />
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/App/CSS/Shared/_Layout.css" type="text/css" />
     @RenderSection("css", required:false)
 </head>
@@ -48,14 +47,11 @@
         <hr />
         <footer>
             <div class="row">
-                <div class="col-md-4">
-                    <p>To do.</p>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-offset-2">
                     <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
                     <p>邮编：430074</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-offset-2">
                     <p>电话：027-87541114</p>
                     <p>传真：027-87545438</p>
                 </div>
@@ -68,7 +64,7 @@
 
         </footer>
     </div>
-
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <script src="~/App/Scripts/Shared/_Layout.js"></script>

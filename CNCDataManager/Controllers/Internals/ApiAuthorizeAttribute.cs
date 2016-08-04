@@ -18,7 +18,8 @@ namespace CNCDataManager.Controllers.Internals
                 throw new ArgumentNullException(nameof(actionContext));
             }
 
-            actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+            //actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+            base.HandleUnauthorizedRequest(actionContext);
         }
     }
 }

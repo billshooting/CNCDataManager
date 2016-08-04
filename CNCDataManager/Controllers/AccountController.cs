@@ -151,12 +151,11 @@ namespace CNCDataManager.Controllers
         {
             if (ModelState.IsValid)
             {
-                string roleName = "Administrator";
+                string roleName = "Tourist";
                 var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    UserManager.role
                     await UserManager.AddToRoleAsync(user.Id, roleName);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
