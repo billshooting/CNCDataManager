@@ -2,7 +2,7 @@
     var toggleBody = function (head) {
         var headId = '#' + $(head).attr("id");
         var bodyId = headId + "-body";
-        var icon = headId + " >span";
+        var icon = headId + " >span:first-child";
 
         var iconClass = $(icon).attr("class").toString();
         if (iconClass.indexOf("glyphicon-menu-down") > 0)

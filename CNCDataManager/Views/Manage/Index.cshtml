@@ -1,87 +1,70 @@
 ﻿@model CNCDataManager.Models.IndexViewModel
 @{
-    ViewBag.Title = "管理";
+    Layout = "~/Views/Shared/_LayoutPage_Data.cshtml";
+    ViewBag.Title = "账户管理";
 }
-
-<h2>@ViewBag.Title。</h2>
-
-<p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>更改你的帐户设置</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>密码:</dt>
-        <dd>
-            [
-            @if (Model.HasPassword)
-            {
-                @Html.ActionLink("更改密码", "ChangePassword")
-            }
-            else
-            {
-                @Html.ActionLink("创建", "SetPassword")
-            }
-            ]
-        </dd>
-        <dt>外部登录名:</dt>
-        <dd>
-            @Model.Logins.Count [
-            @Html.ActionLink("管理", "ManageLogins") ]
-        </dd>
-        @*
-            电话号码可以在双因素身份验证系统中用作第二个验证因素。
-             
-             请参阅<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文</a>
-                了解有关设置此 ASP.NET 应用程序以支持使用 SMS 进行双因素身份验证的详细信息。
-             
-             在设置了双因素身份验证后，请取消注释以下块
-        *@
-        @*  
-            <dt>电话号码:</dt>
-            <dd>
-                @(Model.PhoneNumber ?? "None")
-                @if (Model.PhoneNumber != null)
-                {
-                    <br />
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Change", "AddPhoneNumber")&nbsp;&nbsp;]</text>
-                    using (Html.BeginForm("RemovePhoneNumber", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>[<input type="submit" value="Remove" class="btn-link" />]</text>
-                    }
-                }
-                else
-                {
-                    <text>[&nbsp;&nbsp;@Html.ActionLink("Add", "AddPhoneNumber")
-                }
-            </dd>
-        *@
-        <dt>双因素身份验证:</dt>
-        <dd>
-            <p>
-                没有配置双因素身份验证提供程序。有关设置此 ASP.NET 应用程序
-                以支持双因素身份验证的详细信息，请参阅<a href="http://go.microsoft.com/fwlink/?LinkId=403804">此文</a>。
-            </p>
-            @*@if (Model.TwoFactor)
-                {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>已启用
-                        <input type="submit" value="禁用" class="btn btn-link" />
-                        </text>
-                    }
-                }
-                else
-                {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>已禁用
-                        <input type="submit" value="启用" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
-        </dd>
-    </dl>
+@section css{
+    <link rel="stylesheet" href="~/App/CSS/Manage/Index.css" />
+}
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/App/Scripts/Manage/Index.js"></script>
+}
+<div class="layout-header">
+    <div class="container">
+        <h1>账户</h1>
+        <p>管理，修改您的密码、电话认证、两步验证和权限授予等。</p>
+    </div>
 </div>
+
+<div class="full-wide-body-content">
+    <div class="side-nav-container" id="side-nav-container">
+        <nav class="account-manage-side-nav">
+            <ul class="nav">
+                <li>
+                    <a href="#SetPassword">修改密码</a>
+                </li>
+                <li><a href="#SetPhoneNumber">修改电话号码</a></li>
+                <li><a href="#SetEmailAddr">修改注册邮箱</a></li>
+                <li><a href="#SetAuthorization">授予权限</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="index-content">
+        <div class="row form-block" id="SetPassword-div">
+            <div class="col-xs-4">
+                <p>修改您的密码</p>
+            </div>
+            <div class="col-xs-8">
+                <form  action="/Account/SetPassword" method="post" role="form" novalidate="novalidate" id="SetPasswordForm">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger", style = "font-size: 14px" })
+                    <div class="form-group">
+                        <input class="form-control" id="PrePassword" name="PrePassword" placeholder="原始密码" type="password"
+                               data-val="true" data-val-length="原始密码 至少得有6个字符" data-val-length-min="6" data-val-length-max="100" data-val-required="原始密码 必须填写"
+                               aria-required="true" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="Password" name="Password" placeholder="新密码" type="password"
+                               data-val="true" data-val-length="新密码 至少得有6个字符" data-val-length-min="6" data-val-length-max="100" data-val-required="新密码 必须填写"
+                               aria-required="true" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="ComfirmPassword" name="ComfirmPassword" placeholder="确认密码" type="password" aria-required="true"
+                               data-val="true" data-val-equalto="新密码和确认密码不匹配" data-val-equalto-other="*.Password" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control btn btn-lg btn-success" value="修改" type="submit" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        
+        <hr />
+
+
+    </div>
+</div>
+

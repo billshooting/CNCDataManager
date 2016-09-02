@@ -24,7 +24,7 @@ namespace CNCDataManager.Models
 
         [StringLength(50)]
         [Display(Name = "о╣ап")]
-        public string series { get; set; }
+        public string Series { get; set; }
 
         [Required]
         [StringLength(50)]

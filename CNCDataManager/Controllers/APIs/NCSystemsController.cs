@@ -10,7 +10,7 @@ using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
-    [ApiAuthorize]
+    //[ApiAuthorize]
     public class NCSystemsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();

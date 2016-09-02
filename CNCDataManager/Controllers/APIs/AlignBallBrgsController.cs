@@ -7,10 +7,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
 using CNCDataManager.Controllers.Internals;
+using System.Web.Http.Cors;
 
 namespace CNCDataManager.APIs.Controllers
 {
-    [ApiAuthorize]
+    //[ApiAuthorize]
+    [EnableCors(origins:"http://localhost:9000", headers:"*", methods:"*")]
     public class AlignBallBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
@@ -21,7 +23,7 @@ namespace CNCDataManager.APIs.Controllers
         {
             return db.AlignBallBearings;
         }
-
+        
         // GET: api/AlignBallBrgs/5
         [AllowAnonymous]
         [ResponseType(typeof(AlignBallBrg))]

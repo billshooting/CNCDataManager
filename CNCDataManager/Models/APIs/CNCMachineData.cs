@@ -63,7 +63,7 @@
         {
             modelBuilder.Entity<StepMotorPara>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<StepMotorPara>()
                 .HasOptional(e => e.SizeOfStepMotor)
@@ -71,23 +71,23 @@
 
             modelBuilder.Entity<GearCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<BWElasticSlvPinCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<ElasticSlvPinCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<FlexiblePinCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<ElecSpindlePara>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<ElecSpindlePara>()
                 .HasOptional(e => e.SizeOfElecSpindle)
@@ -95,66 +95,55 @@
 
             modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<NeedleRollerThrustRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<BallLeadScrewSptBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<BallLeadScrewSptBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<BallLeadScrewSptBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.SizeOfWorkingTable)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.SizeOfCentrallyLocatedHole)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.TotalDriveRatio)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.PitchAccuracy)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.RepeatAccuracy)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<RotaryTable>()
                 .Property(e => e.Description)
@@ -162,190 +151,167 @@
 
             modelBuilder.Entity<XTaperedRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<XTaperedRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<XTaperedRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AngContactBallBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AngContactBallBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AngContactBallBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.DiameterOfShaftHole_d1)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.DiameterOfShaftHole_d2)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HubShapedCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PlumShapedFlexibleCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<CommonCylinWormGear>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DeepGrooveBallBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DeepGrooveBallBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DeepGrooveBallBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<OldhamCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SolidBallScrewNutPairs>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SolidBallScrewNutPairs>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SolidBallScrewNutPairs>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleRowCylinRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleRowCylinRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleRowCylinRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<DoubleThrustAngContactBallBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignBallBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignBallBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<AlignBallBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<FlangeCoup>()
                 .Property(e => e.DiameterOfBolts)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<FlangeCoup>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<HeliCylinGear>()
                 .Property(e => e.TypeID)
-                .IsFixedLength();
+                .IsUnicode(true);
 
             modelBuilder.Entity<HeliCylinGear>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength();
+                .IsUnicode(true);
 
             modelBuilder.Entity<HeliCylinGear>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PMSrvMotorSize>()
                 .Property(e => e.Size_F)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PMSrvMotorSize>()
                 .Property(e => e.Size_D)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PMSrvMotorPara>()
                 .Property(e => e.IfWithBrake)
-                .IsFixedLength();
+                .IsUnicode(true);
 
             modelBuilder.Entity<PMSrvMotorPara>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<PMSrvMotorPara>()
                 .HasOptional(e => e.SizeOfPMSrvMotor)
@@ -353,110 +319,99 @@
 
             modelBuilder.Entity<PMSrvMotorDriver>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<ArcCylinWormGear>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<CylinRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<CylinRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<CylinRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<TaperedRollerBrg>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<TaperedRollerBrg>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<TaperedRollerBrg>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpurGear>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<StraightBevelGear>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.TypeID)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.Manufacturer)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfGuideFixedBolt)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.RollerType)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_K)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_M)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.SizeOfSlider_T2)
-                .IsFixedLength()
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<LineRollingGuide>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleBeltSize>()
                 .Property(e => e.TypeID)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleBeltSize>()
                 .Property(e => e.C2F)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleBeltPara>()
                 .Property(e => e.BeltType)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleBeltPara>()
                 .Property(e => e.BeltWidth)
-                .IsFixedLength();
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleSrvMotorPara>()
                 .Property(e => e.MaxRotationSpeed)
-                .IsUnicode(false);
+                .IsUnicode(true);
 
             modelBuilder.Entity<SpindleSrvMotorPara>()
                 .Property(e => e.Description)
-                .IsUnicode(false);
+                .IsUnicode(true);
         }
     }
 }

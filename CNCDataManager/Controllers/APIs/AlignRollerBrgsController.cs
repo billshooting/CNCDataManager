@@ -10,7 +10,7 @@ using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
-    [ApiAuthorize]
+    //[ApiAuthorize]
     public class AlignRollerBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
@@ -129,6 +129,11 @@ namespace CNCDataManager.APIs.Controllers
         private bool AlignRollerBrgExists(string id)
         {
             return db.AlignRollerBearings.Count(e => e.TypeID == id) > 0;
+        }
+
+        public void SaveChanges()
+        {
+             db.SaveChanges();
         }
     }
 }

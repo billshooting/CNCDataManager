@@ -21,7 +21,7 @@ namespace CNCDataManager.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("CNCUserData", throwIfV1Schema: false)
         {
         }
 

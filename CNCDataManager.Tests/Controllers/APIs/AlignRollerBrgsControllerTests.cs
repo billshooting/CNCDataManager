@@ -16,6 +16,12 @@ namespace CNCDataManager.Controllers.Tests
             int expected = 11;
 
             var result = controller.GetAlignRollerBearings();
+            foreach(var r in result)
+            {
+                //r.TypeID = r.TypeID.Trim();
+                r.Manufacturer = r.Manufacturer.Trim();
+            }
+            controller.SaveChanges();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(expected, result.Count());
