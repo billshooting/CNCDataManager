@@ -1,15 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataManager", "CNCDataManager\CNCDataManager.csproj", "{6B099419-7934-4E27-8526-A72D56984205}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataManager.Tests", "CNCDataManager.Tests\CNCDataManager.Tests.csproj", "{0C1178A2-407A-49DE-B62F-30F0D92DC68B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataApi", "CNCDataApi\CNCDataApi.csproj", "{7D78A6A3-C6C0-4C7E-A9D2-FCBE0D3BF691}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNCDataApi.Tests", "CNCDataApi.Tests\CNCDataApi.Tests.csproj", "{B7638FD8-D1D5-4680-A19F-D123F8713DCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +21,6 @@ Global
 		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C1178A2-407A-49DE-B62F-30F0D92DC68B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D78A6A3-C6C0-4C7E-A9D2-FCBE0D3BF691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D78A6A3-C6C0-4C7E-A9D2-FCBE0D3BF691}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D78A6A3-C6C0-4C7E-A9D2-FCBE0D3BF691}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D78A6A3-C6C0-4C7E-A9D2-FCBE0D3BF691}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7638FD8-D1D5-4680-A19F-D123F8713DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7638FD8-D1D5-4680-A19F-D123F8713DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7638FD8-D1D5-4680-A19F-D123F8713DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7638FD8-D1D5-4680-A19F-D123F8713DCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

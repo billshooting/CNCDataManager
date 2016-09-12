@@ -10,7 +10,7 @@ using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
-    [ApiAuthorize]
+    //[ApiAuthorize]
     public class SolidBallScrewNutPairsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();

@@ -13,13 +13,13 @@ namespace CNCDataManager.Controllers.Internals
     {
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
-            if (actionContext == null)
-            {
-                throw new ArgumentNullException(nameof(actionContext));
-            }
+            //if (actionContext == null)
+            //{
+            //    throw new ArgumentNullException(nameof(actionContext));
+            //}
 
-            //actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
-            base.HandleUnauthorizedRequest(actionContext);
+            ////actionContext.Response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
+            //base.HandleUnauthorizedRequest(actionContext);
         }
     }
 }

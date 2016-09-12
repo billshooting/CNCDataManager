@@ -11,7 +11,7 @@ using CNCDataManager.Controllers.Internals;
 
 namespace CNCDataManager.APIs.Controllers
 {
-    [ApiAuthorize]
+    //[ApiAuthorize]
     public class AngContactBallBrgsController : ApiController
     {
         public CNCMachineData db = new CNCMachineData();
