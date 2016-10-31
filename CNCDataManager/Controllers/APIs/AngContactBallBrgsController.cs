@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.Controllers.Internals;
-
+using System.Web.Http.Cors;
 
 namespace CNCDataManager.APIs.Controllers
 {
     //[ApiAuthorize]
+    [EnableCors(origins: "http://localhost:9000", headers: "*", methods: "*")]
     public class AngContactBallBrgsController : ApiController
     {
         public CNCMachineData db = new CNCMachineData();

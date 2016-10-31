@@ -1,0 +1,22 @@
+var LinnearRollingGuideDetailCtrl=angular.module("LinnearRollingGuideDetailCtrl",[]);
+//直线导轨详情页控制器
+LinnearRollingGuideDetailCtrl.controller("LinnearRollingGuideDetailCtrl",function($scope,$state,$stateParams,$http,$cookies,$data){
+	$scope.FeedSystemType=$stateParams.FeedSystemType;
+	$scope.guid={};
+	$http({
+		method:"GET",
+		url:$data.http+"LineRollingGuides",
+		params:{
+			id:$stateParams.id
+		}
+	}).success(function(data){
+		$scope.guid=data;
+	});
+	$scope.nextStep=function(){
+		$cookies.putObject($stateParams.FeedSystemType+"Guide",$scope.guid);
+		$state.go("FeedSystem.SolidBallScrewNutPairs");
+	};
+	$scope.back=function(){
+		$state.go("FeedSystem");
+	};
+});

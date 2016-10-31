@@ -1,0 +1,21 @@
+﻿var SolidBallScrewNutPairsDetailCtrl=angular.module("SolidBallScrewNutPairsDetailCtrl",[]);
+SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",function($scope,$http,$stateParams,$cookies,$state,$data){
+	$scope.FeedSystemType=$stateParams.FeedSystemType;
+	$scope.ballscrew={};
+	$http({
+		method:"GET",
+		url:$data.http+"SolidBallScrewNutPairs",
+		params:{
+			id:$stateParams.id
+		}
+	}).success(function(data){
+		$scope.ballscrew=data;
+	});
+	$scope.nextStep=function(){
+		$cookies.putObject($stateParams.FeedSystemType+"Ballscrew",$scope.ballscrew);
+		$state.go("FeedSystem.Bearings");
+	};
+	$scope.back=function(){
+		$state.go("FeedSystem.SolidBallScrewNutPairs");
+	}
+});

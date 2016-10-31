@@ -13,25 +13,9 @@
     <link href="~/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
     <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/AppSelection/framework/bootsidemenu/BootSideMenu.css" rel="stylesheet" />
 
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-ui-router.min.js"></script>
-    <script src="~/Scripts/angular-cookies.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
-
-    <script src="~/AppSelection/js/demo.js"></script>
-    <script src="~/AppSelection/js/app.js"></script>
-    <script src="~/AppSelection/js/controllers.js"></script>
-    <script src="~/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
-    <script src="~/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
-    <script src="~/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/BearingsTableCtrl.js"></script>
-    <script src="~/AppSelection/js/BearingsDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/services.js"></script>
-    <script src="~/AppSelection/js/filters.js"></script>
-    <script src="~/AppSelection/js/directives.js"></script>
+    
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -64,6 +48,7 @@
             <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
         </div>
     </header>
+
     <div ng-controller="CNCNavCtrl">
         <div class="middleNav">
             <div class="container">
@@ -80,6 +65,734 @@
                 </div>
             </div>
         </div>
+
+        <div id="sideMenu">
+            <div class="user">
+                <img src="../../../../AppSelection/imgs/face_01.gif" alt="用户头像" class="img-thumbnail" />
+                <a href="#" target="_blank" class="navbar-link">用户名</a>
+            </div>
+            <div class="list-group">
+                <div>
+                    <button type="button" class="list-group-item active" data-toggle="collapse" data-target="#sideType1">
+                        <span class="glyphicon glyphicon-unchecked" id="CNCTypeCheck"></span>
+                        数控机床类型
+                    </button>
+                    <div id="sideType1" class="collapse">
+                        <div class="user">
+                            <img src="../../../../AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCTypeImg" />
+                        </div>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>型号</td>
+                                <td id="CNCTypeID">未选择</td>
+                            </tr>
+                            <tr>
+                                <td>支持类型</td>
+                                <td id="CNCTypeManu"></td>
+                            </tr>
+                            <tr>
+                                <td>数量</td>
+                                <td id="CNCTypeNum">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="c-feed x-feed">
+                    <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType2">
+                        <span class="glyphicon glyphicon-unchecked" id="CNCSystemCheck"></span>
+                        数控机床系统
+                    </button>
+                    <div id="sideType2" class="collapse">
+                        <div class="user">
+                            <img src="../../../../AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCSystemImg" />
+                        </div>
+                        <table class="table table-striped">
+                            <tr>
+                                <td>型号</td>
+                                <td id="CNCSystemID">未选择</td>
+                            </tr>
+                            <tr>
+                                <td>生产厂家</td>
+                                <td id="CNCSystemManu"></td>
+                            </tr>
+                            <tr>
+                                <td>数量</td>
+                                <td id="CNCSystemNum">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="c-feed">
+                    <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType10">进给轴x/y轴</button>
+                    <div id="sideType10" class="list-group collapse">
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType11">
+                            <span class="glyphicon glyphicon-unchecked" id="XYGuideCheck"></span>
+                            导轨
+                        </button>
+                        <div id="sideType11" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XYGuideImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYGuideID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYGuideManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYGuideNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType12">
+                            <span class="glyphicon glyphicon-unchecked" id="XYBallscrewCheck"></span>
+                            滚珠丝杠
+                        </button>
+                        <div id="sideType12" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XYBallscrewImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYBallscrewID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYBallscrewManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYBallscrewNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType13">
+                            <span class="glyphicon glyphicon-unchecked" id="XYBearingsCheck"></span>
+                            轴承
+                        </button>
+                        <div id="sideType13" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XYBearingsImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYBearingsID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYBearingsManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYBearingsNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType14">
+                            <span class="glyphicon glyphicon-unchecked" id="XYCouplingCheck"></span>
+                            联轴器
+                        </button>
+                        <div id="sideType14" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XYCouplingImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYCouplingID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYCouplingManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYCouplingNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType15">
+                            <span class="glyphicon glyphicon-unchecked" id="XYMotorCheck"></span>
+                            伺服电机
+                        </button>
+                        <div id="sideType15" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XYMotorImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYMotorID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYMotorManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYMotorNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType16">
+                            <span class="glyphicon glyphicon-unchecked" id="XYDriverCheck"></span>
+                            伺服驱动
+                        </button>
+                        <div id="sideType16" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XYDriverImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XYDriverID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XYDriverManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XYDriverNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="x-feed">
+                    <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType20">进给轴x轴</button>
+                    <div id="sideType20" class="list-group collapse">
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType21">
+                            <span class="glyphicon glyphicon-unchecked" id="XGuideCheck"></span>
+                            导轨
+                        </button>
+                        <div id="sideType21" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XGuideImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XGuideID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XGuideManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XGuideNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType22">
+                            <span class="glyphicon glyphicon-unchecked" id="XBallscrewCheck"></span>
+                            滚珠丝杠
+                        </button>
+                        <div id="sideType22" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XBallscrewImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XBallscrewID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XBallscrewManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XBallscrewNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType23">
+                            <span class="glyphicon glyphicon-unchecked" id="XBearingsCheck"></span>
+                            轴承
+                        </button>
+                        <div id="sideType23" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XBearingsImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XBearingsID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XBearingsManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XBearingsNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType24">
+                            <span class="glyphicon glyphicon-unchecked" id="XCouplingCheck"></span>
+                            联轴器
+                        </button>
+                        <div id="sideType24" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XCouplingImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XCouplingID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XCouplingManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XCouplingNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType25">
+                            <span class="glyphicon glyphicon-unchecked" id="XMotorCheck"></span>
+                            伺服电机
+                        </button>
+                        <div id="sideType25" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XMotorImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XMotorID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XMotorManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XMotorNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType26">
+                            <span class="glyphicon glyphicon-unchecked" id="XDriverCheck"></span>
+                            伺服驱动
+                        </button>
+                        <div id="sideType26" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XDriverImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="XDriverID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="XDriverManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="XDriverNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="x-feed">
+                    <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType30">进给轴y轴</button>
+                    <div id="sideType30" class="list-group collapse">
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType31">
+                            <span class="glyphicon glyphicon-unchecked" id="YGuideCheck"></span>
+                            导轨
+                        </button>
+                        <div id="sideType31" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="YGuideImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YGuideID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YGuideManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YGuideNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType32">
+                            <span class="glyphicon glyphicon-unchecked" id="YBallscrewCheck"></span>
+                            滚珠丝杠
+                        </button>
+                        <div id="sideType32" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="YBallscrewImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YBallscrewID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YBallscrewManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YBallscrewNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType33">
+                            <span class="glyphicon glyphicon-unchecked" id="YBearingsCheck"></span>
+                            轴承
+                        </button>
+                        <div id="sideType33" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="YBearingsImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YBearingsID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YBearingsManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YBearingsNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType34">
+                            <span class="glyphicon glyphicon-unchecked" id="YCouplingCheck"></span>
+                            联轴器
+                        </button>
+                        <div id="sideType34" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="YCouplingImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YCouplingID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YCouplingManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YCouplingNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType35">
+                            <span class="glyphicon glyphicon-unchecked" id="YMotorCheck"></span>
+                            伺服电机
+                        </button>
+                        <div id="sideType35" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="YMotorImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YMotorID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YMotorManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YMotorNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType36">
+                            <span class="glyphicon glyphicon-unchecked" id="YDriverCheck"></span>
+                            伺服驱动
+                        </button>
+                        <div id="sideType36" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="YDriverImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="YDriverID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="YDriverManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="YDriverNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="c-feed x-feed">
+                    <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType40">进给轴z轴</button>
+                    <div id="sideType40" class="list-group collapse">
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType41">
+                            <span class="glyphicon glyphicon-unchecked" id="ZGuideCheck"></span>
+                            导轨
+                        </button>
+                        <div id="sideType41" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="ZGuideImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZGuideID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZGuideManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZGuideNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType42">
+                            <span class="glyphicon glyphicon-unchecked" id="ZBallscrewCheck"></span>
+                            滚珠丝杠
+                        </button>
+                        <div id="sideType42" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="ZBallscrewImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZBallscrewID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZBallscrewManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZBallscrewNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType43">
+                            <span class="glyphicon glyphicon-unchecked" id="ZBearingsCheck"></span>
+                            轴承
+                        </button>
+                        <div id="sideType43" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="ZBearingsImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZBearingsID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZBearingsManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZBearingsNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType44">
+                            <span class="glyphicon glyphicon-unchecked" id="ZCouplingCheck"></span>
+                            联轴器
+                        </button>
+                        <div id="sideType44" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="ZCouplingImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZCouplingID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZCouplingManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZCouplingNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType45">
+                            <span class="glyphicon glyphicon-unchecked" id="ZMotorCheck"></span>
+                            伺服电机
+                        </button>
+                        <div id="sideType45" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="ZMotorImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZMotorID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZMotorManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZMotorNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <button type="button" class="list-group-item" data-toggle="collapse" data-target="#sideType46">
+                            <span class="glyphicon glyphicon-unchecked" id="ZDriverCheck"></span>
+                            伺服驱动
+                        </button>
+                        <div id="sideType46" class="collapse">
+                            <div class="user">
+                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="ZDriverImg" />
+                            </div>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>型号</td>
+                                    <td id="ZDriverID">未选择</td>
+                                </tr>
+                                <tr>
+                                    <td>生产厂家</td>
+                                    <td id="ZDriverManu"></td>
+                                </tr>
+                                <tr>
+                                    <td>数量</td>
+                                    <td id="ZDriverNum">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <!--
+                <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer" 
+                         n-attr="sideCNCSystem.num" id-attr="'sideType2'" name-attr="'数控系统类型'"></ts-list>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypex">进给轴x轴</a>
+                <div class="list-group collapse" id="sideTypex">
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType3'" name-attr="'导轨'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType4'" name-attr="'滚珠丝杠'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType5'" name-attr="'轴承'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType6'" name-attr="'联轴器'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType7'" name-attr="'伺服电机'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType8'" name-attr="'伺服驱动'"></ts-list>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypey">进给轴y轴</a>
+                <div class="list-group collapse" id="sideTypey">
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType9'" name-attr="'导轨'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType10'" name-attr="'滚珠丝杠'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType11'" name-attr="'轴承'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType12'" name-attr="'联轴器'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType13'" name-attr="'伺服电机'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType14'" name-attr="'伺服驱动'"></ts-list>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypexy">进给轴x/y轴</a>
+                <div class="list-group collapse" id="sideTypexy">
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType15'" name-attr="'导轨'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType16'" name-attr="'滚珠丝杠'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType17'" name-attr="'轴承'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType18'" name-attr="'联轴器'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType19'" name-attr="'伺服电机'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType20'" name-attr="'伺服驱动'"></ts-list>
+                </div>
+
+                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypez">进给轴z轴</a>
+                <div class="list-group collapse" id="sideTypez">
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType21'" name-attr="'导轨'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType22'" name-attr="'滚珠丝杠'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType23'" name-attr="'轴承'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType24'" name-attr="'联轴器'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType25'" name-attr="'伺服电机'"></ts-list>
+                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
+                             n-attr="sideCNCSystem.num" id-attr="'sideType26'" name-attr="'伺服驱动'"></ts-list>
+                </div>
+
+                <a href="#" class="list-group-item">主轴</a>-->
 
     @RenderBody()
 
@@ -108,6 +821,35 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('#sideMenu').BootSideMenu({side:"right",
+        autoClose:true});
+    });
+    </script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script src="~/AppSelection/js/demo.js"></script>
+    <script src="~/AppSelection/js/app.js"></script>
+    <script src="~/AppSelection/js/controllers.js"></script>
+    <script src="~/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
+    <script src="~/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
+    <script src="~/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
+    <script src="~/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
+    <script src="~/AppSelection/js/BearingsTableCtrl.js"></script>
+    <script src="~/AppSelection/js/BearingsDetailCtrl.js"></script>
+    <script src="~/AppSelection/js/CouplingTableCtrl.js"></script>
+    <script src="~/AppSelection/js/CouplingDetailCtrl.js"></script>
+    <script src="~/AppSelection/js/services.js"></script>
+    <script src="~/AppSelection/js/filters.js"></script>
+    <script src="~/AppSelection/js/directives.js"></script>
+    <script src="~/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
+    <script src="~/Areas/Selection/App/scripts/JavaScript.js"></script>
 </body>
 </html>
 

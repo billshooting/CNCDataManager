@@ -1,0 +1,15 @@
+﻿<a href="#" class="list-group-item" data-toggle="collapse" data-target="#{{id}}">
+                    <span class="glyphicon" ng-class="{true:'glyphicon-check',false:'glyphicon-unchecked'}[num!=0]"></span>
+                    {{name}}
+</a>
+<div id="{{id}}" class="collapse">
+<div class="user">
+    <img ng-src="../../../../AppSelection/imgs/{{imgsrc}}.jpg" alt="{{name}}" class="img-thumbnail" />
+</div>
+<table class="table table-striped">
+    <tr><td>型号</td><td>{{typeID}}</td></tr>
+    <tr><td>生产厂家</td><td>{{manufacturer}}</td></tr>
+    <tr><td>数量</td><td>{{num}}</td></tr>
+</table>
+</div>
+
