@@ -146,23 +146,52 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-strap.compat.js" />
+    <Content Include="Scripts\angular-strap.compat.min.js" />
+    <Content Include="Scripts\angular-strap.js" />
+    <Content Include="Scripts\angular-strap.min.js" />
+    <Content Include="Scripts\angular-strap.tpl.js" />
+    <Content Include="Scripts\angular-strap.tpl.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\jquery-2.2.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.2.4.js" />
-    <Content Include="Scripts\jquery-2.2.4.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\lodash.core.js" />
+    <Content Include="Scripts\lodash.core.min.js" />
+    <Content Include="Scripts\lodash.js" />
+    <Content Include="Scripts\lodash.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <None Include="Scripts\angular-animate.min.js.map" />
     <None Include="Scripts\angular-route.min.js.map" />
+    <None Include="Scripts\angular-strap.min.js.map" />
     <None Include="Scripts\angular.min.js.map" />
-    <None Include="Scripts\jquery-2.2.4.min.map" />
+    <None Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Scripts\jquery-3.1.1.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CNCDataManager\CNCDataManager.csproj">
