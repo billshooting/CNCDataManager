@@ -43,7 +43,7 @@ namespace CNCDataManager.APIs.Models
         public double? ElasticModulus { get; set; }
 
         [Column("紧边长度mm")]
-        public double? tightSideLength { get; set; }
+        public double? TightSideLength { get; set; }
 
         [StringLength(50)]
         [Column("传动力矩")]

@@ -31,6 +31,6 @@ namespace CNCDataManager.APIs.Models
         public double? Ra { get; set; }
 
         [Column("单位重量g/m")]
-        public double? 单位重量 { get; set; }
+        public double? Density { get; set; }
     }
 }

@@ -46,7 +46,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <td>序号</td>
+                        <td style="width: 100px">序号</td>
                         <td class="table-td-orderable" ng-click="changeOrderProperty('TypeID')" title="按此列排序">
                             型号
                             <span class="glyphicon glyphicon-arrow-up" ng-if="orderProperty === 'TypeID'"></span>
@@ -95,7 +95,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="model in items | orderBy: orderProperty">
-                        <td>{{$index + 1}} 
+                        <td style="width: 100px">{{$index + 1}} 
                             <span class="glyphicon glyphicon-pencil span-button pull-right" title="编辑这条记录" ng-click="updateItemLocal(model)"></span>
                             <button type="button" class="close" ng-click="showDeleteModal(model)" title="在数据库中删除这条记录">&times;</button>
                         </td>

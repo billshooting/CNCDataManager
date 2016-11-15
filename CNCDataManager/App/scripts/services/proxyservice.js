@@ -10,8 +10,8 @@
 angular.module('cncdataManagerApp')
   .service('ProxyService', function ($http, $q) {
     // AngularJS will instantiate a singleton by calling "new" on this function
-    //const BASE = 'http://localhost:8088/';
-    const BASE = 'http://localhost:8088/';
+    const BASE = '/';
+    //const BASE = 'http://localhost:9000/';
     const PATH = 'api/cncdata/';
 
     var getUrl = function (uri){ return BASE + PATH + encodeURIComponent(uri); };

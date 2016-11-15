@@ -124,5 +124,6 @@ h4.head-title{
 }
 .table{
     width: 100%;
+    min-height: 300px;
 }
 /*尺寸描述部分结束*/

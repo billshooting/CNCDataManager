@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 
 namespace CNCDataManager.APIs.Controllers
 {
     //[ApiAuthorize]
+    [EnableCors(origins: "http://localhost:9000", headers: "*", methods: "*")]
     public class OldhamCoupsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();

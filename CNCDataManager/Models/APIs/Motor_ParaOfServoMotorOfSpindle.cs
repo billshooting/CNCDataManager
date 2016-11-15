@@ -49,7 +49,7 @@ namespace CNCDataManager.APIs.Models
         public double? MomentOfInertia { get; set; }
 
         [Column("重量Kg")]
-        public double? Weight { get; set; }
+        public double? Mass { get; set; }
 
         [Column("定子电阻Ω")]
         public double? StatorResistance { get; set; }

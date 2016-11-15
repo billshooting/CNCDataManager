@@ -55,7 +55,7 @@ namespace CNCDataManager.APIs.Models
         [Column(name: "d轴电流增益值")]
         public double? DaxisCurrentGain { get; set; }
 
-        [Column(name: "d轴电流积分常熟")]
+        [Column(name: "d轴电流积分常数")]
         public double? IntegralConstantOfDaxisCurrent { get; set; }
 
         [Column(name: "说明", TypeName = "text")]
