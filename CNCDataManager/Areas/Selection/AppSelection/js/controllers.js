@@ -1,11 +1,11 @@
 var controllers = angular.module('controllers', []);
 var injector=angular.injector(["ng"]);
 //中间导航栏控制器
-controllers.controller('CNCNavCtrl',function($scope,$cookies){
+controllers.controller('CNCNavCtrl',function($scope,$locals){
 	//中间导航栏初始化方法，控制中间导航栏是否显示
     var reset=function(){
-        var CNCType=$cookies.getObject("CNCType");
-        if(CNCType==undefined){
+        var CNCType=$locals.getObject("CNCType");
+        if(!CNCType){
             $scope.navShow=[true,false,false,false,false,false];
             angular.element(document.querySelectorAll('.c-feed,.x-feed')).css('display','none');
         }
@@ -27,7 +27,7 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
     //监控子作用域传播来的事件，并初始化中间导航栏和侧边栏中的数控机床类型
     $scope.$on("CNCTypeChange",function(event,data){
         injector.invoke(reset);
-        var CNCType=$cookies.getObject("CNCType");
+        var CNCType=$locals.getObject("CNCType");
         onComponentChange("CNCType",CNCType.type,CNCType.support,CNCType.type);
     });
     //控制中间导航栏选项是否active
@@ -61,14 +61,14 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
     });
     //监控子作用域传播来的事件，并初始化侧边栏中的进给轴部件
     $scope.$on('ComponentChange',function(event,data){
-        var Component=$cookies.getObject(data);
+        var Component=$locals.getObject(data);
         onComponentChange(data,Component.TypeID,Component.Manufacturer,Component.img);
     });
     //更新侧边栏
     function onComponentChange(data,ID,Manu,img){
         angular.element(document.getElementById(data+"Check")).removeClass('glyphicon-unchecked');
         angular.element(document.getElementById(data+"Check")).addClass('glyphicon-check');
-        angular.element(document.getElementById(data+"Img")).attr("src","../../../../AppSelection/imgs/"+img+".jpg");
+        angular.element(document.getElementById(data + "Img")).attr("src", "../../Areas/Selection/AppSelection/imgs/" + img + ".jpg");
         angular.element(document.getElementById(data+"ID")).text(ID);
         angular.element(document.getElementById(data+"Manu")).text(Manu);
         angular.element(document.getElementById(data+"Num")).text(1);
@@ -77,7 +77,7 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
     function onComponentReset(data){
         angular.element(document.getElementById(data+"Check")).removeClass('glyphicon-check');
         angular.element(document.getElementById(data+"Check")).addClass('glyphicon-unchecked');
-        angular.element(document.getElementById(data+"Img")).attr("src","../../../../AppSelection/imgs/loading.jpg");
+        angular.element(document.getElementById(data + "Img")).attr("src", "../../Areas/Selection/AppSelection/imgs/loading.jpg");
         angular.element(document.getElementById(data+"ID")).text("未选择");
         angular.element(document.getElementById(data+"Manu")).text("");
         angular.element(document.getElementById(data+"Num")).text(0);
@@ -86,13 +86,13 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
         var feedSide=new Array("XY","X","Y","Z");
         var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling");
 
-        var CNCTypec=$cookies.getObject("CNCType");
+        var CNCTypec=$locals.getObject("CNCType");
         if(CNCTypec)
             onComponentChange("CNCType",CNCTypec.type,CNCTypec.support,CNCTypec.type);
         else
             return;
 
-        var CNCSystemc=$cookies.getObject("CNCSystem");
+        var CNCSystemc=$locals.getObject("CNCSystem");
         if(CNCSystemc)
             onComponentChange("CNCSystem",CNCSystemc.TypeID,CNCSystemc.Manufacturer,CNCSystemc.img);
         else
@@ -103,7 +103,7 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
             for(var j=0;j<ComponentSide.length;++j)
             {
                 var cookiesAddr=feedSide[i]+ComponentSide[j];
-                var Componentc=$cookies.getObject(cookiesAddr);
+                var Componentc=$locals.getObject(cookiesAddr);
                 if(Componentc){
                     onComponentChange(cookiesAddr,Componentc.TypeID,Componentc.Manufacturer,Componentc.img);}
                 else
@@ -114,7 +114,7 @@ controllers.controller('CNCNavCtrl',function($scope,$cookies){
 });
 
 //机床类型控制器
-controllers.controller("CNCTypeCtrl",function($scope,$state,$cookies){
+controllers.controller("CNCTypeCtrl",function($scope,$state,$locals){
 	$scope.type=-1;
 	$scope.support="";
 	//点击图片显示图片被选中
@@ -125,7 +125,7 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$cookies){
 	//点击下一步按钮将机床类型存入cookies键为CNCType中
 	$scope.nextStep=function(){
 		var CNCType=["立式车床","立式铣床","龙门铣床","卧式车床","卧式铣床","斜床身车床","磨床"];
-		$cookies.putObject("CNCType",{
+		$locals.putObject("CNCType",{
             type:CNCType[$scope.type],
             support:$scope.support,
         });
@@ -140,12 +140,12 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$cookies){
 });
 
 //机床工作需求控制器
-controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$cookies) {
+controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$locals) {
     //负载性质选项绑定
     $scope.loadCharacterOptions=["无冲击","轻微冲击","有冲击或振动"];
     //点击下一步按钮，将工作需求数据存入cookie中，进入数控系统选型
     $scope.nextStep=function(){
-        $cookies.putObject("CNCWorkingCondition",{
+        $locals.putObject("CNCWorkingCondition",{
             cuttingCondition:$scope.cuttingCondition,
             productCondition:$scope.productCondition,
         });
@@ -199,7 +199,7 @@ controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$cooki
 });
 
 //数控系统选型控制器
-controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies,$data) {
+controllers.controller('CNCSystemTable', function ($scope,$http,$state,$locals,$data) {
 	  //表头排序
      $scope.title="TypeID";
      $scope.desc=1;
@@ -209,7 +209,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies,
      	Manufacturer:null,
      	SupportNumberOfChannels:1,
      	MaxControlNumberOfFeedAxis:1,
-     	SupportTypeOfMachine:$cookies.getObject("CNCType").support,
+     	SupportTypeOfMachine:$locals.getObject("CNCType").support,
      };
      //所选数控系统类型
      $scope.CNCSystemSelected={};
@@ -258,12 +258,12 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies,
 	};
     //点击下一步按钮将数控系统类型存入$CNCSelected服务对象实例中
     $scope.nextStep=function(){
-        var CNCSystem=$cookies.getObject("CNCSystem");
+        var CNCSystem=$locals.getObject("CNCSystem");
         if(!CNCSystem){
             CNCSystem={};
         }
         $scope.CNCSystemSelected.img=$scope.CNCSystemSelected.TypeID;
-        $cookies.putObject("CNCSystem",$scope.CNCSystemSelected);
+        $locals.putObject("CNCSystem",$scope.CNCSystemSelected);
         $scope.$emit('ComponentChange',"CNCSystem");
         $state.go("CNCSystem.Accessories");
     };
@@ -274,7 +274,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$cookies,
 });
 
 //数控系统辅件选型控制器
-controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookies,$http,$data){
+controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$locals,$http,$data){
     $scope.controlTypeOptions=["全闭环","半闭环","开环"];
     $scope.IOUnit={
         controlType:"全闭环",
@@ -416,13 +416,13 @@ controllers.controller("CNCSystemAccessoriesCtrl",function($scope,$state,$cookie
             UPSPower:$scope.UPSPower,
             maunl:$scope.manul,
         };
-        var CNCSystem=$cookies.getObject("CNCSystem");
+        var CNCSystem=$locals.getObject("CNCSystem");
         if(!CNCSystem){
             CNCSystem={};
         }
         CNCSystem.CNCSystemAccessories=CNCSystemAccessories;
-        $cookies.putObject("CNCSystem",CNCSystem);
-        var CNCSupport=$cookies.getObject("CNCType").support;
+        $locals.putObject("CNCSystem",CNCSystem);
+        var CNCSupport=$locals.getObject("CNCType").support;
         if(CNCSupport=="C"){
             $state.go("FeedSystem",{FeedSystemType:"XY"});
         }
