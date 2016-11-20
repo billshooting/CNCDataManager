@@ -1,5 +1,5 @@
 ﻿var SolidBallScrewNutPairsDetailCtrl=angular.module("SolidBallScrewNutPairsDetailCtrl",[]);
-SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",function($scope,$http,$stateParams,$cookies,$state,$data){
+SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",function($scope,$http,$stateParams,$locals,$state,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.ballscrew={};
 	$http({
@@ -12,7 +12,7 @@ SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",f
 		$scope.ballscrew=data;
 	});
 	$scope.nextStep=function(){
-		$cookies.putObject($stateParams.FeedSystemType+"Ballscrew",$scope.ballscrew);
+		$locals.putObject($stateParams.FeedSystemType+"Ballscrew",$scope.ballscrew);
 		$state.go("FeedSystem.Bearings");
 	};
 	$scope.back=function(){

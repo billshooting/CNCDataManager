@@ -1,5 +1,5 @@
 ﻿var CouplingTableCtrl=angular.module("CouplingTableCtrl",[]);
-CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$cookies,$default){
+CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	//联轴器类型数据
 	$scope.typeOptions=[
@@ -11,9 +11,9 @@ CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$statePa
 	{name:"齿式联轴器",},
 	{name:"梅花形弹性联轴器"}];
 	//从cookies中取出计算所需参数
-	var guide=$cookies.getObject($scope.FeedSystemType+"Guide");
-	var ballscrew=$cookies.getObject($scope.FeedSystemType+"Ballscrew");
-	var CNCWorkingCondition=$cookies.getObject("CNCWorkingCondition");
+	var guide=$locals.getObject($scope.FeedSystemType+"Guide");
+	var ballscrew=$locals.getObject($scope.FeedSystemType+"Ballscrew");
+	var CNCWorkingCondition=$locals.getObject("CNCWorkingCondition");
 	//计算联轴器轴孔直径
 	var computeCouplingShaftDia=function()
 	{

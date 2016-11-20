@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+CNCDataManager/CNCDataManager.csproj
+CNCDataManager/CNCDataManager.csproj
