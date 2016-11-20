@@ -1,21 +1,21 @@
 var LinnearRollingGuideTableCtrl=angular.module("LinnearRollingGuideTableCtrl",[]);
 //直线导轨选型控制器
-LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function($scope,$stateParams,$locals,$http,$state,$data){
+LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function($scope,$stateParams,$cookies,$http,$state,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
     $scope.guidTypeOptions=["滚动导轨","滑动导轨"];
 	$scope.rollerTypeOptions=[{id:0,name:"球滚子"},{id:1,name:"圆柱滚子"}];
-    var CNCWorkingCondition=$locals.getObject("CNCWorkingCondition");
+    var CNCWorkingCondition=$cookies.getObject("CNCWorkingCondition");
     //计算静载荷安全系数
     var safetyFactor={"无冲击":2,"轻微冲击":3,"有冲击或振动":5};
     //根据进给轴类型切换导轨尺寸图片
     if($scope.FeedSystemType=="XY"||$scope.FeedSystemType=="X"){
-        $scope.imgsrc="../../Areas/Selection/AppSelection/imgs/立铣水平上导轨.jpg";
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平上导轨.jpg";
     }
     else if($scope.FeedSystemType=="Y"){
-        $scope.imgsrc="../../Areas/Selection/AppSelection/imgs/立铣水平下导轨.jpg";
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣水平下导轨.jpg";
     }
     else if($scope.FeedSystemType=="Z"){
-        $scope.imgsrc="../../Areas/Selection/AppSelection/imgs/立铣Z轴导轨.jpg";
+        $scope.imgsrc="../../../../AppSelection/imgs/立铣Z轴导轨.jpg";
     }
      //计算导轨加工轴最小静载荷，即X轴或XY轴
     var computeWorkingAxisMinStaticLoad=function(){
@@ -475,16 +475,16 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
     };
     //点击下一步按钮，将导轨数据保存到相应cookie中,并跳转到下一个页面
     $scope.nextStep=function(){
-       /* var FeedSystem=$locals.getObject("FeedSystem"+$scope.FeedSystemType);
+       /* var FeedSystem=$cookies.getObject("FeedSystem"+$scope.FeedSystemType);
         if(!FeedSystem){
             FeedSystem={};
         };
         FeedSystem.LineRollingGuide=$scope.LineRollingGuideSelected;
-        $locals.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);*/
+        $cookies.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);*/
         $scope.LineRollingGuideSelected.guidType=$scope.guidPara.guidType;//将导轨类型存入cookies
         $scope.LineRollingGuideSelected.friction=$scope.guidPara.friction;//将库伦摩擦系数存入cookies
-        $scope.LineRollingGuideSelected.img="Guide.jpg";
-        $locals.putObject($scope.FeedSystemType+"Guide",$scope.LineRollingGuideSelected);
+        $scope.LineRollingGuideSelected.img="Guide";
+        $cookies.putObject($scope.FeedSystemType+"Guide",$scope.LineRollingGuideSelected);
         $scope.$emit('ComponentChange',$scope.FeedSystemType+"Guide");
         $state.go("FeedSystem.SolidBallScrewNutPairs");
     };

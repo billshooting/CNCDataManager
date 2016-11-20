@@ -1,5 +1,5 @@
 var SolidBallScrewNutPairsTableCtrl=angular.module("SolidBallScrewNutPairsTableCtrl",[]);
-SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",function($scope,$locals,$stateParams,$http,$state,$data){
+SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",function($scope,$cookies,$stateParams,$http,$state,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	//滚珠丝杠常用精度等级数据
 	$scope.accuracyClassOptions=[
@@ -25,8 +25,8 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 	{name:"重预载",factor:3.4}];
 	//滚珠丝杠支撑方式数据
 	$scope.supportModeOptions=["两端固定","固定-支撑","两端支撑","固定-自由"];
-	var CNCWorkingCondition=$locals.getObject("CNCWorkingCondition");
-	var guid=$locals.getObject($stateParams.FeedSystemType+"Guide");
+	var CNCWorkingCondition=$cookies.getObject("CNCWorkingCondition");
+	var guid=$cookies.getObject($stateParams.FeedSystemType+"Guide");
 	var friction=(guid)?guid.friction:0.003;//导轨库伦摩擦系数
 	var preload=0;//滚珠丝杠预紧力
 	//计算滚珠丝杠合适的公称导程
@@ -157,8 +157,8 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 		$scope.ballscrewSelected.minDiameter=$scope.caculation.minDiameter;//将滚珠丝杠计算结果最小底径存入cookies
 		$scope.ballscrewSelected.lead=$scope.caculation.lead;//将滚珠丝杠计算结果导程存入cookies
 		$scope.ballscrewSelected.accuracyClass=$scope.ballscrewPara.accuracyClass.class;
-		$scope.ballscrewSelected.img="Ballscrew.jpg";
-		$locals.putObject($scope.FeedSystemType+"Ballscrew",$scope.ballscrewSelected);
+		$scope.ballscrewSelected.img="Ballscrew";
+		$cookies.putObject($scope.FeedSystemType+"Ballscrew",$scope.ballscrewSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Ballscrew");
 		$state.go("FeedSystem.Bearings");
 	};

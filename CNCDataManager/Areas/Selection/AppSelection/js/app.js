@@ -15,13 +15,13 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/CNCType',
             views: {
                 '': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/home.html'
+                    templateUrl: '../../../../AppSelection/tpls/home.html'
                 },
                 'list@CNCType': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCType/CNCTypeList.html'
+                    templateUrl: '../../../../AppSelection/tpls/CNCType/CNCTypeList.html'
                 },
                 'table@CNCType': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCType/CNCTypeTable.html'
+                    templateUrl: '../../../../AppSelection/tpls/CNCType/CNCTypeTable.html'
                 }
             }
         })
@@ -29,7 +29,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/WorkingCondition',
             views:{
                     'table@CNCType': {
-                        templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCType/CNCWorkingCondition.html'
+                        templateUrl: '../../../../AppSelection/tpls/CNCType/CNCWorkingCondition.html'
                     }
              }
         })
@@ -37,13 +37,13 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/CNCSystem',
             views: {
                 '': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/home.html'
+                    templateUrl: '../../../../AppSelection/tpls/home.html'
                 },
                 'list@CNCSystem': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCSystem/CNCSystemList.html'
+                    templateUrl: '../../../../AppSelection/tpls/CNCSystem/CNCSystemList.html'
                 },
                 'table@CNCSystem': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCSystem/CNCSystemTable.html'
+                    templateUrl: '../../../../AppSelection/tpls/CNCSystem/CNCSystemTable.html'
                 }
             }
         })
@@ -51,7 +51,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/Accessories',
             views: {
                 'table@CNCSystem': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/CNCSystem/CNCSystemAccessories.html'
+                    templateUrl: '../../../../AppSelection/tpls/CNCSystem/CNCSystemAccessories.html'
                 }
             }
         })
@@ -59,13 +59,13 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url: '/FeedSystem/{FeedSystemType}',
             views: {
                 '': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/home.html'
+                    templateUrl: '../../../../AppSelection/tpls/home.html'
                 },
                 'list@FeedSystem': {
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/FeedSystemList.html'
+                    templateUrl: '../../../../AppSelection/tpls/FeedSystem/FeedSystemList.html'
                 },
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/LinearRollingGuide/LinearRollingGuideTable.html'
+                    templateUrl: '../../../../AppSelection/tpls/FeedSystem/LinearRollingGuide/LinearRollingGuideTable.html'
                 }
             }
         })
@@ -73,7 +73,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/detail/{id}',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/LinearRollingGuide/LinearRollingGuideDetail.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/LinearRollingGuide/LinearRollingGuideDetail.html'
                 }
             }
         })
@@ -81,7 +81,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/SolidBallScrewNutPairs',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsTable.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsTable.html'
                 }
             }
         })
@@ -89,7 +89,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/detail/{id}',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsDetail.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/SolidBallScrewNutPairs/SolidBallScrewNutPairsDetail.html'
                 }
             }
         })
@@ -97,7 +97,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/Bearings',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/Bearings/BearingsTable.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/Bearings/BearingsTable.html'
                 }
             }
         })
@@ -105,7 +105,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/detail/{type}/{id}',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/Bearings/BearingsDetail.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/Bearings/BearingsDetail.html'
                 }
             }
         })
@@ -113,7 +113,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/Coupling',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/Coupling/CouplingTable.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/Coupling/CouplingTable.html'
                 }
             }
         })
@@ -121,7 +121,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/ServoMotor',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/ServoMotor/ServoMotorTable.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/ServoMotor/ServoMotorTable.html'
                 }
             }
         })
@@ -129,7 +129,7 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             url:'/Driver',
             views:{
                 'table@FeedSystem':{
-                    templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/Driver/DriverTable.html'
+                    templateUrl:'../../../../AppSelection/tpls/FeedSystem/Driver/DriverTable.html'
                 }
             }
         })

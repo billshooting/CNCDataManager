@@ -1,6 +1,6 @@
 ﻿var BearingsDetailCtrl=angular.module("BearingsDetailCtrl",[]);
 //直线导轨详情页控制器
-BearingsDetailCtrl.controller("BearingsDetailCtrl",function($scope,$state,$stateParams,$http,$locals,$data){
+BearingsDetailCtrl.controller("BearingsDetailCtrl",function($scope,$state,$stateParams,$http,$cookies,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.bearing={};
 	$http({
@@ -13,7 +13,7 @@ BearingsDetailCtrl.controller("BearingsDetailCtrl",function($scope,$state,$state
 		$scope.bearing=data;
 	});
 	$scope.nextStep=function(){
-		$locals.putObject($stateParams.FeedSystemType+"Bearings",$scope.bearing);
+		$cookies.putObject($stateParams.FeedSystemType+"Bearings",$scope.bearing);
 		$state.go("FeedSystem.Coupling");
 	};
 	$scope.back=function(){

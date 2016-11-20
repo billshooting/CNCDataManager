@@ -1,5 +1,5 @@
 ﻿var BearingsTableCtrl=angular.module("BearingsTableCtrl",[]);
-BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateParams,$http,$state,$data){
+BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$cookies,$stateParams,$http,$state,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.bearingTypeOptions=[
 	{name:"60°接触角推力球轴承",type:"ball",url:"AngContactBallBrgs"},
@@ -14,9 +14,9 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 	{name:"四列DFF",factor:1.62},
 	{name:"四列DFT",factor:2.16}];
 	$scope.lubricationMethodOptions=["油润滑","脂润滑"];
-	var ballscrew=$locals.getObject($stateParams.FeedSystemType+"SolidBallScrewNutPairs");
-	var LinearRollingGuide=$locals.getObject($stateParams.FeedSystemType+"Guide");
-	var CNCWorkingCondition=$locals.getObject("CNCWorkingCondition");
+	var ballscrew=$cookies.getObject($stateParams.FeedSystemType+"SolidBallScrewNutPairs");
+	var LinearRollingGuide=$cookies.getObject($stateParams.FeedSystemType+"Guide");
+	var CNCWorkingCondition=$cookies.getObject("CNCWorkingCondition");
 	//计算轴承内径
 	var computeBearingBoreDiameter=function(){
 		$scope.caculation.bearingBoreDiameter=(ballscrew)?ballscrew.AdaptableDiameterWithBearing:28;
@@ -140,8 +140,8 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 	};
 	//点击下一步按钮，将所选数据存入cookies，并跳转到联轴器选型界面
 	$scope.nextStep=function(){
-		$scope.bearingSelected.img="Bearings.jpg";
-		$locals.putObject($scope.FeedSystemType+"Bearings",$scope.bearingSelected);
+		$scope.bearingSelected.img="Bearings";
+		$cookies.putObject($scope.FeedSystemType+"Bearings",$scope.bearingSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Bearings");
 		$state.go("FeedSystem.Coupling");
 	};
