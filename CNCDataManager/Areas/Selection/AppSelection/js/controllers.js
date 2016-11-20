@@ -28,7 +28,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
     $scope.$on("CNCTypeChange",function(event,data){
         injector.invoke(reset);
         var CNCType=$locals.getObject("CNCType");
-        onComponentChange("CNCType",CNCType.type,CNCType.support,CNCType.type);
+        onComponentChange("CNCType",CNCType.type,CNCType.support,CNCType.img);
     });
     //控制中间导航栏选项是否active
     $scope.navActive=0;
@@ -68,7 +68,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
     function onComponentChange(data,ID,Manu,img){
         angular.element(document.getElementById(data+"Check")).removeClass('glyphicon-unchecked');
         angular.element(document.getElementById(data+"Check")).addClass('glyphicon-check');
-        angular.element(document.getElementById(data + "Img")).attr("src", "../../Areas/Selection/AppSelection/imgs/" + img + ".jpg");
+        angular.element(document.getElementById(data + "Img")).attr("src", "../../Areas/Selection/AppSelection/imgs/" + img);
         angular.element(document.getElementById(data+"ID")).text(ID);
         angular.element(document.getElementById(data+"Manu")).text(Manu);
         angular.element(document.getElementById(data+"Num")).text(1);
@@ -83,12 +83,11 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
         angular.element(document.getElementById(data+"Num")).text(0);
     }
     function resetSide(){
-        var feedSide=new Array("XY","X","Y","Z");
-        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling");
-
         var CNCTypec=$locals.getObject("CNCType");
         if(CNCTypec)
-            onComponentChange("CNCType",CNCTypec.type,CNCTypec.support,CNCTypec.type);
+        {
+            onComponentChange("CNCType",CNCTypec.type,CNCTypec.support,CNCTypec.img);
+        }
         else
             return;
 
@@ -98,6 +97,8 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
         else
             onComponentReset("CNCSystem");
 
+        var feedSide=new Array("XY","X","Y","Z");
+        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling");
         for(var i=0;i<feedSide.length;++i)
         {
             for(var j=0;j<ComponentSide.length;++j)
@@ -128,6 +129,7 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$locals){
 		$locals.putObject("CNCType",{
             type:CNCType[$scope.type],
             support:$scope.support,
+            img:CNCType[$scope.type]+".jpg",
         });
         $scope.$emit("CNCTypeChange");
 		$state.go("CNCType.WorkingCondition");
@@ -262,7 +264,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$locals,$
         if(!CNCSystem){
             CNCSystem={};
         }
-        $scope.CNCSystemSelected.img=$scope.CNCSystemSelected.TypeID;
+        $scope.CNCSystemSelected.img="CNCSystem/"+$scope.CNCSystemSelected.TypeID+".jpg";
         $locals.putObject("CNCSystem",$scope.CNCSystemSelected);
         $scope.$emit('ComponentChange',"CNCSystem");
         $state.go("CNCSystem.Accessories");

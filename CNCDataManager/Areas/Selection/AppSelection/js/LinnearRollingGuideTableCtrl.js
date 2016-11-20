@@ -483,7 +483,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
         $locals.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);*/
         $scope.LineRollingGuideSelected.guidType=$scope.guidPara.guidType;//将导轨类型存入cookies
         $scope.LineRollingGuideSelected.friction=$scope.guidPara.friction;//将库伦摩擦系数存入cookies
-        $scope.LineRollingGuideSelected.img="Guide";
+        $scope.LineRollingGuideSelected.img="Guide.jpg";
         $locals.putObject($scope.FeedSystemType+"Guide",$scope.LineRollingGuideSelected);
         $scope.$emit('ComponentChange',$scope.FeedSystemType+"Guide");
         $state.go("FeedSystem.SolidBallScrewNutPairs");

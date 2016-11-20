@@ -157,7 +157,7 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 		$scope.ballscrewSelected.minDiameter=$scope.caculation.minDiameter;//将滚珠丝杠计算结果最小底径存入cookies
 		$scope.ballscrewSelected.lead=$scope.caculation.lead;//将滚珠丝杠计算结果导程存入cookies
 		$scope.ballscrewSelected.accuracyClass=$scope.ballscrewPara.accuracyClass.class;
-		$scope.ballscrewSelected.img="Ballscrew";
+		$scope.ballscrewSelected.img="Ballscrew.jpg";
 		$locals.putObject($scope.FeedSystemType+"Ballscrew",$scope.ballscrewSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Ballscrew");
 		$state.go("FeedSystem.Bearings");

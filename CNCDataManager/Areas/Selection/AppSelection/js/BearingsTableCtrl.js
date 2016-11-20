@@ -140,7 +140,7 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 	};
 	//点击下一步按钮，将所选数据存入cookies，并跳转到联轴器选型界面
 	$scope.nextStep=function(){
-		$scope.bearingSelected.img="Bearings";
+		$scope.bearingSelected.img="Bearings.jpg";
 		$locals.putObject($scope.FeedSystemType+"Bearings",$scope.bearingSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Bearings");
 		$state.go("FeedSystem.Coupling");
