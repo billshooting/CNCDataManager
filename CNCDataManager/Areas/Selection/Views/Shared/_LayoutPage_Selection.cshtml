@@ -10,12 +10,33 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <link href="~/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
+
+    <link href="~/Areas/Selection/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
     <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/AppSelection/framework/bootsidemenu/BootSideMenu.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.css" rel="stylesheet" />
 
-    
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script src="~/Areas/Selection/AppSelection/js/app.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/controllers.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/BearingsTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/BearingsDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/CouplingTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/CouplingDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/services.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/filters.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/directives.js"></script>
+    <script src="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
+
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -68,7 +89,7 @@
 
         <div id="sideMenu">
             <div class="user">
-                <img src="../../../../AppSelection/imgs/face_01.gif" alt="用户头像" class="img-thumbnail" />
+                <img src="~/Areas/Selection/AppSelection/imgs/face_01.gif" alt="用户头像" class="img-thumbnail" />
                 <a href="#" target="_blank" class="navbar-link">用户名</a>
             </div>
             <div class="list-group">
@@ -79,7 +100,7 @@
                     </button>
                     <div id="sideType1" class="collapse">
                         <div class="user">
-                            <img src="../../../../AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCTypeImg" />
+                            <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCTypeImg" />
                         </div>
                         <table class="table table-striped">
                             <tr>
@@ -104,7 +125,7 @@
                     </button>
                     <div id="sideType2" class="collapse">
                         <div class="user">
-                            <img src="../../../../AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCSystemImg" />
+                            <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCSystemImg" />
                         </div>
                         <table class="table table-striped">
                             <tr>
@@ -132,7 +153,7 @@
                         </button>
                         <div id="sideType11" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XYGuideImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XYGuideImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -156,7 +177,7 @@
                         </button>
                         <div id="sideType12" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XYBallscrewImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XYBallscrewImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -180,7 +201,7 @@
                         </button>
                         <div id="sideType13" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XYBearingsImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XYBearingsImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -204,7 +225,7 @@
                         </button>
                         <div id="sideType14" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XYCouplingImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XYCouplingImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -228,7 +249,7 @@
                         </button>
                         <div id="sideType15" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XYMotorImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XYMotorImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -252,7 +273,7 @@
                         </button>
                         <div id="sideType16" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XYDriverImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XYDriverImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -282,7 +303,7 @@
                         </button>
                         <div id="sideType21" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XGuideImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XGuideImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -306,7 +327,7 @@
                         </button>
                         <div id="sideType22" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XBallscrewImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XBallscrewImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -330,7 +351,7 @@
                         </button>
                         <div id="sideType23" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XBearingsImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XBearingsImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -354,7 +375,7 @@
                         </button>
                         <div id="sideType24" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XCouplingImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XCouplingImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -378,7 +399,7 @@
                         </button>
                         <div id="sideType25" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XMotorImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XMotorImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -402,7 +423,7 @@
                         </button>
                         <div id="sideType26" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XDriverImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XDriverImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -432,7 +453,7 @@
                         </button>
                         <div id="sideType31" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="YGuideImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="YGuideImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -456,7 +477,7 @@
                         </button>
                         <div id="sideType32" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="YBallscrewImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="YBallscrewImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -480,7 +501,7 @@
                         </button>
                         <div id="sideType33" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="YBearingsImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="YBearingsImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -504,7 +525,7 @@
                         </button>
                         <div id="sideType34" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="YCouplingImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="YCouplingImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -528,7 +549,7 @@
                         </button>
                         <div id="sideType35" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="YMotorImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="YMotorImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -552,7 +573,7 @@
                         </button>
                         <div id="sideType36" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="YDriverImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="YDriverImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -582,7 +603,7 @@
                         </button>
                         <div id="sideType41" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="ZGuideImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="ZGuideImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -606,7 +627,7 @@
                         </button>
                         <div id="sideType42" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="ZBallscrewImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="ZBallscrewImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -630,7 +651,7 @@
                         </button>
                         <div id="sideType43" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="ZBearingsImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="ZBearingsImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -654,7 +675,7 @@
                         </button>
                         <div id="sideType44" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="ZCouplingImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="ZCouplingImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -678,7 +699,7 @@
                         </button>
                         <div id="sideType45" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="ZMotorImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="ZMotorImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -702,7 +723,7 @@
                         </button>
                         <div id="sideType46" class="collapse">
                             <div class="user">
-                                <img src="../../../../AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="ZDriverImg" />
+                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="ZDriverImg" />
                             </div>
                             <table class="table table-striped">
                                 <tr>
@@ -828,28 +849,7 @@
         autoClose:true});
     });
     </script>
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-ui-router.min.js"></script>
-    <script src="~/Scripts/angular-cookies.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
 
-    <script src="~/AppSelection/js/demo.js"></script>
-    <script src="~/AppSelection/js/app.js"></script>
-    <script src="~/AppSelection/js/controllers.js"></script>
-    <script src="~/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
-    <script src="~/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
-    <script src="~/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/BearingsTableCtrl.js"></script>
-    <script src="~/AppSelection/js/BearingsDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/CouplingTableCtrl.js"></script>
-    <script src="~/AppSelection/js/CouplingDetailCtrl.js"></script>
-    <script src="~/AppSelection/js/services.js"></script>
-    <script src="~/AppSelection/js/filters.js"></script>
-    <script src="~/AppSelection/js/directives.js"></script>
-    <script src="~/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
-    <script src="~/Areas/Selection/App/scripts/JavaScript.js"></script>
 </body>
 </html>
 
