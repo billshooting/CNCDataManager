@@ -5,7 +5,7 @@ using CNCDataManager.Models;
 using CNCDataManager.APIs.Controllers;
 using CNCDataManager.APIs.Models;
 
-namespace CNCDataManager.Controllers.Tests
+namespace CNCDataManager.APIs.Tests
 {
     [TestClass()]
     public class XTaperedRollerBrgsControllerTests

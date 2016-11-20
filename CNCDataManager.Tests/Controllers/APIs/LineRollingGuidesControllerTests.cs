@@ -5,7 +5,7 @@ using System.Linq;
 using CNCDataManager.APIs.Controllers;
 using CNCDataManager.APIs.Models;
 
-namespace CNCDataManager.Controllers.Tests
+namespace CNCDataManager.APIs.Tests
 {
     [TestClass()]
     public class LineRollingGuidesControllerTests

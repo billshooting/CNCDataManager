@@ -59,6 +59,8 @@
         public virtual DbSet<SpindleSrvMotorPara>           SpindleSrvMotorParas                { get; set; }
         public virtual DbSet<SpindleSrvMotorDriver>         SpindleSrvMotorDrivers              { get; set; }
 
+        public virtual DbSet<CNCMachineType>                CNCMachineTypes                     { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StepMotorPara>()
@@ -412,6 +414,7 @@
             modelBuilder.Entity<SpindleSrvMotorPara>()
                 .Property(e => e.Description)
                 .IsUnicode(true);
+
         }
     }
 }

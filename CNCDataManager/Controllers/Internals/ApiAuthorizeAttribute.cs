@@ -7,7 +7,7 @@ using System.Web.Http.Controllers;
 using System.Net.Http;
 using System.Net;
 
-namespace CNCDataManager.Controllers.Internals
+namespace CNCDataManager.APIs.Internals
 {
     public class ApiAuthorizeAttribute : AuthorizeAttribute
     {

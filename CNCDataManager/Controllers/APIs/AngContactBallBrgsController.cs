@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using CNCDataManager.Controllers.Internals;
+using CNCDataManager.APIs.Internals;
 using System.Web.Http.Cors;
 
 namespace CNCDataManager.APIs.Controllers
