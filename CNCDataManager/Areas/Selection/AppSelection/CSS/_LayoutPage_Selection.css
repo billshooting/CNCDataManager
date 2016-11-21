@@ -157,6 +157,14 @@ table th{
   margin-bottom: 5px;
 }
 
+.CNCtableimg{
+  transition:all 0.3s;
+}
+
+.CNCtableimg:hover{
+  transform: scale(1.01,1.01);
+}
+
 
 
 

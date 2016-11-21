@@ -13,7 +13,9 @@ LinnearRollingGuideDetailCtrl.controller("LinnearRollingGuideDetailCtrl",functio
 		$scope.guid=data;
 	});
 	$scope.nextStep=function(){
-		$locals.putObject($stateParams.FeedSystemType+"Guide",$scope.guid);
+		$scope.guid.img="Guide.jpg";
+		$locals.putObject($scope.FeedSystemType+"Guide",$scope.guid);
+		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Guide");
 		$state.go("FeedSystem.SolidBallScrewNutPairs");
 	};
 	$scope.back=function(){

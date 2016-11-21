@@ -94,6 +94,22 @@ filters.filter("BearingsFilt",function() {
 	}
 });
 
+//进给系统联轴器主过滤器
+filters.filter("CouplingFilt",function(){
+	return function(e,caculation){
+		if(!e){
+			return [];
+		}
+		var result=[];
+		for(var i=0;i<e.length;i++){
+			if(e[i].AllowableRotationSpeed>=caculation.maxSpeed
+				&&e[i].NominalTorque>=caculation.computedTorque*1000)
+				result.push(e[i]);
+		}
+		return result;
+	}
+});
+
 //分页控件获取筛选后数组的长度
 filters.filter("size",function(){
 	return function(e){
@@ -102,6 +118,7 @@ filters.filter("size",function(){
 		return e.length;
 	}
 });
+
 //分页控件获取每一页的数据
 filters.filter("paging",function(){
 	return function(e,currentPage,pageSize){
@@ -111,6 +128,7 @@ filters.filter("paging",function(){
 		return e.slice(start,start+pageSize);
 	}
 });
+
 //去除数组中的重复项
 filters.filter("distinct",function(){
 	return function(e){

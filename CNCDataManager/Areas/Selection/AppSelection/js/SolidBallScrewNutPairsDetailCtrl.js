@@ -12,7 +12,9 @@ SolidBallScrewNutPairsDetailCtrl.controller("SolidBallScrewNutPairsDetailCtrl",f
 		$scope.ballscrew=data;
 	});
 	$scope.nextStep=function(){
-		$locals.putObject($stateParams.FeedSystemType+"Ballscrew",$scope.ballscrew);
+		$scope.ballscrew.img="Ballscrew.jpg";
+		$locals.putObject($scope.FeedSystemType+"Ballscrew",$scope.ballscrew);
+		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Ballscrew");
 		$state.go("FeedSystem.Bearings");
 	};
 	$scope.back=function(){

@@ -966,6 +966,13 @@
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\HNC-818B-T.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\HNC-848C.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\BWElasticSlvPinCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\ElasticSlvPinCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\FlangeCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\FlexiblePinCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\GearCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\OldhamCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Coupling\PlumShapedFlexibleCoups.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\face_01.gif" />
     <Content Include="Areas\Selection\AppSelection\imgs\Guide.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\GuideRail.jpg" />
@@ -1009,6 +1016,7 @@
     <Content Include="Areas\Selection\AppSelection\tpls\directivetemplate\tsList.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Bearings\BearingsDetail.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Bearings\BearingsTable.html" />
+    <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Coupling\CouplingDetail.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Coupling\CouplingTable.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Driver\DriverTable.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\FeedSystemList.html" />

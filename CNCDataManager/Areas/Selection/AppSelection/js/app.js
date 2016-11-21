@@ -1,7 +1,7 @@
 ﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers",
     "directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl",
     "SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl","BearingsTableCtrl",
-    "BearingsDetailCtrl","CouplingTableCtrl"]);
+    "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl"]);
 
 selectionApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
@@ -114,6 +114,14 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             views:{
                 'table@FeedSystem':{
                     templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/Coupling/CouplingTable.html'
+                }
+            }
+        })
+        .state('FeedSystem.Coupling.detail',{
+            url:'/detail/{type}/{id}',
+            views:{
+                'table@FeedSystem':{
+                    templateUrl:'../../Areas/Selection/AppSelection/tpls/FeedSystem/Coupling/CouplingDetail.html'
                 }
             }
         })
