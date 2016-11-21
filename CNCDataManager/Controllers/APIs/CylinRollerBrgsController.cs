@@ -7,10 +7,12 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using CNCDataManager.APIs.Models;
 using CNCDataManager.Controllers.Internals;
+using System.Web.Http.Cors;
 
 namespace CNCDataManager.APIs.Controllers
 {
     //[ApiAuthorize]
+    [EnableCors(origins: "http://localhost:9000", headers: "*", methods: "*")]
     public class CylinRollerBrgsController : ApiController
     {
         private CNCMachineData db = new CNCMachineData();
