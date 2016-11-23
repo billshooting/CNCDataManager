@@ -1,7 +1,7 @@
 ﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers",
     "directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl",
     "SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl","BearingsTableCtrl",
-    "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl"]);
+    "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl","ServoMotorTableCtrl"]);
 
 selectionApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
