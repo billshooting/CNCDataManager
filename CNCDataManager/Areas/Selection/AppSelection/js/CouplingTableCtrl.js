@@ -1,6 +1,7 @@
 ﻿var CouplingTableCtrl=angular.module("CouplingTableCtrl",[]);
 CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default,$http,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
+
 	//联轴器类型数据
 	$scope.typeOptions=[
 	{name:"十字滑块式联轴器",url:"OldhamCoups"},
@@ -10,6 +11,7 @@ CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$statePa
 	{name:"凸缘联轴器",url:"FlangeCoups"},
 	{name:"齿式联轴器",url:"GearCoups"},
 	{name:"梅花形弹性联轴器",url:"PlumShapedFlexibleCoups"}];
+	
 	//从cookies中取出计算所需参数
 	var guide=$locals.getObject($scope.FeedSystemType+"Guide");
 	var ballscrew=$locals.getObject($scope.FeedSystemType+"Ballscrew");

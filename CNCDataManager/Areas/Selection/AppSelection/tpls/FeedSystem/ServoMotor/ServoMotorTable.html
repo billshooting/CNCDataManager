@@ -37,10 +37,10 @@
 									<label class="control-label"></label>
 								</div>
 							</div>
-							<dvi class="row">
+							<div class="row">
 								<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="caculate()">计算</button>
 								<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="reset()">重置</button>
-							</dvi>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -66,10 +66,11 @@
 						<th class="btn-primary" ng-click="title='MaxCurrent';desc=!desc" role="button">最大电流</th>
 						<th class="btn-primary" ng-click="title='MechanicalTimeConstant';desc=!desc" role="button">机械时间常数</th>
 						<th class="btn-primary" ng-click="title='Mass';desc=!desc" role="button">质量</th>
+						<th class="btn-primary"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="servoMotor in servoMotors|orderBy:title:desc|paging:Page.currentPage:Page.pageSize" ng-click="selected(servoMotor)" ng-class="{tableSelected:servoMotor.TypeID==servoMotorSelected.TypeID}">
+					<tr ng-repeat="servoMotor in servoMotors|ServoMotorFilt:servoMotorPara|orderBy:title:desc|paging:Page.currentPage:Page.pageSize" ng-click="selected(servoMotor)" ng-class="{tableSelected:servoMotor.TypeID==servoMotorSelected.TypeID}">
 						<td>{{servoMotor.TypeID}}</td>
 						<td>{{servoMotor.Manufacturer}}</td>
 						<td>{{servoMotor.RatedTorque}}</td>
@@ -84,6 +85,7 @@
 						<td>{{servoMotor.MaxCurrent}}</td>
 						<td>{{servoMotor.MechanicalTimeConstant}}</td>
 						<td>{{servoMotor.Mass}}</td>
+						<td><a ui-sref="FeedSystem.ServoMotor.detail({id:servoMotor.TypeID})">详情</a></td>
 					</tr>
 				</tbody>
 			</table>

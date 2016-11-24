@@ -1,1 +1,49 @@
-﻿Driver
+﻿<div ng-controller="DriverTableCtrl">
+	<div class="CNCTable">
+		<ol class="breadcrumb">
+			<li><a ui-sref="FeedSystem">进给轴{{FeedSystemType}}轴</a></li>
+			<li class="active">伺服驱动列表</li>
+		</ol>
+		<div class="row">
+			<div class="col-md-4">
+				<img src="../../Areas/Selection/AppSelection/imgs/Driver.jpg" class="img-thumbnail" alt="伺服驱动">
+			</div>
+			<div class="col-md-offset-2 col-md-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">伺服驱动参数</h3>
+					</div>
+					<div class="panel-body">
+						<form name="driverForm">
+							<div class="form-inline">
+								<div class="form-group">
+									<label class="control-label" for="powerType">输入电源类型:</label>
+									<select class="form-control" id="powerType" ng-options="data.name for data in powerTypeOptions" ng-model="driverPara.powerType"></select>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="overloadCurrent">电流过载倍数:</label>
+									<input class="form-control" id="overloadCurrent" type="number" ng-model="driverPara.overloadCurrent" placeholder="请输入值" style="width:40%"> 
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="inputCurrent">电机输入电流:</label>
+									<input class="form-control" id="inputCurrent" type="number" ng-model="driverPara.inputCurrent" placeholder="请输入值" style="width:40%">
+									<label class="control-label">A</label>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="ratedCurrent">额定输出电流:</label>
+									<input class="form-control" id="ratedCurrent" type="number" ng-model="driverPara.ratedCurrent" placeholder="请输入值" style="width:40%">
+									<label class="control-label">A</label>
+								</div>
+								<div class="row">
+									<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="caculate()">计算</button>
+									<button class="btn btn-primary col-md-offset-2 col-md-3" type="button" ng-click="reset()">重置</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>

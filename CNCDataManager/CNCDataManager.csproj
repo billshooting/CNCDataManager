@@ -1049,6 +1049,7 @@
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\GearCoups.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\OldhamCoups.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\PlumShapedFlexibleCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Driver.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\face_01.gif" />
     <Content Include="Areas\Selection\AppSelection\imgs\Guide.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\GuideRail.jpg" />
@@ -1057,6 +1058,7 @@
     <Content Include="Areas\Selection\AppSelection\imgs\loading.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\rollingGuideRailData.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\ServoMotor.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\ServoMotorData.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\UPS电源.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\卧式车床.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\卧式铣床.jpg" />
@@ -1077,6 +1079,8 @@
     <Content Include="Areas\Selection\AppSelection\js\CouplingDetailCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\CouplingTableCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\directives.js" />
+    <Content Include="Areas\Selection\AppSelection\js\DriverDetailCtrl.js" />
+    <Content Include="Areas\Selection\AppSelection\js\DriverTableCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\filters.js" />
     <Content Include="Areas\Selection\AppSelection\js\LinnearRollingGuideDetailCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\LinnearRollingGuideTableCtrl.js" />
@@ -1097,6 +1101,7 @@
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Bearings\BearingsTable.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Coupling\CouplingDetail.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Coupling\CouplingTable.html" />
+    <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Driver\DriverDetail.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\Driver\DriverTable.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\FeedSystemList.html" />
     <Content Include="Areas\Selection\AppSelection\tpls\FeedSystem\LinearRollingGuide\LinearRollingGuideDetail.html" />

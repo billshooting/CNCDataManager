@@ -1,7 +1,7 @@
 ﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers",
     "directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl",
     "SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl","BearingsTableCtrl",
-    "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl","ServoMotorTableCtrl"]);
+    "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl","ServoMotorTableCtrl","ServoMotorDetailCtrl","DriverTableCtrl"]);
 
 selectionApp.run(function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;
@@ -130,6 +130,14 @@ selectionApp.config(function ($stateProvider, $urlRouterProvider) {
             views:{
                 'table@FeedSystem':{
                     templateUrl: '../../Areas/Selection/AppSelection/tpls/FeedSystem/ServoMotor/ServoMotorTable.html'
+                }
+            }
+        })
+        .state('FeedSystem.ServoMotor.detail',{
+            url:'/detail/{id}',
+            views:{
+                'table@FeedSystem':{
+                    templateUrl:'../../Areas/Selection/AppSelection/tpls/FeedSystem/ServoMotor/ServoMotorDetail.html'
                 }
             }
         })
