@@ -1,4 +1,4 @@
-﻿@model CNCDataManager.Models.SelectionResult
+﻿@model CNCDataManager.Models.ReportTemplateResult
 @{
     Layout = null;
 }
@@ -15,7 +15,7 @@
 <body>
     <div class="middle-container">
         <div class="fixed-window">
-            <a class="download" href="DownLoad">下载报表</a>
+            <a class="download" href="DownLoad/@Model.Filename">下载报表</a>
             <div style="margin-top: -1cm">
                 <img id="university-icon" src="~/App/images/Upload/university-icon.png" />
             </div>

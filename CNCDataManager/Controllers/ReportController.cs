@@ -13,67 +13,27 @@ namespace CNCDataManager.Controllers
     public class ReportController : Controller
     {
         // GET: Report
-        public ActionResult Index ()
+        [HttpPost]
+        public ActionResult Index (SelectionResult selectionResult)
         {
-            SelectionResult result = new SelectionResult()
-            {
-                MachinePicture = "../App/images/Upload/MachineType.png",
-                TransmissionMethod = new TransmissionMethod()
-                {
-                    XAxis = "减速器",
-                    YAxis = "联轴器",
-                    ZAxis = "带传动"
-                },
-                Components = new List<Component>()
-                {
-                    new Component() { AxisAndName = "进给轴轴承", Manufacturer = "洛阳轴承厂", TypeID = "LZ001C"}
-                },
-                NCSystem = new NCSystem()
-                {
-                    TypeID = "HCN808",
-                    SupportMachineType = "铣床",
-                    NumberOfSupportChannels = 4,
-                    MaxNumberOfFeedSystemAxis = 1,
-                    MaxNumberOfSpindleAxis = 2,
-                    MaxNumberOfLinkageAxis = 4
-                },
-                ServoMotor = new ServoMotor()
-                {
-                    XAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5},
-                    YAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5},
-                    ZAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5}
-                },
-                ServoDriver = new ServoDriver()
-                {
-                    XAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000},
-                    YAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000},
-                    ZAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000}
-                },
-                Guide = new Guide()
-                {
-                    XAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5},
-                    YAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5},
-                    ZAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5}
-                },
-                BallScrew = new BallScrew()
-                {
-                    XAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10},
-                    YAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10},
-                    ZAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10}
-                },
-                SimulationPictures = new List<string>()
-                {
-                    "../App/images/Upload/simu-1.png",
-                    "../App/images/Upload/simu-2.png",
-                    "../App/images/Upload/simu-3.png"
-                }
-            };
-            return View(result);
+            ReportTemplateResult result = ToReportTemplate(selectionResult);
+            string shortName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + ".docx";
+            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName;
+            result.Filename = shortName;
+            //using (DocxGenerator gen = new DocxGenerator(HttpContext.Server.MapPath(@"~/App/docTemplate/选型简表结果.docx")))
+            //{
+            //    gen.AddMachinePicture(MapPath(result.MachinePicture))
+            //        .AddSimulationPictures(MapPath(result.SimulationPictures.ToArray()))
+            //        .AddContent(result)
+            //        .SaveAs(filename);
+            //}
+            //return View(result);
+            return View("test");
         }
 
-        public void DownLoad()
+        private ReportTemplateResult ToReportTemplate(SelectionResult result)
         {
-            SelectionResult result = new SelectionResult()
+            ReportTemplateResult res = new ReportTemplateResult()
             {
                 MachinePicture = "../App/images/Upload/MachineType.png",
                 TransmissionMethod = new TransmissionMethod()
@@ -82,43 +42,12 @@ namespace CNCDataManager.Controllers
                     YAxis = "联轴器",
                     ZAxis = "带传动"
                 },
-                Components = new List<Component>()
-                {
-                    new Component() { AxisAndName = "进给轴轴承", Manufacturer = "洛阳轴承厂", TypeID = "LZ001C"}
-                },
-                NCSystem = new NCSystem()
-                {
-                    TypeID = "HCN808",
-                    SupportMachineType = "铣床",
-                    NumberOfSupportChannels = 4,
-                    MaxNumberOfFeedSystemAxis = 1,
-                    MaxNumberOfSpindleAxis = 2,
-                    MaxNumberOfLinkageAxis = 4
-                },
-                ServoMotor = new ServoMotor()
-                {
-                    XAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5 },
-                    YAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5 },
-                    ZAxis = new ServoMotorAxis() { RatedTorque = 100, RatedSpeed = 3600, MomentOfInertia = 100, RatedPower = 5 }
-                },
-                ServoDriver = new ServoDriver()
-                {
-                    XAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000 },
-                    YAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000 },
-                    ZAxis = new ServoDriverAxis() { ContinuousCurrent = 5, PeakCurrent = 15, SupplyVoltage = 380, MaxAdaptableMotorPower = 10, ExternalBrakingResistance = 1000 }
-                },
-                Guide = new Guide()
-                {
-                    XAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5 },
-                    YAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5 },
-                    ZAxis = new GuideAxis() { SizeOfGuideFixedBolt = "10", RollerType = "钢珠", BasicRatedStaticLoad = 10, BasicRatedDynamicLoad = 5 }
-                },
-                BallScrew = new BallScrew()
-                {
-                    XAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10 },
-                    YAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10 },
-                    ZAxis = new BallScrewAxis() { NominalDiameter = 10, NominalLead = 1000, BasicRatedDynamicLoad = 10 }
-                },
+                Components = new List<Component>(),
+                NCSystem = result.NCSystem,
+                ServoMotor = new ServoMotor(),
+                ServoDriver = new ServoDriver(),
+                Guide = new Guide(),
+                BallScrew = new BallScrew(),
                 SimulationPictures = new List<string>()
                 {
                     "../App/images/Upload/simu-1.png",
@@ -126,15 +55,32 @@ namespace CNCDataManager.Controllers
                     "../App/images/Upload/simu-3.png"
                 }
             };
-            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + ".docx";
-            using (DocxGenerator gen = new DocxGenerator(HttpContext.Server.MapPath(@"~/App/docTemplate/选型简表结果.docx")))
-            {
-                gen.AddMachinePicture(MapPath(result.MachinePicture))
-                    .AddSimulationPictures(MapPath(result.SimulationPictures.ToArray()))
-                    .AddContent(result)
-                    .SaveAs(filename);
-            }
+            res.Components.Add(new Component() { AxisAndName = "X轴滚珠丝杠", TypeID = result.FeedSystemX.Ballscrew.TypeID, Manufacturer = result.FeedSystemX.Ballscrew.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "X轴轴承", TypeID = result.FeedSystemX.Bearings.TypeID, Manufacturer = result.FeedSystemX.Bearings.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "X轴联轴器", TypeID = result.FeedSystemX.Coupling.TypeID, Manufacturer = result.FeedSystemX.Coupling.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "X轴伺服驱动", TypeID = result.FeedSystemX.Driver.TypeID, Manufacturer = result.FeedSystemX.Driver.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "X轴伺服电机", TypeID = result.FeedSystemX.ServoMotor.TypeID, Manufacturer = result.FeedSystemX.ServoMotor.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "X轴导轨", TypeID = result.FeedSystemX.Guide.TypeID, Manufacturer = result.FeedSystemX.Guide.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴滚珠丝杠", TypeID = result.FeedSystemY.Ballscrew.TypeID, Manufacturer = result.FeedSystemY.Ballscrew.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴轴承", TypeID = result.FeedSystemY.Bearings.TypeID, Manufacturer = result.FeedSystemY.Bearings.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴联轴器", TypeID = result.FeedSystemY.Coupling.TypeID, Manufacturer = result.FeedSystemY.Coupling.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴伺服驱动", TypeID = result.FeedSystemY.Driver.TypeID, Manufacturer = result.FeedSystemY.Driver.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴伺服电机", TypeID = result.FeedSystemY.ServoMotor.TypeID, Manufacturer = result.FeedSystemY.ServoMotor.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Y轴导轨", TypeID = result.FeedSystemY.Guide.TypeID, Manufacturer = result.FeedSystemY.Guide.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴滚珠丝杠", TypeID = result.FeedSystemZ.Ballscrew.TypeID, Manufacturer = result.FeedSystemZ.Ballscrew.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴轴承", TypeID = result.FeedSystemZ.Bearings.TypeID, Manufacturer = result.FeedSystemZ.Bearings.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴联轴器", TypeID = result.FeedSystemZ.Coupling.TypeID, Manufacturer = result.FeedSystemZ.Coupling.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴伺服驱动", TypeID = result.FeedSystemZ.Driver.TypeID, Manufacturer = result.FeedSystemZ.Driver.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴伺服电机", TypeID = result.FeedSystemZ.ServoMotor.TypeID, Manufacturer = result.FeedSystemZ.ServoMotor.Manufacturer });
+            res.Components.Add(new Component() { AxisAndName = "Z轴导轨", TypeID = result.FeedSystemZ.Guide.TypeID, Manufacturer = result.FeedSystemZ.Guide.Manufacturer });
+
+            return res;
+        }
+
+        public void DownLoad(string shortName)
+        {
             Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName;
             Response.WriteFile(filename);
             
         }

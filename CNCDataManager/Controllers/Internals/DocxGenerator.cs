@@ -62,7 +62,7 @@ namespace CNCDataManager.Controllers.Internals
             return this;
         }
 
-        public DocxGenerator AddContent(SelectionResult result)
+        public DocxGenerator AddContent(ReportTemplateResult result)
         {
             AddTransMissionMethod(result.TransmissionMethod);
             AddComponents(result.Components);

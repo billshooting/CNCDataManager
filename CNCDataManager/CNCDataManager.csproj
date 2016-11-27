@@ -199,7 +199,6 @@
     <Compile Include="Areas\Help\Controllers\DocumentsController.cs" />
     <Compile Include="Areas\Help\HelpAreaRegistration.cs" />
     <Compile Include="Areas\Selection\Controllers\SelectionController.cs" />
-    <Compile Include="Areas\Selection\Models\SelectionResult.cs" />
     <Compile Include="Areas\Selection\SelectionAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIs\AlignBallBrgsController.cs" />
@@ -256,7 +255,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Internals\ApiAuthorizeAttribute.cs" />
     <Compile Include="Controllers\Internals\DocxGenerator.cs" />
-    <Compile Include="Models\SelectionResult.cs" />
+    <Compile Include="Models\ReportTemplateResult.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
@@ -322,6 +321,7 @@
     <Compile Include="Models\APIs\Worm_CommonCylindricalWormGear.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SelectionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1285,7 +1285,6 @@
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy %282%29.pubxml" />
     <Content Include="Areas\Selection\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Selection\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Selection\Views\Selection\Result.cshtml" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\angular-animate.js" />
@@ -2157,6 +2156,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\temp\" />
@@ -2164,6 +2164,7 @@
     <Folder Include="Areas\DataManage\Models\" />
     <Folder Include="Areas\DataManage\Views\Shared\" />
     <Folder Include="Areas\Help\Models\" />
+    <Folder Include="Areas\Selection\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
