@@ -5,13 +5,26 @@
     });
 
     $("#side-finish").click(function () {
-    	var SelectionResult={
+    	var selectionResult={
             CNCType:getObject("CNCType"),
             CNCSytem:getObject("CNCSystem"),
-            FeedSystemX:getFeedSystem("X"),
-            FeedSystemY:getFeedSystem("Y"),
             FeedSystemZ:getFeedSystem("Z"),
         };
+        if(selectionResult.CNCType.support=="C")
+        {
+            selectionResult.FeedSystemXY=getFeedSystem("XY");
+        }
+        else if(selectionResult.CNCType.support=="X")
+        {
+            selectionResult.FeedSystemX=getFeedSystem("X");
+            selectionResult.FeedSystemY=getFeedSystem("Y");
+        }
+        $.post("/Selection/Selection/Result",selectionResult,function(data){
+            if(data==0)
+                alert("Post");
+            else
+                alert("Fail");
+        });
     });
 
     $("#side-restart").click(function(){
@@ -27,11 +40,11 @@
 
     function getFeedSystem(axis){
         var feedSystem={
-            Guide:getObejct(axis+"Guide"),
+            Guide:getObject(axis+"Guide"),
             Ballscrew:getObject(axis+"Ballscrew"),
             Bearings:getObject(axis+"Bearings"),
             Coupling:getObject(axis+"Coupling"),
-            ServoMotor:getObject(axis+"ServoMotor"),
+            ServoMotor:getObject(axis+"Motor"),
             Driver:getObject(axis+"Driver"),
         }
         return feedSystem;

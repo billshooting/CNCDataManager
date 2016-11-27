@@ -100,7 +100,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
             onComponentReset("CNCSystem");
 
         var feedSide=new Array("XY","X","Y","Z");
-        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling");
+        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling","Motor","Driver");
         for(var i=0;i<feedSide.length;++i)
         {
             for(var j=0;j<ComponentSide.length;++j)
