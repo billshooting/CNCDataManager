@@ -19,44 +19,11 @@ namespace CNCDataManager.APIs.Controllers
         // GET: api/UploadFile
         public void Get()
         {
-            string basePath = HttpContext.Current.Server.MapPath("~/App/images/Upload");
-            string fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/App/images/Upload"), "Test.docx");
-            using (DocX document = DocX.Create(fileName))
-            {
-                //首先创建1个格式对象
-                Formatting formatting = new Formatting();
-                formatting.Bold = true;
-                formatting.FontColor = Color.Red;
-                formatting.Size = 30;
-                //控制段落插入的位置
-                int index = document.Text.Length / 2;
-                //将文本插入到指定位置，并控制格式
-                var p = document.InsertParagraph("Test File", false, formatting);
-                Novacode.Image img = document.AddImage(Path.Combine(basePath, @"顾星炜.png"));
-                p.InsertPicture(img.CreatePicture(), 2);
-                document.Save();//保存文档
-                HttpContext.Current.Response.WriteFile(fileName);
-            }
         }
 
         // GET: api/UploadFile/5
         public void Get(string text)
         {
-            string fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/App/images/Upload"), "Test.docx");
-            using (DocX document = DocX.Create(fileName))
-            {
-                //首先创建1个格式对象
-                Formatting formatting = new Formatting();
-                formatting.Bold = true;
-                formatting.FontColor = Color.Red;
-                formatting.Size = 30;
-                //控制段落插入的位置
-                int index = document.Text.Length / 2;
-                //将文本插入到指定位置，并控制格式
-                document.InsertParagraph(index, text, false, formatting);
-                document.Save();//保存文档
-                HttpContext.Current.Response.WriteFile(fileName);
-            }
         }
 
         // POST: api/UploadFile

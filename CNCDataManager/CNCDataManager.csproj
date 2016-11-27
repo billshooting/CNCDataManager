@@ -57,9 +57,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -258,8 +255,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Internals\ApiAuthorizeAttribute.cs" />
     <Compile Include="Controllers\Internals\DocxGenerator.cs" />
-    <Compile Include="Controllers\Internals\SelectionResult.cs" />
+    <Compile Include="Models\SelectionResult.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -394,6 +392,13 @@
     <Content Include="App\images\Servo\伺服部分.jpg" />
     <Content Include="App\images\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
     <Content Include="App\images\Servo\电机驱动-介绍.jpg" />
+    <Content Include="App\images\Upload\cautious.png" />
+    <Content Include="App\images\Upload\MachineType.png" />
+    <Content Include="App\images\Upload\simu-1.png" />
+    <Content Include="App\images\Upload\simu-2.png" />
+    <Content Include="App\images\Upload\simu-3.png" />
+    <Content Include="App\images\Upload\university-icon.png" />
+    <Content Include="App\images\Upload\条形码.png" />
     <Content Include="App\scripts\app.js" />
     <Content Include="App\scripts\controllers\accountController.js" />
     <Content Include="App\scripts\controllers\cncdataController.js" />
@@ -451,6 +456,7 @@
     <Content Include="App\styles\contact.css" />
     <Content Include="App\styles\home.css" />
     <Content Include="App\styles\index.css" />
+    <Content Include="App\styles\others\docPreview.css" />
     <Content Include="App\styles\templates\cncdata-desc.css" />
     <Content Include="App\styles\templates\tablelist.css" />
     <Content Include="App\views\about.html" />
@@ -1250,6 +1256,8 @@
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\docTemplate\选型简表结果.docx" />
+    <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\angular-animate.js" />
@@ -2115,10 +2123,9 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Report\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\docTemplate\" />
-    <Folder Include="App\images\Upload\" />
     <Folder Include="App\temp\" />
     <Folder Include="Areas\DataManage\Controllers\" />
     <Folder Include="Areas\DataManage\Models\" />

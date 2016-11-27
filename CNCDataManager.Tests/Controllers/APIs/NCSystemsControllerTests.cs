@@ -28,7 +28,7 @@ namespace CNCDataManager.APIs.Tests
             var con = new NCSystemsController();
 
             var result = con.GetNCSystem(1).GetAwaiter().GetResult()
-                as OkNegotiatedContentResult<NCSystem>;
+                as OkNegotiatedContentResult<APIs.Models.NCSystem>;
 
             Assert.IsNotNull(result);
         }
