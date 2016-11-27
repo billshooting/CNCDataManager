@@ -14,23 +14,11 @@
                 </div>
                 <label for="SupportNumberOfChannels" class="col-md-2 control-label">支持通道数：</label>
                 <div class="col-md-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="SupportNumberOfChannels" ng-model="filtNum.SupportNumberOfChannels">
-                        <div class="input-group-btn-vertical">
-                            <button class="btn btn-default" type="button" ng-click="add(0)"><i class="fa fa-caret-up"></i></button>
-                            <button class="btn btn-default" type="button" ng-click="minus(0)"><i class="fa fa-caret-down"></i></button>
-                        </div>
-                    </div>
+                    <input type="number" class="form-control" id="SupportNumberOfChannels" ng-model="filtNum.SupportNumberOfChannels" min="1">
                 </div>
                 <label for="MaxControlNumberOfFeedAxis" class="col-md-2 control-label">最大进给轴数：</label>
                 <div class="col-md-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="MaxControlNumberOfFeedAxis" ng-model="filtNum.MaxControlNumberOfFeedAxis">
-                        <div class="input-group-btn-vertical">
-                            <button class="btn btn-default" type="button" ng-click="add(1)"><i class="fa fa-caret-up"></i></button>
-                            <button class="btn btn-default" type="button" ng-click="minus(1)"><i class="fa fa-caret-down"></i></button>
-                        </div>
-                    </div>
+                    <input type="number" class="form-control" id="MaxControlNumberOfFeedAxis" ng-model="filtNum.MaxControlNumberOfFeedAxis" min="1">
                 </div>
             </div>
         </form>
