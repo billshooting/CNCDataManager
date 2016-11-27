@@ -1,5 +1,5 @@
 ﻿using CNCDataManager.APIs.Models;
-using CNCDataManager.Controllers.Internals;
+using CNCDataManager.APIs.Internals;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;

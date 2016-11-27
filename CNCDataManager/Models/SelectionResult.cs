@@ -1,10 +1,10 @@
-﻿using System;
+﻿using CNCDataManager.APIs.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using CNCDataManager.APIs.Models;
 
-namespace CNCDataManager.Areas.Selection.Models
+namespace CNCDataManager.Models
 {
     public class Bearings
     {
@@ -52,9 +52,9 @@ namespace CNCDataManager.Areas.Selection.Models
     public class SelectionResult
     {
         public CNCType CNCType { get; set; }
+        public NCSystem NCSystem { get; set; }
         public FeedSystem FeedSystemX { get; set; }
         public FeedSystem FeedSystemY { get; set; }
-        public FeedSystem FeedSystemXY { get; set; }
         public FeedSystem FeedSystemZ { get; set; }
     }
 }

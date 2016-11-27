@@ -48,14 +48,15 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -68,6 +69,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -197,7 +199,6 @@
     <Compile Include="Areas\Help\Controllers\DocumentsController.cs" />
     <Compile Include="Areas\Help\HelpAreaRegistration.cs" />
     <Compile Include="Areas\Selection\Controllers\SelectionController.cs" />
-    <Compile Include="Areas\Selection\Models\SelectionResult.cs" />
     <Compile Include="Areas\Selection\SelectionAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIs\AlignBallBrgsController.cs" />
@@ -207,6 +208,7 @@
     <Compile Include="Controllers\APIs\BallLeadScrewSptBrgsController.cs" />
     <Compile Include="Controllers\APIs\BWElasticSlvPinCoupsController.cs" />
     <Compile Include="Controllers\APIs\CablesController.cs" />
+    <Compile Include="Controllers\APIs\CNCMachineTypesController.cs" />
     <Compile Include="Controllers\APIs\CommonCylinWormGearsController.cs" />
     <Compile Include="Controllers\APIs\CylinRollerBrgsController.cs" />
     <Compile Include="Controllers\APIs\DeepGrooveBallBrgsController.cs" />
@@ -248,10 +250,14 @@
     <Compile Include="Controllers\APIs\StepMotorSizesController.cs" />
     <Compile Include="Controllers\APIs\StraightBevelGearsController.cs" />
     <Compile Include="Controllers\APIs\TaperedRollerBrgsController.cs" />
+    <Compile Include="Controllers\APIs\UploadFileController.cs" />
     <Compile Include="Controllers\APIs\XTaperedRollerBrgsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Internals\ApiAuthorizeAttribute.cs" />
+    <Compile Include="Controllers\Internals\DocxGenerator.cs" />
+    <Compile Include="Models\ReportTemplateResult.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -310,10 +316,12 @@
     <Compile Include="Models\APIs\System_NCSystemIOUnit.cs" />
     <Compile Include="Models\APIs\System_NCSystemManual.cs" />
     <Compile Include="Models\APIs\System_NCSystemPowerUnit.cs" />
+    <Compile Include="Models\APIs\System_CNCMachineType.cs" />
     <Compile Include="Models\APIs\Worm_ArcCylindricalWormGear.cs" />
     <Compile Include="Models\APIs\Worm_CommonCylindricalWormGear.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SelectionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -385,6 +393,13 @@
     <Content Include="App\images\Servo\伺服部分.jpg" />
     <Content Include="App\images\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
     <Content Include="App\images\Servo\电机驱动-介绍.jpg" />
+    <Content Include="App\images\Upload\cautious.png" />
+    <Content Include="App\images\Upload\MachineType.png" />
+    <Content Include="App\images\Upload\simu-1.png" />
+    <Content Include="App\images\Upload\simu-2.png" />
+    <Content Include="App\images\Upload\simu-3.png" />
+    <Content Include="App\images\Upload\university-icon.png" />
+    <Content Include="App\images\Upload\条形码.png" />
     <Content Include="App\scripts\app.js" />
     <Content Include="App\scripts\controllers\accountController.js" />
     <Content Include="App\scripts\controllers\cncdataController.js" />
@@ -434,6 +449,7 @@
     <Content Include="App\scripts\directives\cncdata\XTaperedRollerBrgs.js" />
     <Content Include="App\scripts\directives\home-pages.js" />
     <Content Include="App\scripts\index.js" />
+    <Content Include="App\scripts\others\sendAjax.js" />
     <Content Include="App\scripts\services\proxyservice.js" />
     <Content Include="App\scripts\services\table-handler.js" />
     <Content Include="App\styles\about.css" />
@@ -441,6 +457,7 @@
     <Content Include="App\styles\contact.css" />
     <Content Include="App\styles\home.css" />
     <Content Include="App\styles\index.css" />
+    <Content Include="App\styles\others\docPreview.css" />
     <Content Include="App\styles\templates\cncdata-desc.css" />
     <Content Include="App\styles\templates\tablelist.css" />
     <Content Include="App\views\about.html" />
@@ -986,6 +1003,8 @@
     <Content Include="Areas\Selection\AppSelection\imgs\Bearings\AngContactBallBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Ballscrew.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Bearings.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\bus1.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\CASNUC2000TA.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TA.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TA1.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TD.jpg" />
@@ -1262,9 +1281,10 @@
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App\docTemplate\选型简表结果.docx" />
+    <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy %282%29.pubxml" />
     <Content Include="Areas\Selection\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Selection\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Selection\Views\Selection\Result.cshtml" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\angular-animate.js" />
@@ -2135,12 +2155,16 @@
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Report\Index.cshtml" />
+    <Content Include="Views\Report\test.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App\temp\" />
     <Folder Include="Areas\DataManage\Controllers\" />
     <Folder Include="Areas\DataManage\Models\" />
     <Folder Include="Areas\DataManage\Views\Shared\" />
     <Folder Include="Areas\Help\Models\" />
+    <Folder Include="Areas\Selection\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

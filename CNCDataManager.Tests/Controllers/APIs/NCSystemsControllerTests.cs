@@ -5,7 +5,7 @@ using System.Web.Http.Results;
 using CNCDataManager.APIs.Controllers;
 using CNCDataManager.APIs.Models;
 
-namespace CNCDataManager.Controllers.Tests
+namespace CNCDataManager.APIs.Tests
 {
     [TestClass()]
     public class NCSystemsControllerTests
@@ -28,7 +28,7 @@ namespace CNCDataManager.Controllers.Tests
             var con = new NCSystemsController();
 
             var result = con.GetNCSystem(1).GetAwaiter().GetResult()
-                as OkNegotiatedContentResult<NCSystem>;
+                as OkNegotiatedContentResult<APIs.Models.NCSystem>;
 
             Assert.IsNotNull(result);
         }

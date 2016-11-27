@@ -7,7 +7,7 @@
     $("#side-finish").click(function () {
     	var selectionResult={
             CNCType:getObject("CNCType"),
-            CNCSytem:getObject("CNCSystem"),
+            NCSytem:getObject("CNCSystem"),
             FeedSystemZ:getFeedSystem("Z"),
         };
         if(selectionResult.CNCType.support=="C")
@@ -19,11 +19,9 @@
             selectionResult.FeedSystemX=getFeedSystem("X");
             selectionResult.FeedSystemY=getFeedSystem("Y");
         }
-        $.post("/Selection/Selection/Result",selectionResult,function(data){
-            if(data==0)
-                alert("Post");
-            else
-                alert("Fail");
+        $.post("/Report/Index", selectionResult, function (data) {
+            let docWindow = window.open("", "预览");
+            docWindow.document.write(data);
         });
     });
 
