@@ -11,6 +11,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
+    <link href="~/Areas/Selection/AppSelection/CSS/reset.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/AppSelection/CSS/feedSystem.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
     <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -32,11 +34,17 @@
     <script src="~/Areas/Selection/AppSelection/js/BearingsDetailCtrl.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/CouplingTableCtrl.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/CouplingDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/ServoMotorTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/ServoMotorDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/DriverTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/DriverDetailCtrl.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/services.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/filters.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/directives.js"></script>
+    
     <script src="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
-
+    <script src="~/Areas/Selection/AppSelection/js/SideMenu.js"></script>
+    
     @RenderSection("css", required: false)
 </head>
 <body>
@@ -66,7 +74,7 @@
     <header class="jumbotron subhead" id="overview">
         <div class="container">
             <h1>数控机床选型</h1>
-            <p class="lead">A Bootstrap-themed kickstart for jQuery UI widgets (v0.5).</p>
+            <p class="lead">基于数控机床数据中心的数据支撑,根据进给系统各部件的配置计算对每个部件进行参数化选型</p>
         </div>
     </header>
 
@@ -743,6 +751,28 @@
                     </div>
                 </div>
             </div>
+            <br />
+            <div class="row">
+                <button class="btn btn-info col-md-offset-1 col-md-4" type="button" id="side-finish">完   成</button>
+                <button class="btn btn-info col-md-offset-1 col-md-4" type="button" data-toggle="modal" data-target="#restartModal">重新开始</button>
+                <div class="modal fade" id="restartModal" tabindex="-1" role="dialog" aria-labellebdy="restartLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="restartLabel">重新开始</h4>
+                            </div>
+                            <div class="modal-body">
+                                确认要重新开始吗，这将删除所有之前的选型记录
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button class="btn btn-primary" type="button" id="side-restart">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
                 <!--
@@ -823,7 +853,7 @@
         <footer>
             <div class="row">
                 <div class="col-md-4">
-                    <p>To do.</p>
+                    <p></p>
                 </div>
                 <div class="col-md-4">
                     <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
@@ -842,13 +872,6 @@
         </footer>
     </div>
     @RenderSection("scripts", required: false)
-
-    <script type="text/javascript">
-    $(document).ready(function(){
-    $('#sideMenu').BootSideMenu({side:"right",
-        autoClose:true});
-    });
-    </script>
 
 </body>
 </html>

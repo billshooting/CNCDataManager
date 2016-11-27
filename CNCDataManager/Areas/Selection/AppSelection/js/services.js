@@ -1,8 +1,11 @@
 ﻿var services=angular.module("services",[]);
+
 //service自定义服务保存可能变动的网址前缀
 services.service("$data", function(){
 	this.http="http://cncdataapi.azurewebsites.net/api/cncdata/";
+	//this.http="http://localhost:8011/api/cncdata/";
 });
+
 //value自定义服务保存计算中没有提供参数时的默认值
 services.value("$default",{
 	guideFriction:0.003,   //导轨库伦摩擦系数
@@ -12,7 +15,15 @@ services.value("$default",{
 	ballscrewMaxSpeed:8000,   //滚珠丝杠极限转速
 	ballscrewAccuracyClass:1,   //滚珠丝杠精度等级
 	ballscrewLead:5,   //滚珠丝杠计算结果导程
+	ballscrewTorque:2,   //滚珠丝杠计算结果等效负载转矩
+	ballscrewNominalDiameter_d0:30,
+	ballscrewLength:1000,
 });
+
+services.value("$constants",{
+	IronDensity:0.0078   //钢铁密度，单位是kg/cm^3
+});
+
 
 //service自定义服务取出和保存数据到localstorage中
 services.service("$locals",["$window",function($window){

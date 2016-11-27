@@ -1,9 +1,11 @@
-﻿* {
+﻿@charset "utf-8";
+
+/** {
     font-family:'Microsoft YaHei';
     font-size:14px;
     margin:0;
     padding:0;
-}
+}*/
 body {
   background: #f1f2f3;
 }
@@ -55,6 +57,7 @@ div.navbar {
     line-height: 1.25;
     margin-bottom: 30px;
 }
+
 
 /* .menu-collapse { margin-right: 0px; padding-bottom: -15px;}
 .menu-collapse :first-child { margin-top: 0; }
@@ -155,6 +158,14 @@ table th{
 .user{
   padding:5px;
   margin-bottom: 5px;
+}
+
+.CNCtableimg{
+  transition:all 0.3s;
+}
+
+.CNCtableimg:hover{
+  transform: scale(1.01,1.01);
 }
 
 

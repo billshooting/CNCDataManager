@@ -1,15 +1,17 @@
 ﻿var CouplingTableCtrl=angular.module("CouplingTableCtrl",[]);
-CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default){
+CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default,$http,$data){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
+
 	//联轴器类型数据
 	$scope.typeOptions=[
-	{name:"十字滑块式联轴器",},
-	{name:"弹性柱销联轴器",},
-	{name:"弹性套柱销联轴器",},
-	{name:"带制动轮弹性套柱销联轴器",},
-	{name:"凸缘联轴器",},
-	{name:"齿式联轴器",},
-	{name:"梅花形弹性联轴器"}];
+	{name:"十字滑块式联轴器",url:"OldhamCoups"},
+	{name:"弹性柱销联轴器",url:"FlexiblePinCoups"},
+	{name:"弹性套柱销联轴器",url:"ElasticSlvPinCoups"},
+	{name:"带制动轮弹性套柱销联轴器",url:"BWElasticSlvPinCoups"},
+	{name:"凸缘联轴器",url:"FlangeCoups"},
+	{name:"齿式联轴器",url:"GearCoups"},
+	{name:"梅花形弹性联轴器",url:"PlumShapedFlexibleCoups"}];
+	
 	//从cookies中取出计算所需参数
 	var guide=$locals.getObject($scope.FeedSystemType+"Guide");
 	var ballscrew=$locals.getObject($scope.FeedSystemType+"Ballscrew");
@@ -96,4 +98,41 @@ CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$statePa
 	};
 	$scope.reset();
 	
+	/*符合计算结果数据显示*/
+
+	//从服务器获取对应联轴器型号数据
+	$scope.getData=function(couplingType){
+		$http.get($data.http+couplingType.url)
+			.then(function(response){
+				$scope.couplings=response.data;
+			});
+	};
+	$scope.getData($scope.couplingPara.couplingType);
+
+	//选定表格中某一行的数据
+	$scope.selected=function(coupling){
+		$scope.couplingSelected=coupling;
+	};
+
+	//控制表头排序
+	$scope.title="TypeID";
+	$scope.desc=1;
+	//控制分页显示
+	$scope.Page={
+		pageSize:10,
+		currentPage:1
+	};
+	
+	//点击下一步按钮，保存数据到localstorage，并页面跳转到伺服电机
+	$scope.nextStep=function(){
+		$scope.couplingSelected.img="Coupling.jpg";
+		$locals.putObject($scope.FeedSystemType+"Coupling",$scope.couplingSelected);
+		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Coupling");
+		$state.go('FeedSystem.ServoMotor');
+	};
+
+	//点击取消按钮，取消表格中的选中行
+	$scope.cancel=function(){
+		$scope.couplingSelected={};
+	};
 });

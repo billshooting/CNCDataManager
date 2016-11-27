@@ -59,11 +59,13 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
             }
         }
     });
+
     //监控子作用域传播来的事件，并初始化侧边栏中的进给轴部件
     $scope.$on('ComponentChange',function(event,data){
         var Component=$locals.getObject(data);
         onComponentChange(data,Component.TypeID,Component.Manufacturer,Component.img);
     });
+    
     //更新侧边栏
     function onComponentChange(data,ID,Manu,img){
         angular.element(document.getElementById(data+"Check")).removeClass('glyphicon-unchecked');
@@ -98,7 +100,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
             onComponentReset("CNCSystem");
 
         var feedSide=new Array("XY","X","Y","Z");
-        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling");
+        var ComponentSide=new Array("Guide","Ballscrew","Bearings","Coupling","Motor","Driver");
         for(var i=0;i<feedSide.length;++i)
         {
             for(var j=0;j<ComponentSide.length;++j)
@@ -215,35 +217,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$locals,$
      };
      //所选数控系统类型
      $scope.CNCSystemSelected={};
-     //数字输入框增加减少方法
-     $scope.add=function(id){
-     	switch(id){
-     		case 0:
-     			$scope.filtNum.SupportNumberOfChannels=parseInt($scope.filtNum.SupportNumberOfChannels,10)+1;
-     			break;
-     		case 1:
-     			$scope.filtNum.MaxControlNumberOfFeedAxis=parseInt($scope.filtNum.MaxControlNumberOfFeedAxis,10)+1;
-     			break;
-     		default:
-     			break;
-     	}
-     };
-     $scope.minus=function(id){
-     	switch(id){
-     		case 0:
-     			if($scope.filtNum.SupportNumberOfChannels>=2){
-     				$scope.filtNum.SupportNumberOfChannels=parseInt($scope.filtNum.SupportNumberOfChannels,10)-1;
-     			}
-     			break;
-     		case 1:
-     			if($scope.filtNum.MaxControlNumberOfFeedAxis>=2){
-     				$scope.filtNum.MaxControlNumberOfFeedAxis=parseInt($scope.filtNum.MaxControlNumberOfFeedAxis,10)-1;
-     			}
-     			break;
-     		default:
-     			break;
-     	}
-     };
+    
      //从服务端获取数据
     $http.get($data.http+'NCSystems')
       .then(function (response) {
@@ -439,4 +413,6 @@ controllers.controller("FeedSystemListCtrl",function($scope,$stateParams){
     $scope.feedSystemType=$stateParams.FeedSystemType;
     
 });
+
+
 

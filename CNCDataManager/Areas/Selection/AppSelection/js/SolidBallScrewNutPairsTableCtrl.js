@@ -153,6 +153,7 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 		$scope.ballscrewSelected=ballscrew;
 	};
 	$scope.nextStep=function(){
+		$scope.ballscrewSelected.torque=$scope.caculation.torque;
 		$scope.ballscrewSelected.supportMode=$scope.ballscrewPara.supportMode;//将滚珠丝杠支撑方式存入cookies
 		$scope.ballscrewSelected.minDiameter=$scope.caculation.minDiameter;//将滚珠丝杠计算结果最小底径存入cookies
 		$scope.ballscrewSelected.lead=$scope.caculation.lead;//将滚珠丝杠计算结果导程存入cookies
