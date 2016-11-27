@@ -47,7 +47,9 @@ ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$sco
 
 	//点击下一步按钮，跳转到伺服驱动选型
 	$scope.nextStep=function(){
-		$locals.putObject($scope.FeedSystemType+"ServoMotor",$scope.servoMotorSelected);
+		$scope.servoMotorSelected.img="ServoMotor.jpg";
+		$locals.putObject($scope.FeedSystemType+"Motor",$scope.servoMotorSelected);
+		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Motor");
 		$state.go("FeedSystem.Driver");
 	};
 

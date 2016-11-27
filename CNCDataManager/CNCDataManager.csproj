@@ -494,6 +494,8 @@
     <Content Include="App\views\templates\XTaperedRollerBrgs.html" />
     <Content Include="Areas\Help\Content\CSS\DataAPI.css" />
     <Content Include="Areas\Help\Content\JS\DataAPI.js" />
+    <Content Include="Areas\Selection\AppSelection\CSS\feedSystem.css" />
+    <Content Include="Areas\Selection\AppSelection\CSS\reset.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\_LayoutPage_Selection.css" />
     <Content Include="Areas\Selection\AppSelection\framework\angular-1.3.0.14\angular-animate.js" />
     <Content Include="Areas\Selection\AppSelection\framework\angular-1.3.0.14\angular-animate.min.js" />
@@ -980,6 +982,7 @@
     <Content Include="Areas\Selection\AppSelection\framework\ng-grid-2.0.12\ng-grid.min.css" />
     <Content Include="Areas\Selection\AppSelection\framework\ng-grid-2.0.12\ng-grid.min.js" />
     <Content Include="Areas\Selection\AppSelection\framework\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Bearings\AngContactBallBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Ballscrew.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Bearings.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TA.jpg" />
@@ -1049,6 +1052,7 @@
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\GearCoups.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\OldhamCoups.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Coupling\PlumShapedFlexibleCoups.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Bearings\DoubleThrustAngContactBallBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Driver.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\face_01.gif" />
     <Content Include="Areas\Selection\AppSelection\imgs\Guide.jpg" />
@@ -1056,9 +1060,11 @@
     <Content Include="Areas\Selection\AppSelection\imgs\icon-eye.png" />
     <Content Include="Areas\Selection\AppSelection\imgs\IO.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\loading.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Bearings\NeedleRollerThrustRollerBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\rollingGuideRailData.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\ServoMotor.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\ServoMotorData.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\Bearings\TaperedRollerBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\UPS电源.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\卧式车床.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\卧式铣床.jpg" />
@@ -1087,6 +1093,7 @@
     <Content Include="Areas\Selection\AppSelection\js\services.js" />
     <Content Include="Areas\Selection\AppSelection\js\ServoMotorDetailCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\ServoMotorTableCtrl.js" />
+    <Content Include="Areas\Selection\AppSelection\js\SideMenu.js" />
     <Content Include="Areas\Selection\AppSelection\js\SolidBallScrewNutPairsDetailCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\js\SolidBallScrewNutPairsTableCtrl.js" />
     <Content Include="Areas\Selection\AppSelection\tpls\CNCSystem\CNCSystemAccessories.html" />

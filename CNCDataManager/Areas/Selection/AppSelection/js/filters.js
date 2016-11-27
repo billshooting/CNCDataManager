@@ -142,6 +142,23 @@ filters.filter("ServoMotorFilt",function(){
 	}
 });
 
+//伺服驱动主过滤器
+filters.filter("DriverFilt",function(){
+	return function(e,caculation){
+		if(!e){
+			return [];
+		}
+		var result=[];
+		for(var i=0;i<e.length;i++){
+			if(e[i].Manufacturer==caculation.manufacturer.value
+				&&e[i].ContinuousCurrent>=caculation.ratedCurrent
+				&&e[i].SupplyVoltage==caculation.powerType.value)
+				result.push(e[i]);
+		}
+		return result;
+	}
+});
+
 //分页控件获取筛选后数组的长度
 filters.filter("size",function(){
 	return function(e){

@@ -3,6 +3,7 @@ CouplingDetailCtrl.controller('CouplingDetailCtrl',function($scope,$state,$state
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.imgsrc="../../Areas/Selection/AppSelection/imgs/Coupling/"+$stateParams.type+".jpg";
 	$scope.coupling={};
+	
 	$http({
 		method:"GET",
 		url:$data.http+$stateParams.type,

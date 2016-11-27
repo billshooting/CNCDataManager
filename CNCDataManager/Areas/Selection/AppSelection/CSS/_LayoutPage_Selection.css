@@ -1,9 +1,11 @@
-﻿* {
+﻿@charset "utf-8";
+
+/** {
     font-family:'Microsoft YaHei';
     font-size:14px;
     margin:0;
     padding:0;
-}
+}*/
 body {
   background: #f1f2f3;
 }
