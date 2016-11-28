@@ -5,7 +5,8 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
 	//中间导航栏初始化方法，控制中间导航栏是否显示
     var reset=function(){
         var CNCType=$locals.getObject("CNCType");
-        if(!CNCType){
+        var CNCWorkingCondition=$locals.getObject("CNCWorkingCondition");
+        if(!CNCType||!CNCWorkingCondition){
             $scope.navShow=[true,false,false,false,false,false];
             angular.element(document.querySelectorAll('.c-feed,.x-feed')).css('display','none');
         }
@@ -153,6 +154,7 @@ controllers.controller('CNCWorkingConditionCtrl', function ($scope,$state,$local
             cuttingCondition:$scope.cuttingCondition,
             productCondition:$scope.productCondition,
         });
+        $scope.$emit("CNCTypeChange");
         $state.go("CNCSystem");
     };
     //点击取消按钮，初始化界面

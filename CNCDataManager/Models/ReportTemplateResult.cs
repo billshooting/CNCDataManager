@@ -46,9 +46,9 @@ namespace CNCDataManager.Models
     {
         public double? ContinuousCurrent { get; set; }
         public double? PeakCurrent { get; set; }
-        public double? SupplyVoltage { get; set; }
+        public string SupplyVoltage { get; set; }
         public double? MaxAdaptableMotorPower { get; set; }
-        public double? ExternalBrakingResistance { get; set; }
+        public string ExternalBrakingResistance { get; set; }
     }
     public class ServoDriver
     {
