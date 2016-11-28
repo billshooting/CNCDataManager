@@ -79,8 +79,8 @@ ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$sco
 	function computeLoadInertia(){
 		var lead=ballscrew?ballscrew.lead:$default.ballscrewLead;
 		var L=lead/(20*Math.PI);
-		$scope.servoMotorPara.loadInertia=(workingCondition.productCondition.tableMass
-			+workingCondition.productCondition.productMaxMass)*L*L+computeIntertia();
+		$scope.servoMotorPara.loadInertia=Math.round(((workingCondition.productCondition.tableMass
+			+workingCondition.productCondition.productMaxMass)*L*L+computeIntertia())*1000)/1000;
 	}
 
 	//计算电机轴上的等效负载转矩

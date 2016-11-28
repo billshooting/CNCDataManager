@@ -6,6 +6,11 @@ using System.Web;
 
 namespace CNCDataManager.Models
 {
+    public class RollingGuide: LineRollingGuide
+    {
+        public string RollType { get; set; }
+    }
+
     public class Bearings
     {
         public string TypeID { get; set; }
@@ -41,7 +46,7 @@ namespace CNCDataManager.Models
 
     public class FeedSystem
     {
-        public LineRollingGuide Guide { get; set; }
+        public RollingGuide Guide { get; set; }
         public SolidBallScrewNutPairs Ballscrew { get; set; }
         public Bearings Bearings { get; set; }
         public Coupling Coupling { get; set; }

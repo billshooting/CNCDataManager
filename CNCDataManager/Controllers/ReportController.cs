@@ -74,6 +74,66 @@ namespace CNCDataManager.Controllers
             res.Components.Add(new Component() { AxisAndName = "Z轴伺服电机", TypeID = result.FeedSystemZ.ServoMotor.TypeID, Manufacturer = result.FeedSystemZ.ServoMotor.Manufacturer });
             res.Components.Add(new Component() { AxisAndName = "Z轴导轨", TypeID = result.FeedSystemZ.Guide.TypeID, Manufacturer = result.FeedSystemZ.Guide.Manufacturer });
 
+            res.Guide.XAxis.SizeOfGuideFixedBolt = result.FeedSystemX.Guide.SizeOfGuideFixedBolt;
+            res.Guide.XAxis.RollerType = result.FeedSystemX.Guide.RollerType;
+            res.Guide.XAxis.BasicRatedDynamicLoad = result.FeedSystemX.Guide.BasicRatedDynamicLoad_C;
+            res.Guide.XAxis.BasicRatedStaticLoad = result.FeedSystemX.Guide.BasicRatedStaticLoad_C0;
+
+            res.Guide.YAxis.SizeOfGuideFixedBolt = result.FeedSystemY.Guide.SizeOfGuideFixedBolt;
+            res.Guide.YAxis.RollerType = result.FeedSystemY.Guide.RollerType;
+            res.Guide.YAxis.BasicRatedDynamicLoad = result.FeedSystemY.Guide.BasicRatedDynamicLoad_C;
+            res.Guide.YAxis.BasicRatedStaticLoad = result.FeedSystemY.Guide.BasicRatedStaticLoad_C0;
+
+            res.Guide.ZAxis.SizeOfGuideFixedBolt = result.FeedSystemZ.Guide.SizeOfGuideFixedBolt;
+            res.Guide.ZAxis.RollerType = result.FeedSystemZ.Guide.RollerType;
+            res.Guide.ZAxis.BasicRatedDynamicLoad = result.FeedSystemZ.Guide.BasicRatedDynamicLoad_C;
+            res.Guide.ZAxis.BasicRatedStaticLoad = result.FeedSystemZ.Guide.BasicRatedStaticLoad_C0;
+
+            res.ServoMotor.XAxis.RatedTorque = result.FeedSystemX.ServoMotor.RatedTorque;
+            res.ServoMotor.XAxis.RatedSpeed = result.FeedSystemY.ServoMotor.RatedTorque;
+            res.ServoMotor.XAxis.RatedPower = result.FeedSystemX.ServoMotor.RatedPower;
+            res.ServoMotor.XAxis.MomentOfInertia = result.FeedSystemX.ServoMotor.MomentOfInertia;
+
+            res.ServoMotor.YAxis.RatedTorque = result.FeedSystemY.ServoMotor.RatedTorque;
+            res.ServoMotor.YAxis.RatedSpeed = result.FeedSystemY.ServoMotor.RatedTorque;
+            res.ServoMotor.YAxis.RatedPower = result.FeedSystemY.ServoMotor.RatedPower;
+            res.ServoMotor.YAxis.MomentOfInertia = result.FeedSystemY.ServoMotor.MomentOfInertia;
+
+            res.ServoMotor.ZAxis.RatedTorque = result.FeedSystemZ.ServoMotor.RatedTorque;
+            res.ServoMotor.ZAxis.RatedSpeed = result.FeedSystemZ.ServoMotor.RatedTorque;
+            res.ServoMotor.ZAxis.RatedPower = result.FeedSystemZ.ServoMotor.RatedPower;
+            res.ServoMotor.ZAxis.MomentOfInertia = result.FeedSystemZ.ServoMotor.MomentOfInertia;
+
+            res.ServoDriver.XAxis.ContinuousCurrent = result.FeedSystemX.Driver.ContinuousCurrent;
+            res.ServoDriver.XAxis.PeakCurrent = result.FeedSystemX.Driver.PeakCurrent;
+            res.ServoDriver.XAxis.SupplyVoltage = result.FeedSystemX.Driver.SupplyVoltage;
+            res.ServoDriver.XAxis.MaxAdaptableMotorPower = result.FeedSystemX.Driver.MaxAdaptableMotorPower;
+            res.ServoDriver.XAxis.ExternalBrakingResistance = result.FeedSystemX.Driver.ExternalBrakingResistance;
+
+            res.ServoDriver.YAxis.ContinuousCurrent = result.FeedSystemY.Driver.ContinuousCurrent;
+            res.ServoDriver.YAxis.PeakCurrent = result.FeedSystemY.Driver.PeakCurrent;
+            res.ServoDriver.YAxis.SupplyVoltage = result.FeedSystemY.Driver.SupplyVoltage;
+            res.ServoDriver.YAxis.MaxAdaptableMotorPower = result.FeedSystemY.Driver.MaxAdaptableMotorPower;
+            res.ServoDriver.YAxis.ExternalBrakingResistance = result.FeedSystemY.Driver.ExternalBrakingResistance;
+
+            res.ServoDriver.ZAxis.ContinuousCurrent = result.FeedSystemZ.Driver.ContinuousCurrent;
+            res.ServoDriver.ZAxis.PeakCurrent = result.FeedSystemZ.Driver.PeakCurrent;
+            res.ServoDriver.ZAxis.SupplyVoltage = result.FeedSystemZ.Driver.SupplyVoltage;
+            res.ServoDriver.ZAxis.MaxAdaptableMotorPower = result.FeedSystemZ.Driver.MaxAdaptableMotorPower;
+            res.ServoDriver.ZAxis.ExternalBrakingResistance = result.FeedSystemZ.Driver.ExternalBrakingResistance;
+
+            res.BallScrew.XAxis.NominalDiameter = result.FeedSystemX.Ballscrew.NominalDiameter_d0;
+            res.BallScrew.XAxis.NominalLead = result.FeedSystemX.Ballscrew.NominalLead_Ph0;
+            res.BallScrew.XAxis.BasicRatedDynamicLoad = result.FeedSystemX.Ballscrew.BasicRatedDynamicLoad_Ca;
+
+            res.BallScrew.YAxis.NominalDiameter = result.FeedSystemY.Ballscrew.NominalDiameter_d0;
+            res.BallScrew.YAxis.NominalLead = result.FeedSystemY.Ballscrew.NominalLead_Ph0;
+            res.BallScrew.YAxis.BasicRatedDynamicLoad = result.FeedSystemY.Ballscrew.BasicRatedDynamicLoad_Ca;
+
+            res.BallScrew.ZAxis.NominalDiameter = result.FeedSystemZ.Ballscrew.NominalDiameter_d0;
+            res.BallScrew.ZAxis.NominalLead = result.FeedSystemZ.Ballscrew.NominalLead_Ph0;
+            res.BallScrew.ZAxis.BasicRatedDynamicLoad = result.FeedSystemZ.Ballscrew.BasicRatedDynamicLoad_Ca;
+
             return res;
         }
 

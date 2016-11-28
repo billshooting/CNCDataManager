@@ -12,6 +12,7 @@
     @Scripts.Render("~/bundles/bootstrap")
 
     <link href="~/Areas/Selection/AppSelection/CSS/reset.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/AppSelection/CSS/index.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/feedSystem.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
     <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
@@ -753,7 +754,24 @@
             </div>
             <br />
             <div class="row">
-                <button class="btn btn-info col-md-offset-1 col-md-4" type="button" id="side-finish">完   成</button>
+                <button class="btn btn-info col-md-offset-1 col-md-4" type="button" data-toggle="modal" data-target="#finishModal">完   成</button>
+                <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="finishLabel">完  成</h4>
+                            </div>
+                            <div class="modal-body">
+                                确认要提交选型结果吗
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn btn-primary" id="side-finish">确认</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <button class="btn btn-info col-md-offset-1 col-md-4" type="button" data-toggle="modal" data-target="#restartModal">重新开始</button>
                 <div class="modal fade" id="restartModal" tabindex="-1" role="dialog" aria-labellebdy="restartLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -774,102 +792,34 @@
                 </div>
             </div>
         </div>
-        
-                <!--
-                <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer" 
-                         n-attr="sideCNCSystem.num" id-attr="'sideType2'" name-attr="'数控系统类型'"></ts-list>
-
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypex">进给轴x轴</a>
-                <div class="list-group collapse" id="sideTypex">
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType3'" name-attr="'导轨'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType4'" name-attr="'滚珠丝杠'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType5'" name-attr="'轴承'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType6'" name-attr="'联轴器'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType7'" name-attr="'伺服电机'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType8'" name-attr="'伺服驱动'"></ts-list>
-                </div>
-
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypey">进给轴y轴</a>
-                <div class="list-group collapse" id="sideTypey">
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType9'" name-attr="'导轨'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType10'" name-attr="'滚珠丝杠'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType11'" name-attr="'轴承'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType12'" name-attr="'联轴器'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType13'" name-attr="'伺服电机'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType14'" name-attr="'伺服驱动'"></ts-list>
-                </div>
-
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypexy">进给轴x/y轴</a>
-                <div class="list-group collapse" id="sideTypexy">
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType15'" name-attr="'导轨'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType16'" name-attr="'滚珠丝杠'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType17'" name-attr="'轴承'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType18'" name-attr="'联轴器'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType19'" name-attr="'伺服电机'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType20'" name-attr="'伺服驱动'"></ts-list>
-                </div>
-
-                <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sideTypez">进给轴z轴</a>
-                <div class="list-group collapse" id="sideTypez">
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType21'" name-attr="'导轨'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType22'" name-attr="'滚珠丝杠'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType23'" name-attr="'轴承'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType24'" name-attr="'联轴器'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType25'" name-attr="'伺服电机'"></ts-list>
-                    <ts-list i-attr="sideCNCSystem.imgsrc" t-attr="sideCNCSystem.typeID" m-attr="sideCNCSystem.manufacturer"
-                             n-attr="sideCNCSystem.num" id-attr="'sideType26'" name-attr="'伺服驱动'"></ts-list>
-                </div>
-
-                <a href="#" class="list-group-item">主轴</a>-->
 
     @RenderBody()
 
     </div>
     <hr />
-    <div class="container">
-        <footer>
-            <div class="row">
-                <div class="col-md-4">
-                    <p></p>
+    <div class="index-footer">
+        <div class="container">
+            <footer>
+                <div class="row">
+                    <div class="footer-col">
+                        <p></p>
+                    </div>
+                    <div class="footer-col">
+                        <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
+                        <p>邮编：430074</p>
+                    </div>
+                    <div class="footer-col">
+                        <p>电话：027-87541114</p>
+                        <p>传真：027-87545438</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>地址：湖北省武汉市洪山区珞瑜路1037号</p>
-                    <p>邮编：430074</p>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>电话：027-87541114</p>
-                    <p>传真：027-87545438</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <p>&copy; 2015-@DateTime.Now.Year 版权所有-华中科技大学机械科学与工程学院数控中心 CNC Data Hub All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </div>
     </div>
     @RenderSection("scripts", required: false)
 

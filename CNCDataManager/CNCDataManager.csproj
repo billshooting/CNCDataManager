@@ -513,6 +513,7 @@
     <Content Include="Areas\Help\Content\CSS\DataAPI.css" />
     <Content Include="Areas\Help\Content\JS\DataAPI.js" />
     <Content Include="Areas\Selection\AppSelection\CSS\feedSystem.css" />
+    <Content Include="Areas\Selection\AppSelection\CSS\index.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\reset.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\_LayoutPage_Selection.css" />
     <Content Include="Areas\Selection\AppSelection\framework\angular-1.3.0.14\angular-animate.js" />
@@ -1284,7 +1285,6 @@
     <Content Include="App\docTemplate\选型简表结果.docx" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy %282%29.pubxml" />
     <Content Include="Areas\Selection\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Selection\Views\Shared\_Layout.cshtml" />
     <None Include="Properties\PublishProfiles\CNCDataManager - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\angular-animate.js" />

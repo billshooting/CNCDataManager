@@ -23,6 +23,7 @@
             let docWindow = window.open("", "预览");
             docWindow.document.write(data);
         });
+        $("#finishModal").modal("hide");
     });
 
     $("#side-restart").click(function(){
