@@ -7,6 +7,7 @@ using CNCDataManager.Models;
 using CNCDataManager.Controllers.Internals;
 using System.Threading;
 using System.Globalization;
+using System.Text;
 
 namespace CNCDataManager.Controllers
 {
@@ -17,25 +18,24 @@ namespace CNCDataManager.Controllers
         public ActionResult Index (SelectionResult selectionResult)
         {
             ReportTemplateResult result = ToReportTemplate(selectionResult);
-            string shortName = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss") + ".docx";
-            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName;
+            string shortName = DateTime.Now.ToString("yyyyMMdd-hhmmss");
+            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName + ".docx";
             result.Filename = shortName;
-            //using (DocxGenerator gen = new DocxGenerator(HttpContext.Server.MapPath(@"~/App/docTemplate/选型简表结果.docx")))
-            //{
-            //    gen.AddMachinePicture(MapPath(result.MachinePicture))
-            //        .AddSimulationPictures(MapPath(result.SimulationPictures.ToArray()))
-            //        .AddContent(result)
-            //        .SaveAs(filename);
-            //}
-            //return View(result);
-            return View("test");
+            using (DocxGenerator gen = new DocxGenerator(HttpContext.Server.MapPath(@"~/App/docTemplate/选型简表结果.docx")))
+            {
+                gen.AddMachinePicture(MapPath(result.MachinePicture))
+                    .AddSimulationPictures(MapPath(result.SimulationPictures.ToArray()))
+                    .AddContent(result)
+                    .SaveAs(filename);
+            }
+            return View(result);
         }
 
         private ReportTemplateResult ToReportTemplate(SelectionResult result)
         {
             ReportTemplateResult res = new ReportTemplateResult()
             {
-                MachinePicture = "../App/images/Upload/MachineType.png",
+                MachinePicture = "../../App/images/Report/MachineType.png",
                 TransmissionMethod = new TransmissionMethod()
                 {
                     XAxis = "减速器",
@@ -44,15 +44,35 @@ namespace CNCDataManager.Controllers
                 },
                 Components = new List<Component>(),
                 NCSystem = result.NCSystem,
-                ServoMotor = new ServoMotor(),
-                ServoDriver = new ServoDriver(),
-                Guide = new Guide(),
-                BallScrew = new BallScrew(),
+                ServoMotor = new ServoMotor()
+                {
+                    XAxis = new ServoMotorAxis(),
+                    YAxis = new ServoMotorAxis(),
+                    ZAxis = new ServoMotorAxis()
+                },
+                ServoDriver = new ServoDriver()
+                {
+                    XAxis = new ServoDriverAxis(),
+                    YAxis = new ServoDriverAxis(),
+                    ZAxis = new ServoDriverAxis()
+                },
+                Guide = new Guide()
+                {
+                    XAxis = new GuideAxis(),
+                    YAxis = new GuideAxis(),
+                    ZAxis = new GuideAxis()
+                },
+                BallScrew = new BallScrew()
+                {
+                    XAxis = new BallScrewAxis(),
+                    YAxis = new BallScrewAxis(),
+                    ZAxis = new BallScrewAxis()
+                },
                 SimulationPictures = new List<string>()
                 {
-                    "../App/images/Upload/simu-1.png",
-                    "../App/images/Upload/simu-2.png",
-                    "../App/images/Upload/simu-3.png"
+                    "../../App/images/Report/simu-1.png",
+                    "../../App/images/Report/simu-2.png",
+                    "../../App/images/Report/simu-3.png"
                 }
             };
             res.Components.Add(new Component() { AxisAndName = "X轴滚珠丝杠", TypeID = result.FeedSystemX.Ballscrew.TypeID, Manufacturer = result.FeedSystemX.Ballscrew.Manufacturer });
@@ -140,14 +160,16 @@ namespace CNCDataManager.Controllers
         public void DownLoad(string shortName)
         {
             Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
-            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName;
+            string filename = HttpContext.Server.MapPath(@"~/App/temp/") + shortName + ".docx";
             Response.WriteFile(filename);
             
         }
 
         private string MapPath(string relativeUrl)
         {
-            return HttpContext.Server.MapPath(relativeUrl.Replace("..", "~"));
+            StringBuilder sb = new StringBuilder(relativeUrl);
+            sb.Replace("../", "").Insert(0, "~/");           
+            return HttpContext.Server.MapPath(sb.ToString());
         }
 
         private string[] MapPath(string[] relativeUrls)
