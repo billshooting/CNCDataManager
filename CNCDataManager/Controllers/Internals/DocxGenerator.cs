@@ -153,11 +153,11 @@ namespace CNCDataManager.Controllers.Internals
             p = table.Rows[rowIndex + 1].Cells[2].Paragraphs.FirstOrDefault();
             p.Append(sda.PeakCurrent.Value.ToString());
             p = table.Rows[rowIndex + 2].Cells[2].Paragraphs.FirstOrDefault();
-            p.Append(sda.SupplyVoltage.Value.ToString());
+            p.Append(sda.SupplyVoltage);
             p = table.Rows[rowIndex + 3].Cells[2].Paragraphs.FirstOrDefault();
             p.Append(sda.MaxAdaptableMotorPower.Value.ToString());
             p = table.Rows[rowIndex + 4].Cells[2].Paragraphs.FirstOrDefault();
-            p.Append(sda.ExternalBrakingResistance.Value.ToString());
+            p.Append(sda.ExternalBrakingResistance);
         }
 
         private void AddGuide(Guide guide)

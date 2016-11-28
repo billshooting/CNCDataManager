@@ -5,16 +5,26 @@
     });
 
     $("#side-finish").click(function () {
+        let system = getObject("CNCSystem");
+        let ncSystem = {
+            TypeID: system.TypeID,
+            SupportMachineType: system.SupportMachineType,
+            NumberOfSupportChannels: system.SupportChannels,
+            MaxNumberOfFeedSystemAxis: system.MaxNumberOfFeedShafts,
+            MaxNumberOfSpindleAxis: system.MaxNumberOfSpindels,
+            MaxNumberOfLinkageAxis: system.MaxNumberOfLinkageAxis
+        };
+
     	var selectionResult={
             CNCType:getObject("CNCType"),
-            NCSytem:getObject("CNCSystem"),
+            NCSystem:ncSystem,
             FeedSystemZ:getFeedSystem("Z"),
         };
-        if(selectionResult.CNCType.support=="C")
+        if(selectionResult.CNCType.support==="C")
         {
             selectionResult.FeedSystemXY=getFeedSystem("XY");
         }
-        else if(selectionResult.CNCType.support=="X")
+        else if(selectionResult.CNCType.support==="X")
         {
             selectionResult.FeedSystemX=getFeedSystem("X");
             selectionResult.FeedSystemY=getFeedSystem("Y");
@@ -38,14 +48,14 @@
     }
 
     function getFeedSystem(axis){
-        var feedSystem={
-            Guide:getObject(axis+"Guide"),
-            Ballscrew:getObject(axis+"Ballscrew"),
-            Bearings:getObject(axis+"Bearings"),
-            Coupling:getObject(axis+"Coupling"),
-            ServoMotor:getObject(axis+"Motor"),
-            Driver:getObject(axis+"Driver"),
-        }
+        var feedSystem = {
+            Guide: getObject(axis + "Guide"),
+            Ballscrew: getObject(axis + "Ballscrew"),
+            Bearings: getObject(axis + "Bearings"),
+            Coupling: getObject(axis + "Coupling"),
+            ServoMotor: getObject(axis + "Motor"),
+            Driver: getObject(axis + "Driver"),
+        };
         return feedSystem;
     }
 });

@@ -390,16 +390,16 @@
     <Content Include="App\images\Motors\伺服电机.jpg" />
     <Content Include="App\images\Motors\进给电机-表.jpg" />
     <Content Include="App\images\Motors\进给电机尺寸图-表.jpg" />
+    <Content Include="App\images\Report\cautious.png" />
+    <Content Include="App\images\Report\MachineType.png" />
+    <Content Include="App\images\Report\simu-1.png" />
+    <Content Include="App\images\Report\simu-2.png" />
+    <Content Include="App\images\Report\simu-3.png" />
+    <Content Include="App\images\Report\university-icon.png" />
+    <Content Include="App\images\Report\条形码.png" />
     <Content Include="App\images\Servo\伺服部分.jpg" />
     <Content Include="App\images\Servo\永磁同步交流进给伺服电机驱动器-表.jpg" />
     <Content Include="App\images\Servo\电机驱动-介绍.jpg" />
-    <Content Include="App\images\Upload\cautious.png" />
-    <Content Include="App\images\Upload\MachineType.png" />
-    <Content Include="App\images\Upload\simu-1.png" />
-    <Content Include="App\images\Upload\simu-2.png" />
-    <Content Include="App\images\Upload\simu-3.png" />
-    <Content Include="App\images\Upload\university-icon.png" />
-    <Content Include="App\images\Upload\条形码.png" />
     <Content Include="App\scripts\app.js" />
     <Content Include="App\scripts\controllers\accountController.js" />
     <Content Include="App\scripts\controllers\cncdataController.js" />
@@ -2168,9 +2168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
