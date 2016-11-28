@@ -34,6 +34,7 @@ DriverTableCtrl.controller('DriverTableCtrl', function($stateParams,$scope,$loca
 	$http.get($data.http+"PMSrvMotorDrivers")
 		.then(function(response){
 			$scope.drivers=response.data;
+			angular.element(document.getElementsByClassName("loader")).remove();
 		});
 
 	//选中表格中的一行伺服驱动型号

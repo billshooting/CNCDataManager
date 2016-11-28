@@ -142,6 +142,7 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 	$http.get($data.http+"SolidBallScrewNutPairs")
 	.then(function(response){
 		$scope.ballscrews=response.data;
+		angular.element(document.getElementsByClassName("loader")).remove();
 	});
 	$scope.title="TypeID";
 	$scope.desc=1;

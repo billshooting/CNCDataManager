@@ -30,6 +30,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
         injector.invoke(reset);
         var CNCType=$locals.getObject("CNCType");
         onComponentChange("CNCType",CNCType.type,CNCType.support,CNCType.img);
+        angular.element(document.getElementById("list-finish")).removeAttr("disabled");
     });
     //控制中间导航栏选项是否active
     $scope.navActive=0;
@@ -87,12 +88,17 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
     }
     function resetSide(){
         var CNCTypec=$locals.getObject("CNCType");
+        var finshBtn=angular.element(document.getElementById("list-finish"));
         if(CNCTypec)
         {
             onComponentChange("CNCType",CNCTypec.type,CNCTypec.support,CNCTypec.img);
+            finshBtn.removeAttr("disabled");
         }
         else
+        {
+            finshBtn.attr("disabled",true);
             return;
+        }
 
         var CNCSystemc=$locals.getObject("CNCSystem");
         if(CNCSystemc)
@@ -224,6 +230,7 @@ controllers.controller('CNCSystemTable', function ($scope,$http,$state,$locals,$
     $http.get($data.http+'NCSystems')
       .then(function (response) {
           $scope.NCSystems = response.data;
+          angular.element(document.getElementsByClassName("loader")).remove();
       });
     //数控系统数据分页
     $scope.Page={

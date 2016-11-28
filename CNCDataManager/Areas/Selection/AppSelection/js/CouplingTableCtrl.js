@@ -102,9 +102,11 @@ CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$statePa
 
 	//从服务器获取对应联轴器型号数据
 	$scope.getData=function(couplingType){
+		angular.element(document.getElementsByClassName("loader")).show();
 		$http.get($data.http+couplingType.url)
 			.then(function(response){
 				$scope.couplings=response.data;
+				angular.element(document.getElementsByClassName("loader")).hide();
 			});
 	};
 	$scope.getData($scope.couplingPara.couplingType);

@@ -38,6 +38,7 @@ ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$sco
 	$http.get($data.http+"PMSrvMotorParas")
 		.then(function(response){
 			$scope.servoMotors=response.data;
+			angular.element(document.getElementsByClassName("loader")).remove();
 		});
 
 	//点击表中一行，选中某一型号伺服电机

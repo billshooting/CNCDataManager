@@ -44,7 +44,7 @@
     });
 
     function getObject(key){
-        return JSON.parse(localStorage.getItem(key));
+        return JSON.parse(localStorage.getItem(key)) || {};
     }
 
     function getFeedSystem(axis){
@@ -56,6 +56,7 @@
             ServoMotor: getObject(axis + "Motor"),
             Driver: getObject(axis + "Driver"),
         };
+        console.log(feedSystem.Driver);
         return feedSystem;
     }
 });

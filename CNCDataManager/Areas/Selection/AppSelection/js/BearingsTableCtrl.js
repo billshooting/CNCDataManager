@@ -120,9 +120,13 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 	$scope.reset();
 	//从服务端获取相应轴承数据
 	$scope.getData=function(bearingType){
+		angular.element(document.getElementsByClassName("loader")).show();
 		$http.get($data.http+bearingType.url)
 		.then(function(response){
 			$scope.bearings=response.data;
+			angular.element(document.getElementsByClassName("loader")).hide();
+		},function(response){
+			console.log(response.status);
 		});
 	};
 	$scope.getData($scope.bearingPara.bearingType);

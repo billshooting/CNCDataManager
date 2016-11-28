@@ -460,6 +460,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
     $http.get($data.http+"LineRollingGuides")
     .then(function(response){
         $scope.LineRollingGuides=response.data;
+        angular.element(document.getElementsByClassName("loader")).remove();
     });
     //表头排序
     $scope.title="TypeID";
