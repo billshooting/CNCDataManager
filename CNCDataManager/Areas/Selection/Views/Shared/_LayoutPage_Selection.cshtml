@@ -7,9 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <title>@ViewBag.Title - 数控机床数据库管理系统</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
 
     <link href="~/Areas/Selection/AppSelection/CSS/reset.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/index.css" rel="stylesheet" />
@@ -18,33 +15,6 @@
     <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
     <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.css" rel="stylesheet" />
-
-    <script src="~/Scripts/angular.min.js"></script>
-    <script src="~/Scripts/angular-ui-router.min.js"></script>
-    <script src="~/Scripts/angular-cookies.min.js"></script>
-    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
-
-    <script src="~/Areas/Selection/AppSelection/js/app.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/controllers.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/BearingsTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/BearingsDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/CouplingTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/CouplingDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/ServoMotorTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/ServoMotorDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/DriverTableCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/DriverDetailCtrl.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/services.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/filters.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/directives.js"></script>
-    
-    <script src="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
-    <script src="~/Areas/Selection/AppSelection/js/SideMenu.js"></script>
     
     @RenderSection("css", required: false)
 </head>
@@ -112,7 +82,7 @@
                             <div class="user">
                                 <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCTypeImg" />
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-striped table-condensed">
                                 <tr>
                                     <td>型号</td>
                                     <td id="CNCTypeID">未选择</td>
@@ -126,6 +96,10 @@
                                     <td id="CNCTypeNum">0</td>
                                 </tr>
                             </table>
+                            <div class="combtn-group">
+                                <button class="btn btn-info" type="button">查 看</button>
+                                <button class="btn btn-default" type="button">删 除</button>
+                            </div>
                         </div>
                     </div>
                     <div class="c-feed x-feed">
@@ -137,7 +111,7 @@
                             <div class="user">
                                 <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCSystemImg" />
                             </div>
-                            <table class="table table-striped">
+                            <table class="table table-striped table-condensed">
                                 <tr>
                                     <td>型号</td>
                                     <td id="CNCSystemID">未选择</td>
@@ -165,7 +139,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XYGuideImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYGuideID">未选择</td>
@@ -189,7 +163,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XYBallscrewImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYBallscrewID">未选择</td>
@@ -213,7 +187,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XYBearingsImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYBearingsID">未选择</td>
@@ -237,7 +211,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XYCouplingImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYCouplingID">未选择</td>
@@ -261,7 +235,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XYMotorImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYMotorID">未选择</td>
@@ -285,7 +259,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XYDriverImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYDriverID">未选择</td>
@@ -315,7 +289,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XGuideImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XGuideID">未选择</td>
@@ -339,7 +313,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XBallscrewImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XBallscrewID">未选择</td>
@@ -363,7 +337,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XBearingsImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XBearingsID">未选择</td>
@@ -387,7 +361,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XCouplingImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XCouplingID">未选择</td>
@@ -411,7 +385,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XMotorImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XMotorID">未选择</td>
@@ -435,7 +409,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XDriverImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XDriverID">未选择</td>
@@ -465,7 +439,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="YGuideImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YGuideID">未选择</td>
@@ -489,7 +463,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="YBallscrewImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YBallscrewID">未选择</td>
@@ -513,7 +487,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="YBearingsImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YBearingsID">未选择</td>
@@ -537,7 +511,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="YCouplingImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YCouplingID">未选择</td>
@@ -561,7 +535,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="YMotorImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YMotorID">未选择</td>
@@ -585,7 +559,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="YDriverImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YDriverID">未选择</td>
@@ -615,7 +589,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="ZGuideImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZGuideID">未选择</td>
@@ -639,7 +613,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="ZBallscrewImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZBallscrewID">未选择</td>
@@ -663,7 +637,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="ZBearingsImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZBearingsID">未选择</td>
@@ -687,7 +661,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="ZCouplingImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZCouplingID">未选择</td>
@@ -711,7 +685,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="ZMotorImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZMotorID">未选择</td>
@@ -735,7 +709,7 @@
                                 <div class="user">
                                     <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="ZDriverImg" />
                                 </div>
-                                <table class="table table-striped">
+                                <table class="table table-striped table-condensed">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZDriverID">未选择</td>
@@ -756,7 +730,7 @@
             </div>
             <hr />
             <div class="button-group">
-                    <button class="btn btn-info col-md-offset-1 col-md-4" type="button" data-toggle="modal" data-target="#finishModal" id="list-finish">完   成</button>
+                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#finishModal" id="list-finish">完   成</button>
                     <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -774,7 +748,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-info col-md-offset-1 col-md-4" type="button" data-toggle="modal" data-target="#restartModal">重新开始</button>
+                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#restartModal">重新开始</button>
                     <div class="modal fade" id="restartModal" tabindex="-1" role="dialog" aria-labellebdy="restartLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -822,6 +796,39 @@
             </div>
         </div>
     </footer>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-ui-router.min.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script src="~/Areas/Selection/AppSelection/js/app.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/controllers.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/LinnearRollingGuideDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/SolidBallScrewNutPairsDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/BearingsTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/BearingsDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/CouplingTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/CouplingDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/ServoMotorTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/ServoMotorDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/DriverTableCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/DriverDetailCtrl.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/services.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/filters.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/directives.js"></script>
+
+    <script src="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.js"></script>
+    <script src="~/Areas/Selection/AppSelection/framework/jquery.fly.min.js"></script>
+    <script src="~/Areas/Selection/AppSelection/js/SideMenu.js"></script>
+
     @RenderSection("scripts", required: false)
 
 </body>

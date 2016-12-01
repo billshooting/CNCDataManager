@@ -1,5 +1,6 @@
 var SolidBallScrewNutPairsTableCtrl=angular.module("SolidBallScrewNutPairsTableCtrl",[]);
-SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",function($scope,$locals,$stateParams,$http,$state,$data){
+SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",function($scope,$locals,$stateParams,
+		$http,$state,$data,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	//滚珠丝杠常用精度等级数据
 	$scope.accuracyClassOptions=[
@@ -153,7 +154,9 @@ SolidBallScrewNutPairsTableCtrl.controller("SolidBallScrewNutPairsTableCtrl",fun
 	$scope.selected=function(ballscrew){
 		$scope.ballscrewSelected=ballscrew;
 	};
-	$scope.nextStep=function(){
+	$scope.nextStep=function(event){
+		$fly.start(event);
+		
 		$scope.ballscrewSelected.torque=$scope.caculation.torque;
 		$scope.ballscrewSelected.supportMode=$scope.ballscrewPara.supportMode;//将滚珠丝杠支撑方式存入cookies
 		$scope.ballscrewSelected.minDiameter=$scope.caculation.minDiameter;//将滚珠丝杠计算结果最小底径存入cookies

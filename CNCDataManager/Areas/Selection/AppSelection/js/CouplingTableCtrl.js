@@ -1,5 +1,6 @@
 ﻿var CouplingTableCtrl=angular.module("CouplingTableCtrl",[]);
-CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default,$http,$data){
+CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$stateParams,$locals,$default,$http
+		,$data,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 
 	//联轴器类型数据
@@ -126,7 +127,9 @@ CouplingTableCtrl.controller('CouplingTableCtrl',function($scope,$state,$statePa
 	};
 	
 	//点击下一步按钮，保存数据到localstorage，并页面跳转到伺服电机
-	$scope.nextStep=function(){
+	$scope.nextStep=function(event){
+		$fly.start(event);
+		
 		$scope.couplingSelected.img="Coupling.jpg";
 		$locals.putObject($scope.FeedSystemType+"Coupling",$scope.couplingSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Coupling");

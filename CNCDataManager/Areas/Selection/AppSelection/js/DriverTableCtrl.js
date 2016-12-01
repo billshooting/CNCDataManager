@@ -1,5 +1,5 @@
 ﻿var DriverTableCtrl=angular.module("DriverTableCtrl",[]);
-DriverTableCtrl.controller('DriverTableCtrl', function($stateParams,$scope,$locals,$data,$http,$state){
+DriverTableCtrl.controller('DriverTableCtrl', function($stateParams,$scope,$locals,$data,$http,$state,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 
 	//输入电源类型选项数据
@@ -48,7 +48,9 @@ DriverTableCtrl.controller('DriverTableCtrl', function($stateParams,$scope,$loca
 	};
 
 	//点击下一步按钮，跳转到下一个轴选型界面
-	$scope.nextStep=function(){
+	$scope.nextStep=function(event){
+		$fly.start(event);
+		
 		$scope.driverSelected.img="Driver.jpg";
 		$locals.putObject($scope.FeedSystemType+"Driver",$scope.driverSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Driver");

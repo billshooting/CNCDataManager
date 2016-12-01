@@ -40,16 +40,32 @@
 
 .sideList{
 	height:660px;
-	overflow-y: auto;
+	overflow-y: scroll;
 }
 
 .button-group{
 	position:fixed;
 	bottom: 0;
-	width:228px;
+	width:100%;
 	height:54px;
 	padding-top: 10px;
 	background-color: #fff;
 	border-top:1px solid silver;
 	z-index: 2;
+}
+
+.button-group .btn:first-child{
+	margin-left:20px;
+	margin-right:25px;
+	width:80px;
+}
+
+.sideList .combtn-group{
+	margin-top:-15px;
+	margin-bottom: 10px;
+}
+
+.sideList .combtn-group .btn:first-child{
+	margin-left:30px;
+	margin-right:35px;
 }

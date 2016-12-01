@@ -1,5 +1,6 @@
 ﻿var ServoMotorTableCtrl=angular.module("ServoMotorTableCtrl",[]);
-ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$scope,$locals,$default,$constants,$data,$http,$state){
+ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$scope,$locals,$default,$constants,
+		$data,$http,$state,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.a="red";
 	//伺服电机相关数据数据
@@ -47,7 +48,9 @@ ServoMotorTableCtrl.controller('ServoMotorTableCtrl', function($stateParams,$sco
 	};
 
 	//点击下一步按钮，跳转到伺服驱动选型
-	$scope.nextStep=function(){
+	$scope.nextStep=function(event){
+		$fly.start(event);
+
 		$scope.servoMotorSelected.img="ServoMotor.jpg";
 		$locals.putObject($scope.FeedSystemType+"Motor",$scope.servoMotorSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Motor");
