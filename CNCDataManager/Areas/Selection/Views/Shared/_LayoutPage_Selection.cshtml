@@ -11,8 +11,9 @@
     <link href="~/Areas/Selection/AppSelection/CSS/reset.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/index.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/feedSystem.css" rel="stylesheet" />
+    <link href="~/Areas/Selection/AppSelection/CSS/animations.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/CSS/_LayoutPage_Selection.css" rel="stylesheet" />
-    <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+    <!-- <link href="~/Content/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" /> -->
     <link href="~/Content/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Areas/Selection/AppSelection/framework/bootsidemenu/BootSideMenu.css" rel="stylesheet" />
     
@@ -55,12 +56,12 @@
                 <div class="row">
                     <ul class="nav nav-tabs">
                         <li class="col-md-2" ng-show="navShow[0]" ng-class="{active:navActive==0}"><a ui-sref="CNCType" class="text-center">数控机床</a></li>
-                        <li class="col-md-2" ng-show="navShow[1]" ng-class="{active:navActive==1}"><a ui-sref="CNCSystem" class="text-center">数控系统</a></li>
+                        <li class="col-md-2" ng-show="navShow[1]" ng-class="{active:navActive==1}"><a ui-sref="CNCSystem" class="text-center"  data-transition="pop">数控系统</a></li>
                         <li class="col-md-2" ng-show="navShow[2]" ng-class="{active:navActive==2}"><a ui-sref="FeedSystem({FeedSystemType:'XY'})" class="text-center">进给轴x/y轴</a></li>
                         <li class="col-md-2" ng-show="navShow[3]" ng-class="{active:navActive==3}"><a ui-sref="FeedSystem({FeedSystemType:'X'})" class="text-center">进给轴x轴</a></li>
                         <li class="col-md-2" ng-show="navShow[4]" ng-class="{active:navActive==4}"><a ui-sref="FeedSystem({FeedSystemType:'Y'})" class="text-center">进给轴y轴</a></li>
                         <li class="col-md-2" ng-show="navShow[5]" ng-class="{active:navActive==5}"><a ui-sref="FeedSystem({FeedSystemType:'Z'})" class="text-center">进给轴z轴</a></li>
-                        <li class="col-md-2" ng-show="navShow[6]" ng-class="{active:navActive==6}"><a href="#" class="text-center">主轴</a></li>
+                        <li class="col-md-2" ng-show="navShow[6]" ng-class="{active:navActive==6}"><a href="#" class="text-center"  data-transition="pop">主轴</a></li>
                     </ul>
                 </div>
             </div>
@@ -80,9 +81,10 @@
                         </button>
                         <div id="sideType1" class="collapse">
                             <div class="user">
-                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCTypeImg" />
+                                <a ui-sref="CNCType"><img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail user-img" id="CNCTypeImg" /></a>
+                                <span class="glyphicon glyphicon-remove user-close" id="CNCTypeCancel" data-toggle="modal" data-target="#restartModal"></span>
                             </div>
-                            <table class="table table-striped table-condensed">
+                            <table class="table table-striped table-condensed side-table">
                                 <tr>
                                     <td>型号</td>
                                     <td id="CNCTypeID">未选择</td>
@@ -96,10 +98,10 @@
                                     <td id="CNCTypeNum">0</td>
                                 </tr>
                             </table>
-                            <div class="combtn-group">
+                            <!-- <div class="combtn-group">
                                 <button class="btn btn-info" type="button">查 看</button>
                                 <button class="btn btn-default" type="button">删 除</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="c-feed x-feed">
@@ -109,9 +111,10 @@
                         </button>
                         <div id="sideType2" class="collapse">
                             <div class="user">
-                                <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail" id="CNCSystemImg" />
+                                <a ui-sref="CNCSystem"><img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="数控机床类型" class="img-thumbnail user-img" id="CNCSystemImg" /></a>
+                                 <span class="glyphicon glyphicon-remove user-close" id="CNCSystemCancel"></span>
                             </div>
-                            <table class="table table-striped table-condensed">
+                            <table class="table table-striped table-condensed side-table">
                                 <tr>
                                     <td>型号</td>
                                     <td id="CNCSystemID">未选择</td>
@@ -137,9 +140,10 @@
                             </button>
                             <div id="sideType11" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XYGuideImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail user-img" id="XYGuideImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XYGuideCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYGuideID">未选择</td>
@@ -161,9 +165,10 @@
                             </button>
                             <div id="sideType12" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XYBallscrewImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail user-img" id="XYBallscrewImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XYBallscrewCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYBallscrewID">未选择</td>
@@ -185,9 +190,10 @@
                             </button>
                             <div id="sideType13" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XYBearingsImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail user-img" id="XYBearingsImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XYBearingsCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYBearingsID">未选择</td>
@@ -209,9 +215,10 @@
                             </button>
                             <div id="sideType14" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XYCouplingImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail user-img" id="XYCouplingImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XYCouplingCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYCouplingID">未选择</td>
@@ -233,9 +240,10 @@
                             </button>
                             <div id="sideType15" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XYMotorImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail user-img" id="XYMotorImg" />
+                                     <span class="glyphicon glyphicon-remove user-close" id="XYMotorCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYMotorID">未选择</td>
@@ -257,9 +265,10 @@
                             </button>
                             <div id="sideType16" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XYDriverImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail user-img" id="XYDriverImg" />
+                                     <span class="glyphicon glyphicon-remove user-close" id="XYDriverCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XYDriverID">未选择</td>
@@ -287,9 +296,10 @@
                             </button>
                             <div id="sideType21" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="XGuideImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail user-img" id="XGuideImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XGuideCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XGuideID">未选择</td>
@@ -311,9 +321,10 @@
                             </button>
                             <div id="sideType22" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="XBallscrewImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail user-img" id="XBallscrewImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XBallscrewCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XBallscrewID">未选择</td>
@@ -335,9 +346,10 @@
                             </button>
                             <div id="sideType23" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="XBearingsImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail user-img" id="XBearingsImg" />
+                                     <span class="glyphicon glyphicon-remove user-close" id="XBearingsCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XBearingsID">未选择</td>
@@ -359,9 +371,10 @@
                             </button>
                             <div id="sideType24" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="XCouplingImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail user-img" id="XCouplingImg" />
+                                     <span class="glyphicon glyphicon-remove user-close" id="XCouplingCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XCouplingID">未选择</td>
@@ -383,9 +396,10 @@
                             </button>
                             <div id="sideType25" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="XMotorImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail user-img" id="XMotorImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XMotorCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XMotorID">未选择</td>
@@ -407,9 +421,10 @@
                             </button>
                             <div id="sideType26" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="XDriverImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail user-img" id="XDriverImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="XDriverCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="XDriverID">未选择</td>
@@ -437,9 +452,10 @@
                             </button>
                             <div id="sideType31" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="YGuideImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail user-img" id="YGuideImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YGuideCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YGuideID">未选择</td>
@@ -461,9 +477,10 @@
                             </button>
                             <div id="sideType32" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="YBallscrewImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail user-img" id="YBallscrewImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YBallscrewCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YBallscrewID">未选择</td>
@@ -485,9 +502,10 @@
                             </button>
                             <div id="sideType33" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="YBearingsImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail user-img" id="YBearingsImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YBearingsCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YBearingsID">未选择</td>
@@ -509,9 +527,10 @@
                             </button>
                             <div id="sideType34" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="YCouplingImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail user-img" id="YCouplingImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YCouplingCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YCouplingID">未选择</td>
@@ -533,9 +552,10 @@
                             </button>
                             <div id="sideType35" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="YMotorImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail user-img" id="YMotorImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YMotorCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YMotorID">未选择</td>
@@ -557,9 +577,10 @@
                             </button>
                             <div id="sideType36" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="YDriverImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail user-img" id="YDriverImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="YDriverCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="YDriverID">未选择</td>
@@ -587,9 +608,10 @@
                             </button>
                             <div id="sideType41" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail" id="ZGuideImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="导轨" class="img-thumbnail user-img" id="ZGuideImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZGuideCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZGuideID">未选择</td>
@@ -611,9 +633,10 @@
                             </button>
                             <div id="sideType42" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail" id="ZBallscrewImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="滚珠丝杠" class="img-thumbnail user-img" id="ZBallscrewImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZBallscrewCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZBallscrewID">未选择</td>
@@ -635,9 +658,10 @@
                             </button>
                             <div id="sideType43" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail" id="ZBearingsImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="轴承" class="img-thumbnail user-img" id="ZBearingsImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZBearingsCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZBearingsID">未选择</td>
@@ -659,9 +683,10 @@
                             </button>
                             <div id="sideType44" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail" id="ZCouplingImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="联轴器" class="img-thumbnail user-img" id="ZCouplingImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZCouplingCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZCouplingID">未选择</td>
@@ -683,9 +708,10 @@
                             </button>
                             <div id="sideType45" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail" id="ZMotorImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服电机" class="img-thumbnail user-img" id="ZMotorImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZMotorCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZMotorID">未选择</td>
@@ -707,9 +733,10 @@
                             </button>
                             <div id="sideType46" class="collapse">
                                 <div class="user">
-                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail" id="ZDriverImg" />
+                                    <img src="~/Areas/Selection/AppSelection/imgs/loading.jpg" alt="伺服驱动" class="img-thumbnail user-img" id="ZDriverImg" />
+                                    <span class="glyphicon glyphicon-remove user-close" id="ZDriverCancel"></span>
                                 </div>
-                                <table class="table table-striped table-condensed">
+                                <table class="table table-striped table-condensed side-table">
                                     <tr>
                                         <td>型号</td>
                                         <td id="ZDriverID">未选择</td>
@@ -729,7 +756,7 @@
                 </div>
             </div>
             <hr />
-            <div class="button-group">
+            <div class="side-buttongroup">
                     <button class="btn btn-info" type="button" data-toggle="modal" data-target="#finishModal" id="list-finish">完   成</button>
                     <div class="modal fade" id="finishModal" tabindex="-1" role="dialog" aria-labelledby="finishLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -770,7 +797,6 @@
         </div>
 
     @RenderBody()
-
     </div>
     <hr />
     <footer>
@@ -805,7 +831,8 @@
     <script src="~/Scripts/angular-ui-router.min.js"></script>
     <script src="~/Scripts/angular-cookies.min.js"></script>
     <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <!-- <script src="~/Scripts/jquery-ui-1.9.2.custom.min.js"></script> -->
 
     <script src="~/Areas/Selection/AppSelection/js/app.js"></script>
     <script src="~/Areas/Selection/AppSelection/js/controllers.js"></script>

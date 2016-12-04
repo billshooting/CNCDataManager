@@ -512,6 +512,7 @@
     <Content Include="App\views\templates\XTaperedRollerBrgs.html" />
     <Content Include="Areas\Help\Content\CSS\DataAPI.css" />
     <Content Include="Areas\Help\Content\JS\DataAPI.js" />
+    <Content Include="Areas\Selection\AppSelection\CSS\animations.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\feedSystem.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\index.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\reset.css" />

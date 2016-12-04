@@ -14,7 +14,7 @@
 
 
 /* The loader container */
-.loader {
+.loader-dot {
   width: 200px;
   height: 200px;
 
@@ -132,4 +132,10 @@
   95%, 100% {
     transform: rotateZ(330deg) rotateX(10deg);
   }
+}
+
+.loader .loader-text{
+  text-align: center;
+  font-size:25px;
+  color:#0099CC;
 }

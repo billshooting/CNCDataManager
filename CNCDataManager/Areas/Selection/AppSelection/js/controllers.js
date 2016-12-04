@@ -67,7 +67,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
         var Component=$locals.getObject(data);
         onComponentChange(data,Component.TypeID,Component.Manufacturer,Component.img);
     });
-    
+
     //更新侧边栏
     function onComponentChange(data,ID,Manu,img){
         angular.element(document.getElementById(data+"Check")).removeClass('glyphicon-unchecked');
@@ -76,6 +76,7 @@ controllers.controller('CNCNavCtrl',function($scope,$locals){
         angular.element(document.getElementById(data+"ID")).text(ID);
         angular.element(document.getElementById(data+"Manu")).text(Manu);
         angular.element(document.getElementById(data+"Num")).text(1);
+        angular.element(document.getElementById(data+"Cancel")).show();
     }
     //初始化侧边栏
     function onComponentReset(data){
@@ -134,11 +135,17 @@ controllers.controller("CNCTypeCtrl",function($scope,$state,$locals){
 	};
 	//点击下一步按钮将机床类型存入cookies键为CNCType中
 	$scope.nextStep=function(){
-		var CNCType=["立式车床","立式铣床","龙门铣床","卧式车床","卧式铣床","斜床身车床","磨床"];
+		var CNCTypeOptions=["立式车床","立式铣床","龙门铣床","卧式车床","卧式铣床","斜床身车床","磨床"];
+        var newCNCType=CNCTypeOptions[$scope.type];
+
+        var oldCNCType=$locals.getObject("CNCType");
+        if(oldCNCType&&oldCNCType.type!=newCNCType)
+            $locals.clear();
+
 		$locals.putObject("CNCType",{
-            type:CNCType[$scope.type],
+            type:newCNCType,
             support:$scope.support,
-            img:CNCType[$scope.type]+".jpg",
+            img:newCNCType+".jpg",
         });
         $scope.$emit("CNCTypeChange");
 		$state.go("CNCType.WorkingCondition");

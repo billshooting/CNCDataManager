@@ -35,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="NCSystem in NCSystems|CNCSystemFilt:filtNum|orderBy:title:desc|paging:Page.currentPage:Page.pageSize"
+            <tr class="table-item" ng-repeat="NCSystem in NCSystems|CNCSystemFilt:filtNum|orderBy:title:desc|paging:Page.currentPage:Page.pageSize"
             ng-click="Selected(NCSystem)" 
             ng-class="{tableSelected:NCSystem.TypeID==CNCSystemSelected.TypeID}">
                 <td>{{NCSystem.TypeID}}</td>
@@ -49,11 +49,14 @@
         </tbody>
     </table>
     <div class="loader">
+    <div class="loader-text">Loading...</div>
+    <div class="loader-dot">
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
+    </div>
     </div>
     <div class="row form-horizontal">
         <div class="form-group">

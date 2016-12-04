@@ -39,6 +39,9 @@ services.service("$locals",["$window",function($window){
 	this.getObject=function(key){
 		return JSON.parse($window.localStorage.getItem(key));
 	};
+	this.clear=function(){
+		$window.localStorage.clear();
+	}
 }]);
 
 services.service('$fly',function(){
