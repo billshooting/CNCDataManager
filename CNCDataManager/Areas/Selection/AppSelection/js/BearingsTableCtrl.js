@@ -1,5 +1,5 @@
 ﻿var BearingsTableCtrl=angular.module("BearingsTableCtrl",[]);
-BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateParams,$http,$state,$data){
+BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateParams,$http,$state,$data,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
 	$scope.bearingTypeOptions=[
 	{name:"60°接触角推力球轴承",type:"ball",url:"AngContactBallBrgs"},
@@ -120,9 +120,13 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 	$scope.reset();
 	//从服务端获取相应轴承数据
 	$scope.getData=function(bearingType){
+		angular.element(document.getElementsByClassName("loader")).show();
 		$http.get($data.http+bearingType.url)
 		.then(function(response){
 			$scope.bearings=response.data;
+			angular.element(document.getElementsByClassName("loader")).hide();
+		},function(response){
+			console.log(response.status);
 		});
 	};
 	$scope.getData($scope.bearingPara.bearingType);
@@ -139,7 +143,9 @@ BearingsTableCtrl.controller("BearingsTableCtrl",function($scope,$locals,$stateP
 		$scope.bearingSelected=bearing;
 	};
 	//点击下一步按钮，将所选数据存入cookies，并跳转到联轴器选型界面
-	$scope.nextStep=function(){
+	$scope.nextStep=function(event){
+		$fly.start(event);
+		
 		$scope.bearingSelected.img="Bearings.jpg";
 		$locals.putObject($scope.FeedSystemType+"Bearings",$scope.bearingSelected);
 		$scope.$emit('ComponentChange',$scope.FeedSystemType+"Bearings");

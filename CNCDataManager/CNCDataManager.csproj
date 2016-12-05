@@ -512,6 +512,7 @@
     <Content Include="App\views\templates\XTaperedRollerBrgs.html" />
     <Content Include="Areas\Help\Content\CSS\DataAPI.css" />
     <Content Include="Areas\Help\Content\JS\DataAPI.js" />
+    <Content Include="Areas\Selection\AppSelection\CSS\animations.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\feedSystem.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\index.css" />
     <Content Include="Areas\Selection\AppSelection\CSS\reset.css" />
@@ -995,6 +996,7 @@
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\js\bootstrap.js" />
     <Content Include="Areas\Selection\AppSelection\framework\bootstrap-3.0.0\js\bootstrap.min.js" />
     <Content Include="Areas\Selection\AppSelection\framework\jquery-1.9.1.js" />
+    <Content Include="Areas\Selection\AppSelection\framework\jquery.fly.min.js" />
     <Content Include="Areas\Selection\AppSelection\framework\ng-grid-2.0.12\ng-grid.css" />
     <Content Include="Areas\Selection\AppSelection\framework\ng-grid-2.0.12\ng-grid.debug.js" />
     <Content Include="Areas\Selection\AppSelection\framework\ng-grid-2.0.12\ng-grid.js" />
@@ -1005,6 +1007,7 @@
     <Content Include="Areas\Selection\AppSelection\imgs\Ballscrew.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Bearings.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\bus1.jpg" />
+    <Content Include="Areas\Selection\AppSelection\imgs\car.png" />
     <Content Include="Areas\Selection\AppSelection\imgs\CASNUC2000TA.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TA.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\CNCSystem\CASNUC2000TA1.jpg" />
@@ -1076,6 +1079,7 @@
     <Content Include="Areas\Selection\AppSelection\imgs\Bearings\DoubleThrustAngContactBallBrgs.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\Driver.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\face_01.gif" />
+    <Content Include="Areas\Selection\AppSelection\imgs\gear-icon.png" />
     <Content Include="Areas\Selection\AppSelection\imgs\Guide.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\GuideRail.jpg" />
     <Content Include="Areas\Selection\AppSelection\imgs\icon-eye.png" />

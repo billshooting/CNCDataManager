@@ -1,6 +1,7 @@
 var LinnearRollingGuideTableCtrl=angular.module("LinnearRollingGuideTableCtrl",[]);
 //直线导轨选型控制器
-LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function($scope,$stateParams,$locals,$http,$state,$data){
+LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function($scope,$stateParams,$locals,
+        $http,$state,$data,$fly){
 	$scope.FeedSystemType=$stateParams.FeedSystemType;
     $scope.guidTypeOptions=["滚动导轨","滑动导轨"];
 	$scope.rollerTypeOptions=[{id:0,name:"球滚子"},{id:1,name:"圆柱滚子"}];
@@ -460,6 +461,7 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
     $http.get($data.http+"LineRollingGuides")
     .then(function(response){
         $scope.LineRollingGuides=response.data;
+        angular.element(document.getElementsByClassName("loader")).remove();
     });
     //表头排序
     $scope.title="TypeID";
@@ -474,13 +476,15 @@ LinnearRollingGuideTableCtrl.controller("LinnearRollingGuideTableCtrl",function(
         $scope.LineRollingGuideSelected=LineRollingGuide;
     };
     //点击下一步按钮，将导轨数据保存到相应cookie中,并跳转到下一个页面
-    $scope.nextStep=function(){
+    $scope.nextStep=function(event){
        /* var FeedSystem=$locals.getObject("FeedSystem"+$scope.FeedSystemType);
         if(!FeedSystem){
             FeedSystem={};
         };
         FeedSystem.LineRollingGuide=$scope.LineRollingGuideSelected;
         $locals.putObject("FeedSystem"+$scope.FeedSystemType,FeedSystem);*/
+        $fly.start(event);
+
         $scope.LineRollingGuideSelected.guidType=$scope.guidPara.guidType;//将导轨类型存入cookies
         $scope.LineRollingGuideSelected.friction=$scope.guidPara.friction;//将库伦摩擦系数存入cookies
         $scope.LineRollingGuideSelected.img="Guide.jpg";

@@ -39,4 +39,28 @@ services.service("$locals",["$window",function($window){
 	this.getObject=function(key){
 		return JSON.parse($window.localStorage.getItem(key));
 	};
+	this.clear=function(){
+		$window.localStorage.clear();
+	}
 }]);
+
+services.service('$fly',function(){
+	this.start=function(event){
+		var flyer=$('<img class="u-flyer" src="../../Areas/Selection/AppSelection/imgs/gear-icon.png">');
+		flyer.fly({
+			start:{
+				left:event.pageX,
+				top:event.pageY-document.body.scrollTop,
+			},
+			end:{
+				left:$(window).width(),
+				top:$(window).height()/2,
+				width:0,
+				height:0,
+			},
+			onEnd:function(){
+				this.destory();
+			}
+		});
+	};
+});

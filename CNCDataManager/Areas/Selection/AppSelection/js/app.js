@@ -1,4 +1,4 @@
-﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","controllers",
+﻿var selectionApp = angular.module("selectionApp", ["ui.router","ui.bootstrap","ngCookies","ngAnimate","controllers",
     "directives","filters","services","LinnearRollingGuideTableCtrl","LinnearRollingGuideDetailCtrl",
     "SolidBallScrewNutPairsTableCtrl","SolidBallScrewNutPairsDetailCtrl","BearingsTableCtrl",
     "BearingsDetailCtrl","CouplingTableCtrl","CouplingDetailCtrl","ServoMotorTableCtrl",
